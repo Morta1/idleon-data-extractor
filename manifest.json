@@ -1,0 +1,27 @@
+{
+  "name": "idleon-data-extractor",
+  "description": "Build an Extension!",
+  "version": "1.0",
+  "manifest_version": 3,
+  "permissions": ["activeTab", "storage", "tabs", "webRequest"],
+  "host_permissions": [
+    "*://*.legendsofidleon.com/*",
+    "*://firestore.googleapis.com/*"
+  ],
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*.legendsofidleon.com/*"],
+      "js": ["inject.js"],
+      "run_at": "document_start"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["injected.js"],
+      "matches": ["*://*.legendsofidleon.com/*"]
+    }
+  ]
+}
