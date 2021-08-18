@@ -17,6 +17,11 @@
   "action": {
     "default_popup": "index.html"
   },
+  "icons": {
+    "16": "assets/Golden_Plop.png",
+    "48": "assets/Golden_Plop.png",
+    "128": "assets/Golden_Plop.png"
+  },
   "content_scripts": [
     {
       "matches": [
