@@ -1,0 +1,96 @@
+body {
+    color: white;
+    background-color: #212121;
+    width: 200px;
+    min-height: 100px;
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#loader {
+    display: block;
+    text-align: center;
+}
+
+#loader img {
+    margin: 30px;
+}
+
+#loader .loader-text {;
+    font-size: 14px;
+}
+
+#content {
+    display: none;
+}
+
+#tooltip {
+    display: none;
+    position: absolute;
+    padding: 5px;
+    border-radius: 5px;
+    font-weight: bold;
+    color: black;
+    background-color: #ffffff;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+/*Button*/
+button {
+    padding: 0;
+    width: 150px;
+    height: 50px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    background: white;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.15);
+}
+
+button, button span {
+    transition: 200ms;
+}
+
+button .text {
+    transform: translateX(35px);
+    color: black;
+    font-weight: bold;
+}
+
+button .icon {
+    position: absolute;
+    border-left: 1px solid black;
+    transform: translateX(110px);
+    height: 40px;
+    width: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+button svg {
+    width: 15px;
+    fill: #eee;
+}
+
+button:hover {
+    background: white;
+}
+
+button:hover .text {
+    color: transparent;
+}
+
+button:hover .icon {
+    width: 150px;
+    border-left: none;
+    transform: translateX(0);
+}
+
+button:focus {
+    outline: none;
+}

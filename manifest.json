@@ -1,27 +1,41 @@
 {
   "name": "idleon-data-extractor",
-  "description": "Build an Extension!",
+  "description": "Extract data from legends of idleon and transform it to a readable JSON",
   "version": "1.0",
   "manifest_version": 3,
-  "permissions": ["activeTab", "storage", "tabs", "webRequest"],
+  "permissions": [
+    "activeTab",
+    "storage",
+    "tabs",
+    "webRequest",
+    "webNavigation"
+  ],
   "host_permissions": [
     "*://*.legendsofidleon.com/*",
     "*://firestore.googleapis.com/*"
   ],
   "action": {
-    "default_popup": "popup.html"
+    "default_popup": "index.html"
   },
   "content_scripts": [
     {
-      "matches": ["*://*.legendsofidleon.com/*"],
-      "js": ["inject.js"],
-      "run_at": "document_start"
+      "matches": [
+        "*://*.legendsofidleon.com/*"
+      ],
+      "js": [
+        "src/inject.js"
+      ],
+      "run_at": "document_end"
     }
   ],
   "web_accessible_resources": [
     {
-      "resources": ["injected.js"],
-      "matches": ["*://*.legendsofidleon.com/*"]
+      "resources": [
+        "src/injected.js"
+      ],
+      "matches": [
+        "*://*.legendsofidleon.com/*"
+      ]
     }
   ]
 }
