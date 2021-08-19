@@ -1,19 +1,24 @@
-// const rawJson = require("../rawJson.json");
-// const {
-//   classMap,
-//   mapsMap,
-//   itemMap,
-//   bubblesMap,
-//   starSignMap,
-//   cardEquipMap,
-//   cardLevelMap,
-//   cardSetMap,
-//   skillIndexMap,
-//   guildBonusesMap,
-//   obolMap,
-// } = require("./commons/maps");
+// if (process && process?.env?.NODE_ENV === 'development') {
+//   var rawJson = require("../rawJson.json");
+//   var {
+//     classMap,
+//     mapsMap,
+//     itemMap,
+//     bubblesMap,
+//     starSignMap,
+//     cardEquipMap,
+//     cardLevelMap,
+//     cardSetMap,
+//     skillIndexMap,
+//     guildBonusesMap,
+//     obolMap,
+//     obolFamilyShapeMap,
+//     obolCharacterShapeMap
+//   } = require("./commons/maps");
+// }
 
 let isRunning = false;
+// if (!process?.env?.NODE_ENV === 'development') {
 chrome.webNavigation.onBeforeNavigate.addListener(() => {
   toggleButton(false);
 });
@@ -26,11 +31,12 @@ chrome.storage.onChanged.addListener(function (changes) {
   for (let [key, { newValue }] of Object.entries(changes)) {
     // Run when all of the data is set.
     if (newValue && Object.keys(newValue).length === 3) {
+      console.log("key", key);
       parseData(newValue);
     }
   }
 });
-
+// }
 const parseData = (data) => {
   if (isRunning || !data) {
     return;
@@ -54,7 +60,10 @@ const parseData = (data) => {
   }));
   final.characters = buildCharacterData(characters, fields, final.account);
   final.guild = buildGuildData(guildInfo, fields);
+
+  // if (!process?.env?.NODE_ENV === 'development') {
   toggleButton(true, final);
+  // }
 
   isRunning = false;
 
@@ -130,7 +139,7 @@ const buildCharacterData = (characters, fields, account) => {
     const equipmentMapping = { 0: "armor", 1: "tools", 2: "food" };
     const equippableNames = fields[
       `EquipOrder_${index}`
-    ]?.arrayValue?.values?.reduce(
+      ]?.arrayValue?.values?.reduce(
       (result, item, index) => ({
         ...result,
         [equipmentMapping?.[index]]: item.mapValue.fields,
@@ -139,7 +148,7 @@ const buildCharacterData = (characters, fields, account) => {
     );
     const equipapbleAmount = fields[
       `EquipQTY_${index}`
-    ]?.arrayValue?.values?.reduce(
+      ]?.arrayValue?.values?.reduce(
       (result, item, index) => ({
         ...result,
         [equipmentMapping?.[index]]: item?.mapValue?.fields,
@@ -164,12 +173,12 @@ const buildCharacterData = (characters, fields, account) => {
       (res, { stringValue }, index) =>
         stringValue
           ? [
-              ...res,
-              {
-                name: itemMap[stringValue],
-                amount: parseInt(equipapbleAmount.food[index]?.integerValue),
-              },
-            ]
+            ...res,
+            {
+              name: itemMap[stringValue],
+              amount: parseInt(equipapbleAmount.food[index]?.integerValue),
+            },
+          ]
           : res,
       []
     );
@@ -202,9 +211,9 @@ const buildCharacterData = (characters, fields, account) => {
       (res, { integerValue }, index) =>
         integerValue !== "-1"
           ? {
-              ...res,
-              [skillIndexMap[index]]: integerValue,
-            }
+            ...res,
+            [skillIndexMap[index]]: integerValue,
+          }
           : res,
       {}
     );
@@ -252,8 +261,9 @@ const buildCharacterData = (characters, fields, account) => {
     );
 
     const obolObject = fields[`ObolEqO0_${index}`].arrayValue.values;
-    extendedChar.obols = obolObject.map(({ stringValue }) => ({
+    extendedChar.obols = obolObject.map(({ stringValue }, index) => ({
       name: obolMap[stringValue],
+      shape: obolCharacterShapeMap[index]
     }));
 
     return {
@@ -343,9 +353,11 @@ const showTooltip = (e, text) => {
 };
 
 //
-// const fs = require("fs");
-// const data = parseData(rawJson);
-// fs.writeFile("morta1.json", JSON.stringify(data), "utf8", (err) => {
-//   if (err) console.log("Error occurred while creating morta1.json");
-//   console.log("Done");
-// });
+// if (process && process?.env?.NODE_ENV === 'development') {
+//   const fs = require("fs");
+//   const data = parseData(rawJson);
+//   fs.writeFile("morta1.json", JSON.stringify(data), "utf8", (err) => {
+//     if (err) console.log("Error occurred while creating morta1.json");
+//     console.log("Done");
+//   });
+// }
