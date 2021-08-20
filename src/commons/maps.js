@@ -1478,14 +1478,14 @@ const starSignMap = {
 
 const cardSetMap = {
   None: "None",
-  "{%_EXP_if_below_Lv_50": "Blunder_Hills",
-  "{%_All_Food_Effect": "Yum-Yum_Desert",
-  "{%_Skill_Efficiency": "Easy_Resources",
-  "{%_Skill_EXP_Gain": "Medium_Resources",
-  "{%_DEF_and_ACC": "Frostbite_Tundra",
-  "{%_Skill_AFK_Gain_Rate": "Hard_Resources",
-  "{%_Dmg,_Drop,_and_EXP": "Bosses_n_Nightmares",
-  "{%_Drop_Rate": "Events",
+  "{%_EXP_if_below_Lv_50": { name: "Blunder_Hills", rawName: 'CardSet0', base: 8 },
+  "{%_All_Food_Effect": { name: "Yum-Yum_Desert", rawName: 'CardSet1', base: 10 },
+  "{%_Skill_Efficiency": { name: "Easy_Resources", rawName: 'CardSet2', base: 8 },
+  "{%_Skill_EXP_Gain": { name: "Medium_Resources", rawName: 'CardSet3', base: 5 },
+  "{%_DEF_and_ACC": { name: "Frostbite_Tundra", rawName: 'CardSet4', base: 5 },
+  "{%_Skill_AFK_Gain_Rate": { name: "Hard_Resources", rawName: 'CardSet5', base: 4 },
+  "{%_Dmg,_Drop,_and_EXP": { name: "Bosses_n_Nightmares", rawName: 'CardSet26', base: 6 },
+  "{%_Drop_Rate": { name: "Events", rawName: 'CardSet25', base: 5 },
 };
 
 const cardEquipMap = {

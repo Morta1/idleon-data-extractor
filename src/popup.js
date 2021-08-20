@@ -256,10 +256,15 @@ const buildCharacterData = (characters, fields, account) => {
         stars: account?.cards?.[cardEquipMap?.[stringValue]]?.stars,
       }))
       .filter((_, ind) => ind < 8); //cardEquipMap
+    const cardsSetObject = cardSetMap[Object.keys(cardSet)[0]];
     extendedChar.cards = {
-      cardSet: cardSetMap[Object.keys(cardSet)[0]],
+      cardSet: {
+        ...cardsSetObject,
+        stars: calculateCardSetStars(cardsSetObject, Object.values(cardSet)[0])
+      },
       equippedCards,
     };
+
     // printer
     const fieldsPrint = JSON.parse(fields.Print.stringValue);
     const printData = fieldsPrint.slice(5, fieldsPrint.length); // REMOVE 5 '0' ELEMENTS
@@ -336,6 +341,19 @@ const buildGuildData = (guildInfo, fields) => {
   }));
   // guildData.maxMembers = totalMembers.length + 4 *
   return guildData;
+};
+
+const calculateCardSetStars = (card, bonus) => {
+  if (card.base === bonus) {
+    return 0;
+  } else if (bonus >= card.base * 4) {
+    return 3;
+  } else if (bonus >= card.base * 3) {
+    return 2;
+  } else if (bonus >= card.base * 2) {
+    return 1;
+  }
+  return null;
 };
 
 const calculateStars = (card, amountOfCards) => {
