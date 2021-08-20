@@ -1,24 +1,24 @@
-// if (process && process?.env?.NODE_ENV === 'development') {
-//   var rawJson = require("../rawJson.json");
-//   var {
-//     classMap,
-//     mapsMap,
-//     itemMap,
-//     bubblesMap,
-//     starSignMap,
-//     cardEquipMap,
-//     cardLevelMap,
-//     cardSetMap,
-//     skillIndexMap,
-//     guildBonusesMap,
-//     obolMap,
-//     obolFamilyShapeMap,
-//     obolCharacterShapeMap
-//   } = require("./commons/maps");
-// }
+// const rawJson = require("../rawJson.json");
+// const {
+//   classMap,
+//   mapsMap,
+//   itemMap,
+//   bubblesMap,
+//   starSignMap,
+//   cardEquipMap,
+//   cardLevelMap,
+//   cardSetMap,
+//   skillIndexMap,
+//   guildBonusesMap,
+//   obolMap,
+//   obolFamilyShapeMap,
+//   obolCharacterShapeMap,
+//   filteredLootyItems,
+//   anvilProductionItems
+// } = require("./commons/maps");
+
 
 let isRunning = false;
-// if (!process?.env?.NODE_ENV === 'development') {
 chrome.webNavigation.onBeforeNavigate.addListener(() => {
   toggleButton(false);
 });
@@ -36,7 +36,7 @@ chrome.storage.onChanged.addListener(function (changes) {
     }
   }
 });
-// }
+
 const parseData = (data) => {
   if (isRunning || !data) {
     return;
@@ -61,9 +61,7 @@ const parseData = (data) => {
   final.characters = buildCharacterData(characters, fields, final.account);
   final.guild = buildGuildData(guildInfo, fields);
 
-  // if (!process?.env?.NODE_ENV === 'development') {
   toggleButton(true, final);
-  // }
 
   isRunning = false;
 
@@ -98,9 +96,26 @@ const buildAccountData = (fields) => {
         amount: cardsObject?.[card],
         stars: calculateStars(card, cardsObject?.[card]),
       },
-    }),
-    {}
-  );
+    }), {});
+  const obolsObject = fields.ObolEqO1.arrayValue.values;
+  accountData.obols = obolsObject.map(({ stringValue }, index) => ({
+    name: obolMap[stringValue],
+    shape: obolFamilyShapeMap[index]
+  }));
+
+  const lootyObject = JSON.parse(fields.Cards1.stringValue);
+  const allItems = JSON.parse(JSON.stringify(itemMap)); // Deep clone
+  lootyObject.forEach((lootyItemName) => {
+    if (allItems[lootyItemName]) {
+      delete allItems[lootyItemName];
+    }
+  });
+  accountData.missingLootyItems = Object.keys(allItems).reduce((res, key) => (!filteredLootyItems[key] ? [
+    ...res,
+    {
+      name: allItems[key],
+      rawName: key,
+    }] : res), []);
   return accountData;
 };
 
@@ -187,8 +202,8 @@ const buildCharacterData = (characters, fields, account) => {
     const starSignsObject = fields?.[`PVtStarSign_${index}`]?.stringValue;
     extendedChar.starSigns = starSignsObject
       .split(",")
-      .filter((item) => parseInt(item))
-      .map((starSign) => starSignMap?.[starSign]);
+      .map((starSign) => starSignMap?.[starSign])
+      .filter(item => item);
 
     // equipped bubbles
     const cauldronBubbles = JSON.parse(fields?.CauldronBubbles?.stringValue);
@@ -202,7 +217,7 @@ const buildCharacterData = (characters, fields, account) => {
       fields[`AnvilPAselect_${index}`]?.arrayValue?.values;
     const selectedProducts = anvilCraftsMapping
       .sort((a, b) => a?.integerValue - b?.integerValue)
-      .map(({ integerValue }) => itemMap?.[`CraftMat${integerValue}`]);
+      .map(({ integerValue }) => anvilProductionItems[integerValue]);
     extendedChar.anvil = {
       selected: selectedProducts,
     };
@@ -353,11 +368,10 @@ const showTooltip = (e, text) => {
 };
 
 //
-// if (process && process?.env?.NODE_ENV === 'development') {
-//   const fs = require("fs");
-//   const data = parseData(rawJson);
-//   fs.writeFile("morta1.json", JSON.stringify(data), "utf8", (err) => {
-//     if (err) console.log("Error occurred while creating morta1.json");
-//     console.log("Done");
-//   });
-// }
+// const fs = require("fs");
+// const data = parseData(rawJson);
+// fs.writeFile("morta1.json", JSON.stringify(data), "utf8", (err) => {
+//   if (err) console.log("Error occurred while creating morta1.json");
+//   console.log("Done");
+// });
+//
