@@ -14,7 +14,7 @@
 //   obolFamilyShapeMap,
 //   obolCharacterShapeMap,
 //   filteredLootyItems,
-//   anvilProductionItems
+//   anvilProductionItems, stampsMap
 // } = require("./commons/maps");
 
 
@@ -116,6 +116,22 @@ const buildAccountData = (fields) => {
       name: allItems[key],
       rawName: key,
     }] : res), []);
+
+  const stampsMapping = { 0: "combat", 1: "skills", 2: "misc" };
+  const stamps = fields['StampLv'].arrayValue.values?.reduce((result, item, index) => ({
+    ...result,
+    [stampsMapping?.[index]]: Object.keys(item.mapValue.fields).reduce((res, key) => (key !== 'length' ? [
+        ...res,
+        { level: item.mapValue.fields[key].integerValue }
+      ]
+      : res), []),
+  }), {});
+  accountData.stamps = {
+    combat: stamps.combat.map((item, index) => ({ ...stampsMap['combat'][index], ...item })),
+    skills: stamps.skills.map((item, index) => ({ ...stampsMap['skills'][index], ...item })),
+    misc: stamps.misc.map((item, index) => ({ ...stampsMap['misc'][index], ...item })),
+  };
+
   return accountData;
 };
 
@@ -311,9 +327,11 @@ const buildGuildData = (guildInfo, fields) => {
       accountId: totalMembers[index],
     };
   });
+
   const guildBonusesObject = JSON.parse(fields?.Guild?.stringValue);
   guildData.bonuses = guildBonusesObject[0].map((bonus, index) => ({
     name: guildBonusesMap[index],
+    rawName: `Gbonus${index}`,
     level: bonus,
   }));
   // guildData.maxMembers = totalMembers.length + 4 *

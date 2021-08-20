@@ -1960,13 +1960,13 @@ const filteredLootyItems = {
   "TestObj2": true,
   "TestObj4": true,
   "TestObj5": true,
-  "EquipmentPants7":true,
-  "EquipmentPants8":true,
-  "EquipmentPants9":true,
-  "EquipmentPants11":true,
-  "EquipmentPants12":true,
-  "EquipmentPants13":true,
-  "EquipmentPants14":true,
+  "EquipmentPants7": true,
+  "EquipmentPants8": true,
+  "EquipmentPants9": true,
+  "EquipmentPants11": true,
+  "EquipmentPants12": true,
+  "EquipmentPants13": true,
+  "EquipmentPants14": true,
   'Blank': true,
   'LockedInvSpace': true,
   'FillerMaterial': true,
@@ -1992,7 +1992,380 @@ const filteredLootyItems = {
   'CraftMat15': true,
   'CraftMat16': true,
   'CraftMat17': true,
-}
+};
+
+const stampsMap = {
+  "combat": {
+    "0": {
+      "name": "Sword_Stamp",
+      "rawName": "StampA1"
+    },
+    "1": {
+      "name": "Heart_Stamp",
+      "rawName": "StampA2"
+    },
+    "2": {
+      "name": "Mana_Stamp",
+      "rawName": "StampA3"
+    },
+    "3": {
+      "name": "Tomahawk_Stamp",
+      "rawName": "StampA4"
+    },
+    "4": {
+      "name": "Target_Stamp",
+      "rawName": "StampA5"
+    },
+    "5": {
+      "name": "Shield_Stamp",
+      "rawName": "StampA6"
+    },
+    "6": {
+      "name": "Longsword_Stamp",
+      "rawName": "StampA7"
+    },
+    "7": {
+      "name": "Kapow_Stamp",
+      "rawName": "StampA8"
+    },
+    "8": {
+      "name": "Fist_Stamp",
+      "rawName": "StampA9"
+    },
+    "9": {
+      "name": "Battleaxe_Stamp",
+      "rawName": "StampA10"
+    },
+    "10": {
+      "name": "Agile_Stamp",
+      "rawName": "StampA11"
+    },
+    "11": {
+      "name": "Vitality_Stamp",
+      "rawName": "StampA12"
+    },
+    "12": {
+      "name": "Book_Stamp",
+      "rawName": "StampA13"
+    },
+    "13": {
+      "name": "Manamoar_Stamp",
+      "rawName": "StampA14"
+    },
+    "14": {
+      "name": "Clover_Stamp",
+      "rawName": "StampA15"
+    },
+    "15": {
+      "name": "Scimitar_Stamp",
+      "rawName": "StampA16"
+    },
+    "16": {
+      "name": "Bullseye_Stamp",
+      "rawName": "StampA17"
+    },
+    "17": {
+      "name": "Feather_Stamp",
+      "rawName": "StampA18"
+    },
+    "18": {
+      "name": "Polearm_Stamp",
+      "rawName": "StampA19"
+    },
+    "19": {
+      "name": "Violence_Stamp",
+      "rawName": "StampA20"
+    },
+    "20": {
+      "name": "Buckler_Stamp",
+      "rawName": "StampA21"
+    },
+    "21": {
+      "name": "FILLER",
+      "rawName": "StampA22"
+    },
+    "22": {
+      "name": "Sukka_Foo",
+      "rawName": "StampA23"
+    },
+    "23": {
+      "name": "Arcane_Stamp",
+      "rawName": "StampA24"
+    },
+    "24": {
+      "name": "FILLER",
+      "rawName": "StampA25"
+    },
+    "25": {
+      "name": "Steve_Sword",
+      "rawName": "StampA26"
+    },
+    "26": {
+      "name": "Blover_Stamp",
+      "rawName": "StampA27"
+    },
+    "27": {
+      "name": "Stat_Graph_Stamp",
+      "rawName": "StampA28"
+    },
+    "28": {
+      "name": "FILLER",
+      "rawName": "StampA29"
+    },
+    "29": {
+      "name": "FILLER",
+      "rawName": "StampA30"
+    },
+    "30": {
+      "name": "FILLER",
+      "rawName": "StampA31"
+    },
+    "31": {
+      "name": "FILLER",
+      "rawName": "StampA32"
+    },
+    "32": {
+      "name": "FILLER",
+      "rawName": "StampA33"
+    },
+    "33": {
+      "name": "FILLER",
+      "rawName": "StampA34"
+    },
+    "34": {
+      "name": "FILLER",
+      "rawName": "StampA35"
+    }
+  },
+  "skills": {
+    "0": {
+      "name": "Pickaxe_Stamp",
+      "rawName": "StampB1"
+    },
+    "1": {
+      "name": "Hatchet_Stamp",
+      "rawName": "StampB2"
+    },
+    "2": {
+      "name": "Anvil_Zoomer_Stamp",
+      "rawName": "StampB3"
+    },
+    "3": {
+      "name": "Lil' Mining_Baggy_Stamp",
+      "rawName": "StampB4"
+    },
+    "4": {
+      "name": "Twin_Ores_Stamp",
+      "rawName": "StampB5"
+    },
+    "5": {
+      "name": "Choppin' Bag_Stamp",
+      "rawName": "StampB6"
+    },
+    "6": {
+      "name": "Duplogs_Stamp",
+      "rawName": "StampB7"
+    },
+    "7": {
+      "name": "Matty_Bag_Stamp",
+      "rawName": "StampB8"
+    },
+    "8": {
+      "name": "Smart_Dirt_Stamp",
+      "rawName": "StampB9"
+    },
+    "9": {
+      "name": "Cool_Diggy_Tool_Stamp",
+      "rawName": "StampB10"
+    },
+    "10": {
+      "name": "High_IQ_Lumber_Stamp",
+      "rawName": "StampB11"
+    },
+    "11": {
+      "name": "Swag_Swingy_Tool_Stamp",
+      "rawName": "StampB12"
+    },
+    "12": {
+      "name": "Alch_Go_Brrr_Stamp",
+      "rawName": "StampB13"
+    },
+    "13": {
+      "name": "Brainstew_Stamps",
+      "rawName": "StampB14"
+    },
+    "14": {
+      "name": "Drippy_Drop_Stamp",
+      "rawName": "StampB15"
+    },
+    "15": {
+      "name": "Droplots_Stamp",
+      "rawName": "StampB16"
+    },
+    "16": {
+      "name": "Fishing_Rod_Stamp",
+      "rawName": "StampB17"
+    },
+    "17": {
+      "name": "Fishhead_Stamp",
+      "rawName": "StampB18"
+    },
+    "18": {
+      "name": "Catch_Net_Stamp",
+      "rawName": "StampB19"
+    },
+    "19": {
+      "name": "Fly_Intel_Stamp",
+      "rawName": "StampB20"
+    },
+    "20": {
+      "name": "Bag_o_Heads_Stamp",
+      "rawName": "StampB21"
+    },
+    "21": {
+      "name": "Holy_Mackerel_Stamp",
+      "rawName": "StampB22"
+    },
+    "22": {
+      "name": "Bugsack_Stamp",
+      "rawName": "StampB23"
+    },
+    "23": {
+      "name": "Buzz_Buzz_Stamp",
+      "rawName": "StampB24"
+    },
+    "24": {
+      "name": "Hidey_Box_Stamp",
+      "rawName": "StampB25"
+    },
+    "25": {
+      "name": "Purp_Froge_Stamp",
+      "rawName": "StampB26"
+    },
+    "26": {
+      "name": "Spikemouth_Stamp",
+      "rawName": "StampB27"
+    },
+    "27": {
+      "name": "Shiny_Crab_Stamp",
+      "rawName": "StampB28"
+    },
+    "28": {
+      "name": "Gear_Stamp",
+      "rawName": "StampB29"
+    },
+    "29": {
+      "name": "Sample_Stamp",
+      "rawName": "StampB30"
+    },
+    "30": {
+      "name": "Saw_Stamp",
+      "rawName": "StampB31"
+    },
+    "31": {
+      "name": "Amplesample_Stamp",
+      "rawName": "StampB32"
+    },
+    "32": {
+      "name": "SpoOoky_Stamp",
+      "rawName": "StampB33"
+    },
+    "33": {
+      "name": "Flowin_Stamp",
+      "rawName": "StampB34"
+    },
+    "34": {
+      "name": "Prayday_Stamp",
+      "rawName": "StampB35"
+    },
+    "35": {
+      "name": "Banked_Pts_Stamp",
+      "rawName": "StampB36"
+    }
+  },
+  "misc": {
+    "0": {
+      "name": "Questin_Stamp",
+      "rawName": "StampC1"
+    },
+    "1": {
+      "name": "Mason_Jar_Stamp",
+      "rawName": "StampC2"
+    },
+    "2": {
+      "name": "Crystallin",
+      "rawName": "StampC3"
+    },
+    "3": {
+      "name": "Blank",
+      "rawName": "StampC4"
+    },
+    "4": {
+      "name": "Apple_Stamp",
+      "rawName": "StampC5"
+    },
+    "5": {
+      "name": "Potion_Stamp",
+      "rawName": "StampC6"
+    },
+    "6": {
+      "name": "Golden_Apple_Stamp",
+      "rawName": "StampC7"
+    },
+    "7": {
+      "name": "Blank",
+      "rawName": "StampC8"
+    },
+    "8": {
+      "name": "Card_Stamp",
+      "rawName": "StampC9"
+    },
+    "9": {
+      "name": "Blank",
+      "rawName": "StampC10"
+    },
+    "10": {
+      "name": "Blank",
+      "rawName": "StampC11"
+    },
+    "11": {
+      "name": "Blank",
+      "rawName": "StampC12"
+    },
+    "12": {
+      "name": "Talent_I_Stamp",
+      "rawName": "StampC13"
+    },
+    "13": {
+      "name": "Talent_II_Stamp",
+      "rawName": "StampC14"
+    },
+    "14": {
+      "name": "Talent_III_Stamp",
+      "rawName": "StampC15"
+    },
+    "15": {
+      "name": "Talent_IV_Stamp",
+      "rawName": "StampC16"
+    },
+    "16": {
+      "name": "Talent_V_Stamp",
+      "rawName": "StampC17"
+    },
+    "17": {
+      "name": "Talent_S_Stamp",
+      "rawName": "StampC18"
+    },
+    "18": {
+      "name": "Multikill_Stamp",
+      "rawName": "StampC19"
+    },
+    "19": {
+      "name": "Biblio_Stamp",
+      "rawName": "StampC20"
+    }
+  }
+};
 
 // module.exports = {
 //   starSignMap,
@@ -2009,7 +2382,8 @@ const filteredLootyItems = {
 //   obolFamilyShapeMap,
 //   obolCharacterShapeMap,
 //   filteredLootyItems,
-//   anvilProductionItems
+//   anvilProductionItems,
+//   stampsMap
 // };
 
 
