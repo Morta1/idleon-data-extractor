@@ -14,7 +14,7 @@
 //   obolFamilyShapeMap,
 //   obolCharacterShapeMap,
 //   filteredLootyItems,
-//   anvilProductionItems, stampsMap
+//   anvilProductionItems, stampsMap, maxCarryCap
 // } = require("./commons/maps");
 
 
@@ -164,7 +164,10 @@ const buildCharacterData = (characters, fields, account) => {
     extendedChar.invBagsUsed = bags?.map((bag) => ({
       id: bag,
       name: itemMap[`InvBag${bag}`],
-    }));
+      rawName: `InvBag${bag}`
+    })).filter(bag => bag.name);
+    const carryCapacityObject = JSON.parse(fields[`MaxCarryCap_${index}`].stringValue);
+    extendedChar.carryCapBags = Object.keys(carryCapacityObject).map((bagName) => (maxCarryCap?.[bagName]?.[carryCapacityObject[bagName]])).filter(bag => bag)
 
     // equipment indices (0 = armor, 1 = tools, 2 = food)
     const equipmentMapping = { 0: "armor", 1: "tools", 2: "food" };
@@ -174,45 +177,25 @@ const buildCharacterData = (characters, fields, account) => {
       (result, item, index) => ({
         ...result,
         [equipmentMapping?.[index]]: item.mapValue.fields,
-      }),
-      {}
-    );
-    const equipapbleAmount = fields[
-      `EquipQTY_${index}`
-      ]?.arrayValue?.values?.reduce(
-      (result, item, index) => ({
-        ...result,
-        [equipmentMapping?.[index]]: item?.mapValue?.fields,
-      }),
-      {}
-    );
-    extendedChar.equipment = Array.from(
-      Object.values(equippableNames.armor)
-    ).reduce(
-      (res, { stringValue }) =>
-        stringValue ? [...res, { name: itemMap?.[stringValue] }] : res,
-      []
-    );
-    extendedChar.tools = Array.from(
-      Object.values(equippableNames.tools)
-    ).reduce(
-      (res, { stringValue }) =>
-        stringValue ? [...res, { name: itemMap?.[stringValue] }] : res,
-      []
-    );
-    extendedChar.food = Array.from(Object.values(equippableNames.food)).reduce(
-      (res, { stringValue }, index) =>
-        stringValue
-          ? [
-            ...res,
-            {
-              name: itemMap[stringValue],
-              amount: parseInt(equipapbleAmount.food[index]?.integerValue),
-            },
-          ]
-          : res,
-      []
-    );
+      }), {});
+    const equipapbleAmount = fields[`EquipQTY_${index}`]?.arrayValue?.values?.reduce((result, item, index) => ({
+      ...result,
+      [equipmentMapping?.[index]]: item?.mapValue?.fields,
+    }), {});
+
+    extendedChar.equipment = Array.from(Object.values(equippableNames.armor)).reduce((res, { stringValue }) =>
+      stringValue ? [...res, { name: itemMap?.[stringValue], rawName: stringValue }] : res, []);
+
+    extendedChar.tools = Array.from(Object.values(equippableNames.tools)).reduce((res, { stringValue }) =>
+      stringValue ? [...res, { name: itemMap?.[stringValue], rawName: stringValue }] : res, []);
+
+    extendedChar.food = Array.from(Object.values(equippableNames.food)).reduce((res, { stringValue }, index) =>
+      stringValue
+        ? [...res, {
+          name: itemMap[stringValue],
+          rawName: stringValue,
+          amount: parseInt(equipapbleAmount.food[index]?.integerValue),
+        }] : res, []);
 
     // star signs
     const starSignsObject = fields?.[`PVtStarSign_${index}`]?.stringValue;
@@ -224,9 +207,7 @@ const buildCharacterData = (characters, fields, account) => {
     // equipped bubbles
     const cauldronBubbles = JSON.parse(fields?.CauldronBubbles?.stringValue);
     extendedChar.equippedBubbles = cauldronBubbles?.[index].reduce(
-      (res, bubbleInd) => (bubbleInd ? [...res, bubblesMap?.[bubbleInd]] : res),
-      []
-    );
+      (res, bubbleInd) => (bubbleInd ? [...res, bubblesMap?.[bubbleInd]] : res), []);
 
     // crafting material in production
     const anvilCraftsMapping =
@@ -240,14 +221,7 @@ const buildCharacterData = (characters, fields, account) => {
     const skillsInfoObject = fields?.[`Lv0_${index}`]?.arrayValue?.values;
     extendedChar.skillsInfo = skillsInfoObject.reduce(
       (res, { integerValue }, index) =>
-        integerValue !== "-1"
-          ? {
-            ...res,
-            [skillIndexMap[index]]: integerValue,
-          }
-          : res,
-      {}
-    );
+        integerValue !== "-1" ? { ...res, [skillIndexMap[index]]: integerValue, } : res, {});
 
     const cardSet = JSON.parse(fields?.[`CSetEq_${index}`]?.stringValue);
     const equippedCards = fields?.[`CardEquip_${index}`]?.arrayValue?.values
@@ -282,9 +256,7 @@ const buildCharacterData = (characters, fields, account) => {
         if (sampleIndex % 2 === 0) {
           const sample = array
             .slice(sampleIndex, sampleIndex + 2)
-            .map((item, sampleIndex) =>
-              sampleIndex === 0 ? itemMap[item] : item
-            );
+            .map((item, sampleIndex) => sampleIndex === 0 ? itemMap[item] : item);
           if (sampleIndex < 10) {
             result.stored.push({ item: sample[0], value: sample[1] });
           } else {

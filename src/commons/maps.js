@@ -2367,6 +2367,241 @@ const stampsMap = {
   }
 };
 
+const maxCarryCap = {
+  "Mining": {
+    25: {
+      name: 'Miniature_Mining_Pouch',
+      rawName: 'MaxCapBagT2'
+    },
+    50: {
+      name: 'Cramped_Mining_Pouch',
+      rawName: 'MaxCapBag1'
+    },
+    100: {
+      name: 'Small_Mining_Pouch',
+      rawName: 'MaxCapBag2'
+    },
+    250: {
+      name: 'Average_Mining_Pouch',
+      rawName: 'MaxCapBag3'
+    },
+    500: {
+      name: 'Sizable_Mining_Pouch',
+      rawName: 'MaxCapBag4'
+    },
+    1000: {
+      name: 'Big_Mining_Pouch',
+      rawName: 'MaxCapBag5'
+    },
+    2000: {
+      name: 'Large_Mining_Pouch',
+      rawName: 'MaxCapBagMi6'
+    }
+  },
+  "Chopping": {
+    25: {
+      name: 'Miniature_Choppin_Pouch',
+      rawName: 'MaxCapBagT1'
+    },
+    50: {
+      name: 'Cramped_Choppin_Pouch',
+      rawName: 'MaxCapBag7'
+    },
+    100: {
+      name: 'Small_Choppin_Pouch',
+      rawName: 'MaxCapBag9'
+    },
+    250: {
+      name: 'Average_Choppin_Pouch',
+      rawName: 'MaxCapBagT3'
+    },
+    500: {
+      name: 'Sizable_Choppin_Pouch',
+      rawName: 'MaxCapBagT4'
+    },
+    1000: {
+      name: 'Big_Choppin_Pouch',
+      rawName: 'MaxCapBagT5'
+    },
+    2000: {
+      name: 'Large_Choppin_Pouch',
+      rawName: 'MaxCapBagT6'
+    }
+  },
+  "Foods": {
+    25: {
+      name: 'Miniscule_Food_Pouch',
+      rawName: 'MaxCapBag6'
+    },
+    50: {
+      name: 'Cramped_Food_Pouch',
+      rawName: 'MaxCapBag8'
+    },
+    100: {
+      name: 'Small_Food_Pouch',
+      rawName: 'MaxCapBag10'
+    },
+    250: {
+      name: 'Average_Food_Pouch',
+      rawName: 'MaxCapBagF3'
+    },
+    500: {
+      name: 'Sizable_Food_Pouch',
+      rawName: 'MaxCapBagF4'
+    },
+    1000: {
+      name: 'Big_Food_Pouch',
+      rawName: 'MaxCapBagF5'
+    },
+    2000: {
+      name: 'Large_Food_Pouch',
+      rawName: 'MaxCapBagF6'
+    }
+  },
+  "bCraft": {
+    25: {
+      name: 'Mini_Materials_Pouch',
+      rawName: 'MaxCapBagM1'
+    },
+    50: {
+      name: 'Cramped_Material_Pouch',
+      rawName: 'MaxCapBagM2'
+    },
+    100: {
+      name: 'Small_Material_Pouch',
+      rawName: 'MaxCapBagM3'
+    },
+    250: {
+      name: 'Average_Material_Pouch',
+      rawName: 'MaxCapBagM4'
+    },
+    500: {
+      name: 'Sizable_Materials_Pouch',
+      rawName: 'MaxCapBagM5'
+    },
+    1000: {
+      name: 'Big_Materials_Pouch',
+      rawName: 'MaxCapBagM6'
+    },
+    2000: {
+      name: 'Large_Materials_Pouch',
+      rawName: 'MaxCapBagM7'
+    }
+  },
+  "Fishing": {
+    25: {
+      name: 'Miniature_Fish_Pouch',
+      rawName: 'MaxCapBagFi0'
+    },
+    50: {
+      name: 'Cramped_Fish_Pouch',
+      rawName: 'MaxCapBagFi1'
+    },
+    100: {
+      name: 'Small_Fish_Pouch',
+      rawName: 'MaxCapBagFi2'
+    },
+    250: {
+      name: 'Average_Fish_Pouch',
+      rawName: 'MaxCapBagFi3'
+    },
+    500: {
+      name: 'Sizable_Fish_Pouch',
+      rawName: 'MaxCapBagFi4'
+    },
+    1000: {
+      name: 'Big_Fish_Pouch',
+      rawName: 'MaxCapBagFi5'
+    },
+    2000: {
+      name: 'Large_Fish_Pouch',
+      rawName: 'MaxCapBagFi6'
+    }
+  },
+  "Bugs": {
+    25: {
+      name: 'Miniature_Bug_Pouch',
+      rawName: 'MaxCapBagB0'
+    },
+    50: {
+      name: 'Cramped_Bug_Pouch',
+      rawName: 'MaxCapBagB1'
+    },
+    100: {
+      name: 'Small_Bug_Pouch',
+      rawName: 'MaxCapBagB2'
+    },
+    250: {
+      name: 'Average_Bug_Pouch',
+      rawName: 'MaxCapBagB3'
+    },
+    500: {
+      name: 'Sizable_Bug_Pouch',
+      rawName: 'MaxCapBagB4'
+    },
+    1000: {
+      name: 'Big_Bug_Pouch',
+      rawName: 'MaxCapBagB5'
+    },
+    2000: {
+      name: 'Large_Bug_Pouch',
+      rawName: 'MaxCapBagB6'
+    }
+  },
+  "Critters": {
+    50: {
+      name: 'Cramped_Critter_Pouch',
+      rawName: 'MaxCapBagTr0'
+    },
+    100: {
+      name: 'Small_Critter_Pouch',
+      rawName: 'MaxCapBagTr1'
+    },
+    250: {
+      name: 'Average_Critter_Pouch',
+      rawName: 'MaxCapBagTr2'
+    },
+    500: {
+      name: 'Sizable_Critter_Pouch',
+      rawName: 'MaxCapBagTr3'
+    },
+    1000: {
+      name: 'Big_Critter_Pouch',
+      rawName: 'MaxCapBagTr4'
+    },
+    2000: {
+      name: 'Large_Critter_Pouch',
+      rawName: 'MaxCapBagTr5'
+    }
+  },
+  "Souls": {
+    50: {
+      name: 'Cramped_Soul_Pouch',
+      rawName: 'MaxCapBagS0'
+    },
+    100: {
+      name: 'Small_Soul_Pouch',
+      rawName: 'MaxCapBagS1'
+    },
+    250: {
+      name: 'Average_Soul_Pouch',
+      rawName: 'MaxCapBagS2'
+    },
+    500: {
+      name: 'Sizable_Soul_Pouch',
+      rawName: 'MaxCapBagS3'
+    },
+    1000: {
+      name: 'Big_Soul_Pouch',
+      rawName: 'MaxCapBagS4'
+    },
+    2000: {
+      name: 'Large_Soul_Pouch',
+      rawName: 'MaxCapBagS5'
+    }
+  }
+};
+
 // module.exports = {
 //   starSignMap,
 //   classMap,
@@ -2383,7 +2618,8 @@ const stampsMap = {
 //   obolCharacterShapeMap,
 //   filteredLootyItems,
 //   anvilProductionItems,
-//   stampsMap
+//   stampsMap,
+//   maxCarryCap
 // };
 
 
