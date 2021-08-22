@@ -14,7 +14,7 @@
 //   obolFamilyShapeMap,
 //   obolCharacterShapeMap,
 //   filteredLootyItems,
-//   anvilProductionItems, stampsMap, maxCarryCap
+//   anvilProductionItems, stampsMap, maxCarryCap, statuesMap
 // } = require("./commons/maps");
 
 
@@ -132,6 +132,16 @@ const buildAccountData = (fields) => {
     misc: stamps.misc.map((item, index) => ({ ...stampsMap['misc'][index], ...item })),
   };
 
+  const goldStatuesObject = JSON.parse(fields['StuG'].stringValue);
+  const goldStatues = goldStatuesObject.reduce((res, item, index) => (item === 1 ? {
+    ...res,
+    [index]: true
+  } : res), {});
+  const firstCharacterStatues = JSON.parse(fields['StatueLevels_0'].stringValue);
+  accountData.statues = Object.keys(goldStatues).map((statueIndex) => ({
+    ...({ ...statuesMap?.[statueIndex], rawName: `StatueG${parseInt(statueIndex) + 1}` } || {}),
+    level: firstCharacterStatues[statueIndex][0]
+  }));
   return accountData;
 };
 

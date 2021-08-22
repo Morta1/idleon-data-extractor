@@ -2602,6 +2602,27 @@ const maxCarryCap = {
   }
 };
 
+const statuesMap = {
+  0: { name: "Power_Statue", rawName: "Statue1" },
+  1: { name: "Speed_Statue", rawName: "Statue2" },
+  2: { name: "Mining_Statue", rawName: "Statue3" },
+  3: { name: "Feasty_Statue", rawName: "Statue4" },
+  4: { name: "Health_Statue", rawName: "Statue5" },
+  5: { name: "Kachow_Statue", rawName: "Statue6" },
+  6: { name: "Lumberbob_Statue", rawName: "Statue7" },
+  7: { name: "Thicc_Skin_Statue", rawName: "Statue8" },
+  8: { name: "Oceanman_Statue", rawName: "Statue9" },
+  9: { name: "Ol_Reliable_Statue", rawName: "Statue10" },
+  10: { name: "Exp_Book_Statue", rawName: "Statue11" },
+  11: { name: "Anvil_Statue", rawName: "Statue12" },
+  12: { name: "Cauldron_Statue", rawName: "Statue13" },
+  13: { name: "Beholder_Statue", rawName: "Statue14" },
+  14: { name: "Bullseye_Statue", rawName: "Statue15" },
+  15: { name: "Box_Statue", rawName: "Statue16" },
+  16: { name: "Twosoul_Statue", rawName: "Statue17" },
+  17: { name: "EhExPee_Statue", rawName: "Statue18" }
+}
+
 // module.exports = {
 //   starSignMap,
 //   classMap,
@@ -2619,7 +2640,8 @@ const maxCarryCap = {
 //   filteredLootyItems,
 //   anvilProductionItems,
 //   stampsMap,
-//   maxCarryCap
+//   maxCarryCap,
+//   statuesMap
 // };
 
 
