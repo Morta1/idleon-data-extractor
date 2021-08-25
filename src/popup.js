@@ -14,7 +14,7 @@
 //   obolFamilyShapeMap,
 //   obolCharacterShapeMap,
 //   filteredLootyItems,
-//   anvilProductionItems, stampsMap, maxCarryCap, statuesMap
+//   anvilProductionItems, stampsMap, maxCarryCap, statuesMap, talentsMap, talentPagesMap
 // } = require("./commons/maps");
 
 
@@ -31,7 +31,7 @@ chrome.storage.onChanged.addListener(function (changes) {
   for (let [key, { newValue }] of Object.entries(changes)) {
     // Run when all of the data is set.
     if (newValue && Object.keys(newValue).length === 3) {
-      console.log("key", key);
+      console.log(`key ${key}`, newValue);
       parseData(newValue);
     }
   }
@@ -142,6 +142,11 @@ const buildAccountData = (fields) => {
     ...({ ...statuesMap?.[statueIndex], rawName: `StatueG${parseInt(statueIndex) + 1}` } || {}),
     level: firstCharacterStatues[statueIndex][0]
   }));
+
+  const money = ['MoneyBANK', 'Money_0', 'Money_1', 'Money_2', 'Money_3', 'Money_4', 'Money_5', 'Money_6', 'Money_7', 'Money_8'].reduce((res, moneyInd) =>
+    (res + parseInt(fields[moneyInd].integerValue)), 0);
+  accountData.money = String(money).split(/(?=(?:..)*$)/);
+
   return accountData;
 };
 
@@ -284,6 +289,25 @@ const buildCharacterData = (characters, fields, account) => {
       shape: obolCharacterShapeMap[index]
     }));
 
+    const talentsObject = JSON.parse(fields[`SL_${index}`].stringValue);
+    const maxTalentsObject = JSON.parse(fields[`SM_${index}`].stringValue);
+    const mergedObject = Object.keys(talentsObject).reduce((res, talentIndex) => ({
+      ...res,
+      [talentIndex]: {
+        level: talentsObject?.[talentIndex],
+      }
+    }), {});
+    const pages = talentPagesMap?.[extendedChar?.class];
+    extendedChar.talents = [...pages, "Star Talents"].reduce((res, className, index) => {
+      const orderedTalents = talentsMap?.[className]?.map((talentId) => ({
+        talentId, ...mergedObject[talentId],
+        maxLevel: maxTalentsObject[talentId]
+      }));
+      return {
+        ...res,
+        [index]: { name: className, orderedTalents }
+      }
+    }, {});
     return {
       ...character,
       ...extendedChar,
@@ -294,6 +318,8 @@ const buildCharacterData = (characters, fields, account) => {
 const buildGuildData = (guildInfo, fields) => {
   const guildData = {};
   const totalMembers = Object.keys(guildInfo);
+  guildData.name = fields?.['OptLacc']?.arrayValue?.values?.[37]?.stringValue;
+  guildData.iconId = fields?.['OptLacc']?.arrayValue?.values?.[38].integerValue;
   guildData.members = Object.keys(guildInfo).map((memberInfo, index) => {
     const {
       a: name,
@@ -338,6 +364,13 @@ const calculateCardSetStars = (card, bonus) => {
   return null;
 };
 
+const getTalentTrees = (className) => {
+  switch (className) {
+    case "Beginner": {
+
+    }
+  }
+}
 const calculateStars = (card, amountOfCards) => {
   const base = cardLevelMap[card];
   // 1 star - base, 2 stars - base * 3, 3 stars - base * 5
