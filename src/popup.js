@@ -147,6 +147,10 @@ const buildAccountData = (fields) => {
     (res + parseInt(fields[moneyInd].integerValue)), 0);
   accountData.money = String(money).split(/(?=(?:..)*$)/);
 
+  const inventoryArr = fields['ChestOrder'].arrayValue.values;
+  const inventoryQuantityArr = fields['ChestQuantity'].arrayValue.values;
+  accountData.inventory = getInventory(inventoryArr, inventoryQuantityArr, 'storage');
+
   return accountData;
 };
 
@@ -211,6 +215,11 @@ const buildCharacterData = (characters, fields, account) => {
           rawName: stringValue,
           amount: parseInt(equipapbleAmount.food[index]?.integerValue),
         }] : res, []);
+
+    const inventoryArr = fields[`InventoryOrder_${index}`].arrayValue.values;
+    const inventoryQuantityArr = fields[`ItemQTY_${index}`].arrayValue.values;
+    extendedChar.inventory = getInventory(inventoryArr, inventoryQuantityArr, character.name);
+
 
     // star signs
     const starSignsObject = fields?.[`PVtStarSign_${index}`]?.stringValue;
@@ -364,13 +373,17 @@ const calculateCardSetStars = (card, bonus) => {
   return null;
 };
 
-const getTalentTrees = (className) => {
-  switch (className) {
-    case "Beginner": {
-
+const getInventory = (inventoryArr, inventoryQuantityArr, owner) => {
+  return inventoryArr.reduce((res, { stringValue }, index) => (stringValue !== 'LockedInvSpace' && stringValue !== 'Blank' ? [
+    ...res, {
+      owner,
+      name: itemMap?.[stringValue],
+      rawName: stringValue,
+      amount: parseInt(inventoryQuantityArr?.[index].integerValue)
     }
-  }
-}
+  ] : res), []);
+};
+
 const calculateStars = (card, amountOfCards) => {
   const base = cardLevelMap[card];
   // 1 star - base, 2 stars - base * 3, 3 stars - base * 5
@@ -418,7 +431,7 @@ const showTooltip = (e, text) => {
   }, 1000);
 };
 
-//
+// //
 // const fs = require("fs");
 // const data = parseData(rawJson);
 // fs.writeFile("morta1.json", JSON.stringify(data), "utf8", (err) => {

@@ -2693,5 +2693,3 @@ const talentPagesMap = {
 //   maxCarryCap,
 //   statuesMap
 // };
-
-
