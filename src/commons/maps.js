@@ -2671,7 +2671,14 @@ const talentPagesMap = {
   "Wizard": ["Savvy Basics", "Mage", "Wizard"]
 };
 
+const keysMap = {
+  0: { name: "Forest_Villa_Key", rawName: 'Key1' },
+  1: { name: "Efaunt's_Tomb_Key", rawName: 'Key2' },
+  2: { name: "Chizoar's_Cavern_Key", rawName: 'Key3' }
+}
+
 // module.exports = {
+//   keysMap,
 //   talentPagesMap,
 //   talentsMap,
 //   starSignMap,

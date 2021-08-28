@@ -14,9 +14,8 @@
 //   obolFamilyShapeMap,
 //   obolCharacterShapeMap,
 //   filteredLootyItems,
-//   anvilProductionItems, stampsMap, maxCarryCap, statuesMap, talentsMap, talentPagesMap
+//   anvilProductionItems, stampsMap, maxCarryCap, statuesMap, talentsMap, talentPagesMap, keysMap
 // } = require("./commons/maps");
-
 
 let isRunning = false;
 chrome.webNavigation.onBeforeNavigate.addListener(() => {
@@ -143,13 +142,21 @@ const buildAccountData = (fields) => {
     level: firstCharacterStatues[statueIndex][0]
   }));
 
-  const money = ['MoneyBANK', 'Money_0', 'Money_1', 'Money_2', 'Money_3', 'Money_4', 'Money_5', 'Money_6', 'Money_7', 'Money_8'].reduce((res, moneyInd) =>
-    (res + parseInt(fields[moneyInd].integerValue)), 0);
+  const moneyArr = ['MoneyBANK', 'Money_0', 'Money_1', 'Money_2', 'Money_3', 'Money_4', 'Money_5', 'Money_6', 'Money_7', 'Money_8'];
+  const money = moneyArr.reduce((res, moneyInd) =>
+    (res + fields[moneyInd] ? parseInt(fields[moneyInd].integerValue) : 0), 0);
+
   accountData.money = String(money).split(/(?=(?:..)*$)/);
 
   const inventoryArr = fields['ChestOrder'].arrayValue.values;
   const inventoryQuantityArr = fields['ChestQuantity'].arrayValue.values;
   accountData.inventory = getInventory(inventoryArr, inventoryQuantityArr, 'storage');
+  accountData.worldTeleports = fields?.['CYWorldTeleports']?.integerValue;
+  accountData.keys = fields?.['CYKeysAll']?.arrayValue.values.reduce((res, { integerValue }, index) => integerValue > 0 ? [...res, { amount: integerValue, ...keysMap[index] }] : res, []);
+  accountData.colosseumTickets = fields?.['CYColosseumTickets'].integerValue;
+  accountData.obolFragments = fields?.['CYObolFragments'].integerValue;
+  accountData.silverPens = fields?.['CYSilverPens'].integerValue;
+  accountData.goldPens = fields?.['CYGoldPens'].integerValue;
 
   return accountData;
 };
@@ -438,4 +445,4 @@ const showTooltip = (e, text) => {
 //   if (err) console.log("Error occurred while creating morta1.json");
 //   console.log("Done");
 // });
-//
+
