@@ -144,7 +144,7 @@ const buildAccountData = (fields) => {
 
   const moneyArr = ['MoneyBANK', 'Money_0', 'Money_1', 'Money_2', 'Money_3', 'Money_4', 'Money_5', 'Money_6', 'Money_7', 'Money_8'];
   const money = moneyArr.reduce((res, moneyInd) =>
-    (res + fields[moneyInd] ? parseInt(fields[moneyInd].integerValue) : 0), 0);
+    (res + (fields[moneyInd] ? parseInt(fields[moneyInd].integerValue) : 0)), 0);
 
   accountData.money = String(money).split(/(?=(?:..)*$)/);
 
@@ -445,4 +445,4 @@ const showTooltip = (e, text) => {
 //   if (err) console.log("Error occurred while creating morta1.json");
 //   console.log("Done");
 // });
-
+//
