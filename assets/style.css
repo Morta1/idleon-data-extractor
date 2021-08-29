@@ -37,6 +37,10 @@ body {
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
 }
 
+a {
+    color: white;
+}
+
 /*Button*/
 button {
     padding: 0;

@@ -8,11 +8,14 @@
     "storage",
     "tabs",
     "webRequest",
-    "webNavigation"
+    "webNavigation",
+    "scripting"
   ],
   "host_permissions": [
     "*://*.legendsofidleon.com/*",
-    "*://firestore.googleapis.com/*"
+    "*://firestore.googleapis.com/*",
+    "*://localhost:*/*",
+    "*://morta1.github.io/*/*"
   ],
   "action": {
     "default_popup": "index.html"
@@ -34,6 +37,11 @@
       "all_frames": true
     }
   ],
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "minimum_chrome_version": 92,
   "web_accessible_resources": [
     {
       "resources": [

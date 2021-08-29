@@ -1,5 +1,9 @@
 setTimeout(() => {
   (function () {
+    const playButton = document?.querySelectorAll('.PlayBrowserButton')[0];
+    if (playButton) {
+      playButton.click();
+    }
     const XHR = XMLHttpRequest.prototype;
 
     const open = XHR.open;
@@ -53,7 +57,7 @@ setTimeout(() => {
                   window.dispatchEvent(event);
                 }
               } catch (e) {
-                console.log("Parsing JSON Data has failed");
+                // console.log("Parsing JSON Data has failed");
               }
             }
           },
@@ -95,5 +99,4 @@ setTimeout(() => {
       return wsSend(this, arguments);
     };
   })();
-
 }, 0);
