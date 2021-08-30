@@ -41,7 +41,7 @@
     "service_worker": "background.js",
     "type": "module"
   },
-  "minimum_chrome_version": 92,
+  "minimum_chrome_version": "92",
   "web_accessible_resources": [
     {
       "resources": [
