@@ -176,6 +176,7 @@ try {
     accountData.obolFragments = fields?.['CYObolFragments'].integerValue;
     accountData.silverPens = fields?.['CYSilverPens'].integerValue;
     accountData.goldPens = fields?.['CYGoldPens'].integerValue;
+    accountData.gems = fields?.['GemsOwned'].integerValue;
 
     return accountData;
   };
