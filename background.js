@@ -346,7 +346,7 @@ try {
       }, {});
 
       const prayersArray = JSON.parse(fields[`Prayers_${index}`].stringValue);
-      extendedChar.prayers = prayersArray.reduce((res, prayerIndex) => (prayerIndex > 0 ? [...res, { ...prayersMap?.[prayerIndex] }] : res), []);
+      extendedChar.prayers = prayersArray.reduce((res, prayerIndex) => (prayerIndex >= 0 ? [...res, { ...prayersMap?.[prayerIndex] }] : res), []);
       return {
         ...character,
         ...extendedChar,
