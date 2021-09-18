@@ -61,17 +61,21 @@ try {
     if (!tab) {
       tab = await chrome.tabs.get(activeTabId);
     }
+    const manifest = chrome.runtime.getManifest();
     chrome.scripting.executeScript({
       target: { tabId: tab?.id },
-      func: (characterData) => localStorage.setItem('characterData', JSON.stringify(characterData)),
-      args: [characterData]
+      func: (characterData, manifest) => localStorage.setItem('characterData', JSON.stringify({
+        ...characterData,
+        version: manifest.version
+      })),
+      args: [characterData, manifest]
     }, () => { console.log('Done!') });
   }
 
   let isRunning = false;
 
   const parseData = (data) => {
-    console.log('Start Parsing')
+    console.log('Started Parsing');
     if (isRunning || !data) {
       return;
     }
@@ -93,6 +97,7 @@ try {
       name: characterNames[index],
     }));
     final.characters = buildCharacterData(characters, fields, final.account);
+    console.log('Finished building character data');
     final.guild = buildGuildData(guildInfo, fields);
 
     chrome.runtime.sendMessage({ data: true })
@@ -105,6 +110,7 @@ try {
   };
 
   const buildAccountData = (fields) => {
+    console.log('Started building account data');
     const accountData = {};
     const cardsObject = JSON.parse(fields?.["Cards0"].stringValue);
     accountData.cards = Object.keys(cardsObject).reduce(
@@ -124,14 +130,14 @@ try {
     const lootyObject = JSON.parse(fields.Cards1.stringValue);
     const allItems = JSON.parse(JSON.stringify(itemMap)); // Deep clone
     lootyObject.forEach((lootyItemName) => {
-      if (allItems[lootyItemName]) {
-        delete allItems[lootyItemName];
+      if (allItems?.[lootyItemName]?.displayName) {
+        delete allItems?.[lootyItemName];
       }
     });
     accountData.missingLootyItems = Object.keys(allItems).reduce((res, key) => (!filteredLootyItems[key] ? [
       ...res,
       {
-        name: allItems[key],
+        name: allItems?.[key]?.displayName,
         rawName: key,
       }] : res), []);
 
@@ -178,13 +184,15 @@ try {
     accountData.goldPens = fields?.['CYGoldPens'].integerValue;
     accountData.gems = fields?.['GemsOwned'].integerValue;
 
+    console.log('Finished building account data');
     return accountData;
   };
 
   const buildCharacterData = (characters, fields, account) => {
+    console.log('Started building character data');
     return characters.map((character, index) => {
       const extendedChar = {};
-      const classObject = fields[`CharacterClass_${index}`];
+      const classObject = fields?.[`CharacterClass_${index}`];
       extendedChar.class =
         classMap[parseInt(classObject?.doubleValue || classObject?.integerValue)];
       extendedChar.afkTarget = monstersMap?.[fields?.[`AFKtarget_${index}`]?.stringValue];
@@ -209,8 +217,8 @@ try {
       const bags = Object.keys(rawInvBagsUsed);
       extendedChar.invBagsUsed = bags?.map((bag) => ({
         id: bag,
-        name: itemMap[`InvBag${bag}`],
-        rawName: `InvBag${bag}`
+        name: itemMap[`InvBag${parseInt(bag) < 100 ? parseInt(bag) + 1 : bag}`]?.displayName,
+        rawName: `InvBag${parseInt(bag) < 100 ? parseInt(bag) + 1 : bag}`
       })).filter(bag => bag.name);
       const carryCapacityObject = JSON.parse(fields[`MaxCarryCap_${index}`].stringValue);
       extendedChar.carryCapBags = Object.keys(carryCapacityObject).map((bagName) => (maxCarryCap?.[bagName]?.[carryCapacityObject[bagName]])).filter(bag => bag)
@@ -229,16 +237,14 @@ try {
         [equipmentMapping?.[index]]: item?.mapValue?.fields,
       }), {});
 
-      extendedChar.equipment = Array.from(Object.values(equippableNames.armor)).reduce((res, { stringValue }) =>
-        stringValue ? [...res, { name: itemMap?.[stringValue], rawName: stringValue }] : res, []);
-
-      extendedChar.tools = Array.from(Object.values(equippableNames.tools)).reduce((res, { stringValue }) =>
-        stringValue ? [...res, { name: itemMap?.[stringValue], rawName: stringValue }] : res, []);
-
+      const equipmentStoneData = JSON.parse(fields[`EMm0_${index}`].stringValue);
+      extendedChar.equipment = createItemsWithUpgrades(equippableNames.armor, equipmentStoneData);
+      const toolsStoneData = JSON.parse(fields[`EMm1_${index}`].stringValue);
+      extendedChar.tools = createItemsWithUpgrades(equippableNames.tools, toolsStoneData);
       extendedChar.food = Array.from(Object.values(equippableNames.food)).reduce((res, { stringValue }, index) =>
         stringValue
           ? [...res, {
-            name: itemMap[stringValue],
+            name: itemMap?.[stringValue]?.displayName,
             rawName: stringValue,
             amount: parseInt(equipapbleAmount.food[index]?.integerValue),
           }] : res, []);
@@ -281,11 +287,11 @@ try {
           stars: account?.cards?.[cardEquipMap?.[stringValue]]?.stars,
         }))
         .filter((_, ind) => ind < 8); //cardEquipMap
-      const cardsSetObject = cardSetMap[Object.keys(cardSet)[0]];
+      const cardsSetObject = cardSetMap[Object.keys(cardSet)?.[0]] || {};
       extendedChar.cards = {
         cardSet: {
           ...cardsSetObject,
-          stars: calculateCardSetStars(cardsSetObject, Object.values(cardSet)[0])
+          stars: calculateCardSetStars(cardsSetObject, Object.values(cardSet)?.[0])
         },
         equippedCards,
       };
@@ -307,7 +313,7 @@ try {
           if (sampleIndex % 2 === 0) {
             const sample = array
               .slice(sampleIndex, sampleIndex + 2)
-              .map((item, sampleIndex) => sampleIndex === 0 ? itemMap[item] : item);
+              .map((item, sampleIndex) => sampleIndex === 0 ? itemMap?.[item]?.displayName : item);
             if (sampleIndex < 10) {
               result.stored.push({ item: sample[0], value: sample[1] });
             } else {
@@ -355,6 +361,7 @@ try {
   };
 
   const buildGuildData = (guildInfo, fields) => {
+    console.log('Started building guild data');
     const guildData = {};
     const totalMembers = Object.keys(guildInfo);
     guildData.name = fields?.['OptLacc']?.arrayValue?.values?.[37]?.stringValue;
@@ -386,11 +393,12 @@ try {
       rawName: `Gbonus${index}`,
       level: bonus,
     }));
-    // guildData.maxMembers = totalMembers.length + 4 *
+    console.log('Finished building guild data');
     return guildData;
   };
 
   const calculateCardSetStars = (card, bonus) => {
+    if (!card || !bonus) return null;
     if (card.base === bonus) {
       return 0;
     } else if (bonus >= card.base * 4) {
@@ -407,9 +415,9 @@ try {
     return inventoryArr.reduce((res, { stringValue }, index) => (stringValue !== 'LockedInvSpace' && stringValue !== 'Blank' ? [
       ...res, {
         owner,
-        name: itemMap?.[stringValue],
+        name: itemMap?.[stringValue]?.displayName,
         rawName: stringValue,
-        amount: parseInt(inventoryQuantityArr?.[index].integerValue)
+        amount: parseInt(inventoryQuantityArr?.[index].integerValue),
       }
     ] : res), []);
   };
@@ -428,6 +436,31 @@ try {
     }
     return null;
   };
+
+  const createItemsWithUpgrades = (items, stoneData) => {
+    return Array.from(Object.values(items)).reduce((res, { stringValue }, itemIndex) => {
+      const stoneResult = addStoneDataToEquip(itemMap?.[stringValue], stoneData[itemIndex]);
+      return stringValue ? [...res, {
+        name: itemMap?.[stringValue]?.displayName, rawName: stringValue,
+        ...(stringValue === 'Blank' ? {} : { ...itemMap?.[stringValue], ...stoneResult })
+      }] : res
+    }, []);
+  }
+
+  const addStoneDataToEquip = (baseItem, stoneData) => {
+    if (!baseItem || !stoneData) return {};
+    return Object.keys(stoneData)?.reduce((res, statName) => {
+      const baseItemStat = baseItem?.[statName];
+      const stoneStat = stoneData?.[statName];
+      let sum = baseItemStat;
+      if (stoneStat) {
+        sum = (baseItemStat || 0) + stoneStat;
+        return { ...res, [statName]: sum };
+      }
+      return { ...res, [statName]: baseItemStat };
+    }, {});
+  }
+
 } catch (err) {
-  console.log('Error occurred in background script', err)
+  console.log('Error occurred in background script', err);
 }

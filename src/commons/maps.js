@@ -165,1163 +165,6 @@ const mapsMap = {
   119: "filler",
 };
 
-// maps items stored names to their display name in game
-const itemMap = {
-  Blank: "None",
-  LockedInvSpace: "LockedInvSpace",
-  Trash: "Broken_Weapon",
-  Copper: "Copper_Ore",
-  Iron: "Iron_Ore",
-  Gold: "Gold_Ore",
-  Plat: "Platinum_Ore",
-  Dementia: "Dementia_Ore",
-  Void: "Void_Ore",
-  Lustre: "Lustre_Ore",
-  Starfire: "Starfire_Ore",
-  Dreadlo: "Dreadlo_Ore",
-  Godshard: "Godshard_Ore",
-  CopperBar: "Copper_Bar",
-  IronBar: "Iron_Bar",
-  GoldBar: "Gold_Bar",
-  PlatBar: "Platinum_Bar",
-  DementiaBar: "Dementia_Bar",
-  VoidBar: "Void_Bar",
-  LustreBar: "Lustre_Bar",
-  StarfireBar: "Starfire_Bar",
-  DreadloBar: "Dreadlo_Bar",
-  GodshardBar: "Godshard_Bar",
-  OilBarrel1: "Crude_Oil",
-  OilBarrel2: "Toxic_Sludge",
-  OilBarrel3: "Radioactive_Waste",
-  OilBarrel4: "Glumlee's_Special_Tutorial_Oil",
-  OilBarrel5: "Eco_Friendly_Oil",
-  OakTree: "Oak_Logs",
-  BirchTree: "Bleach_Logs",
-  JungleTree: "Jungle_Logs",
-  ForestTree: "Forest_Fibres",
-  ToiletTree: "Potty_Rolls",
-  PalmTree: "Tropilogs",
-  StumpTree: "Veiny_Logs",
-  SaharanFoal: "Tundra_Logs",
-  Tree7: "Wispy_Lumber",
-  AlienTree: "Alien_Hive_Chunk",
-  Leaf1: "Grass_Leaf",
-  Leaf2: "Twisty_Leaf",
-  Leaf3: "Arctic_Leaf",
-  FillerMaterial: "Not_Yet",
-  Fish1: "Goldfish",
-  Fish2: "Hermit_Can",
-  Fish3: "Jellyfish",
-  Fish4: "Bloach",
-  Fish5: "Filler",
-  Fish6: "Filler",
-  Fish7: "Filler",
-  Fish8: "Filler",
-  Bug1: "Fly",
-  Bug2: "Butterfly",
-  Bug3: "Sentient_Cereal",
-  Bug4: "Fruitfly",
-  Bug5: "Mosquisnow",
-  Bug6: "Flycicle",
-  Critter1: "Froge",
-  Critter1A: "Poison_Froge",
-  Critter2: "Crabbo",
-  Critter2A: "Mutant_Crabbo",
-  Critter3: "Scorpie",
-  Critter3A: "Crescent_Scorpie",
-  Critter4: "Mousey",
-  Critter4A: "Nakeo_Moleo",
-  Critter5: "Owlio",
-  Critter5A: "Minervowl",
-  Critter6: "Pingy",
-  Critter6A: "Eternal_Lord_of_The_Undying_Ember",
-  Critter7: "Bunny",
-  Critter7A: "Purbunni",
-  Critter8: "Dung_Beat",
-  Critter8A: "Jade_Scarab",
-  Critter9: "Honker",
-  Critter9A: "Diamond_Duck",
-  Soul1: "Forest_Soul",
-  Soul2: "Dune_Soul",
-  Soul3: "Rooted_Soul",
-  Soul4: "Frigid_Soul",
-  Soul5: "Squiddy_Soul",
-  Soul6: "Cryo_Soul",
-  EquipmentHats1: "Farmer_Brim",
-  TestObj15: "Slime_Cap",
-  EquipmentHatsBeg1: "Ice_Cream_Sunday",
-  EquipmentHats61: "Mark_of_Member",
-  EquipmentHats15: "Leather_Cap",
-  EquipmentHats5: "White_Headband",
-  EquipmentHats6: "Green_Headband",
-  EquipmentHats7: "Red_Headband",
-  EquipmentHats8: "Purple_Tupacband",
-  EquipmentHats9: "Yellow_Headband",
-  EquipmentHats10: "Pink_Headband",
-  EquipmentHats11: "Grey_Beret",
-  EquipmentHats12: "Traffic_Cone",
-  EquipmentHats13: "Propeller_Cap",
-  EquipmentHats14: "Baseball_Hat",
-  TestObj14: "Trojan_Helmet",
-  TestObj16: "Demon_Horns",
-  EquipmentHats4Choppin: "Stump_Prop",
-  EquipmentHats17: "Copper_Helmet",
-  EquipmentHats18: "Iron_Helmet",
-  EquipmentHats28: "Gold_Helmet",
-  EquipmentHats22: "Amarok_Helmet",
-  EquipmentHats19: "Platinum_Helmet",
-  EquipmentHats53: "Dementia_Helmet",
-  EquipmentHats52: "Efaunt_Helmet",
-  EquipmentHats54: "Void_Imperium_Helmet",
-  EquipmentHats21: "Party_Hat",
-  EquipmentHats23: "Farmer_Brimer",
-  EquipmentHats24: "Farmer_Brimest",
-  EquipmentHats25: "Bored_Beanie",
-  EquipmentHats2: "Royal_Turban",
-  EquipmentHats27: "Paper_Boat",
-  EquipmentHats29: "Alien_Headband",
-  EquipmentHats30: "Cowbo_Galloneer",
-  EquipmentHats39: "Grandma_Disguise",
-  EquipmentHats42: "Santa_Hat",
-  EquipmentHats44: "Jar",
-  EquipmentHats51: "Big_Pretty_Bow",
-  EquipmentHats55: "Steam_Cap",
-  EquipmentHats56: "Bunny_Ears",
-  EquipmentHats63: "Summer_Shell",
-  EquipmentHats20: "Militia_Helm",
-  TestObj13: "Viking_Cap",
-  EquipmentHats58: "Murmillo_Helm",
-  EquipmentHats3: "Thief_Hood",
-  EquipmentHats41: "Sleek_Coif",
-  EquipmentHats59: "Conquistador_Plume",
-  EquipmentHats16: "Top_Hat",
-  EquipmentHats26: "Witch_Hat",
-  EquipmentHats60: "Adornment_of_the_High_Priest",
-  EquipmentPunching1: "Boxing_Gloves",
-  EquipmentPunching2: "The_Stingers",
-  EquipmentPunching3: "Bandage_Wraps",
-  EquipmentPunching4: "Uninflated_Glove",
-  TestObj1: "Wooden_Spear",
-  TestObj7: "Steel_Axe",
-  TestObj3: "Royal_Bayonet",
-  EquipmentSword1: "Enforced_Slasher",
-  EquipmentSword2: "The_Ice_Breaker",
-  EquipmentSword3: "Deuscythe",
-  TestObj4: "Frozen_Impaler",
-  TestObj5: "Blood_Screamer",
-  TestObj8: "Flaming_Katana",
-  TestObj9: "Emerald_Eizon",
-  TestObj10: "Stalagmite",
-  EquipmentWeapons1: "Iron_Sword",
-  TestObj2: "Steel_Spear",
-  EquipmentBows1: "Wooden_Bow",
-  EquipmentBows3: "Birch_Longbow",
-  EquipmentBows4: "Carrot_Launcher",
-  EquipmentBows5: "Spiked_Menace",
-  EquipmentBows6: "Pharoah_Bow",
-  EquipmentBows7: "Blizzard_Bow",
-  EquipmentBows8: "Blackhole_Bow",
-  EquipmentWands1: "Gnarled_Wand",
-  EquipmentWands2: "Quarterstaff",
-  EquipmentWands5: "Starlight",
-  EquipmentWands6: "Crows_Nest",
-  EquipmentWands3: "Spriggly_Storm",
-  EquipmentWands7: "Grey_Gatsby",
-  EquipmentWands4: "Microphone",
-  EquipmentShirts1: "Orange_Tee",
-  EquipmentShirts2: "Blue_Tee",
-  EquipmentShirts16: "Spore_Tee",
-  EquipmentShirts3: "Black_Tee",
-  EquipmentShirts4: "Tanned_Hide",
-  EquipmentShirts6: "Paralax_Chest",
-  EquipmentShirts7: "Molten_Chest",
-  EquipmentShirts8: "REPLACE_ME",
-  EquipmentShirts9: "REPLACE_ME",
-  EquipmentShirts21: "Tattered_Cloth",
-  EquipmentShirts10: "Fur_Shirt",
-  EquipmentShirts11: "Copper_Platebody",
-  EquipmentShirts12: "Iron_Platebody",
-  EquipmentShirts13: "Gold_Platebody",
-  EquipmentShirts18: "Amarok_Bodyplate",
-  EquipmentShirts14: "Platinum_Platbody",
-  EquipmentShirts15: "Dementia_Body",
-  EquipmentShirts26: "Efaunt_Ribcage",
-  EquipmentShirts27: "Void_Imperium_Platebody",
-  EquipmentShirts17: "MCR_Tshirt",
-  EquipmentShirts19: "Planktop",
-  EquipmentShirts20: "Hide_Shirt",
-  EquipmentShirts24: "Green_Tee",
-  EquipmentShirts25: "Purple_Tee",
-  EquipmentShirts31: "Member_Hoodie",
-  EquipmentShirts5: "Studded_Hide",
-  EquipmentShirts23: "Feral_Leathering",
-  EquipmentShirts22: "Furled_Robes",
-  EquipmentShirts28: "Damascus_Plates",
-  EquipmentShirts29: "Evergreen_Wraps",
-  EquipmentShirts30: "Elegantine_Robes",
-  EquipmentPants1: "Torn_Jeans",
-  EquipmentPants2: "Copper_Platelegs",
-  EquipmentPants3: "Iron_Platelegs",
-  EquipmentPants4: "Gold_Platelegs",
-  EquipmentPants17: "Amarok_Hinds",
-  EquipmentPants5: "Platinum_Shins",
-  EquipmentPants6: "Dementia_Shins",
-  EquipmentPants20: "Efaunt_Hipilium",
-  EquipmentPants21: "Void_Imperium_Shardshins",
-  EquipmentPants7: "Gilded_Pilates",
-  EquipmentPants8: "Twisted_Scales",
-  EquipmentPants9: "Crystallax_Shins",
-  EquipmentPants10: "Give_Up_On_Life_Pants",
-  EquipmentPants11: "Yellow_Belt_Ninja_Pants",
-  EquipmentPants12: "Merchantile_Pants",
-  EquipmentPants13: "Ancient_Leggings",
-  EquipmentPants14: "Forensic_Leggings",
-  EquipmentPants15: "Bleached_Designer_Wode_Patch_Pants",
-  EquipmentPants16: "Adam's_Leaf",
-  EquipmentPants18: "Dirty_Coal_Miner_Baggy_Soot_Pants",
-  EquipmentPants19: "Trimmed_Rune_Platelegs",
-  EquipmentPants22: "Fishing_Overalls",
-  EquipmentPants23: "Bandito_Pantaloon",
-  EquipmentShoes1: "Copper_Boots",
-  EquipmentShoes15: "Iron_Boots",
-  EquipmentShoes3: "Gold_Boots",
-  EquipmentShoes20: "Amarok_Paws",
-  EquipmentShoes4: "Platinum_Boots",
-  EquipmentShoes5: "Dementia_Boots",
-  EquipmentShoes21: "Efaunts_Broken_Ankles",
-  EquipmentShoes22: "Void_Imperium_Kicks",
-  EquipmentShoes6: "Hermes_Boots",
-  EquipmentShoes7: "Goo_Galoshes",
-  EquipmentShoes8: "Yeti_Walkers",
-  EquipmentShoes9: "Flip_Flops",
-  EquipmentShoes10: "Flap_Flops",
-  EquipmentShoes11: "Floop_Flops",
-  EquipmentShoes12: "Flux_Flops",
-  EquipmentShoes13: "Gaia_Shoes",
-  EquipmentShoes14: "Cauldrunners",
-  EquipmentShoes16: "Cavern_Trekkers",
-  EquipmentShoes17: "Logger_Heels",
-  EquipmentShoes18: "Angler_Boots",
-  EquipmentShoes19: "Bandito_Boots",
-  EquipmentShoes2: "Eyern_Boots",
-  EquipmentPendant1: "Mint_Icey",
-  EquipmentPendant2: "Strawbu_Icey",
-  EquipmentPendant3: "Rok_Road_Icey",
-  EquipmentPendant4: "Rainbo_Icey",
-  EquipmentPendant5: "Chocotastic_Icey",
-  EquipmentPendant6: "Blubbery_Icey",
-  EquipmentPendant7: "Lava_Icey",
-  EquipmentPendant8: "Legends_Icey",
-  EquipmentPendant9: "Little_Wooden_Katana",
-  EquipmentPendant10: "Sleek_Shank",
-  EquipmentPendant11: "Carrot_Horror",
-  EquipmentPendant12: "Tarantulight",
-  EquipmentPendant13: "Quartz_Pendant",
-  EquipmentPendant14: "Fuscismatia",
-  EquipmentPendant15: "Lucky_Fish_Head",
-  EquipmentPendant16: "Strung_Bludgeon",
-  EquipmentPendant17: "Chaotic_Amarok_Pendant",
-  EquipmentPendant18: "Strung_Steamy",
-  EquipmentRings1: "Gold_Ring",
-  EquipmentRings2: "Copper_Band",
-  EquipmentRings3: "Steel_Band",
-  EquipmentRings4: "Molden_Crust",
-  EquipmentRings5: "Toxic_Bubbles_Band",
-  EquipmentRings6: "Death_Wish",
-  EquipmentRings7: "Pugilist_Demise",
-  EquipmentRings8: "The_Used_Bandaid",
-  EquipmentRings9: "Chat_Ring",
-  EquipmentRings10: "Spikeweed_Ring",
-  EquipmentRings11: "Defenders_Dignity",
-  EquipmentRingsFishing1: "Shallow_Watering",
-  EquipmentRingsFishing2: "Oceanic_Ring",
-  EquipmentRingsFishing3: "Deepwater_Trench_Ring",
-  EquipmentRings12: "Frisbee_Ring",
-  EquipmentRings13: "Silver_Stopwatch",
-  EquipmentRings14: "Dooble_Goopi",
-  EquipmentRings15: "Sanic_Ring",
-  EquipmentRings16: "Efaunt_Trunculus",
-  EquipmentRingsChat1: "Love_Ring",
-  EquipmentRingsChat2: "Leafy_Ring",
-  EquipmentRingsChat3: "Wealth_Ring",
-  EquipmentRingsChat4: "Bob_Ring",
-  EquipmentRingsChat5: "Bubble_Ring",
-  EquipmentRingsChat6: "Cthulu's_Ring",
-  EquipmentRingsChat8: "Lava_Sez_Buy_More_Gems",
-  EquipmentRingsChat9: "HONK_Ring",
-  EquipmentTools1: "Junk_Pickaxe",
-  EquipmentTools2: "Copper_Pickaxe",
-  EquipmentTools3: "Iron_Pickaxe",
-  EquipmentTools5: "Gold_Pickaxe",
-  EquipmentTools6: "Platinum_Pickaxe",
-  EquipmentTools7: "Dementia_Pickaxe",
-  EquipmentTools11: "Void_Imperium_Pik",
-  EquipmentTools8: "Lustre_Pickaxe",
-  EquipmentTools9: "Dreadlo_Pickolo",
-  EquipmentTools10: "Poopy_Pickaxe",
-  EquipmentToolsHatchet0: "Old_Hatchet",
-  EquipmentToolsHatchet3: "Copper_Chopper",
-  EquipmentToolsHatchet1: "Iron_Hatchet",
-  EquipmentToolsHatchet2b: "Stinky_Axe",
-  EquipmentToolsHatchet2: "Golden_Axe",
-  EquipmentToolsHatchet4: "Plat_Hatchet",
-  EquipmentToolsHatchet5: "Dementia_Dicer",
-  EquipmentToolsHatchet7: "Void_Imperium_Axe",
-  EquipmentToolsHatchet6: "Lustre_Logger",
-  EquipmentToolsHatchet8: "Starfire_Hatchet",
-  EquipmentToolsHatchet9: "Dreadlo_Eviscerator",
-  EquipmentToolsHatchet10: "Annihilator_of_the_Yggdrasil",
-  FishingRod1: "Wood_Fishing_Rod",
-  FishingRod2: "Copper_Fish_Rod",
-  FishingRod3: "Iron_Fishing_Rod",
-  FishingRod4: "Gold_Fishing_Rod",
-  FishingRod5: "Plat_Fishing_Rod",
-  FishingRod6: "Dementia_Rod_for_Fishing",
-  FishingRod7: "Void_Imperium_Rod",
-  CatchingNet1: "Bug_Net",
-  CatchingNet2: "Copper_Netted_Net",
-  CatchingNet3: "Reinforced_Net",
-  CatchingNet4: "Gilded_Net",
-  CatchingNet5: "Platinet",
-  CatchingNet6: "Dementia_Net",
-  CatchingNet7: "Void_Imperium_Net",
-  TrapBoxSet1: "Cardboard_Traps",
-  TrapBoxSet2: "Silkskin_Traps",
-  TrapBoxSet3: "Wooden_Traps",
-  TrapBoxSet4: "Natural_Traps",
-  TrapBoxSet5: "Steel_Traps",
-  TrapBoxSet6: "Royal_Traps",
-  WorshipSkull1: "Wax_Skull",
-  WorshipSkull2: "Ceramic_Skull",
-  WorshipSkull3: "Horned_Skull",
-  WorshipSkull4: "Prickle_Skull",
-  WorshipSkull5: "Manifested_Skull",
-  WorshipSkull6: "Wax_Skull",
-  FoodHealth1: "Nomwich",
-  FoodHealth3: "Hot_Dog",
-  FoodHealth2: "Cheezy_Pizza",
-  Peanut: "Peanut",
-  FoodHealth4: "Saucy_Weiner",
-  FoodHealth6: "Kebab_Sticks",
-  FoodHealth7: "Meat_Pie",
-  FoodHealth10: "Mountain_Bread",
-  FoodHealth9: "Yeti_Ham",
-  FoodHealth11: "Sheepie_Dairy",
-  FoodHealth5: "Cranberry_Jam",
-  FoodHealth8: "Crabby_Cake_Supreme",
-  FoodEvent8: "Milk_Choco",
-  Meatloaf: "Magic_Meatloaf",
-  FoodPotOr1: "Small_Strength_Potion",
-  FoodPotOr2: "Average_Strength_Potion",
-  FoodPotOr3: "Decent_Strength_Potion",
-  FoodPotRe1: "Small_Life_Potion",
-  FoodPotRe2: "Average_Life_Potion",
-  FoodPotRe3: "Decent_Life_Potion",
-  FoodPotGr1: "Small_Speed_Potion",
-  FoodPotGr2: "Average_Speed_Potion",
-  FoodPotGr3: "Decent_Speed_Potion",
-  FoodEvent7: "Minto_Choco",
-  FoodPotMana1: "Small_Mana_Potion",
-  FoodPotMana2: "Average_Mana_Potion",
-  FoodPotMana3: "Decent_Mana_Potion",
-  FoodPotYe1: "Small_EXP_Potion",
-  FoodPotYe2: "Average_EXP_Potion",
-  FoodPotYe3: "Decent_EXP_Potion",
-  FoodEvent6: "Lemony_Choco",
-  Pearl3: "Shiny_Pearl",
-  FoodMining1: "Icing_Ironbite",
-  FoodEvent1: "Giftybread_Man",
-  Pearl2: "Stained_Pearl",
-  FoodChoppin1: "Saucy_Logfries",
-  FoodEvent2: "Chogg_Nog",
-  FoodFish1: "Slurpin_Herm",
-  FoodEvent3: "Candy_Canes",
-  Pearl1: "Aqua_Pearl",
-  FoodCatch1: "Buttered_Toasted_Butter",
-  FoodEvent4: "Mistleberries",
-  FoodTrapping1: "Critter_Numnums",
-  FoodWorship1: "Soulble_Gum",
-  Bullet: "Bullet",
-  BulletB: "FMJ_Bullet",
-  MidnightCookie: "Midnight_Cookie",
-  FoodEvent5: "Cherry_Choco",
-  PeanutG: "Golden_Peanut",
-  FoodG1: "Golden_Jam",
-  FoodG2: "Golden_Kebabs",
-  FoodG3: "Golden_Meat_Pie",
-  FoodG4: "Golden_Nomwich",
-  FoodG5: "Golden_Ham",
-  FoodG6: "Golden_Bread",
-  ButterBar: "Butter_Bar",
-  rtt0: "Bottled_Town_Teleport",
-  ResetFrag: "Talent_Point_Reset_Fragment",
-  ResetCompleted: "Talent_Point_Reset_Potion",
-  ResetCompletedS: "Star_Talent_Reset_Potion",
-  ClassSwap: "Sub_Class_Swap_Token",
-  ResetBox: "Post_Office_Box_Reseto_Magnifico",
-  Ht: "Hat_Premiumifier",
-  StonePremRestore: "Premium_Stone_Refunder",
-  ExpBalloon1: "Small_Experience_Balloon",
-  ExpBalloon2: "Medium_Experience_Balloon",
-  ExpBalloon3: "Large_Experience_Balloon",
-  JobApplication: "Job_Application",
-  SmithingHammerChisel: "Sculpting_Tools",
-  BobJoePickle: "BobJoePickle",
-  Quest1: "Mining_Certificate",
-  Crystal1: "Desert_Topaz",
-  Crystal2: "Glacier_Quartz",
-  Crystal3: "Galaxial_Amethyst",
-  Quest2: "Mining_Certificate",
-  PeanutS: "Stone_Peanut",
-  Quest3: "Ketchup_Bottle",
-  Quest4: "Mustard_Bottle",
-  Quest5: "Golden_Jam",
-  Quest6: "Scouting_Report",
-  Quest7: "Strange_Rock",
-  Quest8: "Filler_bc_I_messed_up",
-  Quest10: "Green_Tea",
-  Quest11: "Forest_Villas_Flyer_Thingy",
-  Quest12: "Dog_Bone",
-  Quest13: "Empty_Box",
-  Quest14: "Employment_Statistics",
-  Quest15: "Red_Frisbee",
-  Quest16: "Broken_Mic",
-  Quest17: "Amarok_Slab",
-  Quest18: "Loomi's_Room_Key",
-  Quest19: "Golden_Dubloon",
-  Quest20: "Signed_Arrest_Warrant",
-  Quest21: "Time_Thingy",
-  Quest22: "Corporatube_Sub",
-  Quest23: "Instablab_Follower",
-  Quest24: "Cloudsound_Follower",
-  Quest25: "Birthday_Card",
-  Quest26: "Pre_Crime_Box",
-  Quest27: "Bag_o_Nuts",
-  Quest28: "IOU_One_Blue_Crystal",
-  Quest29: "Chaotic_Amarok_Slab",
-  GoldricP1: "Casual_Confidante",
-  GoldricP2: "Triumphant_Treason",
-  GoldricP3: "Claiming_Cashe",
-  Quest30: "Giftmas_Box",
-  Quest31: "Gem_Note",
-  Cutter: "Bolt_Cutters",
-  Quest32: "Monster_Rating",
-  Quest33: "Player_Rating_With_Letter_P",
-  Quest34: "Player_Rating_With_Letter_S",
-  Quest35: "Googley_Eyes",
-  Quest36: "Dootjat_Eye",
-  Quest37: "Silver_Antique",
-  Quest38: "Guild_Giftbox",
-  Quest39: "Lovey_Dovey_Letter",
-  Quest40: "Choco_Box",
-  Quest41: "Flowies",
-  Quest42: "Egg_Capsule",
-  Quest43: "Gummy_Bunny",
-  Quest44: "Goldegg_Capsule",
-  Quest45: "Sesame_Seed",
-  Quest46: "The_Bobber_Challenge_Scroll",
-  Quest47: "Elderly_Peanut",
-  Quest48: "Pete_the_Peanut",
-  Quest49: "Summer_Cooler",
-  Quest50: "Beach_Oyster",
-  Pearl4: "Black_Pearl",
-  Quest9: "Picnic_Token",
-  BadgeG1: "Blunderhills_NPC_Completion_Token",
-  BadgeG2: "Blunder_Skills_Completion_Token",
-  BadgeG3: "Blunderhills_Misc_Completion_Token",
-  BadgeD1: "Yumyum_Desert_NPC_Completion_Token",
-  BadgeD2: "Yumyum_Skills_Completion_Token",
-  BadgeD3: "Yumyum_Misc_Completion_Token",
-  NPCtoken1: "Easy_Blunderhills_NPC_Token",
-  NPCtoken2: "Med_Blunderhills_NPC_Token",
-  NPCtoken3: "Hard_Blunderhills_NPC_Token",
-  NPCtoken4: "Stiltzcho_Token",
-  NPCtoken5: "Woodsman_Token",
-  NPCtoken6: "Glumlee_Token",
-  NPCtoken7: "Papua_Piggea_Token",
-  NPCtoken8: "FILLER",
-  NPCtoken9: "Funguy_Token",
-  NPCtoken10: "Krunk_Token",
-  NPCtoken11: "Tiki_Chief_Token",
-  NPCtoken12: "Sproutinald_Token",
-  NPCtoken13: "Dog_Bone_Token",
-  NPCtoken14: "Dazey_Token",
-  NPCtoken15: "TP_Pete_Token",
-  NPCtoken16: "Bandit_Bob_Token",
-  NPCtoken17: "Snake_Jar_Token",
-  NPCtoken18: "Whattso_Token",
-  NPCtoken19: "Cowbo_Jones_Token",
-  NPCtoken20: "Carpetiem_Token",
-  NPCtoken21: "Goldric_Token",
-  NPCtoken27: "Cattleprod_Token",
-  NPCtoken22: "Fishpaste_Token",
-  NPCtoken24: "Loominadi_Token",
-  NPCtoken25: "Djonnut_Token",
-  NPCtoken26: "Scubidew_Token",
-  NPCtoken23: "Wellington_Token",
-  NPCtoken28: "Easy_Yumyum_Dez_NPC_Token",
-  NPCtoken29: "Med_Yumyum_Dez_NPC_Token",
-  NPCtoken30: "Hard_Yumyum_Dez_NPC_Token",
-  EquipmentSmithingTabs2: "Anvil_Tab_2",
-  EquipmentSmithingTabs3: "Anvil_Tab_3",
-  EquipmentSmithingTabs4: "Anvil_Tab_4",
-  EquipmentSmithingTabs5: "Anvil_Tab_5",
-  EquipmentSmithingTabs6: "Anvil_Tab_6",
-  EquipmentSmithingTabs7: "Anvil_Tab_7",
-  EquipmentSmithingTabs8: "Anvil_Tab_8",
-  EquipmentStatues1: "Power_Statue",
-  EquipmentStatues2: "Speed_Statue",
-  EquipmentStatues3: "Mining_Statue",
-  EquipmentStatues4: "Feasty_Statue",
-  EquipmentStatues5: "Health_Statue",
-  EquipmentStatues6: "Kachow_Statue",
-  EquipmentStatues7: "Lumberbob_Statue",
-  EquipmentStatues8: "Thicc_Skin_Statue",
-  EquipmentStatues9: "Oceanman_Statue",
-  EquipmentStatues10: "Ol_Reliable_Statue",
-  EquipmentStatues11: "Exp_Book_Statue",
-  EquipmentStatues12: "Anvil_Statue",
-  EquipmentStatues13: "Cauldron_Statue",
-  EquipmentStatues14: "Beholder_Statue",
-  EquipmentStatues15: "Bullseye_Statue",
-  EquipmentStatues16: "Box_Statue",
-  EquipmentStatues17: "Twosoul_Statue",
-  EquipmentStatues18: "EhExPee_Statue",
-  EquipmentStatues19: "Seesaw_Statue",
-  SmithingRecipes1: "Beginner_Recipe",
-  SmithingRecipes2: "Novice_Recipe",
-  SmithingRecipes3: "Apprentice_Recipe",
-  SmithingRecipes4: "Journeyman_Recipe",
-  TalentBook1: "Special_Talent_Book",
-  TalentBook2: "Beginner_Talent_Book",
-  TalentBook3: "Warrior_Talent_Book",
-  TalentBook4: "Archer_Talent_Book",
-  TalentBook5: "Wizard_Talent_Book",
-  MaxCapBagT2: "Miniature_Mining_Pouch",
-  MaxCapBag1: "Cramped_Mining_Pouch",
-  MaxCapBag2: "Small_Mining_Pouch",
-  MaxCapBag3: "Average_Mining_Pouch",
-  MaxCapBag4: "Sizable_Mining_Pouch",
-  MaxCapBag5: "Big_Mining_Pouch",
-  MaxCapBagMi6: "Large_Mining_Pouch",
-  MaxCapBagT1: "Miniature_Choppin_Pouch",
-  MaxCapBag7: "Cramped_Choppin_Pouch",
-  MaxCapBag9: "Small_Choppin_Pouch",
-  MaxCapBagT3: "Average_Choppin_Pouch",
-  MaxCapBagT4: "Sizable_Choppin_Pouch",
-  MaxCapBagT5: "Big_Choppin_Pouch",
-  MaxCapBagT6: "Large_Choppin_Pouch",
-  MaxCapBag6: "Miniscule_Food_Pouch",
-  MaxCapBag8: "Cramped_Food_Pouch",
-  MaxCapBag10: "Small_Food_Pouch",
-  MaxCapBagF3: "Average_Food_Pouch",
-  MaxCapBagF4: "Sizable_Food_Pouch",
-  MaxCapBagF5: "Big_Food_Pouch",
-  MaxCapBagF6: "Large_Food_Pouch",
-  MaxCapBagM1: "Mini_Materials_Pouch",
-  MaxCapBagM2: "Cramped_Material_Pouch",
-  MaxCapBagM3: "Small_Material_Pouch",
-  MaxCapBagM4: "Average_Material_Pouch",
-  MaxCapBagM5: "Sizable_Materials_Pouch",
-  MaxCapBagM6: "Big_Materials_Pouch",
-  MaxCapBagM7: "Large_Materials_Pouch",
-  MaxCapBagFi0: "Miniature_Fish_Pouch",
-  MaxCapBagFi1: "Cramped_Fish_Pouch",
-  MaxCapBagFi2: "Small_Fish_Pouch",
-  MaxCapBagFi3: "Average_Fish_Pouch",
-  MaxCapBagFi4: "Sizable_Fish_Pouch",
-  MaxCapBagFi5: "Big_Fish_Pouch",
-  MaxCapBagFi6: "Large_Fish_Pouch",
-  MaxCapBagB0: "Miniature_Bug_Pouch",
-  MaxCapBagB1: "Cramped_Bug_Pouch",
-  MaxCapBagB2: "Small_Bug_Pouch",
-  MaxCapBagB3: "Average_Bug_Pouch",
-  MaxCapBagB4: "Sizable_Bug_Pouch",
-  MaxCapBagB5: "Big_Bug_Pouch",
-  MaxCapBagB6: "Large_Bug_Pouch",
-  MaxCapBagTr0: "Cramped_Critter_Pouch",
-  MaxCapBagTr1: "Small_Critter_Pouch",
-  MaxCapBagTr2: "Average_Critter_Pouch",
-  MaxCapBagTr3: "Sizable_Critter_Pouch",
-  MaxCapBagTr4: "Big_Critter_Pouch",
-  MaxCapBagTr5: "Large_Critter_Pouch",
-  MaxCapBagS0: "Cramped_Soul_Pouch",
-  MaxCapBagS1: "Small_Soul_Pouch",
-  MaxCapBagS2: "Average_Soul_Pouch",
-  MaxCapBagS3: "Sizable_Soul_Pouch",
-  MaxCapBagS4: "Big_Soul_Pouch",
-  MaxCapBagS5: "Large_Soul_Pouch",
-  ObolBronze0: "Bronze_STR_Obol",
-  ObolBronze1: "Bronze_AGI_Obol",
-  ObolBronze2: "Bronze_WIS_Obol",
-  ObolBronze3: "Bronze_LUK_Obol",
-  ObolSilver0: "Silver_STR_Obol",
-  ObolSilver1: "Silver_AGI_Obol",
-  ObolSilver2: "Silver_WIS_Obol",
-  ObolSilver3: "Silver_LUK_Obol",
-  ObolGold0: "Gold_STR_Obol",
-  ObolGold1: "Gold_AGI_Obol",
-  ObolGold2: "Gold_WIS_Obol",
-  ObolGold3: "Gold_LUK_Obol",
-  ObolPlatinum0: "Platinum_STR_Obol",
-  ObolPlatinum1: "Platinum_AGI_Obol",
-  ObolPlatinum2: "Platinum_WIS_Obol",
-  ObolPlatinum3: "Platinum_LUK_Obol",
-  ObolPink0: "Dementia_STR_Obol",
-  ObolPink1: "Dementia_AGI_Obol",
-  ObolPink2: "Dementia_WIS_Obol",
-  ObolPink3: "Dementia_LUK_Obol",
-  ObolBronzeDamage: "Bronze_Obol_of_Puny_Damage",
-  ObolSilverDamage: "Silver_Obol_of_Little_Damage",
-  ObolGoldDamage: "Golden_Obol_of_Big_Boy_Damage",
-  ObolPlatinumDamage: "Platinum_Obol_of_Lethal_Damage",
-  ObolPinkDamage: "Dementia_Obol_of_Infinite_Damage",
-  ObolPlatinumSpeed: "Platinum_Obol_of_Blinding_Speed",
-  ObolSilverMoney: "Silver_Obol_of_Pocket_Change",
-  ObolGoldMoney: "Golden_Obol_of_Plentiful_Riches",
-  ObolBronzeMining: "Bronze_Obol_of_Small_Swings",
-  ObolSilverMining: "Silver_Obol_of_Moderate_Mining",
-  ObolGoldMining: "Golden_Obol_of_Diligent_Digging",
-  ObolPlatinumMining: "Platinum_Obol_of_Dwarven_Delving",
-  ObolPinkMining: "Dementia_Obol_of_Magisterial_Metals",
-  ObolBronzeChoppin: "Bronze_Obol_of_Chippin_Chops",
-  ObolSilverChoppin: "Silver_Obol_of_Big_Bark",
-  ObolGoldChoppin: "Golden_Obol_of_Huge_Hackin",
-  ObolPlatinumChoppin: "Platinum_Obol_of_Lumby_Loggo",
-  ObolPinkChoppin: "Dementia_Obol_of_WOWOWOWWO",
-  ObolBronzeFishing: "Bronze_Obol_of_Finite_Fish",
-  ObolSilverFishing: "Silver_Obol_of_Puny_Pikes",
-  ObolGoldFishing: "Golden_Obol_of_Crazy_Carp",
-  ObolPlatinumFishing: "Platinum_Obol_of_Tremendous_Trout",
-  ObolPinkFishing: "Dementia_Obol_of_Monument_Marlins",
-  ObolBronzeCatching: "Bronze_Obol_of_Few_Flies",
-  ObolSilverCatching: "Silver_Obol_of_Big_Bugs",
-  ObolGoldCatching: "Golden_Obol_of_Insane_Insects",
-  ObolPlatinumCatching: "Platinum_Obol_of_Idk_Yet",
-  ObolPinkCatching: "Dementia_Obol_of_Idk_Yet",
-  ObolSilverLuck: "Silver_Obol_of_Double_Sixes",
-  ObolGoldLuck: "Golden_Obol_of_Triple_Sixes",
-  ObolPlatinumLuck: "Platinum_Obol_of_Yahtzee_Sixes",
-  ObolPinkLuck: "Dementia_Obol_of_Infinisixes",
-  ObolBronzePop: "Bronze_Obol_of_Pop",
-  ObolSilverPop: "Silver_Obol_of_Pop_Pop",
-  ObolGoldPop: "Golden_Obol_of_Poppity_Pop",
-  ObolPlatinumPop: "Platinum_Obol_of_Poppity_Poppy",
-  ObolPinkPop: "Dementia_Obol_of_Pop_Pop_Pop_Pop",
-  ObolEfauntA: "Skeletal_Obol_of_Efaunt's_Gaze",
-  ObolAmarokA: "Granite_Obol_of_Amarok's_Stare",
-  ObolBronzeKill: "Bronze_Obol_of_Multikill",
-  ObolSilverKill: "Silver_Obol_of_Megakill",
-  ObolGoldKill: "Golden_Obol_of_Ultrakill",
-  ObolPlatinumKill: "Platinum_Obol_of_Killimanjaro",
-  ObolPinkKill: "Dementia_Obol_of_Killionaire",
-  ObolBronzeEXP: "Bronze_Obol_of_Experience",
-  ObolSilverEXP: "Silver_Obol_of_Experience",
-  ObolGoldEXP: "Golden_Obol_of_Experience",
-  ObolPlatinumEXP: "Platinum_Obol_of_Experience",
-  ObolPinkEXP: "Dementia_Obol_of_Experience",
-  ObolBronzeCard: "Bronze_Obol_of_Cards",
-  ObolSilverCard: "Silver_Obol_of_Cards",
-  ObolGoldCard: "Golden_Obol_of_Cards",
-  ObolPlatinumCard: "Platinum_Obol_of_Cards",
-  ObolPinkCard: "Dementia_Obol_of_Cards",
-  ObolBronzeDef: "Bronze_Obol_of_Defence",
-  ObolSilverDef: "Silver_Obol_of_Defence",
-  ObolGoldDef: "Golden_Obol_of_Defence",
-  ObolPlatinumDef: "Platinum_Obol_of_Defense_with_an_S",
-  ObolPinkDef: "Dementia_Obol_of_Defence",
-  ObolBronzeTrapping: "Bronze_Obol_of_Trapping",
-  ObolSilverTrapping: "Silver_Obol_of_Trapping",
-  ObolGoldTrapping: "Golden_Obol_of_Trapping",
-  ObolPlatinumTrapping: "Platinum_Obol_of_Trapping",
-  ObolPinkTrapping: "Dementia_Obol_of_Trapping",
-  ObolBronzeCons: "Bronze_Obol_of_Construction",
-  ObolSilverCons: "Silver_Obol_of_Construction",
-  ObolGoldCons: "Golden_Obol_of_Construction",
-  ObolPlatinumCons: "Platinum_Obol_of_Construction",
-  ObolPinkCons: "Dementia_Obol_of_Construction",
-  ObolBronzeWorship: "Bronze_Obol_of_Worship",
-  ObolSilverWorship: "Silver_Obol_of_Worship",
-  ObolGoldWorship: "Golden_Obol_of_Worship",
-  ObolPlatinumWorship: "Platinum_Obol_of_Worship",
-  ObolPinkWorship: "Dementia_Obol_of_Worship",
-  ExpSmith1: "Smithing_Exp",
-  StampA1: "Sword_Stamp",
-  StampA2: "Heart_Stamp",
-  StampA3: "Mana_Stamp",
-  StampA4: "Tomahawk_Stamp",
-  StampA5: "Target_Stamp",
-  StampA6: "Shield_Stamp",
-  StampA7: "Longsword_Stamp",
-  StampA8: "Kapow_Stamp",
-  StampA9: "Fist_Stamp",
-  StampA10: "Battleaxe_Stamp",
-  StampA11: "Agile_Stamp",
-  StampA12: "Vitality_Stamp",
-  StampA13: "Book_Stamp",
-  StampA14: "Manamoar_Stamp",
-  StampA15: "Clover_Stamp",
-  StampA16: "Scimitar_Stamp",
-  StampA17: "Bullseye_Stamp",
-  StampA18: "Feather_Stamp",
-  StampA19: "Polearm_Stamp",
-  StampA20: "Violence_Stamp",
-  StampA21: "Buckler_Stamp",
-  StampA22: "FILLER",
-  StampA23: "Sukka_Foo",
-  StampA24: "Arcane_Stamp",
-  StampA25: "FILLER",
-  StampA26: "Steve_Sword",
-  StampA27: "Blover_Stamp",
-  StampA28: "Stat_Graph_Stamp",
-  StampA29: "FILLER",
-  StampA30: "FILLER",
-  StampA31: "FILLER",
-  StampA32: "FILLER",
-  StampA33: "FILLER",
-  StampA34: "FILLER",
-  StampA35: "FILLER",
-  StampB1: "Pickaxe_Stamp",
-  StampB2: "Hatchet_Stamp",
-  StampB3: "Anvil_Zoomer_Stamp",
-  StampB4: "Lil' Mining_Baggy_Stamp",
-  StampB5: "Twin_Ores_Stamp",
-  StampB6: "Choppin' Bag_Stamp",
-  StampB7: "Duplogs_Stamp",
-  StampB8: "Matty_Bag_Stamp",
-  StampB9: "Smart_Dirt_Stamp",
-  StampB10: "Cool_Diggy_Tool_Stamp",
-  StampB11: "High_IQ_Lumber_Stamp",
-  StampB12: "Swag_Swingy_Tool_Stamp",
-  StampB13: "Alch_Go_Brrr_Stamp",
-  StampB14: "Brainstew_Stamps",
-  StampB15: "Drippy_Drop_Stamp",
-  StampB16: "Droplots_Stamp",
-  StampB17: "Fishing_Rod_Stamp",
-  StampB18: "Fishhead_Stamp",
-  StampB19: "Catch_Net_Stamp",
-  StampB20: "Fly_Intel_Stamp",
-  StampB21: "Bag_o_Heads_Stamp",
-  StampB22: "Holy_Mackerel_Stamp",
-  StampB23: "Bugsack_Stamp",
-  StampB24: "Buzz_Buzz_Stamp",
-  StampB25: "Hidey_Box_Stamp",
-  StampB26: "Purp_Froge_Stamp",
-  StampB27: "Spikemouth_Stamp",
-  StampB28: "Shiny_Crab_Stamp",
-  StampB29: "Gear_Stamp",
-  StampB30: "Sample_Stamp",
-  StampB31: "Saw_Stamp",
-  StampB32: "Amplesample_Stamp",
-  StampB33: "SpoOoky_Stamp",
-  StampB34: "Flowin_Stamp",
-  StampB35: "Prayday_Stamp",
-  StampB36: "Banked_Pts_Stamp",
-  StampC1: "Questin_Stamp",
-  StampC2: "Mason_Jar_Stamp",
-  StampC3: "Crystallin",
-  StampC4: "Blank",
-  StampC5: "Apple_Stamp",
-  StampC6: "Potion_Stamp",
-  StampC7: "Golden_Apple_Stamp",
-  StampC8: "Blank",
-  StampC9: "Card_Stamp",
-  StampC10: "Blank",
-  StampC11: "Blank",
-  StampC12: "Blank",
-  StampC13: "Talent_I_Stamp",
-  StampC14: "Talent_II_Stamp",
-  StampC15: "Talent_III_Stamp",
-  StampC16: "Talent_IV_Stamp",
-  StampC17: "Talent_V_Stamp",
-  StampC18: "Talent_S_Stamp",
-  StampC19: "Multikill_Stamp",
-  StampC20: "Biblio_Stamp",
-  StoneWe: "Easter_Weapon_Stone",
-  StoneWeb: "Summer_Weapon_Stone",
-  StoneW1: "Weapon_Upgrade_Stone_I",
-  StoneW2: "Weapon_Upgrade_Stone_II",
-  StoneW3: "Weapon_Upgrade_Stone_III",
-  StoneW6: "Warped_Weapon_Upgrade_Stone",
-  StoneAe: "Easter_Armor_Stone",
-  StoneAeB: "Summer_Armor_Stone",
-  StoneA1: "Armor_Upgrade_Stone_I",
-  StoneA1b: "Armor_Upgrade_Stone_G",
-  StoneA2: "Armor_Upgrade_Stone_II",
-  StoneA2b: "Armor_Upgrade_Stone_B",
-  StoneA3: "Armor_Upgrade_Stone_III",
-  StoneA3b: "Armor_Upgrade_Stone_C",
-  StoneTe: "Easter_Tool_Upgrade_Stone",
-  StoneT1: "Tool_Upgrade_Stone_I",
-  StoneT1e: "Giftmas_Tool_Upgrade_Stone",
-  StoneT1eb: "Summer_Tool_Upgrade_Stone",
-  StoneT2: "Tool_Upgrade_Stone_II",
-  StoneT3: "Tool_Upgrade_Stone_III",
-  StoneHelm1: "Helmet_Upgrade_Stone_I",
-  StoneHelm6: "Warped_Helmet_Upgrade_Stone",
-  StoneHelm1b: "Giftmas_Helmet_Upgrade_Stone",
-  StoneZ1: "Mystery_Upgrade_Stone_I",
-  StoneZ2: "Mystery_Upgrade_Stone_II",
-  StonePremSTR: "Premium_STR_Stone",
-  StonePremAGI: "Premium_AGI_Stone",
-  StonePremWIS: "Premium_WIS_Stone",
-  StonePremLUK: "Premium_LUK_Stone",
-  Refinery1: "Redox_Salts",
-  Refinery2: "Explosive_Salts",
-  Refinery3: "Spontaneity_Salts",
-  Refinery4: "Dioxide_Synthesis",
-  Refinery5: "Red_Salt",
-  Refinery6: "Red_Salt_2",
-  "CraftMat1": "Thread",
-  "CraftMat2": "Crimson_String",
-  "CraftMat3": "Cue_Tape",
-  "CraftMat5": "Trusty_Nails",
-  "CraftMat6": "Boring_Brick",
-  "CraftMat7": "Chain_Link",
-  "CraftMat9": "Leather_Hide",
-  "CraftMat8": "Pinion_Spur",
-  "CraftMat10": "Lugi_Bracket",
-  CraftMat11: "Filler",
-  CraftMat12: "Filler",
-  CraftMat13: "Filler",
-  CraftMat14: "Filler",
-  CraftMat15: "Filler",
-  CraftMat16: "Filler",
-  CraftMat17: "Filler",
-  PureWater: "Distilled_Water",
-  PureWater2: "Dense_Water",
-  Grasslands1: "Spore_Cap",
-  Grasslands2: "Frog_Leg",
-  Grasslands3: "Bean_Slices",
-  Grasslands4: "Red_Spore_Cap",
-  Jungle1: "Slime_Sludge",
-  Jungle2: "Snake_Skin",
-  Jungle3: "Carrot_Cube",
-  Forest1: "Goblin_Ear",
-  Forest2: "Plank",
-  Forest3: "Bullfrog_Horn",
-  Sewers1: "Corn_Kernels",
-  Sewers1b: "Golden_Plop",
-  Sewers2: "Rats_Tail",
-  Sewers3: "Bonemeal",
-  TreeInterior1: "Stick",
-  TreeInterior1b: "Woodular_Circle",
-  TreeInterior2: "Acorn",
-  BabaYagaETC: "Baba_Yaga_Baby_Eggs",
-  DesertA1: "Pocket_Sand",
-  DesertA1b: "Glass_Shard",
-  DesertA2: "Megalodon_Tooth",
-  DesertA3: "Crabby_Cakey",
-  DesertA3b: "Nuget_Cake",
-  DesertB1: "Coconotnotto",
-  DesertB2: "Furled_Flag",
-  DesertB3: "Pincer_Arm",
-  DesertB4: "Potato_Remains",
-  DesertC1: "High_Steaks",
-  DesertC2: "Wakka_Cherry",
-  DesertC2b: "Ghost",
-  DesertC3: "Singlecle",
-  DesertC4: "Shrapshell",
-  SnowA1: "Floof_Ploof",
-  SnowA2: "Melty_Cube",
-  SnowA2a: "Yellow_Snowflake",
-  SnowA3: "Moustache_Comb",
-  SnowA4: "Ram_Wool",
-  SnowB1: "Sticky_Stick",
-  SnowB2: "Mamooth_Tusk",
-  SnowB2a: "Ice_Age_3",
-  SnowB5: "Snow_Ball",
-  SnowB3: "Pen",
-  SnowB4: "Cracked_Glass",
-  SnowC1: "Sippy_Straw",
-  SnowC2: "Cryosnake_Skin",
-  SnowC3: "Audio_Cord",
-  SnowC4: "Contact_Lense",
-  SnowC4a: "Black_Lense",
-  IceMountains2: "Ice_A_La_Crem",
-  Hgg: "Minuteglass",
-  EfauntDrop1: "Ripped_Tunic",
-  EfauntDrop2: "Ribbed_Tunic",
-  Trophy1: "King_of_Food",
-  Trophy2: "Lucky_Lad",
-  Trophy3: "Club_Member",
-  Trophy4: "I_Made_This_Game",
-  Trophy5: "Dice_Dynamo",
-  Trophy6: "Blunder_Hero",
-  Trophy7: "Original_Gamer",
-  Trophy8: "Trailblazer",
-  Trophy9: "Ultra_Unboxer",
-  Trophy10: "Critter_Baron",
-  Trophy11: "YumYum_Sheriff",
-  Trophy12: "Megalodon",
-  Trophy13: "Club_Maestro",
-  Trophy14: "Beach_Bro",
-  Starlight: "Starlight_Ore",
-  AlienTreetutorial: "Alien_Logs",
-  EquipmentWeapons2: "Flesh_Reaper",
-  Secretstone: "Secretstone",
-  Timecandy1: "1_HR_Time_Candy",
-  Timecandy2: "2_HR_Time_Candy",
-  Timecandy3: "4_HR_Time_Candy",
-  Timecandy4: "12_HR_Time_Candy",
-  Timecandy5: "24_HR_Time_Candy",
-  Timecandy6: "72_HR_Time_Candy",
-  Timecandy7: "Steamy_Time_Candy",
-  InvBag0: "Inventory_Bag_A",
-  InvBag1: "Inventory_Bag_B",
-  InvBag2: "Inventory_Bag_C",
-  InvBag3: "Inventory_Bag_D",
-  InvBag4: "Inventory_Bag_E",
-  InvBag5: "Inventory_Bag_F",
-  InvBag6: "Inventory_Bag_G",
-  InvBag7: "Inventory_Bag_H",
-  InvBag8: "Inventory_Bag_I",
-  InvBag20: "Inventory_Bag_U",
-  InvBag21: "Inventory_Bag_V",
-  InvBag22: "Inventory_Bag_W",
-  InvBag23: "Inventory_Bag_X",
-  InvBag24: "Inventory_Bag_Y",
-  InvBag25: "Inventory_Bag_Z",
-  InvBag100: "Snakeskinventory_Bag",
-  InvBag101: "Totally_Normal_and_not_fake_Bag",
-  InvBag102: "Blunderbag",
-  InvBag103: "Sandy_Satchel",
-  InvBag104: "Bummo_Bag",
-  InvBag105: "Capitalist_Case",
-  InvBag106: "Wealthy_Wallet",
-  InvBag107: "Prosperous_Pouch",
-  InvBag108: "Sack_of_Success",
-  InvBag109: "Shivering_Sack",
-  InvBag110: "Mamooth_Hide_Bag",
-  InvStorage1: "Storage_Chest_1",
-  InvStorage2: "Storage_Chest_2",
-  InvStorage3: "Storage_Chest_3",
-  InvStorage4: "Storage_Chest_4",
-  InvStorage5: "Storage_Chest_5",
-  InvStorage6: "Storage_Chest_6",
-  InvStorage7: "Storage_Chest_7",
-  InvStorage8: "Storage_Chest_8",
-  InvStorage9: "Storage_Chest_9",
-  InvStorage10: "Storage_Chest_10",
-  InvStorage11: "Storage_Chest_11",
-  InvStorage12: "Storage_Chest_12",
-  InvStorage13: "Storage_Chest_13",
-  InvStorage14: "Storage_Chest_14",
-  InvStorage15: "Storage_Chest_15",
-  InvStorage16: "Storage_Chest_16",
-  InvStorage17: "Storage_Chest_17",
-  InvStorage18: "Storage_Chest_18",
-  InvStorage19: "Storage_Chest_19",
-  InvStorage20: "Storage_Chest_20",
-  InvStorage21: "Storage_Chest_21",
-  InvStorage31: "Storage_Chest_90",
-  InvStorage32: "Storage_Chest_91",
-  InvStorage33: "Storage_Chest_92",
-  InvStorage34: "Storage_Chest_93",
-  InvStorage35: "Storage_Chest_94",
-  InvStorage36: "Storage_Chest_95",
-  InvStorage37: "Storage_Chest_96",
-  InvStorage38: "Storage_Chest_97",
-  InvStorage39: "Storage_Chest_98",
-  InvStorage40: "Storage_Chest_99",
-  InvStorage41: "Storage_Chest_99B",
-  InvStorage42: "Storage_Chest_99C",
-  InvStorageF: "Dank_Paypay_Chest",
-  Key1: "Forest_Villa_Key",
-  Key2: "Efaunt's_Tomb_Key",
-  Key3: "Chizoar's_Cavern_Key",
-  ObolFrag: "Obol_Fragment",
-  DoubleAFKtix: "Double_AFK_Gain_Ticket",
-  TixCol: "Colosseum_Ticket",
-  DeliveryBox: "Delivery_Box",
-  SilverPen: "Silver_Pen",
-  PremiumGem: "Gem",
-  TalentPoint1: "Talent_Point_Tab_1",
-  TalentPoint2: "Talent_Point_Tab_2",
-  TalentPoint3: "Talent_Point_Tab_3",
-  TalentPoint4: "Talent_Point_Tab_4",
-  TalentPoint5: "Talent_Point_Tab_5",
-  TalentPoint6: "Talent_Point_Special_Tab",
-  Line1: "Copper_Twine",
-  Line2: "Silver_Twine",
-  Line3: "Gold_Twine",
-  Line4: "Platinum_Twine",
-  Line5: "Leafy_Vines",
-  Line6: "Fun_Flags",
-  Line7: "Electrical_Wiring",
-  Line8: "Wiener_Links",
-  Line9: "Zeus_Gon_Fishin",
-  Line10: "Needledrop",
-  Line11: "Spoons_Lol",
-  Line12: "Its_a_Boy_Celebration",
-  Line13: "Its_a_Girl_Celebration",
-  Line14: "Its_Alright_Celebration",
-  Weight1: "Wormie_Weight",
-  Weight2: "Iron_Hook",
-  Weight3: "Basic_Bobber",
-  Weight4: "Dualhook_Prongs",
-  Weight5: "One_Pound_of_Steel",
-  Weight6: "One_Pound_of_Feathers",
-  Weight7: "Massless_Unit_for_Physics_Questions",
-  Weight8: "Literal_Elephant",
-  Weight9: "Valve_Patented_Circle_Thingies",
-  Weight10: "Dynamite",
-  Weight11: "Not_Dynamite",
-  Weight12: "Triple_Threat",
-  Weight13: "Crash_Box",
-  Weight14: "Fat_Albert",
-  CardPack1: "Newbie_Card_Pack",
-  CardPack2: "Ancient_Card_Pack",
-  CardPack3: "Eternal_Card_Pack",
-  EquipmentHats31: "Smitty's_Bubble_Blowing_Hat",
-  EquipmentHats32: "Bandit_Bob_Mask",
-  EquipmentHats33: "Paper_Bag",
-  EquipmentHats34: "Parasite",
-  EquipmentHats35: "Diamon_Horns",
-  EquipmentHats36: "Halloween_Pumpkin",
-  EquipmentHats40: "Pardoned_Turkey",
-  EquipmentHats37: "Hotdog_Hero",
-  EquipmentHats38: "Invisible_Hat",
-  EquipmentHats46: "Strawbiggy",
-  EquipmentHats47: "Pop_Cat",
-  EquipmentHats48: "Dairy_Dunk",
-  EquipmentHats49: "The_Classic",
-  EquipmentHats50: "Green_Beanie",
-  EquipmentHats43: "Snowman",
-  EquipmentHats45: "Giftmas_Tree",
-  EquipmentHats57: "Big_Bunny",
-  EquipmentHats62: "Fluffy_Ramsy",
-  GemP1: "Infinite_Forge",
-  GemP9: "Quality_Obol_Stack",
-  GemP10: "Marvelous_Obol_Stack",
-  GemQ1: "Infinite_Forge",
-  GemQ2: "Infinite_Forge",
-  GemQ3: "Infinite_Forge",
-  GemQ4: "Infinite_Forge",
-  GemQ5: "Infinite_Forge",
-  GemQ6: "Infinite_Forge",
-  GemQ7: "Infinite_Forge",
-  GemQ8: "Infinite_Forge",
-  Mayo: "Maynaise_Bottle",
-  CardsA0: "Green_Mushroom_Card",
-  CardsA1: "Red_Mushroom_Card",
-  CardsA2: "Frog_Card",
-  CardsA3: "Bored_Bean_Card",
-  CardsA4: "Slime_Card",
-  CardsA5: "Baby_Boa_Card",
-  CardsA6: "Carrotman_Card",
-  CardsA7: "Glublin_Card",
-  CardsA8: "Wode_Board_Card",
-  CardsA9: "Gigafrog_Card",
-  CardsA10: "Poop_Card",
-  CardsA11: "Rat_Card",
-  CardsA12: "Walking_Stick_Card",
-  CardsA13: "Nutto_Card",
-  CardsA14: "Crystal_Carrot_Card",
-  CardsA15: "Poop_Card",
-  CardsA16: "Wood_Mushroom_Card",
-  CardsB1: "Sandy_Pot_Card",
-  CardsB2: "Mimic_Card",
-  CardsB3: "Crabcake_Card",
-  CardsB4: "Mafioso_Card",
-  CardsB5: "Sand_Castle_Card",
-  CardsB6: "Pincermin_Card",
-  CardsB7: "Mashed_Potato_Card",
-  CardsB8: "Tyson_Card",
-  CardsB9: "Moonmoon_Card",
-  CardsB10: "Sand_Giant_Card",
-  CardsB11: "Snelbie_Card",
-  CardsB12: "Dig_Doug_Card",
-  CardsB13: "Crystal_Crabal_Card",
-  CardsB14: "Bandit_Bob_Card",
-  CardsC1: "Copper_Ore_Card",
-  CardsC2: "Iron_Ore_Card",
-  CardsC3: "Gold_Ore_Card",
-  CardsC4: "Oak_Tree_Card",
-  CardsC5: "Bleach_Logs_Card",
-  CardsC6: "Jungle_Logs_Card",
-  CardsC7: "Forest_Fibres_Card",
-  CardsC8: "Goldfish_Card",
-  CardsC9: "Hermit_Can_Card",
-  CardsC10: "Jellyfish_Card",
-  CardsC11: "Fly_Card",
-  CardsC12: "Butterfly_Card",
-  CardsC13: "",
-  CardsC14: "",
-  CardsC15: "",
-  CardsC16: "Fire_Forge_Card",
-  CardsD1: "Dementia_Ore_Card",
-  CardsD2: "Platinum_Ore_Card",
-  CardsD3: "Void_Ore_Card",
-  CardsD4: "Lustre_Ore_Card",
-  CardsD5: "Potty_Rolls_Card",
-  CardsD6: "Veiny_Logs_Card",
-  CardsD7: "Tropilogs_Card",
-  CardsD8: "Tundra_Logs_Card",
-  CardsD9: "Fruitfly_Card",
-  CardsD10: "Sentient_Cereal_Card",
-  CardsD11: "Fly_Card",
-  CardsD12: "",
-  CardsD13: "",
-  CardsD16: "Cinder_Forge_Card",
-  CardsD17: "Forest_Soul_Card",
-  CardsD18: "Dune_Soul_Card",
-  CardsD19: "Froge_Card",
-  CardsD20: "Crabbo_Card",
-  CardsD21: "Scorpie_Card",
-  CardsE0: "Frost_Flake_Card",
-  CardsE1: "Sheepie_Card",
-  CardsE2: "Sir_Stache_Card",
-  CardsE3: "Bloque_Card",
-  CardsE4: "Mamooth_Card",
-  CardsE5: "Snowman_Card",
-  CardsE6: "Penguin_Card",
-  CardsE7: "Thermister_Card",
-  CardsE8: "Quenchie_Card",
-  CardsE9: "Cryosnake_Card",
-  CardsE10: "Bop_Box_Card",
-  CardsE11: "Neyeptune_Card",
-  CardsE12: "Xylobone_Card",
-  CardsE13: "Bloodbone_Card",
-  CardsE14: "Dedotated_Ram_Card",
-  CardsE15: "Crystal_Cattle_Card",
-  CardsF1: "",
-  CardsF2: "Wispy_Lumber_Card",
-  CardsF3: "Rooted_Soul_Card",
-  CardsF4: "Mousey_Card",
-  CardsF5: "Owlio_Card",
-  CardsF6: "Pingy_Card",
-  CardsF7: "Bunny_Card",
-  CardsF8: "Mosquisnow_Card",
-  CardsF9: "Flycicle_Card",
-  CardsF10: "Frigid_Soul_Card",
-  CardsF11: "Squiddy_Soul_Card",
-  CardsY0: "Ghost_Card",
-  CardsY1: "Giftmas_Blobulyte_Card",
-  CardsY2: "Meaning_of_Giftmas_Card",
-  CardsY3: "Valentslime_Card",
-  CardsY4: "Loveulyte_Card",
-  CardsY5: "Chocco_Box_Card",
-  CardsY6: "Floofie_Card",
-  CardsY7: "Shell_Snake_Card",
-  CardsY8: "Egggulyte_Card",
-  CardsY9: "Egg_Capsule_Card",
-  CardsY10: "Mr_Blueberry_Card",
-  CardsY11: "Coastiolyte_Card",
-  CardsY12: "Summer_Spirit_Card",
-  CardsY13: "Plasti_Doug_Card",
-  CardsZ0: "Baba_Yaga_Card",
-  CardsZ1: "Dr_Defecaus_Card",
-  CardsZ2: "Amarok_Card",
-  CardsZ3: "Chaotic_Amarok_Card",
-  CardsZ4: "Biggie_Hours_Card",
-  CardsZ5: "King_Doot_Card",
-  CardsZ6: "Efaunt_Card",
-  CardsZ7: "Chaotic_Efaunt_Card",
-  CardsZ8: "Chizoar_Card",
-  CardsZ9: "Chaotic_Chizoar_Card"
-};
-
 const bubblesMap = {
   _11: "Call_Me_Bob",
   _6: "Sploosh_Sploosh",
@@ -2028,6 +871,8 @@ const filteredLootyItems = {
   'InvStorage40': true,
   'InvStorage41': true,
   'InvStorage42': true,
+  "COIN": true,
+  "EXP": true
 };
 
 const stampsMap = {
@@ -2915,6 +1760,6682 @@ const prayersMap = {
   23: { name: 'Unknown', rawName: 'Prayer23' },
   24: { name: 'Unknown', rawName: 'Prayer24' },
 }
+
+const itemMap = {
+  "Blank": {
+    "displayName": "Blank",
+    "Class": "ALL",
+    "Speed": 3,
+    "Reach": 55,
+    "Power": 2,
+    "Weapon_Power": 2
+  },
+  "LockedInvSpace": {
+    "displayName": "LockedInvSpace",
+    "Class": "ALL",
+    "Speed": 3,
+    "Reach": 55,
+    "Power": 2,
+    "Weapon_Power": 2
+  },
+  "COIN": {
+    "displayName": "Coins",
+    "Class": "ALL",
+    "Speed": 3,
+    "Reach": 55,
+    "Power": 2,
+    "Weapon_Power": 2
+  },
+  "EXP": {
+    "displayName": "Exp",
+    "Class": "ALL",
+    "Speed": 3,
+    "Reach": 55,
+    "Power": 2,
+    "Weapon_Power": 2
+  },
+  "Copper": {
+    "displayName": "Copper_Ore"
+  },
+  "Iron": {
+    "displayName": "Iron_Ore"
+  },
+  "Gold": {
+    "displayName": "Gold_Ore"
+  },
+  "Plat": {
+    "displayName": "Platinum_Ore"
+  },
+  "Dementia": {
+    "displayName": "Dementia_Ore"
+  },
+  "Void": {
+    "displayName": "Void_Ore"
+  },
+  "Lustre": {
+    "displayName": "Lustre_Ore"
+  },
+  "Starfire": {
+    "displayName": "Starfire_Ore"
+  },
+  "Dreadlo": {
+    "displayName": "Dreadlo_Ore"
+  },
+  "Godshard": {
+    "displayName": "Godshard_Ore"
+  },
+  "CopperBar": {
+    "displayName": "Copper_Bar"
+  },
+  "IronBar": {
+    "displayName": "Iron_Bar"
+  },
+  "GoldBar": {
+    "displayName": "Gold_Bar"
+  },
+  "PlatBar": {
+    "displayName": "Platinum_Bar"
+  },
+  "DementiaBar": {
+    "displayName": "Dementia_Bar"
+  },
+  "VoidBar": {
+    "displayName": "Void_Bar"
+  },
+  "LustreBar": {
+    "displayName": "Lustre_Bar"
+  },
+  "StarfireBar": {
+    "displayName": "Starfire_Bar"
+  },
+  "DreadloBar": {
+    "displayName": "Dreadlo_Bar"
+  },
+  "GodshardBar": {
+    "displayName": "Godshard_Bar"
+  },
+  "OilBarrel1": {
+    "displayName": "Crude_Oil"
+  },
+  "OilBarrel2": {
+    "displayName": "Toxic_Sludge"
+  },
+  "OilBarrel3": {
+    "displayName": "Radioactive_Waste"
+  },
+  "OilBarrel4": {
+    "displayName": "Glumlee's_Special_Tutorial_Oil"
+  },
+  "OilBarrel5": {
+    "displayName": "Eco_Friendly_Oil"
+  },
+  "OakTree": {
+    "displayName": "Oak_Logs"
+  },
+  "BirchTree": {
+    "displayName": "Bleach_Logs"
+  },
+  "JungleTree": {
+    "displayName": "Jungle_Logs"
+  },
+  "ForestTree": {
+    "displayName": "Forest_Fibres"
+  },
+  "ToiletTree": {
+    "displayName": "Potty_Rolls"
+  },
+  "PalmTree": {
+    "displayName": "Tropilogs"
+  },
+  "StumpTree": {
+    "displayName": "Veiny_Logs"
+  },
+  "SaharanFoal": {
+    "displayName": "Tundra_Logs"
+  },
+  "Tree7": {
+    "displayName": "Wispy_Lumber"
+  },
+  "AlienTree": {
+    "displayName": "Alien_Hive_Chunk"
+  },
+  "Leaf1": {
+    "displayName": "Grass_Leaf"
+  },
+  "Leaf2": {
+    "displayName": "Twisty_Leaf"
+  },
+  "Leaf3": {
+    "displayName": "Arctic_Leaf"
+  },
+  "FillerMaterial": {
+    "displayName": "Not_Yet"
+  },
+  "Fish1": {
+    "displayName": "Goldfish"
+  },
+  "Fish2": {
+    "displayName": "Hermit_Can"
+  },
+  "Fish3": {
+    "displayName": "Jellyfish"
+  },
+  "Fish4": {
+    "displayName": "Bloach"
+  },
+  "Fish5": {
+    "displayName": "Filler"
+  },
+  "Fish6": {
+    "displayName": "Filler"
+  },
+  "Fish7": {
+    "displayName": "Filler"
+  },
+  "Fish8": {
+    "displayName": "Filler"
+  },
+  "Bug1": {
+    "displayName": "Fly"
+  },
+  "Bug2": {
+    "displayName": "Butterfly"
+  },
+  "Bug3": {
+    "displayName": "Sentient_Cereal"
+  },
+  "Bug4": {
+    "displayName": "Fruitfly"
+  },
+  "Bug5": {
+    "displayName": "Mosquisnow"
+  },
+  "Bug6": {
+    "displayName": "Flycicle"
+  },
+  "Critter1": {
+    "displayName": "Froge"
+  },
+  "Critter1A": {
+    "displayName": "Poison_Froge"
+  },
+  "Critter2": {
+    "displayName": "Crabbo"
+  },
+  "Critter2A": {
+    "displayName": "Mutant_Crabbo"
+  },
+  "Critter3": {
+    "displayName": "Scorpie"
+  },
+  "Critter3A": {
+    "displayName": "Crescent_Scorpie"
+  },
+  "Critter4": {
+    "displayName": "Mousey"
+  },
+  "Critter4A": {
+    "displayName": "Nakeo_Moleo"
+  },
+  "Critter5": {
+    "displayName": "Owlio"
+  },
+  "Critter5A": {
+    "displayName": "Minervowl"
+  },
+  "Critter6": {
+    "displayName": "Pingy"
+  },
+  "Critter6A": {
+    "displayName": "Eternal_Lord_of__The_Undying_Ember"
+  },
+  "Critter7": {
+    "displayName": "Bunny"
+  },
+  "Critter7A": {
+    "displayName": "Purbunni"
+  },
+  "Critter8": {
+    "displayName": "Dung_Beat"
+  },
+  "Critter8A": {
+    "displayName": "Jade_Scarab"
+  },
+  "Critter9": {
+    "displayName": "Honker"
+  },
+  "Critter9A": {
+    "displayName": "Diamond_Duck"
+  },
+  "Soul1": {
+    "displayName": "Forest_Soul"
+  },
+  "Soul2": {
+    "displayName": "Dune_Soul"
+  },
+  "Soul3": {
+    "displayName": "Rooted_Soul"
+  },
+  "Soul4": {
+    "displayName": "Frigid_Soul"
+  },
+  "Soul5": {
+    "displayName": "Squiddy_Soul"
+  },
+  "Soul6": {
+    "displayName": "Cryo_Soul"
+  },
+  "EquipmentHats1": {
+    "displayName": "Farmer_Brim",
+    "lvReqToEquip": 1,
+    "Class": "ALL",
+    "STR": 1,
+    "AGI": 1,
+    "WIS": 1,
+    "Defence": 2
+  },
+  "TestObj15": {
+    "displayName": "Slime_Cap",
+    "lvReqToEquip": 15,
+    "Class": "BEGINNER",
+    "AGI": 4,
+    "LUK": 2
+  },
+  "EquipmentHatsBeg1": {
+    "displayName": "Ice_Cream_Sunday",
+    "lvReqToEquip": 30,
+    "Class": "BEGINNER",
+    "WIS": 6,
+    "Defence": 5,
+    "UQ1txt": "%_GOLD_FOOD_EFFECT",
+    "UQ1val": 10
+  },
+  "EquipmentHats61": {
+    "displayName": "Mark_of_Member",
+    "lvReqToEquip": 80,
+    "Class": "BEGINNER",
+    "LUK": 20,
+    "Defence": 50,
+    "UQ1txt": "%_XP_FROM_MONSTERS",
+    "UQ1val": 15
+  },
+  "EquipmentHats15": {
+    "displayName": "Leather_Cap",
+    "lvReqToEquip": 6,
+    "Class": "ALL",
+    "STR": 2,
+    "AGI": 2,
+    "WIS": 2,
+    "Defence": 4
+  },
+  "EquipmentHats5": {
+    "displayName": "White_Headband",
+    "lvReqToEquip": 1,
+    "Class": "ALL",
+    "STR": 1,
+    "AGI": 1,
+    "WIS": 1,
+    "LUK": 1
+  },
+  "EquipmentHats6": {
+    "displayName": "Green_Headband",
+    "lvReqToEquip": 1,
+    "Class": "ALL",
+    "STR": 2,
+    "AGI": 4,
+    "WIS": 1,
+    "LUK": 1
+  },
+  "EquipmentHats7": {
+    "displayName": "Red_Headband",
+    "lvReqToEquip": 1,
+    "Class": "ALL",
+    "STR": 2,
+    "AGI": 1
+  },
+  "EquipmentHats8": {
+    "displayName": "Purple_Tupacband",
+    "lvReqToEquip": 1,
+    "Class": "ALL",
+    "AGI": 2,
+    "WIS": 5
+  },
+  "EquipmentHats9": {
+    "displayName": "Yellow_Headband",
+    "lvReqToEquip": 1,
+    "Class": "ALL",
+    "AGI": 2,
+    "WIS": 3,
+    "LUK": 8
+  },
+  "EquipmentHats10": {
+    "displayName": "Pink_Headband",
+    "lvReqToEquip": 1,
+    "Class": "ALL",
+    "STR": 4,
+    "AGI": 4,
+    "WIS": 4,
+    "LUK": 4
+  },
+  "EquipmentHats11": {
+    "displayName": "Grey_Beret",
+    "lvReqToEquip": 1,
+    "Class": "ALL",
+    "AGI": 1
+  },
+  "EquipmentHats12": {
+    "displayName": "Traffic_Cone",
+    "lvReqToEquip": 1,
+    "Class": "ALL",
+    "LUK": 1
+  },
+  "EquipmentHats13": {
+    "displayName": "Propeller_Cap",
+    "lvReqToEquip": 1,
+    "Class": "ALL",
+    "WIS": 1
+  },
+  "EquipmentHats14": {
+    "displayName": "Baseball_Hat",
+    "lvReqToEquip": 1,
+    "Class": "ALL",
+    "STR": 1
+  },
+  "TestObj14": {
+    "displayName": "Trojan_Helmet",
+    "lvReqToEquip": 15,
+    "Class": "ALL",
+    "STR": 2,
+    "AGI": 2
+  },
+  "TestObj16": {
+    "displayName": "Demon_Horns",
+    "lvReqToEquip": 15,
+    "Class": "ALL",
+    "Power": 50,
+    "Weapon_Power": 50,
+    "STR": 3,
+    "AGI": 3,
+    "LUK": 3,
+    "Defence": 1
+  },
+  "EquipmentHats4Choppin": {
+    "displayName": "Stump_Prop",
+    "lvReqToEquip": 4,
+    "Class": "ALL",
+    "Power": 5,
+    "Weapon_Power": 5,
+    "AGI": 3,
+    "LUK": 4,
+    "Defence": 2,
+    "UQ1txt": "%_CHOP_EFFICIENCY",
+    "UQ1val": 5
+  },
+  "EquipmentHats17": {
+    "displayName": "Copper_Helmet",
+    "lvReqToEquip": 8,
+    "Class": "ALL",
+    "STR": 3,
+    "AGI": 3,
+    "WIS": 3,
+    "Defence": 5
+  },
+  "EquipmentHats18": {
+    "displayName": "Iron_Helmet",
+    "lvReqToEquip": 15,
+    "Class": "ALL",
+    "STR": 5,
+    "AGI": 5,
+    "WIS": 5,
+    "Defence": 9
+  },
+  "EquipmentHats28": {
+    "displayName": "Gold_Helmet",
+    "lvReqToEquip": 35,
+    "Class": "ALL",
+    "STR": 7,
+    "AGI": 7,
+    "WIS": 7,
+    "Defence": 15,
+    "UQ1txt": "%_DEFENCE",
+    "UQ1val": 3
+  },
+  "EquipmentHats22": {
+    "displayName": "Amarok_Helmet",
+    "lvReqToEquip": 38,
+    "Class": "ALL",
+    "STR": 4,
+    "AGI": 4,
+    "WIS": 4,
+    "LUK": 4,
+    "Defence": 20
+  },
+  "EquipmentHats19": {
+    "displayName": "Platinum_Helmet",
+    "lvReqToEquip": 55,
+    "Class": "ALL",
+    "STR": 9,
+    "AGI": 9,
+    "WIS": 9,
+    "Defence": 25,
+    "UQ1txt": "%_DEFENCE",
+    "UQ1val": 5
+  },
+  "EquipmentHats53": {
+    "displayName": "Dementia_Helmet",
+    "lvReqToEquip": 70,
+    "Class": "ALL",
+    "STR": 12,
+    "AGI": 12,
+    "WIS": 12,
+    "LUK": 12,
+    "Defence": 34,
+    "UQ1txt": "%_DEFENCE",
+    "UQ1val": 6
+  },
+  "EquipmentHats52": {
+    "displayName": "Efaunt_Helmet",
+    "lvReqToEquip": 80,
+    "Class": "ALL",
+    "Power": 1,
+    "Weapon_Power": 1,
+    "STR": 8,
+    "AGI": 8,
+    "WIS": 8,
+    "LUK": 8,
+    "Defence": 38,
+    "UQ1txt": "%_DROP_CHANCE",
+    "UQ1val": 5
+  },
+  "EquipmentHats54": {
+    "displayName": "Void_Imperium_Helmet",
+    "lvReqToEquip": 90,
+    "Class": "ALL",
+    "STR": 15,
+    "AGI": 15,
+    "WIS": 15,
+    "LUK": 15,
+    "Defence": 46,
+    "UQ1txt": "%_DEFENCE",
+    "UQ1val": 8
+  },
+  "EquipmentHats21": {
+    "displayName": "Party_Hat",
+    "lvReqToEquip": 10,
+    "Class": "BEGINNER",
+    "LUK": 5,
+    "Defence": 10,
+    "UQ1txt": "%_XP_FROM_MONSTERS",
+    "UQ1val": 5
+  },
+  "EquipmentHats23": {
+    "displayName": "Farmer_Brimer",
+    "lvReqToEquip": 3,
+    "Class": "ALL",
+    "AGI": 4,
+    "WIS": 2,
+    "Defence": 4
+  },
+  "EquipmentHats24": {
+    "displayName": "Farmer_Brimest",
+    "lvReqToEquip": 5,
+    "Class": "ALL",
+    "STR": 3,
+    "AGI": 3,
+    "WIS": 3,
+    "LUK": 3,
+    "Defence": 6
+  },
+  "EquipmentHats25": {
+    "displayName": "Bored_Beanie",
+    "lvReqToEquip": 8,
+    "Class": "ALL",
+    "AGI": 7,
+    "LUK": 3,
+    "Defence": 5
+  },
+  "EquipmentHats2": {
+    "displayName": "Royal_Turban",
+    "lvReqToEquip": 70,
+    "Class": "ALL",
+    "AGI": 15,
+    "Defence": 7,
+    "UQ1txt": "%_GOLD_FOOD_EFFECT",
+    "UQ1val": 15
+  },
+  "EquipmentHats27": {
+    "displayName": "Paper_Boat",
+    "lvReqToEquip": 30,
+    "Class": "ALL",
+    "STR": 4,
+    "WIS": 10,
+    "Defence": 12,
+    "UQ1txt": "%_FISHIN_EFFICINCY",
+    "UQ1val": 5
+  },
+  "EquipmentHats29": {
+    "displayName": "Alien_Headband",
+    "lvReqToEquip": 13,
+    "Class": "ALL",
+    "AGI": 3,
+    "WIS": 11,
+    "Defence": 4,
+    "UQ1txt": "%_MANA_REGEN",
+    "UQ1val": 10
+  },
+  "EquipmentHats30": {
+    "displayName": "Cowbo_Galloneer",
+    "lvReqToEquip": 6,
+    "Class": "ALL",
+    "STR": 2,
+    "Defence": 3,
+    "UQ1txt": "_BASE_DAMAGE",
+    "UQ1val": 25
+  },
+  "EquipmentHats39": {
+    "displayName": "Grandma_Disguise",
+    "lvReqToEquip": 35,
+    "Class": "ALL",
+    "WIS": 15,
+    "Defence": 5,
+    "UQ1txt": "%_XP_FROM_MONSTERS",
+    "UQ1val": 7
+  },
+  "EquipmentHats42": {
+    "displayName": "Santa_Hat",
+    "lvReqToEquip": 1,
+    "Class": "ALL",
+    "STR": 1,
+    "AGI": 1,
+    "WIS": 1,
+    "UQ1txt": "%_XP_FROM_MONSTERS",
+    "UQ1val": 5
+  },
+  "EquipmentHats44": {
+    "displayName": "Jar",
+    "lvReqToEquip": 25,
+    "Class": "ALL",
+    "Defence": 25
+  },
+  "EquipmentHats51": {
+    "displayName": "Big_Pretty_Bow",
+    "lvReqToEquip": 1,
+    "Class": "ALL",
+    "STR": 1,
+    "AGI": 1,
+    "WIS": 1,
+    "UQ1txt": "%_XP_FROM_MONSTERS",
+    "UQ1val": 5
+  },
+  "EquipmentHats55": {
+    "displayName": "Steam_Cap",
+    "lvReqToEquip": 1,
+    "Class": "ALL",
+    "STR": 1,
+    "AGI": 1,
+    "WIS": 1,
+    "LUK": 1,
+    "UQ1txt": "%_XP_FROM_MONSTERS",
+    "UQ1val": 3
+  },
+  "EquipmentHats56": {
+    "displayName": "Bunny_Ears",
+    "lvReqToEquip": 1,
+    "Class": "ALL",
+    "AGI": 4,
+    "UQ1txt": "%_XP_FROM_MONSTERS",
+    "UQ1val": 4
+  },
+  "EquipmentHats63": {
+    "displayName": "Summer_Shell",
+    "lvReqToEquip": 1,
+    "Class": "ALL",
+    "AGI": 4,
+    "UQ1txt": "%_XP_FROM_MONSTERS",
+    "UQ1val": 4
+  },
+  "EquipmentHats20": {
+    "displayName": "Militia_Helm",
+    "lvReqToEquip": 10,
+    "Class": "WARRIOR",
+    "STR": 7,
+    "AGI": 2,
+    "Defence": 11
+  },
+  "TestObj13": {
+    "displayName": "Viking_Cap",
+    "lvReqToEquip": 40,
+    "Class": "WARRIOR",
+    "STR": 13,
+    "WIS": 3,
+    "Defence": 21,
+    "UQ1txt": "%_MINING_EFFICINCY",
+    "UQ1val": 10
+  },
+  "EquipmentHats58": {
+    "displayName": "Murmillo_Helm",
+    "lvReqToEquip": 100,
+    "Class": "WARRIOR",
+    "Power": 1,
+    "Weapon_Power": 1,
+    "STR": 20,
+    "WIS": 10,
+    "Defence": 55,
+    "UQ1txt": "%_DEFENCE",
+    "UQ1val": 10
+  },
+  "EquipmentHats3": {
+    "displayName": "Thief_Hood",
+    "lvReqToEquip": 10,
+    "Class": "ARCHER",
+    "STR": 3,
+    "AGI": 6,
+    "Defence": 9
+  },
+  "EquipmentHats41": {
+    "displayName": "Sleek_Coif",
+    "lvReqToEquip": 40,
+    "Class": "ARCHER",
+    "STR": 4,
+    "AGI": 12,
+    "Defence": 18
+  },
+  "EquipmentHats59": {
+    "displayName": "Conquistador_Plume",
+    "lvReqToEquip": 100,
+    "Class": "ARCHER",
+    "Power": 1,
+    "Weapon_Power": 1,
+    "STR": 7,
+    "AGI": 23,
+    "Defence": 47,
+    "UQ1txt": "%_MOVEMENT_SPEED",
+    "UQ1val": 6
+  },
+  "EquipmentHats16": {
+    "displayName": "Top_Hat",
+    "lvReqToEquip": 10,
+    "Class": "MAGE",
+    "WIS": 8,
+    "LUK": 1,
+    "Defence": 7
+  },
+  "EquipmentHats26": {
+    "displayName": "Witch_Hat",
+    "lvReqToEquip": 40,
+    "Class": "MAGE",
+    "AGI": 1,
+    "WIS": 16,
+    "Defence": 15
+  },
+  "EquipmentHats60": {
+    "displayName": "Adornment_of_the_High_Priest",
+    "lvReqToEquip": 100,
+    "Class": "MAGE",
+    "Power": 1,
+    "Weapon_Power": 1,
+    "AGI": 5,
+    "WIS": 25,
+    "Defence": 40,
+    "UQ1txt": "%_CRIT_DAMAGE",
+    "UQ1val": 30
+  },
+  "EquipmentPunching1": {
+    "displayName": "Boxing_Gloves",
+    "lvReqToEquip": 2,
+    "Class": "ALL",
+    "Speed": 5,
+    "Reach": 55,
+    "Power": 4,
+    "Weapon_Power": 4,
+    "STR": 2,
+    "LUK": 2
+  },
+  "EquipmentPunching2": {
+    "displayName": "The_Stingers",
+    "lvReqToEquip": 6,
+    "Class": "ALL",
+    "Speed": 5,
+    "Reach": 60,
+    "Power": 11,
+    "Weapon_Power": 11,
+    "STR": 5,
+    "LUK": 5
+  },
+  "EquipmentPunching3": {
+    "displayName": "Bandage_Wraps",
+    "lvReqToEquip": 25,
+    "Class": "BEGINNER",
+    "Speed": 7,
+    "Reach": 65,
+    "Power": 20,
+    "Weapon_Power": 20,
+    "STR": 6,
+    "LUK": 10
+  },
+  "EquipmentPunching4": {
+    "displayName": "Uninflated_Glove",
+    "lvReqToEquip": 50,
+    "Class": "BEGINNER",
+    "Speed": 8,
+    "Reach": 65,
+    "Power": 27,
+    "Weapon_Power": 27,
+    "LUK": 13
+  },
+  "EquipmentPunching5": {
+    "displayName": "Eclectic_Ordeal",
+    "lvReqToEquip": 85,
+    "Class": "BEGINNER",
+    "Speed": 9,
+    "Reach": 85,
+    "Power": 32,
+    "Weapon_Power": 32,
+    "LUK": 17,
+    "UQ1txt": "%_CRIT_CHANCE",
+    "UQ1val": 5
+  },
+  "TestObj1": {
+    "displayName": "Wooden_Spear",
+    "lvReqToEquip": 4,
+    "Class": "ALL",
+    "Speed": 5,
+    "Reach": 70,
+    "Power": 7,
+    "Weapon_Power": 7,
+    "STR": 3,
+    "WIS": 1
+  },
+  "TestObj7": {
+    "displayName": "Steel_Axe",
+    "lvReqToEquip": 11,
+    "Class": "WARRIOR",
+    "Speed": 5,
+    "Reach": 62,
+    "Power": 14,
+    "Weapon_Power": 14,
+    "STR": 7,
+    "WIS": 3
+  },
+  "TestObj3": {
+    "displayName": "Royal_Bayonet",
+    "lvReqToEquip": 30,
+    "Class": "WARRIOR",
+    "Speed": 5,
+    "Reach": 95,
+    "Power": 20,
+    "Weapon_Power": 20,
+    "STR": 10,
+    "WIS": 2
+  },
+  "EquipmentSword1": {
+    "displayName": "Enforced_Slasher",
+    "lvReqToEquip": 50,
+    "Class": "WARRIOR",
+    "Speed": 5,
+    "Reach": 80,
+    "Power": 26,
+    "Weapon_Power": 26,
+    "STR": 11,
+    "WIS": 4
+  },
+  "EquipmentSword2": {
+    "displayName": "The_Ice_Breaker",
+    "lvReqToEquip": 75,
+    "Class": "WARRIOR",
+    "Speed": 5,
+    "Reach": 76,
+    "Power": 33,
+    "Weapon_Power": 33,
+    "STR": 13,
+    "WIS": 6,
+    "UQ1txt": "%_CRIT_DAMAGE",
+    "UQ1val": 5
+  },
+  "EquipmentSword3": {
+    "displayName": "Deuscythe",
+    "lvReqToEquip": 90,
+    "Class": "WARRIOR",
+    "Speed": 6,
+    "Reach": 88,
+    "Power": 40,
+    "Weapon_Power": 40,
+    "STR": 20,
+    "UQ1txt": "%_CRIT_DAMAGE",
+    "UQ1val": 5
+  },
+  "TestObj4": {
+    "displayName": "Frozen_Impaler",
+    "lvReqToEquip": 45,
+    "Class": "WARRIOR",
+    "Speed": 3,
+    "Reach": 100,
+    "Power": 66,
+    "Weapon_Power": 66,
+    "STR": 4,
+    "AGI": 2,
+    "WIS": 9,
+    "LUK": 2
+  },
+  "TestObj5": {
+    "displayName": "Blood_Screamer",
+    "lvReqToEquip": 55,
+    "Class": "WARRIOR",
+    "Speed": 4,
+    "Reach": 84,
+    "Power": 87,
+    "Weapon_Power": 87,
+    "STR": 5,
+    "AGI": 15,
+    "WIS": 5,
+    "LUK": 5
+  },
+  "TestObj8": {
+    "displayName": "Flaming_Katana",
+    "lvReqToEquip": 85,
+    "Class": "WARRIOR",
+    "Speed": 7,
+    "Reach": 74,
+    "Power": 36,
+    "Weapon_Power": 36,
+    "WIS": 6,
+    "LUK": 8
+  },
+  "TestObj9": {
+    "displayName": "Emerald_Eizon",
+    "lvReqToEquip": 95,
+    "Class": "WARRIOR",
+    "Speed": 7,
+    "Reach": 76,
+    "Power": 45,
+    "Weapon_Power": 45,
+    "WIS": 3,
+    "LUK": 2
+  },
+  "TestObj10": {
+    "displayName": "Stalagmite",
+    "lvReqToEquip": 155,
+    "Class": "WARRIOR",
+    "Speed": 8,
+    "Reach": 78,
+    "Power": 55,
+    "Weapon_Power": 55,
+    "STR": 10,
+    "AGI": 5,
+    "WIS": 6
+  },
+  "EquipmentWeapons1": {
+    "displayName": "Iron_Sword",
+    "lvReqToEquip": 1,
+    "Class": "WARRIOR",
+    "Speed": 9,
+    "Reach": 78,
+    "Power": 25,
+    "Weapon_Power": 25,
+    "STR": 3,
+    "LUK": 1
+  },
+  "TestObj2": {
+    "displayName": "Steel_Spear",
+    "lvReqToEquip": 25,
+    "Class": "WARRIOR",
+    "Speed": 2,
+    "Reach": 90,
+    "Power": 40,
+    "Weapon_Power": 40,
+    "STR": 2,
+    "WIS": 3,
+    "LUK": 1
+  },
+  "EquipmentBows1": {
+    "displayName": "Wooden_Bow",
+    "lvReqToEquip": 1,
+    "Class": "ALL",
+    "Speed": 5,
+    "Reach": 150,
+    "Power": 7,
+    "Weapon_Power": 7,
+    "STR": 2,
+    "AGI": 3
+  },
+  "EquipmentBows3": {
+    "displayName": "Birch_Longbow",
+    "lvReqToEquip": 12,
+    "Class": "ARCHER",
+    "Speed": 6,
+    "Reach": 170,
+    "Power": 12,
+    "Weapon_Power": 12,
+    "STR": 4,
+    "AGI": 5
+  },
+  "EquipmentBows4": {
+    "displayName": "Carrot_Launcher",
+    "lvReqToEquip": 18,
+    "Class": "ARCHER",
+    "Speed": 2,
+    "Reach": 225,
+    "Power": 22,
+    "Weapon_Power": 22,
+    "AGI": 8
+  },
+  "EquipmentBows5": {
+    "displayName": "Spiked_Menace",
+    "lvReqToEquip": 30,
+    "Class": "ARCHER",
+    "Speed": 6,
+    "Reach": 175,
+    "Power": 17,
+    "Weapon_Power": 17,
+    "STR": 5,
+    "AGI": 8,
+    "LUK": 3
+  },
+  "EquipmentBows6": {
+    "displayName": "Pharoah_Bow",
+    "lvReqToEquip": 50,
+    "Class": "ARCHER",
+    "Speed": 6,
+    "Reach": 200,
+    "Power": 23,
+    "Weapon_Power": 23,
+    "STR": 1,
+    "AGI": 13
+  },
+  "EquipmentBows7": {
+    "displayName": "Blizzard_Bow",
+    "lvReqToEquip": 75,
+    "Class": "ARCHER",
+    "Speed": 6,
+    "Reach": 205,
+    "Power": 30,
+    "Weapon_Power": 30,
+    "AGI": 15,
+    "UQ1txt": "%_CRIT_DAMAGE",
+    "UQ1val": 5
+  },
+  "EquipmentBows8": {
+    "displayName": "Blackhole_Bow",
+    "lvReqToEquip": 90,
+    "Class": "ARCHER",
+    "Speed": 7,
+    "Reach": 230,
+    "Power": 36,
+    "Weapon_Power": 36,
+    "STR": 10,
+    "AGI": 13,
+    "UQ1txt": "%_CRIT_DAMAGE",
+    "UQ1val": 5
+  },
+  "EquipmentWands1": {
+    "displayName": "Gnarled_Wand",
+    "lvReqToEquip": 4,
+    "Class": "ALL",
+    "Speed": 5,
+    "Reach": 115,
+    "Power": 7,
+    "Weapon_Power": 7,
+    "WIS": 4
+  },
+  "EquipmentWands2": {
+    "displayName": "Quarterstaff",
+    "lvReqToEquip": 12,
+    "Class": "MAGE",
+    "Speed": 4,
+    "Reach": 120,
+    "Power": 16,
+    "Weapon_Power": 16,
+    "WIS": 9
+  },
+  "EquipmentWands5": {
+    "displayName": "Starlight",
+    "lvReqToEquip": 30,
+    "Class": "MAGE",
+    "Speed": 4,
+    "Reach": 145,
+    "Power": 23,
+    "Weapon_Power": 23,
+    "AGI": 1,
+    "WIS": 11
+  },
+  "EquipmentWands6": {
+    "displayName": "Crows_Nest",
+    "lvReqToEquip": 50,
+    "Class": "MAGE",
+    "Speed": 5,
+    "Reach": 160,
+    "Power": 30,
+    "Weapon_Power": 30,
+    "AGI": 5,
+    "WIS": 9,
+    "UQ1txt": "%_MOVEMENT_SPEED",
+    "UQ1val": 5
+  },
+  "EquipmentWands3": {
+    "displayName": "Spriggly_Storm",
+    "lvReqToEquip": 75,
+    "Class": "MAGE",
+    "Speed": 5,
+    "Reach": 155,
+    "Power": 36,
+    "Weapon_Power": 36,
+    "WIS": 15,
+    "LUK": 1,
+    "UQ1txt": "%_CRIT_DAMAGE",
+    "UQ1val": 5
+  },
+  "EquipmentWands7": {
+    "displayName": "Grey_Gatsby",
+    "lvReqToEquip": 90,
+    "Class": "MAGE",
+    "Speed": 6,
+    "Reach": 170,
+    "Power": 43,
+    "Weapon_Power": 43,
+    "AGI": 10,
+    "WIS": 13,
+    "LUK": 1,
+    "UQ1txt": "%_CRIT_DAMAGE",
+    "UQ1val": 5
+  },
+  "EquipmentWands4": {
+    "displayName": "Microphone",
+    "lvReqToEquip": 1,
+    "Class": "MAGE",
+    "Speed": 8,
+    "Reach": 160,
+    "Power": 13,
+    "Weapon_Power": 13,
+    "AGI": 5,
+    "WIS": 9,
+    "UQ1txt": "%_MOVEMENT_SPEED",
+    "UQ1val": 5
+  },
+  "EquipmentShirts1": {
+    "displayName": "Orange_Tee",
+    "lvReqToEquip": 2,
+    "Class": "ALL",
+    "STR": 2,
+    "AGI": 1,
+    "Defence": 3
+  },
+  "EquipmentShirts2": {
+    "displayName": "Blue_Tee",
+    "lvReqToEquip": 4,
+    "Class": "ALL",
+    "AGI": 1,
+    "WIS": 2,
+    "Defence": 3
+  },
+  "EquipmentShirts16": {
+    "displayName": "Spore_Tee",
+    "lvReqToEquip": 1,
+    "Class": "ALL",
+    "AGI": 3,
+    "Defence": 3
+  },
+  "EquipmentShirts3": {
+    "displayName": "Black_Tee",
+    "lvReqToEquip": 1,
+    "Class": "ALL",
+    "Defence": 5
+  },
+  "EquipmentShirts4": {
+    "displayName": "Tanned_Hide",
+    "lvReqToEquip": 15,
+    "Class": "ARCHER",
+    "Power": 5,
+    "Weapon_Power": 5,
+    "STR": 3,
+    "AGI": 3,
+    "LUK": 3
+  },
+  "EquipmentShirts6": {
+    "displayName": "Paralax_Chest",
+    "lvReqToEquip": 15,
+    "Class": "WARRIOR",
+    "Power": 5,
+    "Weapon_Power": 5,
+    "STR": 3,
+    "AGI": 3,
+    "LUK": 3
+  },
+  "EquipmentShirts7": {
+    "displayName": "Molten_Chest",
+    "lvReqToEquip": 15,
+    "Class": "WARRIOR",
+    "Power": 5,
+    "Weapon_Power": 5,
+    "STR": 3,
+    "AGI": 3,
+    "LUK": 3
+  },
+  "EquipmentShirts8": {
+    "displayName": "REPLACE_ME",
+    "lvReqToEquip": 15,
+    "Class": "BEGINNER",
+    "Power": 5,
+    "Weapon_Power": 5,
+    "STR": 3,
+    "AGI": 3,
+    "LUK": 3
+  },
+  "EquipmentShirts9": {
+    "displayName": "REPLACE_ME",
+    "lvReqToEquip": 15,
+    "Class": "ALL",
+    "Power": 5,
+    "Weapon_Power": 5,
+    "STR": 3,
+    "AGI": 3,
+    "LUK": 3
+  },
+  "EquipmentShirts21": {
+    "displayName": "Tattered_Cloth",
+    "lvReqToEquip": 15,
+    "Class": "MAGE",
+    "WIS": 8,
+    "LUK": 3
+  },
+  "EquipmentShirts10": {
+    "displayName": "Fur_Shirt",
+    "lvReqToEquip": 18,
+    "Class": "ARCHER",
+    "STR": 5,
+    "AGI": 9,
+    "Defence": 13
+  },
+  "EquipmentShirts11": {
+    "displayName": "Copper_Platebody",
+    "lvReqToEquip": 8,
+    "Class": "ALL",
+    "STR": 2,
+    "AGI": 2,
+    "WIS": 2,
+    "Defence": 7
+  },
+  "EquipmentShirts12": {
+    "displayName": "Iron_Platebody",
+    "lvReqToEquip": 15,
+    "Class": "ALL",
+    "STR": 3,
+    "AGI": 3,
+    "WIS": 3,
+    "Defence": 12,
+    "UQ1val": 5
+  },
+  "EquipmentShirts13": {
+    "displayName": "Gold_Platebody",
+    "lvReqToEquip": 35,
+    "Class": "ALL",
+    "STR": 5,
+    "AGI": 5,
+    "WIS": 5,
+    "Defence": 18
+  },
+  "EquipmentShirts18": {
+    "displayName": "Amarok_Bodyplate",
+    "lvReqToEquip": 35,
+    "Class": "ALL",
+    "STR": 3,
+    "AGI": 3,
+    "WIS": 3,
+    "Defence": 22
+  },
+  "EquipmentShirts14": {
+    "displayName": "Platinum_Platbody",
+    "lvReqToEquip": 50,
+    "Class": "ALL",
+    "STR": 8,
+    "AGI": 8,
+    "WIS": 8,
+    "Defence": 25
+  },
+  "EquipmentShirts15": {
+    "displayName": "Dementia_Body",
+    "lvReqToEquip": 70,
+    "Class": "ALL",
+    "STR": 10,
+    "AGI": 10,
+    "WIS": 10,
+    "Defence": 35
+  },
+  "EquipmentShirts26": {
+    "displayName": "Efaunt_Ribcage",
+    "lvReqToEquip": 80,
+    "Class": "ALL",
+    "STR": 5,
+    "AGI": 5,
+    "WIS": 5,
+    "Defence": 30,
+    "UQ1txt": "%_MASTERY",
+    "UQ1val": 4
+  },
+  "EquipmentShirts27": {
+    "displayName": "Void_Imperium_Platebody",
+    "lvReqToEquip": 90,
+    "Class": "ALL",
+    "STR": 13,
+    "AGI": 13,
+    "WIS": 13,
+    "Defence": 45
+  },
+  "EquipmentShirts17": {
+    "displayName": "MCR_Tshirt",
+    "lvReqToEquip": 25,
+    "Class": "ALL",
+    "Power": 2,
+    "Weapon_Power": 2,
+    "AGI": 8,
+    "Defence": 1
+  },
+  "EquipmentShirts19": {
+    "displayName": "Planktop",
+    "lvReqToEquip": 10,
+    "Class": "ALL",
+    "STR": 6,
+    "Defence": 4
+  },
+  "EquipmentShirts20": {
+    "displayName": "Hide_Shirt",
+    "lvReqToEquip": 15,
+    "Class": "WARRIOR",
+    "STR": 6,
+    "Defence": 4
+  },
+  "EquipmentShirts24": {
+    "displayName": "Green_Tee",
+    "lvReqToEquip": 2,
+    "Class": "ALL",
+    "LUK": 3,
+    "Defence": 4
+  },
+  "EquipmentShirts25": {
+    "displayName": "Purple_Tee",
+    "lvReqToEquip": 2,
+    "Class": "ALL",
+    "WIS": 3,
+    "Defence": 3
+  },
+  "EquipmentShirts31": {
+    "displayName": "Member_Hoodie",
+    "lvReqToEquip": 80,
+    "Class": "BEGINNER",
+    "LUK": 25,
+    "Defence": 40,
+    "UQ1txt": "%_XP_FROM_MONSTERS",
+    "UQ1val": 15
+  },
+  "EquipmentShirts5": {
+    "displayName": "Studded_Hide",
+    "lvReqToEquip": 40,
+    "Class": "WARRIOR",
+    "STR": 10,
+    "WIS": 4,
+    "Defence": 22,
+    "UQ1txt": "%_FISHIN_EFFICINCY",
+    "UQ1val": 10
+  },
+  "EquipmentShirts23": {
+    "displayName": "Feral_Leathering",
+    "lvReqToEquip": 40,
+    "Class": "ARCHER",
+    "STR": 2,
+    "AGI": 12,
+    "Defence": 18,
+    "UQ1txt": "%_CATCH_EFFICINCY",
+    "UQ1val": 10
+  },
+  "EquipmentShirts22": {
+    "displayName": "Furled_Robes",
+    "lvReqToEquip": 40,
+    "Class": "MAGE",
+    "AGI": 1,
+    "WIS": 13,
+    "Defence": 14,
+    "UQ1txt": "%_CHOP_EFFICIENCY",
+    "UQ1val": 10
+  },
+  "EquipmentShirts28": {
+    "displayName": "Damascus_Plates",
+    "lvReqToEquip": 95,
+    "Class": "WARRIOR",
+    "STR": 17,
+    "WIS": 5,
+    "Defence": 52
+  },
+  "EquipmentShirts29": {
+    "displayName": "Evergreen_Wraps",
+    "lvReqToEquip": 95,
+    "Class": "ARCHER",
+    "STR": 4,
+    "AGI": 19,
+    "Defence": 49
+  },
+  "EquipmentShirts30": {
+    "displayName": "Elegantine_Robes",
+    "lvReqToEquip": 95,
+    "Class": "MAGE",
+    "AGI": 1,
+    "WIS": 23,
+    "Defence": 47
+  },
+  "EquipmentPants1": {
+    "displayName": "Torn_Jeans",
+    "lvReqToEquip": 4,
+    "Class": "ALL",
+    "AGI": 2,
+    "WIS": 1,
+    "Defence": 4
+  },
+  "EquipmentPants2": {
+    "displayName": "Copper_Platelegs",
+    "lvReqToEquip": 8,
+    "Class": "ALL",
+    "STR": 2,
+    "AGI": 2,
+    "WIS": 2,
+    "Defence": 6
+  },
+  "EquipmentPants3": {
+    "displayName": "Iron_Platelegs",
+    "lvReqToEquip": 15,
+    "Class": "ALL",
+    "STR": 3,
+    "AGI": 3,
+    "WIS": 3,
+    "Defence": 11
+  },
+  "EquipmentPants4": {
+    "displayName": "Gold_Platelegs",
+    "lvReqToEquip": 35,
+    "Class": "ALL",
+    "STR": 4,
+    "AGI": 4,
+    "WIS": 4,
+    "Defence": 16
+  },
+  "EquipmentPants17": {
+    "displayName": "Amarok_Hinds",
+    "lvReqToEquip": 40,
+    "Class": "ALL",
+    "STR": 2,
+    "AGI": 2,
+    "WIS": 2,
+    "Defence": 18
+  },
+  "EquipmentPants5": {
+    "displayName": "Platinum_Shins",
+    "lvReqToEquip": 50,
+    "Class": "ALL",
+    "STR": 6,
+    "AGI": 6,
+    "WIS": 6,
+    "Defence": 23
+  },
+  "EquipmentPants6": {
+    "displayName": "Dementia_Shins",
+    "lvReqToEquip": 70,
+    "Class": "ALL",
+    "STR": 7,
+    "AGI": 7,
+    "WIS": 7,
+    "Defence": 28,
+    "UQ1txt": "%_DEFENCE",
+    "UQ1val": 3
+  },
+  "EquipmentPants20": {
+    "displayName": "Efaunt_Hipilium",
+    "lvReqToEquip": 75,
+    "Class": "ALL",
+    "STR": 4,
+    "AGI": 4,
+    "WIS": 4,
+    "Defence": 32,
+    "UQ1txt": "%_DEFENCE",
+    "UQ1val": 5
+  },
+  "EquipmentPants21": {
+    "displayName": "Void_Imperium_Shardshins",
+    "lvReqToEquip": 90,
+    "Class": "ALL",
+    "STR": 9,
+    "AGI": 9,
+    "WIS": 9,
+    "Defence": 38,
+    "UQ1txt": "%_DEFENCE",
+    "UQ1val": 7
+  },
+  "EquipmentPants7": {
+    "displayName": "Gilded_Pilates",
+    "lvReqToEquip": 15,
+    "Class": "WARRIOR",
+    "Power": 5,
+    "Weapon_Power": 5,
+    "STR": 3,
+    "AGI": 3,
+    "LUK": 3
+  },
+  "EquipmentPants8": {
+    "displayName": "Twisted_Scales",
+    "lvReqToEquip": 15,
+    "Class": "ALL",
+    "Power": 5,
+    "Weapon_Power": 5,
+    "STR": 3,
+    "AGI": 3,
+    "LUK": 3
+  },
+  "EquipmentPants9": {
+    "displayName": "Crystallax_Shins",
+    "lvReqToEquip": 15,
+    "Class": "WARRIOR",
+    "Power": 5,
+    "Weapon_Power": 5,
+    "STR": 3,
+    "AGI": 3,
+    "LUK": 3
+  },
+  "EquipmentPants10": {
+    "displayName": "Give_Up_On_Life_Pants",
+    "lvReqToEquip": 7,
+    "Class": "ALL",
+    "WIS": 6,
+    "Defence": 3
+  },
+  "EquipmentPants11": {
+    "displayName": "Yellow_Belt_Ninja_Pants",
+    "lvReqToEquip": 15,
+    "Class": "ALL",
+    "STR": 3,
+    "AGI": 3,
+    "LUK": 3
+  },
+  "EquipmentPants12": {
+    "displayName": "Merchantile_Pants",
+    "lvReqToEquip": 15,
+    "Class": "ALL",
+    "STR": 3,
+    "AGI": 3,
+    "LUK": 3
+  },
+  "EquipmentPants13": {
+    "displayName": "Ancient_Leggings",
+    "lvReqToEquip": 15,
+    "Class": "ALL",
+    "STR": 3,
+    "AGI": 3,
+    "LUK": 3
+  },
+  "EquipmentPants14": {
+    "displayName": "Forensic_Leggings",
+    "lvReqToEquip": 15,
+    "Class": "ALL",
+    "STR": 3,
+    "AGI": 3,
+    "LUK": 3
+  },
+  "EquipmentPants15": {
+    "displayName": "Bleached_Designer_Wode_Patch_Pants",
+    "lvReqToEquip": 25,
+    "Class": "ALL",
+    "AGI": 3,
+    "WIS": 7,
+    "Defence": 11,
+    "UQ1txt": "%_CHOP_EFFICIENCY",
+    "UQ1val": 5
+  },
+  "EquipmentPants16": {
+    "displayName": "Adam's_Leaf",
+    "lvReqToEquip": 15,
+    "Class": "ALL",
+    "STR": 4,
+    "WIS": 13,
+    "Defence": 2
+  },
+  "EquipmentPants18": {
+    "displayName": "Dirty_Coal_Miner_Baggy_Soot_Pants",
+    "lvReqToEquip": 25,
+    "Class": "ALL",
+    "STR": 7,
+    "Defence": 12,
+    "UQ1txt": "%_MINING_EFFICINCY",
+    "UQ1val": 5
+  },
+  "EquipmentPants19": {
+    "displayName": "Trimmed_Rune_Platelegs",
+    "lvReqToEquip": 82,
+    "Class": "ALL",
+    "STR": 4,
+    "AGI": 2,
+    "Defence": 20,
+    "UQ1txt": "%_DEFENCE",
+    "UQ1val": 10
+  },
+  "EquipmentPants22": {
+    "displayName": "Fishing_Overalls",
+    "lvReqToEquip": 35,
+    "Class": "ALL",
+    "STR": 8,
+    "Defence": 15,
+    "UQ1txt": "%_FISHIN_EFFICINCY",
+    "UQ1val": 12
+  },
+  "EquipmentPants23": {
+    "displayName": "Bandito_Pantaloon",
+    "lvReqToEquip": 35,
+    "Class": "ALL",
+    "AGI": 9,
+    "Defence": 14,
+    "UQ1txt": "%_CATCH_EFFICINCY",
+    "UQ1val": 12
+  },
+  "EquipmentShoes1": {
+    "displayName": "Copper_Boots",
+    "lvReqToEquip": 8,
+    "Class": "ALL",
+    "STR": 1,
+    "AGI": 1,
+    "WIS": 1,
+    "LUK": 2,
+    "Defence": 2
+  },
+  "EquipmentShoes15": {
+    "displayName": "Iron_Boots",
+    "lvReqToEquip": 15,
+    "Class": "ALL",
+    "STR": 2,
+    "AGI": 2,
+    "WIS": 2,
+    "Defence": 4
+  },
+  "EquipmentShoes3": {
+    "displayName": "Gold_Boots",
+    "lvReqToEquip": 30,
+    "Class": "ALL",
+    "STR": 3,
+    "AGI": 3,
+    "WIS": 3,
+    "LUK": 3,
+    "Defence": 8
+  },
+  "EquipmentShoes20": {
+    "displayName": "Amarok_Paws",
+    "lvReqToEquip": 35,
+    "Class": "ALL",
+    "STR": 1,
+    "AGI": 1,
+    "WIS": 1,
+    "Defence": 10,
+    "UQ1txt": "%_DEFENCE",
+    "UQ1val": 3
+  },
+  "EquipmentShoes4": {
+    "displayName": "Platinum_Boots",
+    "lvReqToEquip": 50,
+    "Class": "ALL",
+    "STR": 5,
+    "AGI": 5,
+    "WIS": 5,
+    "LUK": 5,
+    "Defence": 15,
+    "UQ1txt": "%_DEFENCE",
+    "UQ1val": 5
+  },
+  "EquipmentShoes5": {
+    "displayName": "Dementia_Boots",
+    "lvReqToEquip": 65,
+    "Class": "ALL",
+    "STR": 7,
+    "AGI": 7,
+    "WIS": 7,
+    "LUK": 7,
+    "Defence": 22,
+    "UQ1txt": "%_DEFENCE",
+    "UQ1val": 7
+  },
+  "EquipmentShoes21": {
+    "displayName": "Efaunts_Broken_Ankles",
+    "lvReqToEquip": 75,
+    "Class": "ALL",
+    "STR": 2,
+    "AGI": 2,
+    "WIS": 2,
+    "Defence": 18,
+    "UQ1txt": "%_MOVEMENT_SPEED",
+    "UQ1val": 2
+  },
+  "EquipmentShoes22": {
+    "displayName": "Void_Imperium_Kicks",
+    "lvReqToEquip": 85,
+    "Class": "ALL",
+    "STR": 9,
+    "AGI": 9,
+    "WIS": 9,
+    "LUK": 9,
+    "Defence": 30,
+    "UQ1txt": "%_DEFENCE",
+    "UQ1val": 8
+  },
+  "EquipmentShoes6": {
+    "displayName": "Hermes_Boots",
+    "lvReqToEquip": 15,
+    "Class": "ALL",
+    "Power": 5,
+    "Weapon_Power": 5,
+    "STR": 3,
+    "AGI": 3,
+    "LUK": 3
+  },
+  "EquipmentShoes7": {
+    "displayName": "Goo_Galoshes",
+    "lvReqToEquip": 10,
+    "Class": "ALL",
+    "STR": 1,
+    "AGI": 1,
+    "WIS": 1,
+    "LUK": 2,
+    "UQ1txt": "%_MONEY",
+    "UQ1val": 5
+  },
+  "EquipmentShoes8": {
+    "displayName": "Yeti_Walkers",
+    "lvReqToEquip": 15,
+    "Class": "ALL",
+    "Power": 5,
+    "Weapon_Power": 5,
+    "STR": 3,
+    "AGI": 3,
+    "LUK": 3
+  },
+  "EquipmentShoes9": {
+    "displayName": "Flip_Flops",
+    "lvReqToEquip": 4,
+    "Class": "ALL",
+    "AGI": 3,
+    "UQ1txt": "%_MOVEMENT_SPEED",
+    "UQ1val": 2
+  },
+  "EquipmentShoes10": {
+    "displayName": "Flap_Flops",
+    "lvReqToEquip": 10,
+    "Class": "ALL",
+    "STR": 3,
+    "AGI": 3,
+    "LUK": 3,
+    "UQ1txt": "%_MOVEMENT_SPEED",
+    "UQ1val": 3
+  },
+  "EquipmentShoes11": {
+    "displayName": "Floop_Flops",
+    "lvReqToEquip": 25,
+    "Class": "ALL",
+    "STR": 3,
+    "AGI": 3,
+    "LUK": 3,
+    "UQ1txt": "%_MOVEMENT_SPEED",
+    "UQ1val": 4
+  },
+  "EquipmentShoes12": {
+    "displayName": "Flux_Flops",
+    "lvReqToEquip": 50,
+    "Class": "ALL",
+    "STR": 5,
+    "AGI": 3,
+    "LUK": 8,
+    "Defence": 40,
+    "UQ1txt": "%_MOVEMENT_SPEED",
+    "UQ1val": 5
+  },
+  "EquipmentShoes13": {
+    "displayName": "Gaia_Shoes",
+    "lvReqToEquip": 15,
+    "Class": "ALL",
+    "STR": 2,
+    "AGI": 6,
+    "UQ1txt": "%_XP_FROM_MONSTERS",
+    "UQ1val": 2
+  },
+  "EquipmentShoes14": {
+    "displayName": "Cauldrunners",
+    "lvReqToEquip": 30,
+    "Class": "MAGE",
+    "WIS": 9,
+    "Defence": 4,
+    "UQ1txt": "%_BREW_SPEED",
+    "UQ1val": 4
+  },
+  "EquipmentShoes16": {
+    "displayName": "Cavern_Trekkers",
+    "lvReqToEquip": 30,
+    "Class": "ALL",
+    "STR": 5,
+    "WIS": 1,
+    "Defence": 10,
+    "UQ1txt": "%_MINING_EFFICINCY",
+    "UQ1val": 20
+  },
+  "EquipmentShoes17": {
+    "displayName": "Logger_Heels",
+    "lvReqToEquip": 30,
+    "Class": "ALL",
+    "WIS": 7,
+    "Defence": 6,
+    "UQ1txt": "%_CHOP_EFFICIENCY",
+    "UQ1val": 20
+  },
+  "EquipmentShoes18": {
+    "displayName": "Angler_Boots",
+    "lvReqToEquip": 30,
+    "Class": "ALL",
+    "STR": 6,
+    "Defence": 8,
+    "UQ1txt": "%_FISHIN_EFFICINCY",
+    "UQ1val": 20
+  },
+  "EquipmentShoes19": {
+    "displayName": "Bandito_Boots",
+    "lvReqToEquip": 30,
+    "Class": "ALL",
+    "AGI": 6,
+    "Defence": 8,
+    "UQ1txt": "%_CATCH_EFFICINCY",
+    "UQ1val": 20
+  },
+  "EquipmentShoes2": {
+    "displayName": "Eyern_Boots",
+    "lvReqToEquip": 15,
+    "Class": "ALL",
+    "Defence": 1,
+    "UQ1txt": "%_NOVELTY",
+    "UQ1val": 100
+  },
+  "EquipmentPendant1": {
+    "displayName": "Mint_Icey",
+    "lvReqToEquip": 1,
+    "Class": "ALL",
+    "Power": 1,
+    "Weapon_Power": 1,
+    "STR": 1,
+    "AGI": 1,
+    "WIS": 1,
+    "LUK": 1,
+    "UQ1txt": "%_XP_FROM_MONSTERS",
+    "UQ1val": 1
+  },
+  "EquipmentPendant2": {
+    "displayName": "Strawbu_Icey",
+    "lvReqToEquip": 1,
+    "Class": "ALL",
+    "Power": 2,
+    "Weapon_Power": 2,
+    "STR": 1,
+    "AGI": 1,
+    "WIS": 1,
+    "LUK": 1,
+    "UQ1txt": "%_XP_FROM_MONSTERS",
+    "UQ1val": 2
+  },
+  "EquipmentPendant3": {
+    "displayName": "Rok_Road_Icey",
+    "lvReqToEquip": 1,
+    "Class": "ALL",
+    "Power": 3,
+    "Weapon_Power": 3,
+    "STR": 2,
+    "AGI": 2,
+    "WIS": 2,
+    "LUK": 2,
+    "UQ1txt": "%_XP_FROM_MONSTERS",
+    "UQ1val": 3
+  },
+  "EquipmentPendant4": {
+    "displayName": "Rainbo_Icey",
+    "lvReqToEquip": 1,
+    "Class": "ALL",
+    "Power": 5,
+    "Weapon_Power": 5,
+    "STR": 2,
+    "AGI": 2,
+    "WIS": 2,
+    "LUK": 2,
+    "UQ1txt": "%_XP_FROM_MONSTERS",
+    "UQ1val": 4
+  },
+  "EquipmentPendant5": {
+    "displayName": "Chocotastic_Icey",
+    "lvReqToEquip": 1,
+    "Class": "ALL",
+    "Power": 7,
+    "Weapon_Power": 7,
+    "STR": 3,
+    "AGI": 3,
+    "WIS": 3,
+    "LUK": 3,
+    "UQ1txt": "%_XP_FROM_MONSTERS",
+    "UQ1val": 5
+  },
+  "EquipmentPendant6": {
+    "displayName": "Blubbery_Icey",
+    "lvReqToEquip": 1,
+    "Class": "ALL",
+    "Power": 10,
+    "Weapon_Power": 10,
+    "STR": 3,
+    "AGI": 3,
+    "WIS": 3,
+    "LUK": 3,
+    "UQ1txt": "%_XP_FROM_MONSTERS",
+    "UQ1val": 6
+  },
+  "EquipmentPendant7": {
+    "displayName": "Lava_Icey",
+    "lvReqToEquip": 1,
+    "Class": "ALL",
+    "Power": 12,
+    "Weapon_Power": 12,
+    "STR": 4,
+    "AGI": 4,
+    "WIS": 4,
+    "LUK": 4,
+    "UQ1txt": "%_XP_FROM_MONSTERS",
+    "UQ1val": 8
+  },
+  "EquipmentPendant8": {
+    "displayName": "Legends_Icey",
+    "lvReqToEquip": 1,
+    "Class": "ALL",
+    "Power": 15,
+    "Weapon_Power": 15,
+    "STR": 5,
+    "AGI": 5,
+    "WIS": 5,
+    "LUK": 5,
+    "UQ1txt": "%_XP_FROM_MONSTERS",
+    "UQ1val": 10
+  },
+  "EquipmentPendant9": {
+    "displayName": "Little_Wooden_Katana",
+    "lvReqToEquip": 1,
+    "Class": "ALL",
+    "STR": 2,
+    "AGI": 1
+  },
+  "EquipmentPendant10": {
+    "displayName": "Sleek_Shank",
+    "lvReqToEquip": 1,
+    "Class": "ALL",
+    "Power": 1,
+    "Weapon_Power": 1,
+    "Defence": 4
+  },
+  "EquipmentPendant11": {
+    "displayName": "Carrot_Horror",
+    "lvReqToEquip": 14,
+    "Class": "ALL",
+    "AGI": 2,
+    "WIS": 5,
+    "LUK": 2
+  },
+  "EquipmentPendant12": {
+    "displayName": "Tarantulight",
+    "lvReqToEquip": 20,
+    "Class": "ALL",
+    "STR": 2,
+    "AGI": 2,
+    "WIS": 2,
+    "LUK": 5
+  },
+  "EquipmentPendant13": {
+    "displayName": "Quartz_Pendant",
+    "lvReqToEquip": 20,
+    "Class": "ALL",
+    "STR": 2,
+    "AGI": 2,
+    "WIS": 2,
+    "LUK": 5
+  },
+  "EquipmentPendant14": {
+    "displayName": "Fuscismatia",
+    "lvReqToEquip": 70,
+    "Class": "ALL",
+    "WIS": 10,
+    "Defence": 5,
+    "UQ1txt": "_PURPLE_DEPTH",
+    "UQ1val": 30
+  },
+  "EquipmentPendant15": {
+    "displayName": "Lucky_Fish_Head",
+    "lvReqToEquip": 20,
+    "Class": "ALL",
+    "STR": 2,
+    "AGI": 2,
+    "WIS": 2,
+    "LUK": 5
+  },
+  "EquipmentPendant16": {
+    "displayName": "Strung_Bludgeon",
+    "lvReqToEquip": 20,
+    "Class": "ALL",
+    "Power": 4,
+    "Weapon_Power": 4
+  },
+  "EquipmentPendant17": {
+    "displayName": "Chaotic_Amarok_Pendant",
+    "lvReqToEquip": 30,
+    "Class": "ALL",
+    "Power": 2,
+    "Weapon_Power": 2,
+    "WIS": 12
+  },
+  "EquipmentPendant18": {
+    "displayName": "Strung_Steamy",
+    "lvReqToEquip": 1,
+    "Class": "ALL",
+    "STR": 1,
+    "AGI": 1,
+    "WIS": 1,
+    "LUK": 3,
+    "UQ1txt": "%_DROP_CHANCE",
+    "UQ1val": 3
+  },
+  "EquipmentRings1": {
+    "displayName": "Gold_Ring",
+    "lvReqToEquip": 15,
+    "Class": "ALL",
+    "Power": 5,
+    "Weapon_Power": 5,
+    "STR": 3,
+    "AGI": 3,
+    "LUK": 3
+  },
+  "EquipmentRings2": {
+    "displayName": "Copper_Band",
+    "lvReqToEquip": 1,
+    "Class": "ALL",
+    "STR": 1,
+    "AGI": 1,
+    "WIS": 1,
+    "LUK": 3
+  },
+  "EquipmentRings3": {
+    "displayName": "Steel_Band",
+    "lvReqToEquip": 15,
+    "Class": "ALL",
+    "STR": 1,
+    "AGI": 1,
+    "WIS": 1,
+    "LUK": 4,
+    "Defence": 1
+  },
+  "EquipmentRings4": {
+    "displayName": "Molden_Crust",
+    "lvReqToEquip": 15,
+    "Class": "ALL",
+    "Power": 5,
+    "Weapon_Power": 5,
+    "STR": 3,
+    "AGI": 3,
+    "LUK": 3
+  },
+  "EquipmentRings5": {
+    "displayName": "Toxic_Bubbles_Band",
+    "lvReqToEquip": 15,
+    "Class": "ALL",
+    "Power": 5,
+    "Weapon_Power": 5,
+    "STR": 3,
+    "AGI": 3,
+    "LUK": 3
+  },
+  "EquipmentRings6": {
+    "displayName": "Death_Wish",
+    "lvReqToEquip": 55,
+    "Class": "ALL",
+    "Power": 4,
+    "Weapon_Power": 4,
+    "Defence": 6,
+    "UQ1txt": "%_BOSS_DAMAGE",
+    "UQ1val": 5
+  },
+  "EquipmentRings7": {
+    "displayName": "Pugilist_Demise",
+    "lvReqToEquip": 9,
+    "Class": "ALL",
+    "STR": 3,
+    "UQ1txt": "%_BOSS_DAMAGE",
+    "UQ1val": 4
+  },
+  "EquipmentRings8": {
+    "displayName": "The_Used_Bandaid",
+    "lvReqToEquip": 9,
+    "Class": "ALL",
+    "Power": 3,
+    "Weapon_Power": 3,
+    "STR": 6,
+    "AGI": 4,
+    "LUK": 1,
+    "UQ1txt": "%_BOSS_DAMAGE"
+  },
+  "EquipmentRings9": {
+    "displayName": "Chat_Ring",
+    "lvReqToEquip": 12,
+    "Class": "ALL",
+    "Power": 3,
+    "Weapon_Power": 3,
+    "STR": 6,
+    "AGI": 2,
+    "UQ1txt": "%_BOSS_DAMAGE"
+  },
+  "EquipmentRings10": {
+    "displayName": "Spikeweed_Ring",
+    "lvReqToEquip": 9,
+    "Class": "ALL",
+    "Power": 3,
+    "Weapon_Power": 3,
+    "STR": 6,
+    "AGI": 2
+  },
+  "EquipmentRings11": {
+    "displayName": "Defenders_Dignity",
+    "lvReqToEquip": 30,
+    "Class": "ALL",
+    "Defence": 15
+  },
+  "EquipmentRingsFishing1": {
+    "displayName": "Shallow_Watering",
+    "lvReqToEquip": 9,
+    "Class": "ALL",
+    "Power": 3,
+    "Weapon_Power": 3,
+    "STR": 6,
+    "AGI": 2,
+    "UQ1txt": "_YELLOW_DEPTH",
+    "UQ1val": 20
+  },
+  "EquipmentRingsFishing2": {
+    "displayName": "Oceanic_Ring",
+    "lvReqToEquip": 9,
+    "Class": "ALL",
+    "Power": 3,
+    "Weapon_Power": 3,
+    "STR": 6,
+    "AGI": 2,
+    "UQ1txt": "_RED_DEPTH",
+    "UQ1val": 30
+  },
+  "EquipmentRingsFishing3": {
+    "displayName": "Deepwater_Trench_Ring",
+    "lvReqToEquip": 9,
+    "Class": "ALL",
+    "Power": 3,
+    "Weapon_Power": 3,
+    "STR": 6,
+    "AGI": 2,
+    "UQ1txt": "_PURPLE_DEPTH",
+    "UQ1val": 40
+  },
+  "EquipmentRings12": {
+    "displayName": "Frisbee_Ring",
+    "lvReqToEquip": 45,
+    "Class": "ALL",
+    "STR": 12,
+    "UQ1txt": "_ACCURACY",
+    "UQ1val": 20
+  },
+  "EquipmentRings13": {
+    "displayName": "Silver_Stopwatch",
+    "lvReqToEquip": 17,
+    "Class": "ALL",
+    "STR": 1,
+    "AGI": 1,
+    "WIS": 1,
+    "LUK": 1,
+    "UQ1txt": "%_FIGHT_AFK_GAIN",
+    "UQ1val": 2
+  },
+  "EquipmentRings14": {
+    "displayName": "Dooble_Goopi",
+    "lvReqToEquip": 30,
+    "Class": "ALL",
+    "LUK": 1,
+    "Defence": 2,
+    "UQ1txt": "%_MONEY",
+    "UQ1val": 5
+  },
+  "EquipmentRings15": {
+    "displayName": "Sanic_Ring",
+    "lvReqToEquip": 60,
+    "Class": "ALL",
+    "AGI": 8,
+    "LUK": 4,
+    "Defence": 5,
+    "UQ1txt": "%_MOVEMENT_SPEED",
+    "UQ1val": 1
+  },
+  "EquipmentRings16": {
+    "displayName": "Efaunt_Trunculus",
+    "lvReqToEquip": 85,
+    "Class": "ALL",
+    "Power": 3,
+    "Weapon_Power": 3,
+    "AGI": 10,
+    "Defence": 8,
+    "UQ1txt": "%_CRIT_CHANCE",
+    "UQ1val": 2
+  },
+  "EquipmentRingsChat1": {
+    "displayName": "Love_Ring",
+    "lvReqToEquip": 1,
+    "Class": "ALL",
+    "Power": 1,
+    "Weapon_Power": 1,
+    "STR": 1,
+    "AGI": 1,
+    "WIS": 1,
+    "LUK": 1,
+    "UQ1txt": "%_LOVE",
+    "UQ1val": 69
+  },
+  "EquipmentRingsChat2": {
+    "displayName": "Leafy_Ring",
+    "lvReqToEquip": 1,
+    "Class": "ALL",
+    "Power": 1,
+    "Weapon_Power": 1,
+    "STR": 1,
+    "AGI": 1,
+    "WIS": 1,
+    "LUK": 1,
+    "UQ1txt": "%_ALL_NATURAL",
+    "UQ1val": 100
+  },
+  "EquipmentRingsChat3": {
+    "displayName": "Wealth_Ring",
+    "lvReqToEquip": 1,
+    "Class": "ALL",
+    "Power": 1,
+    "Weapon_Power": 1,
+    "STR": 3,
+    "AGI": 3,
+    "WIS": 3,
+    "LUK": 3,
+    "UQ1txt": "%_COOLNESS",
+    "UQ1val": 777
+  },
+  "EquipmentRingsChat4": {
+    "displayName": "Bob_Ring",
+    "lvReqToEquip": 1,
+    "Class": "ALL",
+    "Power": 1,
+    "Weapon_Power": 1,
+    "STR": 1,
+    "AGI": 1,
+    "WIS": 1,
+    "LUK": 1,
+    "UQ1txt": "%_BOB",
+    "UQ1val": 808
+  },
+  "EquipmentRingsChat5": {
+    "displayName": "Bubble_Ring",
+    "lvReqToEquip": 1,
+    "Class": "ALL",
+    "Power": 1,
+    "Weapon_Power": 1,
+    "STR": 1,
+    "AGI": 1,
+    "WIS": 1,
+    "LUK": 1,
+    "UQ1txt": "%_POP_CHANCE"
+  },
+  "EquipmentRingsChat6": {
+    "displayName": "Cthulu's_Ring",
+    "lvReqToEquip": 1,
+    "Class": "ALL",
+    "Power": 1,
+    "Weapon_Power": 1,
+    "STR": 1,
+    "AGI": 1,
+    "WIS": 1,
+    "LUK": 1,
+    "UQ1txt": "%_PURE_EVIL",
+    "UQ1val": 666
+  },
+  "EquipmentRingsChat8": {
+    "displayName": "Lava_Sez_Buy_More_Gems",
+    "lvReqToEquip": 1,
+    "Class": "ALL",
+    "Power": 1,
+    "Weapon_Power": 1,
+    "STR": 1,
+    "AGI": 1,
+    "WIS": 1,
+    "LUK": 1,
+    "UQ1txt": "%_SELF_ESTEEM",
+    "UQ1val": 1
+  },
+  "EquipmentRingsChat9": {
+    "displayName": "HONK_Ring",
+    "lvReqToEquip": 1,
+    "Class": "ALL",
+    "Power": 1,
+    "Weapon_Power": 1,
+    "STR": 1,
+    "AGI": 1,
+    "WIS": 1,
+    "LUK": 1,
+    "UQ1txt": "%_HONK",
+    "UQ1val": 100
+  },
+  "EquipmentTools1": {
+    "displayName": "Junk_Pickaxe",
+    "lvReqToEquip": 2,
+    "Class": "ALL",
+    "Speed": 3,
+    "Power": 2,
+    "Weapon_Power": 2,
+    "STR": 1
+  },
+  "EquipmentTools2": {
+    "displayName": "Copper_Pickaxe",
+    "lvReqToEquip": 5,
+    "Class": "ALL",
+    "Speed": 3,
+    "Power": 6,
+    "Weapon_Power": 6,
+    "STR": 3
+  },
+  "EquipmentTools3": {
+    "displayName": "Iron_Pickaxe",
+    "lvReqToEquip": 10,
+    "Class": "ALL",
+    "Speed": 4,
+    "Power": 10,
+    "Weapon_Power": 10,
+    "STR": 5,
+    "AGI": 2
+  },
+  "EquipmentTools5": {
+    "displayName": "Gold_Pickaxe",
+    "lvReqToEquip": 17,
+    "Class": "ALL",
+    "Speed": 4,
+    "Power": 13,
+    "Weapon_Power": 13,
+    "STR": 8,
+    "AGI": 3
+  },
+  "EquipmentTools6": {
+    "displayName": "Platinum_Pickaxe",
+    "lvReqToEquip": 27,
+    "Class": "ALL",
+    "Speed": 4,
+    "Power": 16,
+    "Weapon_Power": 16,
+    "STR": 11,
+    "AGI": 4,
+    "UQ1txt": "%_MINING_EFFICINCY",
+    "UQ1val": 1
+  },
+  "EquipmentTools7": {
+    "displayName": "Dementia_Pickaxe",
+    "lvReqToEquip": 37,
+    "Class": "ALL",
+    "Speed": 4,
+    "Power": 19,
+    "Weapon_Power": 19,
+    "STR": 15,
+    "AGI": 5,
+    "UQ1txt": "%_MINING_EFFICINCY",
+    "UQ1val": 2
+  },
+  "EquipmentTools11": {
+    "displayName": "Void_Imperium_Pik",
+    "lvReqToEquip": 47,
+    "Class": "ALL",
+    "Speed": 5,
+    "Power": 24,
+    "Weapon_Power": 24,
+    "STR": 18,
+    "AGI": 6,
+    "UQ1txt": "%_MINING_EFFICINCY",
+    "UQ1val": 8
+  },
+  "EquipmentTools8": {
+    "displayName": "Lustre_Pickaxe",
+    "lvReqToEquip": 60,
+    "Class": "ALL",
+    "Speed": 5,
+    "Power": 28,
+    "Weapon_Power": 28,
+    "STR": 22,
+    "AGI": 7,
+    "UQ1txt": "%_MINING_EFFICINCY",
+    "UQ1val": 5
+  },
+  "EquipmentTools9": {
+    "displayName": "Dreadlo_Pickolo",
+    "lvReqToEquip": 70,
+    "Class": "ALL",
+    "Speed": 5,
+    "Power": 35,
+    "Weapon_Power": 35,
+    "STR": 26,
+    "AGI": 9,
+    "UQ1txt": "%_MINING_EFFICINCY",
+    "UQ1val": 8
+  },
+  "EquipmentTools10": {
+    "displayName": "Poopy_Pickaxe",
+    "lvReqToEquip": 15,
+    "Class": "ALL",
+    "Speed": 2,
+    "Power": 18,
+    "Weapon_Power": 18,
+    "Defence": 3,
+    "UQ1txt": "%_MINING_EFFICINCY",
+    "UQ1val": 2
+  },
+  "EquipmentToolsHatchet0": {
+    "displayName": "Old_Hatchet",
+    "lvReqToEquip": 2,
+    "Class": "ALL",
+    "Speed": 3,
+    "Power": 3,
+    "Weapon_Power": 3,
+    "WIS": 1
+  },
+  "EquipmentToolsHatchet3": {
+    "displayName": "Copper_Chopper",
+    "lvReqToEquip": 5,
+    "Class": "ALL",
+    "Speed": 3,
+    "Power": 7,
+    "Weapon_Power": 7,
+    "AGI": 1,
+    "WIS": 3
+  },
+  "EquipmentToolsHatchet1": {
+    "displayName": "Iron_Hatchet",
+    "lvReqToEquip": 10,
+    "Class": "ALL",
+    "Speed": 3,
+    "Power": 10,
+    "Weapon_Power": 10,
+    "STR": 2,
+    "WIS": 5
+  },
+  "EquipmentToolsHatchet2b": {
+    "displayName": "Stinky_Axe",
+    "lvReqToEquip": 15,
+    "Class": "ALL",
+    "Speed": 2,
+    "Power": 18,
+    "Weapon_Power": 18,
+    "WIS": 8,
+    "LUK": 4
+  },
+  "EquipmentToolsHatchet2": {
+    "displayName": "Golden_Axe",
+    "lvReqToEquip": 17,
+    "Class": "ALL",
+    "Speed": 4,
+    "Power": 14,
+    "Weapon_Power": 14,
+    "WIS": 8,
+    "LUK": 4
+  },
+  "EquipmentToolsHatchet4": {
+    "displayName": "Plat_Hatchet",
+    "lvReqToEquip": 25,
+    "Class": "ALL",
+    "Speed": 4,
+    "Power": 18,
+    "Weapon_Power": 18,
+    "AGI": 5,
+    "WIS": 14
+  },
+  "EquipmentToolsHatchet5": {
+    "displayName": "Dementia_Dicer",
+    "lvReqToEquip": 35,
+    "Class": "ALL",
+    "Speed": 4,
+    "Power": 23,
+    "Weapon_Power": 23,
+    "AGI": 6,
+    "WIS": 17
+  },
+  "EquipmentToolsHatchet7": {
+    "displayName": "Void_Imperium_Axe",
+    "lvReqToEquip": 45,
+    "Class": "ALL",
+    "Speed": 5,
+    "Power": 26,
+    "Weapon_Power": 26,
+    "AGI": 7,
+    "WIS": 20
+  },
+  "EquipmentToolsHatchet6": {
+    "displayName": "Lustre_Logger",
+    "lvReqToEquip": 65,
+    "Class": "ALL",
+    "Speed": 5,
+    "Power": 29,
+    "Weapon_Power": 29,
+    "WIS": 24,
+    "LUK": 8
+  },
+  "EquipmentToolsHatchet8": {
+    "displayName": "Starfire_Hatchet",
+    "lvReqToEquip": 80,
+    "Class": "ALL",
+    "Speed": 5,
+    "Power": 35,
+    "Weapon_Power": 35,
+    "AGI": 9,
+    "WIS": 28,
+    "LUK": 3
+  },
+  "EquipmentToolsHatchet9": {
+    "displayName": "Dreadlo_Eviscerator",
+    "lvReqToEquip": 90,
+    "Class": "ALL",
+    "Speed": 5,
+    "Power": 40,
+    "Weapon_Power": 40,
+    "STR": 4,
+    "AGI": 4,
+    "WIS": 32,
+    "LUK": 4
+  },
+  "EquipmentToolsHatchet10": {
+    "displayName": "Annihilator_of_the_Yggdrasil",
+    "lvReqToEquip": 100,
+    "Class": "ALL",
+    "Speed": 6,
+    "Power": 50,
+    "Weapon_Power": 50,
+    "STR": 5,
+    "AGI": 5,
+    "WIS": 40,
+    "LUK": 5
+  },
+  "FishingRod1": {
+    "displayName": "Wood_Fishing_Rod",
+    "lvReqToEquip": 2,
+    "Class": "ALL",
+    "Speed": 3,
+    "Power": 3,
+    "Weapon_Power": 3,
+    "STR": 1
+  },
+  "FishingRod2": {
+    "displayName": "Copper_Fish_Rod",
+    "lvReqToEquip": 5,
+    "Class": "ALL",
+    "Speed": 3,
+    "Power": 8,
+    "Weapon_Power": 8,
+    "STR": 2
+  },
+  "FishingRod3": {
+    "displayName": "Iron_Fishing_Rod",
+    "lvReqToEquip": 10,
+    "Class": "ALL",
+    "Speed": 4,
+    "Power": 13,
+    "Weapon_Power": 13,
+    "STR": 4,
+    "WIS": 1
+  },
+  "FishingRod4": {
+    "displayName": "Gold_Fishing_Rod",
+    "lvReqToEquip": 15,
+    "Class": "ALL",
+    "Speed": 4,
+    "Power": 19,
+    "Weapon_Power": 19,
+    "STR": 6,
+    "LUK": 4
+  },
+  "FishingRod5": {
+    "displayName": "Plat_Fishing_Rod",
+    "lvReqToEquip": 25,
+    "Class": "ALL",
+    "Speed": 5,
+    "Power": 25,
+    "Weapon_Power": 25,
+    "STR": 9
+  },
+  "FishingRod6": {
+    "displayName": "Dementia_Rod_for_Fishing",
+    "lvReqToEquip": 33,
+    "Class": "ALL",
+    "Speed": 5,
+    "Power": 30,
+    "Weapon_Power": 30,
+    "STR": 12
+  },
+  "FishingRod7": {
+    "displayName": "Void_Imperium_Rod",
+    "lvReqToEquip": 40,
+    "Class": "ALL",
+    "Speed": 5,
+    "Power": 36,
+    "Weapon_Power": 36,
+    "STR": 15
+  },
+  "CatchingNet1": {
+    "displayName": "Bug_Net",
+    "lvReqToEquip": 2,
+    "Class": "ALL",
+    "Speed": 4,
+    "Power": 4,
+    "Weapon_Power": 4,
+    "AGI": 2
+  },
+  "CatchingNet2": {
+    "displayName": "Copper_Netted_Net",
+    "lvReqToEquip": 5,
+    "Class": "ALL",
+    "Speed": 4,
+    "Power": 9,
+    "Weapon_Power": 9,
+    "STR": 1,
+    "AGI": 3
+  },
+  "CatchingNet3": {
+    "displayName": "Reinforced_Net",
+    "lvReqToEquip": 10,
+    "Class": "ALL",
+    "Speed": 4,
+    "Power": 14,
+    "Weapon_Power": 14,
+    "STR": 2,
+    "AGI": 4
+  },
+  "CatchingNet4": {
+    "displayName": "Gilded_Net",
+    "lvReqToEquip": 17,
+    "Class": "ALL",
+    "Speed": 5,
+    "Power": 20,
+    "Weapon_Power": 20,
+    "STR": 2,
+    "AGI": 6
+  },
+  "CatchingNet5": {
+    "displayName": "Platinet",
+    "lvReqToEquip": 25,
+    "Class": "ALL",
+    "Speed": 5,
+    "Power": 26,
+    "Weapon_Power": 26,
+    "STR": 3,
+    "AGI": 7
+  },
+  "CatchingNet6": {
+    "displayName": "Dementia_Net",
+    "lvReqToEquip": 35,
+    "Class": "ALL",
+    "Speed": 5,
+    "Power": 31,
+    "Weapon_Power": 31,
+    "STR": 4,
+    "AGI": 9
+  },
+  "CatchingNet7": {
+    "displayName": "Void_Imperium_Net",
+    "lvReqToEquip": 45,
+    "Class": "ALL",
+    "Speed": 5,
+    "Power": 37,
+    "Weapon_Power": 37,
+    "STR": 6,
+    "AGI": 12
+  },
+  "TrapBoxSet1": {
+    "displayName": "Cardboard_Traps",
+    "lvReqToEquip": 1,
+    "Class": "ALL",
+    "Speed": 4,
+    "Power": 4,
+    "Weapon_Power": 4,
+    "AGI": 2
+  },
+  "TrapBoxSet2": {
+    "displayName": "Silkskin_Traps",
+    "lvReqToEquip": 10,
+    "Class": "ALL",
+    "Speed": 4,
+    "Power": 8,
+    "Weapon_Power": 8,
+    "AGI": 4
+  },
+  "TrapBoxSet3": {
+    "displayName": "Wooden_Traps",
+    "lvReqToEquip": 20,
+    "Class": "ALL",
+    "Speed": 4,
+    "Power": 13,
+    "Weapon_Power": 13,
+    "AGI": 7
+  },
+  "TrapBoxSet4": {
+    "displayName": "Natural_Traps",
+    "lvReqToEquip": 30,
+    "Class": "ALL",
+    "Speed": 4,
+    "Power": 20,
+    "Weapon_Power": 20,
+    "AGI": 10
+  },
+  "TrapBoxSet5": {
+    "displayName": "Steel_Traps",
+    "lvReqToEquip": 40,
+    "Class": "ALL",
+    "Speed": 4,
+    "Power": 26,
+    "Weapon_Power": 26,
+    "AGI": 12
+  },
+  "TrapBoxSet6": {
+    "displayName": "Royal_Traps",
+    "lvReqToEquip": 50,
+    "Class": "ALL",
+    "Speed": 4,
+    "Power": 34,
+    "Weapon_Power": 34,
+    "AGI": 15
+  },
+  "WorshipSkull1": {
+    "displayName": "Wax_Skull",
+    "lvReqToEquip": 1,
+    "Class": "ALL",
+    "Speed": 4,
+    "Power": 4,
+    "Weapon_Power": 4,
+    "WIS": 2
+  },
+  "WorshipSkull2": {
+    "displayName": "Ceramic_Skull",
+    "lvReqToEquip": 10,
+    "Class": "ALL",
+    "Speed": 5,
+    "Power": 8,
+    "Weapon_Power": 8,
+    "WIS": 4
+  },
+  "WorshipSkull3": {
+    "displayName": "Horned_Skull",
+    "lvReqToEquip": 25,
+    "Class": "ALL",
+    "Speed": 5,
+    "Power": 13,
+    "Weapon_Power": 13,
+    "WIS": 7
+  },
+  "WorshipSkull4": {
+    "displayName": "Prickle_Skull",
+    "lvReqToEquip": 35,
+    "Class": "ALL",
+    "Speed": 6,
+    "Power": 20,
+    "Weapon_Power": 20,
+    "WIS": 10
+  },
+  "WorshipSkull5": {
+    "displayName": "Manifested_Skull",
+    "lvReqToEquip": 55,
+    "Class": "ALL",
+    "Speed": 7,
+    "Power": 26,
+    "Weapon_Power": 26,
+    "WIS": 12
+  },
+  "WorshipSkull6": {
+    "displayName": "Wax_Skull",
+    "lvReqToEquip": 70,
+    "Class": "ALL",
+    "Speed": 4,
+    "Power": 34,
+    "Weapon_Power": 34,
+    "WIS": 15
+  },
+  "FoodHealth1": {
+    "displayName": "Nomwich"
+  },
+  "FoodHealth3": {
+    "displayName": "Hot_Dog"
+  },
+  "FoodHealth2": {
+    "displayName": "Cheezy_Pizza"
+  },
+  "Peanut": {
+    "displayName": "Peanut"
+  },
+  "FoodHealth4": {
+    "displayName": "Saucy_Weiner"
+  },
+  "FoodHealth6": {
+    "displayName": "Kebab_Sticks"
+  },
+  "FoodHealth7": {
+    "displayName": "Meat_Pie"
+  },
+  "FoodHealth10": {
+    "displayName": "Mountain_Bread"
+  },
+  "FoodHealth9": {
+    "displayName": "Yeti_Ham"
+  },
+  "FoodHealth11": {
+    "displayName": "Sheepie_Dairy"
+  },
+  "FoodHealth5": {
+    "displayName": "Cranberry_Jam"
+  },
+  "FoodHealth8": {
+    "displayName": "Crabby_Cake_Supreme"
+  },
+  "FoodEvent8": {
+    "displayName": "Milk_Choco"
+  },
+  "Meatloaf": {
+    "displayName": "Magic_Meatloaf"
+  },
+  "FoodPotOr1": {
+    "displayName": "Small_Strength_Potion"
+  },
+  "FoodPotOr2": {
+    "displayName": "Average_Strength_Potion"
+  },
+  "FoodPotOr3": {
+    "displayName": "Decent_Strength_Potion"
+  },
+  "FoodPotRe1": {
+    "displayName": "Small_Life_Potion"
+  },
+  "FoodPotRe2": {
+    "displayName": "Average_Life_Potion"
+  },
+  "FoodPotRe3": {
+    "displayName": "Decent_Life_Potion"
+  },
+  "FoodPotGr1": {
+    "displayName": "Small_Speed_Potion"
+  },
+  "FoodPotGr2": {
+    "displayName": "Average_Speed_Potion"
+  },
+  "FoodPotGr3": {
+    "displayName": "Decent_Speed_Potion"
+  },
+  "FoodEvent7": {
+    "displayName": "Minto_Choco"
+  },
+  "FoodPotMana1": {
+    "displayName": "Small_Mana_Potion"
+  },
+  "FoodPotMana2": {
+    "displayName": "Average_Mana_Potion"
+  },
+  "FoodPotMana3": {
+    "displayName": "Decent_Mana_Potion"
+  },
+  "FoodPotYe1": {
+    "displayName": "Small_EXP_Potion",
+    "Class": "ClassEXP"
+  },
+  "FoodPotYe2": {
+    "displayName": "Average_EXP_Potion",
+    "Class": "ClassEXP"
+  },
+  "FoodPotYe3": {
+    "displayName": "Decent_EXP_Potion",
+    "Class": "ClassEXP"
+  },
+  "FoodEvent6": {
+    "displayName": "Lemony_Choco",
+    "Class": "ClassEXP"
+  },
+  "Pearl3": {
+    "displayName": "Shiny_Pearl",
+    "Class": "ClassEXP"
+  },
+  "FoodMining1": {
+    "displayName": "Icing_Ironbite"
+  },
+  "FoodEvent1": {
+    "displayName": "Giftybread_Man"
+  },
+  "Pearl2": {
+    "displayName": "Stained_Pearl"
+  },
+  "FoodChoppin1": {
+    "displayName": "Saucy_Logfries"
+  },
+  "FoodEvent2": {
+    "displayName": "Chogg_Nog"
+  },
+  "FoodFish1": {
+    "displayName": "Slurpin_Herm"
+  },
+  "FoodEvent3": {
+    "displayName": "Candy_Canes"
+  },
+  "Pearl1": {
+    "displayName": "Aqua_Pearl"
+  },
+  "FoodCatch1": {
+    "displayName": "Buttered_Toasted_Butter"
+  },
+  "FoodEvent4": {
+    "displayName": "Mistleberries"
+  },
+  "FoodTrapping1": {
+    "displayName": "Critter_Numnums"
+  },
+  "FoodWorship1": {
+    "displayName": "Soulble_Gum"
+  },
+  "Bullet": {
+    "displayName": "Bullet"
+  },
+  "BulletB": {
+    "displayName": "FMJ_Bullet"
+  },
+  "MidnightCookie": {
+    "displayName": "Midnight_Cookie"
+  },
+  "FoodEvent5": {
+    "displayName": "Cherry_Choco"
+  },
+  "PeanutG": {
+    "displayName": "Golden_Peanut"
+  },
+  "FoodG1": {
+    "displayName": "Golden_Jam"
+  },
+  "FoodG2": {
+    "displayName": "Golden_Kebabs"
+  },
+  "FoodG3": {
+    "displayName": "Golden_Meat_Pie"
+  },
+  "FoodG4": {
+    "displayName": "Golden_Nomwich"
+  },
+  "FoodG5": {
+    "displayName": "Golden_Ham"
+  },
+  "FoodG6": {
+    "displayName": "Golden_Bread"
+  },
+  "ButterBar": {
+    "displayName": "Butter_Bar"
+  },
+  "rtt0": {
+    "displayName": "Bottled_Town_Teleport"
+  },
+  "ResetFrag": {
+    "displayName": "Talent_Point_Reset_Fragment"
+  },
+  "ResetCompleted": {
+    "displayName": "Talent_Point_Reset_Potion"
+  },
+  "ResetCompletedS": {
+    "displayName": "Star_Talent_Reset_Potion"
+  },
+  "ClassSwap": {
+    "displayName": "Sub_Class_Swap_Token"
+  },
+  "ResetBox": {
+    "displayName": "Post_Office_Box_Reseto_Magnifico"
+  },
+  "Ht": {
+    "displayName": "Hat_Premiumifier"
+  },
+  "StonePremRestore": {
+    "displayName": "Premium_Stone_Refunder"
+  },
+  "ExpBalloon1": {
+    "displayName": "Small_Experience_Balloon"
+  },
+  "ExpBalloon2": {
+    "displayName": "Medium_Experience_Balloon"
+  },
+  "ExpBalloon3": {
+    "displayName": "Large_Experience_Balloon"
+  },
+  "JobApplication": {
+    "displayName": "Job_Application"
+  },
+  "SmithingHammerChisel": {
+    "displayName": "Sculpting_Tools"
+  },
+  "SmithingHammerChisel2": {
+    "displayName": "Guilding_Tools"
+  },
+  "BobJoePickle": {
+    "displayName": "BobJoePickle"
+  },
+  "Quest1": {
+    "displayName": "Mining_Certificate"
+  },
+  "Crystal1": {
+    "displayName": "Desert_Topaz"
+  },
+  "Crystal2": {
+    "displayName": "Glacier_Quartz"
+  },
+  "Crystal3": {
+    "displayName": "Galaxial_Amethyst"
+  },
+  "Quest2": {
+    "displayName": "Mining_Certificate"
+  },
+  "PeanutS": {
+    "displayName": "Stone_Peanut"
+  },
+  "Quest3": {
+    "displayName": "Ketchup_Bottle"
+  },
+  "Quest4": {
+    "displayName": "Mustard_Bottle"
+  },
+  "Mayo": {
+    "displayName": "Mayonnaise_Bottle"
+  },
+  "Trash": {
+    "displayName": "Broken_Weapon"
+  },
+  "Trash2": {
+    "displayName": "Dried_Paint_Blob"
+  },
+  "Trash3": {
+    "displayName": "Engraved_Bullet"
+  },
+  "Quest5": {
+    "displayName": "Golden_Jam"
+  },
+  "Quest6": {
+    "displayName": "Scouting_Report"
+  },
+  "Quest7": {
+    "displayName": "Strange_Rock"
+  },
+  "Quest8": {
+    "displayName": "Filler_bc_I_messed_up"
+  },
+  "Quest10": {
+    "displayName": "Green_Tea"
+  },
+  "Quest11": {
+    "displayName": "Forest_Villas_Flyer_Thingy"
+  },
+  "Quest12": {
+    "displayName": "Dog_Bone"
+  },
+  "Quest13": {
+    "displayName": "Empty_Box"
+  },
+  "Quest14": {
+    "displayName": "Employment_Statistics"
+  },
+  "Quest15": {
+    "displayName": "Red_Frisbee"
+  },
+  "Quest16": {
+    "displayName": "Broken_Mic"
+  },
+  "Quest17": {
+    "displayName": "Amarok_Slab"
+  },
+  "Quest18": {
+    "displayName": "Loomi's_Room_Key"
+  },
+  "Quest19": {
+    "displayName": "Golden_Dubloon"
+  },
+  "Quest20": {
+    "displayName": "Signed_Arrest_Warrant"
+  },
+  "Quest21": {
+    "displayName": "Time_Thingy"
+  },
+  "Quest22": {
+    "displayName": "Corporatube_Sub"
+  },
+  "Quest23": {
+    "displayName": "Instablab_Follower"
+  },
+  "Quest24": {
+    "displayName": "Cloudsound_Follower"
+  },
+  "Quest25": {
+    "displayName": "Birthday_Card"
+  },
+  "Quest26": {
+    "displayName": "Pre_Crime_Box"
+  },
+  "Quest27": {
+    "displayName": "Bag_o_Nuts"
+  },
+  "Quest28": {
+    "displayName": "IOU_One_Blue_Crystal"
+  },
+  "Quest29": {
+    "displayName": "Chaotic_Amarok_Slab"
+  },
+  "GoldricP1": {
+    "displayName": "Casual_Confidante"
+  },
+  "GoldricP2": {
+    "displayName": "Triumphant_Treason"
+  },
+  "GoldricP3": {
+    "displayName": "Claiming_Cashe"
+  },
+  "Quest30": {
+    "displayName": "Giftmas_Box"
+  },
+  "Quest31": {
+    "displayName": "Gem_Note"
+  },
+  "Cutter": {
+    "displayName": "Bolt_Cutters"
+  },
+  "Quest32": {
+    "displayName": "Monster_Rating"
+  },
+  "Quest33": {
+    "displayName": "Player_Rating_With_Letter_P"
+  },
+  "Quest34": {
+    "displayName": "Player_Rating_With_Letter_S"
+  },
+  "Quest35": {
+    "displayName": "Googley_Eyes"
+  },
+  "Quest36": {
+    "displayName": "Dootjat_Eye"
+  },
+  "Quest37": {
+    "displayName": "Silver_Antique"
+  },
+  "Quest38": {
+    "displayName": "Guild_Giftbox"
+  },
+  "Quest39": {
+    "displayName": "Lovey_Dovey_Letter"
+  },
+  "Quest40": {
+    "displayName": "Choco_Box"
+  },
+  "Quest41": {
+    "displayName": "Flowies"
+  },
+  "Quest42": {
+    "displayName": "Egg_Capsule"
+  },
+  "Quest43": {
+    "displayName": "Gummy_Bunny"
+  },
+  "Quest44": {
+    "displayName": "Goldegg_Capsule"
+  },
+  "Quest45": {
+    "displayName": "Sesame_Seed"
+  },
+  "Quest46": {
+    "displayName": "The_Bobber_Challenge_Scroll"
+  },
+  "Quest47": {
+    "displayName": "Elderly_Peanut"
+  },
+  "Quest48": {
+    "displayName": "Pete_the_Peanut"
+  },
+  "Quest49": {
+    "displayName": "Summer_Cooler"
+  },
+  "Quest50": {
+    "displayName": "Beach_Oyster"
+  },
+  "Pearl4": {
+    "displayName": "Black_Pearl"
+  },
+  "NPCtoken8": {
+    "displayName": "FILLER"
+  },
+  "BadgeG1": {
+    "displayName": "Blunderhills_NPC_Completion_Token"
+  },
+  "BadgeG2": {
+    "displayName": "Blunder_Skills_Completion_Token"
+  },
+  "BadgeG3": {
+    "displayName": "Blunderhills_Misc_Completion_Token"
+  },
+  "BadgeD1": {
+    "displayName": "Yumyum_Desert_NPC_Completion_Token"
+  },
+  "BadgeD2": {
+    "displayName": "Yumyum_Skills_Completion_Token"
+  },
+  "BadgeD3": {
+    "displayName": "Yumyum_Misc_Completion_Token"
+  },
+  "NPCtoken1": {
+    "displayName": "Easy_Blunderhills_NPC_Token"
+  },
+  "NPCtoken2": {
+    "displayName": "Med_Blunderhills_NPC_Token"
+  },
+  "NPCtoken3": {
+    "displayName": "Hard_Blunderhills_NPC_Token"
+  },
+  "NPCtoken5": {
+    "displayName": "Woodsman_Token"
+  },
+  "NPCtoken6": {
+    "displayName": "Glumlee_Token"
+  },
+  "NPCtoken4": {
+    "displayName": "Stiltzcho_Token"
+  },
+  "NPCtoken9": {
+    "displayName": "Funguy_Token"
+  },
+  "NPCtoken10": {
+    "displayName": "Krunk_Token"
+  },
+  "NPCtoken11": {
+    "displayName": "Tiki_Chief_Token"
+  },
+  "NPCtoken13": {
+    "displayName": "Dog_Bone_Token"
+  },
+  "NPCtoken7": {
+    "displayName": "Papua_Piggea_Token"
+  },
+  "Quest9": {
+    "displayName": "Picnic_Token"
+  },
+  "NPCtoken15": {
+    "displayName": "TP_Pete_Token"
+  },
+  "NPCtoken12": {
+    "displayName": "Sproutinald_Token"
+  },
+  "NPCtoken14": {
+    "displayName": "Dazey_Token"
+  },
+  "NPCtoken16": {
+    "displayName": "Bandit_Bob_Token"
+  },
+  "NPCtoken17": {
+    "displayName": "Snake_Jar_Token"
+  },
+  "NPCtoken18": {
+    "displayName": "Whattso_Token"
+  },
+  "NPCtoken19": {
+    "displayName": "Cowbo_Jones_Token"
+  },
+  "NPCtoken20": {
+    "displayName": "Carpetiem_Token"
+  },
+  "NPCtoken21": {
+    "displayName": "Goldric_Token"
+  },
+  "NPCtoken27": {
+    "displayName": "Cattleprod_Token"
+  },
+  "NPCtoken22": {
+    "displayName": "Fishpaste_Token"
+  },
+  "NPCtoken24": {
+    "displayName": "Loominadi_Token"
+  },
+  "NPCtoken25": {
+    "displayName": "Djonnut_Token"
+  },
+  "NPCtoken26": {
+    "displayName": "Scubidew_Token"
+  },
+  "NPCtoken23": {
+    "displayName": "Wellington_Token"
+  },
+  "NPCtoken28": {
+    "displayName": "Easy_Yumyum_Dez_NPC_Token"
+  },
+  "NPCtoken29": {
+    "displayName": "Med_Yumyum_Dez_NPC_Token"
+  },
+  "NPCtoken30": {
+    "displayName": "Hard_Yumyum_Dez_NPC_Token"
+  },
+  "EquipmentSmithingTabs2": {
+    "displayName": "Anvil_Tab_2"
+  },
+  "EquipmentSmithingTabs3": {
+    "displayName": "Anvil_Tab_3"
+  },
+  "EquipmentSmithingTabs4": {
+    "displayName": "Anvil_Tab_4"
+  },
+  "EquipmentSmithingTabs5": {
+    "displayName": "Anvil_Tab_5"
+  },
+  "EquipmentSmithingTabs6": {
+    "displayName": "Anvil_Tab_6"
+  },
+  "EquipmentSmithingTabs7": {
+    "displayName": "Anvil_Tab_7"
+  },
+  "EquipmentSmithingTabs8": {
+    "displayName": "Anvil_Tab_8"
+  },
+  "EquipmentStatues1": {
+    "displayName": "Power_Statue"
+  },
+  "EquipmentStatues2": {
+    "displayName": "Speed_Statue"
+  },
+  "EquipmentStatues3": {
+    "displayName": "Mining_Statue"
+  },
+  "EquipmentStatues4": {
+    "displayName": "Feasty_Statue"
+  },
+  "EquipmentStatues5": {
+    "displayName": "Health_Statue"
+  },
+  "EquipmentStatues6": {
+    "displayName": "Kachow_Statue"
+  },
+  "EquipmentStatues7": {
+    "displayName": "Lumberbob_Statue"
+  },
+  "EquipmentStatues8": {
+    "displayName": "Thicc_Skin_Statue"
+  },
+  "EquipmentStatues9": {
+    "displayName": "Oceanman_Statue"
+  },
+  "EquipmentStatues10": {
+    "displayName": "Ol_Reliable_Statue"
+  },
+  "EquipmentStatues11": {
+    "displayName": "Exp_Book_Statue"
+  },
+  "EquipmentStatues12": {
+    "displayName": "Anvil_Statue"
+  },
+  "EquipmentStatues13": {
+    "displayName": "Cauldron_Statue"
+  },
+  "EquipmentStatues14": {
+    "displayName": "Beholder_Statue"
+  },
+  "EquipmentStatues15": {
+    "displayName": "Bullseye_Statue"
+  },
+  "EquipmentStatues16": {
+    "displayName": "Box_Statue"
+  },
+  "EquipmentStatues17": {
+    "displayName": "Twosoul_Statue"
+  },
+  "EquipmentStatues18": {
+    "displayName": "EhExPee_Statue"
+  },
+  "EquipmentStatues19": {
+    "displayName": "Seesaw_Statue"
+  },
+  "SmithingRecipes1": {
+    "displayName": "Beginner_Recipe",
+    "lvReqToEquip": 999,
+    "Class": "ALL"
+  },
+  "SmithingRecipes2": {
+    "displayName": "Novice_Recipe",
+    "lvReqToEquip": 999,
+    "Class": "ALL"
+  },
+  "SmithingRecipes3": {
+    "displayName": "Apprentice_Recipe",
+    "lvReqToEquip": 999,
+    "Class": "ALL"
+  },
+  "SmithingRecipes4": {
+    "displayName": "Journeyman_Recipe",
+    "lvReqToEquip": 999,
+    "Class": "ALL"
+  },
+  "TalentBook1": {
+    "displayName": "Special_Talent_Book",
+    "lvReqToEquip": 999,
+    "Class": "ALL"
+  },
+  "TalentBook2": {
+    "displayName": "Beginner_Talent_Book",
+    "lvReqToEquip": 999,
+    "Class": "BEGINNER"
+  },
+  "TalentBook3": {
+    "displayName": "Warrior_Talent_Book",
+    "lvReqToEquip": 999,
+    "Class": "WARRIOR",
+    "STR": 3
+  },
+  "TalentBook4": {
+    "displayName": "Archer_Talent_Book",
+    "lvReqToEquip": 999,
+    "Class": "ARCHER",
+    "STR": 3
+  },
+  "TalentBook5": {
+    "displayName": "Wizard_Talent_Book",
+    "lvReqToEquip": 999,
+    "Class": "MAGE",
+    "STR": 3
+  },
+  "MaxCapBagT2": {
+    "displayName": "Miniature_Mining_Pouch",
+    "lvReqToEquip": 25,
+    "Class": "Mining",
+    "Speed": 5,
+    "Reach": 10,
+    "STR": 3
+  },
+  "MaxCapBag1": {
+    "displayName": "Cramped_Mining_Pouch",
+    "lvReqToEquip": 50,
+    "Class": "Mining",
+    "Speed": 25,
+    "Reach": 10,
+    "STR": 3
+  },
+  "MaxCapBag2": {
+    "displayName": "Small_Mining_Pouch",
+    "lvReqToEquip": 100,
+    "Class": "Mining",
+    "Speed": 118,
+    "Reach": 10,
+    "STR": 3
+  },
+  "MaxCapBag3": {
+    "displayName": "Average_Mining_Pouch",
+    "lvReqToEquip": 250,
+    "Class": "Mining",
+    "Speed": 5,
+    "Reach": 10,
+    "STR": 3
+  },
+  "MaxCapBag4": {
+    "displayName": "Sizable_Mining_Pouch",
+    "lvReqToEquip": 500,
+    "Class": "Mining",
+    "Speed": 170,
+    "Reach": 10,
+    "STR": 3
+  },
+  "MaxCapBag5": {
+    "displayName": "Big_Mining_Pouch",
+    "lvReqToEquip": 1,
+    "Class": "Mining",
+    "Speed": 240,
+    "Reach": 10,
+    "STR": 3
+  },
+  "MaxCapBagMi6": {
+    "displayName": "Large_Mining_Pouch",
+    "lvReqToEquip": 2,
+    "Class": "Mining",
+    "Speed": 240,
+    "Reach": 10,
+    "STR": 3
+  },
+  "MaxCapBagT1": {
+    "displayName": "Miniature_Choppin_Pouch",
+    "lvReqToEquip": 25,
+    "Class": "Chopping",
+    "Speed": 5,
+    "Reach": 10,
+    "Power": 1,
+    "Weapon_Power": 1,
+    "STR": 3
+  },
+  "MaxCapBag7": {
+    "displayName": "Cramped_Choppin_Pouch",
+    "lvReqToEquip": 50,
+    "Class": "Chopping",
+    "Speed": 25,
+    "Reach": 10,
+    "Power": 1,
+    "Weapon_Power": 1,
+    "STR": 3
+  },
+  "MaxCapBag9": {
+    "displayName": "Small_Choppin_Pouch",
+    "lvReqToEquip": 100,
+    "Class": "Chopping",
+    "Speed": 118,
+    "Reach": 10,
+    "Power": 1,
+    "Weapon_Power": 1,
+    "STR": 3
+  },
+  "MaxCapBagT3": {
+    "displayName": "Average_Choppin_Pouch",
+    "lvReqToEquip": 250,
+    "Class": "Chopping",
+    "Speed": 5,
+    "Reach": 10,
+    "Power": 1,
+    "Weapon_Power": 1,
+    "STR": 3
+  },
+  "MaxCapBagT4": {
+    "displayName": "Sizable_Choppin_Pouch",
+    "lvReqToEquip": 500,
+    "Class": "Chopping",
+    "Speed": 170,
+    "Reach": 10,
+    "Power": 1,
+    "Weapon_Power": 1,
+    "STR": 3
+  },
+  "MaxCapBagT5": {
+    "displayName": "Big_Choppin_Pouch",
+    "lvReqToEquip": 1,
+    "Class": "Chopping",
+    "Speed": 240,
+    "Reach": 10,
+    "Power": 1,
+    "Weapon_Power": 1,
+    "STR": 3
+  },
+  "MaxCapBagT6": {
+    "displayName": "Large_Choppin_Pouch",
+    "lvReqToEquip": 2,
+    "Class": "Chopping",
+    "Speed": 240,
+    "Reach": 10,
+    "Power": 1,
+    "Weapon_Power": 1,
+    "STR": 3
+  },
+  "MaxCapBag6": {
+    "displayName": "Miniscule_Food_Pouch",
+    "lvReqToEquip": 25,
+    "Class": "Foods",
+    "Speed": 5,
+    "Reach": 10,
+    "Power": 2,
+    "Weapon_Power": 2,
+    "STR": 3
+  },
+  "MaxCapBag8": {
+    "displayName": "Cramped_Food_Pouch",
+    "lvReqToEquip": 50,
+    "Class": "Foods",
+    "Speed": 25,
+    "Reach": 10,
+    "Power": 2,
+    "Weapon_Power": 2,
+    "STR": 3
+  },
+  "MaxCapBag10": {
+    "displayName": "Small_Food_Pouch",
+    "lvReqToEquip": 100,
+    "Class": "Foods",
+    "Speed": 118,
+    "Reach": 10,
+    "Power": 2,
+    "Weapon_Power": 2,
+    "STR": 3
+  },
+  "MaxCapBagF3": {
+    "displayName": "Average_Food_Pouch",
+    "lvReqToEquip": 250,
+    "Class": "Foods",
+    "Speed": 5,
+    "Reach": 10,
+    "Power": 2,
+    "Weapon_Power": 2,
+    "STR": 3
+  },
+  "MaxCapBagF4": {
+    "displayName": "Sizable_Food_Pouch",
+    "lvReqToEquip": 500,
+    "Class": "Foods",
+    "Speed": 170,
+    "Reach": 10,
+    "Power": 2,
+    "Weapon_Power": 2,
+    "STR": 3
+  },
+  "MaxCapBagF5": {
+    "displayName": "Big_Food_Pouch",
+    "lvReqToEquip": 1,
+    "Class": "Foods",
+    "Speed": 240,
+    "Reach": 10,
+    "Power": 2,
+    "Weapon_Power": 2,
+    "STR": 3
+  },
+  "MaxCapBagF6": {
+    "displayName": "Large_Food_Pouch",
+    "lvReqToEquip": 2,
+    "Class": "Foods",
+    "Speed": 240,
+    "Reach": 10,
+    "Power": 2,
+    "Weapon_Power": 2,
+    "STR": 3
+  },
+  "MaxCapBagM1": {
+    "displayName": "Mini_Materials_Pouch",
+    "lvReqToEquip": 25,
+    "Class": "bCraft",
+    "Speed": 10,
+    "Reach": 10,
+    "Power": 3,
+    "Weapon_Power": 3,
+    "STR": 3
+  },
+  "MaxCapBagM2": {
+    "displayName": "Cramped_Material_Pouch",
+    "lvReqToEquip": 50,
+    "Class": "bCraft",
+    "Speed": 15,
+    "Reach": 10,
+    "Power": 3,
+    "Weapon_Power": 3,
+    "STR": 3
+  },
+  "MaxCapBagM3": {
+    "displayName": "Small_Material_Pouch",
+    "lvReqToEquip": 100,
+    "Class": "bCraft",
+    "Speed": 118,
+    "Reach": 10,
+    "Power": 3,
+    "Weapon_Power": 3,
+    "STR": 3
+  },
+  "MaxCapBagM4": {
+    "displayName": "Average_Material_Pouch",
+    "lvReqToEquip": 250,
+    "Class": "bCraft",
+    "Speed": 5,
+    "Reach": 10,
+    "Power": 3,
+    "Weapon_Power": 3,
+    "STR": 3
+  },
+  "MaxCapBagM5": {
+    "displayName": "Sizable_Materials_Pouch",
+    "lvReqToEquip": 500,
+    "Class": "bCraft",
+    "Speed": 170,
+    "Reach": 10,
+    "Power": 3,
+    "Weapon_Power": 3,
+    "STR": 3
+  },
+  "MaxCapBagM6": {
+    "displayName": "Big_Materials_Pouch",
+    "lvReqToEquip": 1,
+    "Class": "bCraft",
+    "Speed": 240,
+    "Reach": 10,
+    "Power": 3,
+    "Weapon_Power": 3,
+    "STR": 3
+  },
+  "MaxCapBagM7": {
+    "displayName": "Large_Materials_Pouch",
+    "lvReqToEquip": 2,
+    "Class": "bCraft",
+    "Speed": 240,
+    "Reach": 10,
+    "Power": 3,
+    "Weapon_Power": 3,
+    "STR": 3
+  },
+  "MaxCapBagFi0": {
+    "displayName": "Miniature_Fish_Pouch",
+    "lvReqToEquip": 25,
+    "Class": "Fishing",
+    "Speed": 10,
+    "Reach": 10,
+    "Power": 4,
+    "Weapon_Power": 4,
+    "STR": 3
+  },
+  "MaxCapBagFi1": {
+    "displayName": "Cramped_Fish_Pouch",
+    "lvReqToEquip": 50,
+    "Class": "Fishing",
+    "Speed": 25,
+    "Reach": 10,
+    "Power": 4,
+    "Weapon_Power": 4,
+    "STR": 3
+  },
+  "MaxCapBagFi2": {
+    "displayName": "Small_Fish_Pouch",
+    "lvReqToEquip": 100,
+    "Class": "Fishing",
+    "Speed": 118,
+    "Reach": 10,
+    "Power": 4,
+    "Weapon_Power": 4,
+    "STR": 3
+  },
+  "MaxCapBagFi3": {
+    "displayName": "Average_Fish_Pouch",
+    "lvReqToEquip": 250,
+    "Class": "Fishing",
+    "Speed": 5,
+    "Reach": 10,
+    "Power": 4,
+    "Weapon_Power": 4,
+    "STR": 3
+  },
+  "MaxCapBagFi4": {
+    "displayName": "Sizable_Fish_Pouch",
+    "lvReqToEquip": 500,
+    "Class": "Fishing",
+    "Speed": 170,
+    "Reach": 10,
+    "Power": 4,
+    "Weapon_Power": 4,
+    "STR": 3
+  },
+  "MaxCapBagFi5": {
+    "displayName": "Big_Fish_Pouch",
+    "lvReqToEquip": 1,
+    "Class": "Fishing",
+    "Speed": 240,
+    "Reach": 10,
+    "Power": 4,
+    "Weapon_Power": 4,
+    "STR": 3
+  },
+  "MaxCapBagFi6": {
+    "displayName": "Large_Fish_Pouch",
+    "lvReqToEquip": 2,
+    "Class": "Fishing",
+    "Speed": 240,
+    "Reach": 10,
+    "Power": 4,
+    "Weapon_Power": 4,
+    "STR": 3
+  },
+  "MaxCapBagB0": {
+    "displayName": "Miniature_Bug_Pouch",
+    "lvReqToEquip": 25,
+    "Class": "Bugs",
+    "Speed": 5,
+    "Reach": 10,
+    "Power": 5,
+    "Weapon_Power": 5,
+    "STR": 3
+  },
+  "MaxCapBagB1": {
+    "displayName": "Cramped_Bug_Pouch",
+    "lvReqToEquip": 50,
+    "Class": "Bugs",
+    "Speed": 250,
+    "Reach": 10,
+    "Power": 5,
+    "Weapon_Power": 5,
+    "STR": 3
+  },
+  "MaxCapBagB2": {
+    "displayName": "Small_Bug_Pouch",
+    "lvReqToEquip": 100,
+    "Class": "Bugs",
+    "Speed": 118,
+    "Reach": 10,
+    "Power": 5,
+    "Weapon_Power": 5,
+    "STR": 3
+  },
+  "MaxCapBagB3": {
+    "displayName": "Average_Bug_Pouch",
+    "lvReqToEquip": 250,
+    "Class": "Bugs",
+    "Speed": 5,
+    "Reach": 10,
+    "Power": 5,
+    "Weapon_Power": 5,
+    "STR": 3
+  },
+  "MaxCapBagB4": {
+    "displayName": "Sizable_Bug_Pouch",
+    "lvReqToEquip": 500,
+    "Class": "Bugs",
+    "Speed": 170,
+    "Reach": 10,
+    "Power": 5,
+    "Weapon_Power": 5,
+    "STR": 3
+  },
+  "MaxCapBagB5": {
+    "displayName": "Big_Bug_Pouch",
+    "lvReqToEquip": 1,
+    "Class": "Bugs",
+    "Speed": 240,
+    "Reach": 10,
+    "Power": 5,
+    "Weapon_Power": 5,
+    "STR": 3
+  },
+  "MaxCapBagB6": {
+    "displayName": "Large_Bug_Pouch",
+    "lvReqToEquip": 2,
+    "Class": "Bugs",
+    "Speed": 240,
+    "Reach": 10,
+    "Power": 5,
+    "Weapon_Power": 5,
+    "STR": 3
+  },
+  "MaxCapBagTr0": {
+    "displayName": "Cramped_Critter_Pouch",
+    "lvReqToEquip": 50,
+    "Class": "Critters",
+    "Speed": 250,
+    "Reach": 10,
+    "Power": 6,
+    "Weapon_Power": 6,
+    "STR": 3
+  },
+  "MaxCapBagTr1": {
+    "displayName": "Small_Critter_Pouch",
+    "lvReqToEquip": 100,
+    "Class": "Critters",
+    "Speed": 118,
+    "Reach": 10,
+    "Power": 6,
+    "Weapon_Power": 6,
+    "STR": 3
+  },
+  "MaxCapBagTr2": {
+    "displayName": "Average_Critter_Pouch",
+    "lvReqToEquip": 250,
+    "Class": "Critters",
+    "Speed": 5,
+    "Reach": 10,
+    "Power": 6,
+    "Weapon_Power": 6,
+    "STR": 3
+  },
+  "MaxCapBagTr3": {
+    "displayName": "Sizable_Critter_Pouch",
+    "lvReqToEquip": 500,
+    "Class": "Critters",
+    "Speed": 170,
+    "Reach": 10,
+    "Power": 6,
+    "Weapon_Power": 6,
+    "STR": 3
+  },
+  "MaxCapBagTr4": {
+    "displayName": "Big_Critter_Pouch",
+    "lvReqToEquip": 1,
+    "Class": "Critters",
+    "Speed": 240,
+    "Reach": 10,
+    "Power": 6,
+    "Weapon_Power": 6,
+    "STR": 3
+  },
+  "MaxCapBagTr5": {
+    "displayName": "Large_Critter_Pouch",
+    "lvReqToEquip": 2,
+    "Class": "Critters",
+    "Speed": 240,
+    "Reach": 10,
+    "Power": 6,
+    "Weapon_Power": 6,
+    "STR": 3
+  },
+  "MaxCapBagS0": {
+    "displayName": "Cramped_Soul_Pouch",
+    "lvReqToEquip": 50,
+    "Class": "Souls",
+    "Speed": 250,
+    "Reach": 10,
+    "Power": 7,
+    "Weapon_Power": 7,
+    "STR": 3
+  },
+  "MaxCapBagS1": {
+    "displayName": "Small_Soul_Pouch",
+    "lvReqToEquip": 100,
+    "Class": "Souls",
+    "Speed": 118,
+    "Reach": 10,
+    "Power": 7,
+    "Weapon_Power": 7,
+    "STR": 3
+  },
+  "MaxCapBagS2": {
+    "displayName": "Average_Soul_Pouch",
+    "lvReqToEquip": 250,
+    "Class": "Souls",
+    "Speed": 5,
+    "Reach": 10,
+    "Power": 7,
+    "Weapon_Power": 7,
+    "STR": 3
+  },
+  "MaxCapBagS3": {
+    "displayName": "Sizable_Soul_Pouch",
+    "lvReqToEquip": 500,
+    "Class": "Souls",
+    "Speed": 170,
+    "Reach": 10,
+    "Power": 7,
+    "Weapon_Power": 7,
+    "STR": 3
+  },
+  "MaxCapBagS4": {
+    "displayName": "Big_Soul_Pouch",
+    "lvReqToEquip": 1,
+    "Class": "Souls",
+    "Speed": 240,
+    "Reach": 10,
+    "Power": 7,
+    "Weapon_Power": 7,
+    "STR": 3
+  },
+  "MaxCapBagS5": {
+    "displayName": "Large_Soul_Pouch",
+    "lvReqToEquip": 2,
+    "Class": "Souls",
+    "Speed": 240,
+    "Reach": 10,
+    "Power": 7,
+    "Weapon_Power": 7,
+    "STR": 3
+  },
+  "ObolBronze0": {
+    "displayName": "Bronze_STR_Obol",
+    "lvReqToEquip": 1,
+    "Class": "ALL",
+    "STR": 1
+  },
+  "ObolBronze1": {
+    "displayName": "Bronze_AGI_Obol",
+    "lvReqToEquip": 1,
+    "Class": "ALL",
+    "AGI": 1
+  },
+  "ObolBronze2": {
+    "displayName": "Bronze_WIS_Obol",
+    "lvReqToEquip": 1,
+    "Class": "ALL",
+    "WIS": 1
+  },
+  "ObolBronze3": {
+    "displayName": "Bronze_LUK_Obol",
+    "lvReqToEquip": 1,
+    "Class": "ALL",
+    "LUK": 1
+  },
+  "ObolSilver0": {
+    "displayName": "Silver_STR_Obol",
+    "lvReqToEquip": 1,
+    "Class": "ALL",
+    "STR": 2
+  },
+  "ObolSilver1": {
+    "displayName": "Silver_AGI_Obol",
+    "lvReqToEquip": 1,
+    "Class": "ALL",
+    "AGI": 2
+  },
+  "ObolSilver2": {
+    "displayName": "Silver_WIS_Obol",
+    "lvReqToEquip": 1,
+    "Class": "ALL",
+    "WIS": 2
+  },
+  "ObolSilver3": {
+    "displayName": "Silver_LUK_Obol",
+    "lvReqToEquip": 1,
+    "Class": "ALL",
+    "LUK": 2
+  },
+  "ObolGold0": {
+    "displayName": "Gold_STR_Obol",
+    "lvReqToEquip": 1,
+    "Class": "ALL",
+    "STR": 4
+  },
+  "ObolGold1": {
+    "displayName": "Gold_AGI_Obol",
+    "lvReqToEquip": 1,
+    "Class": "ALL",
+    "AGI": 4
+  },
+  "ObolGold2": {
+    "displayName": "Gold_WIS_Obol",
+    "lvReqToEquip": 1,
+    "Class": "ALL",
+    "WIS": 4
+  },
+  "ObolGold3": {
+    "displayName": "Gold_LUK_Obol",
+    "lvReqToEquip": 1,
+    "Class": "ALL",
+    "LUK": 4
+  },
+  "ObolPlatinum0": {
+    "displayName": "Platinum_STR_Obol",
+    "lvReqToEquip": 1,
+    "Class": "ALL",
+    "STR": 7
+  },
+  "ObolPlatinum1": {
+    "displayName": "Platinum_AGI_Obol",
+    "lvReqToEquip": 1,
+    "Class": "ALL",
+    "AGI": 7
+  },
+  "ObolPlatinum2": {
+    "displayName": "Platinum_WIS_Obol",
+    "lvReqToEquip": 1,
+    "Class": "ALL",
+    "WIS": 7
+  },
+  "ObolPlatinum3": {
+    "displayName": "Platinum_LUK_Obol",
+    "lvReqToEquip": 1,
+    "Class": "ALL",
+    "LUK": 7
+  },
+  "ObolPink0": {
+    "displayName": "Dementia_STR_Obol",
+    "lvReqToEquip": 1,
+    "Class": "ALL",
+    "Power": 1,
+    "Weapon_Power": 1,
+    "STR": 12
+  },
+  "ObolPink1": {
+    "displayName": "Dementia_AGI_Obol",
+    "lvReqToEquip": 1,
+    "Class": "ALL",
+    "Power": 1,
+    "Weapon_Power": 1,
+    "AGI": 12
+  },
+  "ObolPink2": {
+    "displayName": "Dementia_WIS_Obol",
+    "lvReqToEquip": 1,
+    "Class": "ALL",
+    "Power": 1,
+    "Weapon_Power": 1,
+    "WIS": 12
+  },
+  "ObolPink3": {
+    "displayName": "Dementia_LUK_Obol",
+    "lvReqToEquip": 1,
+    "Class": "ALL",
+    "Power": 1,
+    "Weapon_Power": 1,
+    "LUK": 12
+  },
+  "ObolBronzeDamage": {
+    "displayName": "Bronze_Obol_of_Puny_Damage",
+    "lvReqToEquip": 1,
+    "Class": "ALL",
+    "UQ1txt": "_BASE_DAMAGE",
+    "UQ1val": 5
+  },
+  "ObolSilverDamage": {
+    "displayName": "Silver_Obol_of_Little_Damage",
+    "lvReqToEquip": 1,
+    "Class": "ALL",
+    "STR": 1,
+    "AGI": 1,
+    "WIS": 1,
+    "UQ1txt": "_BASE_DAMAGE",
+    "UQ1val": 10
+  },
+  "ObolGoldDamage": {
+    "displayName": "Golden_Obol_of_Big_Boy_Damage",
+    "lvReqToEquip": 1,
+    "Class": "ALL",
+    "Power": 1,
+    "Weapon_Power": 1,
+    "STR": 1,
+    "AGI": 1,
+    "WIS": 1,
+    "UQ1txt": "_BASE_DAMAGE",
+    "UQ1val": 20
+  },
+  "ObolPlatinumDamage": {
+    "displayName": "Platinum_Obol_of_Lethal_Damage",
+    "lvReqToEquip": 1,
+    "Class": "ALL",
+    "Power": 2,
+    "Weapon_Power": 2,
+    "STR": 2,
+    "AGI": 3,
+    "WIS": 3,
+    "LUK": 3,
+    "UQ1txt": "_BASE_DAMAGE",
+    "UQ1val": 50
+  },
+  "ObolPinkDamage": {
+    "displayName": "Dementia_Obol_of_Infinite_Damage",
+    "lvReqToEquip": 1,
+    "Class": "ALL",
+    "Power": 3,
+    "Weapon_Power": 3,
+    "STR": 5,
+    "AGI": 5,
+    "WIS": 5,
+    "LUK": 5,
+    "UQ1txt": "_BASE_DAMAGE",
+    "UQ1val": 100
+  },
+  "ObolPlatinumSpeed": {
+    "displayName": "Platinum_Obol_of_Blinding_Speed",
+    "lvReqToEquip": 1,
+    "Class": "ALL",
+    "AGI": 4,
+    "UQ1txt": "%_MOVEMENT_SPEED",
+    "UQ1val": 2
+  },
+  "ObolSilverMoney": {
+    "displayName": "Silver_Obol_of_Pocket_Change",
+    "lvReqToEquip": 1,
+    "Class": "ALL",
+    "UQ1txt": "%_MONEY",
+    "UQ1val": 6
+  },
+  "ObolGoldMoney": {
+    "displayName": "Golden_Obol_of_Plentiful_Riches",
+    "lvReqToEquip": 1,
+    "Class": "ALL",
+    "UQ1txt": "%_MONEY",
+    "UQ1val": 10
+  },
+  "ObolBronzeMining": {
+    "displayName": "Bronze_Obol_of_Small_Swings",
+    "lvReqToEquip": 1,
+    "Class": "ALL",
+    "Power": 1,
+    "Weapon_Power": 1
+  },
+  "ObolSilverMining": {
+    "displayName": "Silver_Obol_of_Moderate_Mining",
+    "lvReqToEquip": 1,
+    "Class": "ALL",
+    "Power": 2,
+    "Weapon_Power": 2,
+    "STR": 1
+  },
+  "ObolGoldMining": {
+    "displayName": "Golden_Obol_of_Diligent_Digging",
+    "lvReqToEquip": 1,
+    "Class": "ALL",
+    "Power": 3,
+    "Weapon_Power": 3,
+    "STR": 2
+  },
+  "ObolPlatinumMining": {
+    "displayName": "Platinum_Obol_of_Dwarven_Delving",
+    "lvReqToEquip": 1,
+    "Class": "ALL",
+    "Power": 4,
+    "Weapon_Power": 4,
+    "STR": 3,
+    "UQ1txt": "%_MINING_EFFICINCY",
+    "UQ1val": 2
+  },
+  "ObolPinkMining": {
+    "displayName": "Dementia_Obol_of_Magisterial_Metals",
+    "lvReqToEquip": 1,
+    "Class": "ALL",
+    "Power": 5,
+    "Weapon_Power": 5,
+    "STR": 5,
+    "UQ1txt": "%_MINING_EFFICINCY",
+    "UQ1val": 8
+  },
+  "ObolBronzeChoppin": {
+    "displayName": "Bronze_Obol_of_Chippin_Chops",
+    "lvReqToEquip": 1,
+    "Class": "ALL",
+    "Power": 1,
+    "Weapon_Power": 1
+  },
+  "ObolSilverChoppin": {
+    "displayName": "Silver_Obol_of_Big_Bark",
+    "lvReqToEquip": 1,
+    "Class": "ALL",
+    "Power": 2,
+    "Weapon_Power": 2,
+    "WIS": 1
+  },
+  "ObolGoldChoppin": {
+    "displayName": "Golden_Obol_of_Huge_Hackin",
+    "lvReqToEquip": 1,
+    "Class": "ALL",
+    "Power": 3,
+    "Weapon_Power": 3,
+    "WIS": 2
+  },
+  "ObolPlatinumChoppin": {
+    "displayName": "Platinum_Obol_of_Lumby_Loggo",
+    "lvReqToEquip": 1,
+    "Class": "ALL",
+    "Power": 4,
+    "Weapon_Power": 4,
+    "WIS": 3,
+    "UQ1txt": "%_CHOP_EFFICIENCY",
+    "UQ1val": 2
+  },
+  "ObolPinkChoppin": {
+    "displayName": "Dementia_Obol_of_WOWOWOWWO",
+    "lvReqToEquip": 1,
+    "Class": "ALL",
+    "Power": 5,
+    "Weapon_Power": 5,
+    "WIS": 5,
+    "UQ1txt": "%_CHOP_EFFICIENCY",
+    "UQ1val": 8
+  },
+  "ObolBronzeFishing": {
+    "displayName": "Bronze_Obol_of_Finite_Fish",
+    "lvReqToEquip": 1,
+    "Class": "ALL",
+    "Power": 1,
+    "Weapon_Power": 1
+  },
+  "ObolSilverFishing": {
+    "displayName": "Silver_Obol_of_Puny_Pikes",
+    "lvReqToEquip": 1,
+    "Class": "ALL",
+    "Power": 2,
+    "Weapon_Power": 2,
+    "STR": 1
+  },
+  "ObolGoldFishing": {
+    "displayName": "Golden_Obol_of_Crazy_Carp",
+    "lvReqToEquip": 1,
+    "Class": "ALL",
+    "Power": 3,
+    "Weapon_Power": 3,
+    "STR": 2
+  },
+  "ObolPlatinumFishing": {
+    "displayName": "Platinum_Obol_of_Tremendous_Trout",
+    "lvReqToEquip": 1,
+    "Class": "ALL",
+    "Power": 4,
+    "Weapon_Power": 4,
+    "STR": 3,
+    "UQ1txt": "%_FISHIN_EFFICINCY",
+    "UQ1val": 2
+  },
+  "ObolPinkFishing": {
+    "displayName": "Dementia_Obol_of_Monument_Marlins",
+    "lvReqToEquip": 1,
+    "Class": "ALL",
+    "Power": 5,
+    "Weapon_Power": 5,
+    "STR": 5,
+    "UQ1txt": "%_FISHIN_EFFICINCY",
+    "UQ1val": 8
+  },
+  "ObolBronzeCatching": {
+    "displayName": "Bronze_Obol_of_Few_Flies",
+    "lvReqToEquip": 1,
+    "Class": "ALL",
+    "Power": 1,
+    "Weapon_Power": 1
+  },
+  "ObolSilverCatching": {
+    "displayName": "Silver_Obol_of_Big_Bugs",
+    "lvReqToEquip": 1,
+    "Class": "ALL",
+    "Power": 2,
+    "Weapon_Power": 2,
+    "AGI": 1
+  },
+  "ObolGoldCatching": {
+    "displayName": "Golden_Obol_of_Insane_Insects",
+    "lvReqToEquip": 1,
+    "Class": "ALL",
+    "Power": 3,
+    "Weapon_Power": 3,
+    "AGI": 2
+  },
+  "ObolPlatinumCatching": {
+    "displayName": "Platinum_Obol_of_Idk_Yet",
+    "lvReqToEquip": 1,
+    "Class": "ALL",
+    "Power": 4,
+    "Weapon_Power": 4,
+    "AGI": 3,
+    "UQ1txt": "%_CATCH_EFFICINCY",
+    "UQ1val": 2
+  },
+  "ObolPinkCatching": {
+    "displayName": "Dementia_Obol_of_Idk_Yet",
+    "lvReqToEquip": 1,
+    "Class": "ALL",
+    "Power": 5,
+    "Weapon_Power": 5,
+    "AGI": 5,
+    "UQ1txt": "%_CATCH_EFFICINCY",
+    "UQ1val": 8
+  },
+  "ObolSilverLuck": {
+    "displayName": "Silver_Obol_of_Double_Sixes",
+    "lvReqToEquip": 1,
+    "Class": "ALL",
+    "LUK": 2,
+    "UQ1txt": "%_DROP_CHANCE",
+    "UQ1val": 5
+  },
+  "ObolGoldLuck": {
+    "displayName": "Golden_Obol_of_Triple_Sixes",
+    "lvReqToEquip": 1,
+    "Class": "ALL",
+    "LUK": 3,
+    "UQ1txt": "%_DROP_CHANCE",
+    "UQ1val": 7
+  },
+  "ObolPlatinumLuck": {
+    "displayName": "Platinum_Obol_of_Yahtzee_Sixes",
+    "lvReqToEquip": 1,
+    "Class": "ALL",
+    "LUK": 5,
+    "UQ1txt": "%_DROP_CHANCE",
+    "UQ1val": 10
+  },
+  "ObolPinkLuck": {
+    "displayName": "Dementia_Obol_of_Infinisixes",
+    "lvReqToEquip": 1,
+    "Class": "ALL",
+    "LUK": 7,
+    "UQ1txt": "%_DROP_CHANCE",
+    "UQ1val": 15
+  },
+  "ObolBronzePop": {
+    "displayName": "Bronze_Obol_of_Pop",
+    "lvReqToEquip": 1,
+    "Class": "ALL",
+    "LUK": 1,
+    "Defence": 1,
+    "UQ1txt": "%_DROP_CHANCE",
+    "UQ1val": 2
+  },
+  "ObolSilverPop": {
+    "displayName": "Silver_Obol_of_Pop_Pop",
+    "lvReqToEquip": 1,
+    "Class": "ALL",
+    "LUK": 3,
+    "Defence": 2,
+    "UQ1txt": "%_DROP_CHANCE",
+    "UQ1val": 3
+  },
+  "ObolGoldPop": {
+    "displayName": "Golden_Obol_of_Poppity_Pop",
+    "lvReqToEquip": 1,
+    "Class": "ALL",
+    "LUK": 6,
+    "Defence": 3,
+    "UQ1txt": "%_DROP_CHANCE",
+    "UQ1val": 4
+  },
+  "ObolPlatinumPop": {
+    "displayName": "Platinum_Obol_of_Poppity_Poppy",
+    "lvReqToEquip": 1,
+    "Class": "ALL",
+    "LUK": 9,
+    "Defence": 4,
+    "UQ1txt": "%_DROP_CHANCE",
+    "UQ1val": 6
+  },
+  "ObolPinkPop": {
+    "displayName": "Dementia_Obol_of_Pop_Pop_Pop_Pop",
+    "lvReqToEquip": 1,
+    "Class": "ALL",
+    "LUK": 12,
+    "Defence": 5,
+    "UQ1txt": "%_DROP_CHANCE",
+    "UQ1val": 9
+  },
+  "ObolEfauntA": {
+    "displayName": "Skeletal_Obol_of_Efaunt's_Gaze",
+    "lvReqToEquip": 1,
+    "Class": "ALL",
+    "Power": 2,
+    "Weapon_Power": 2,
+    "STR": 5,
+    "AGI": 5,
+    "WIS": 5,
+    "LUK": 5,
+    "UQ1txt": "%_BOSS_DAMAGE",
+    "UQ1val": 5
+  },
+  "ObolAmarokA": {
+    "displayName": "Granite_Obol_of_Amarok's_Stare",
+    "lvReqToEquip": 1,
+    "Class": "ALL",
+    "STR": 2,
+    "AGI": 2,
+    "WIS": 2,
+    "LUK": 2,
+    "Defence": 5,
+    "UQ1txt": "%_DEFENCE",
+    "UQ1val": 4
+  },
+  "ObolBronzeKill": {
+    "displayName": "Bronze_Obol_of_Multikill",
+    "lvReqToEquip": 1,
+    "Class": "ALL",
+    "UQ1txt": "%_MULTIKILL",
+    "UQ1val": 1
+  },
+  "ObolSilverKill": {
+    "displayName": "Silver_Obol_of_Megakill",
+    "lvReqToEquip": 1,
+    "Class": "ALL",
+    "UQ1txt": "%_MULTIKILL",
+    "UQ1val": 2
+  },
+  "ObolGoldKill": {
+    "displayName": "Golden_Obol_of_Ultrakill",
+    "lvReqToEquip": 1,
+    "Class": "ALL",
+    "Power": 1,
+    "Weapon_Power": 1,
+    "UQ1txt": "%_MULTIKILL",
+    "UQ1val": 3
+  },
+  "ObolPlatinumKill": {
+    "displayName": "Platinum_Obol_of_Killimanjaro",
+    "lvReqToEquip": 1,
+    "Class": "ALL",
+    "Power": 1,
+    "Weapon_Power": 1,
+    "UQ1txt": "%_MULTIKILL",
+    "UQ1val": 5
+  },
+  "ObolPinkKill": {
+    "displayName": "Dementia_Obol_of_Killionaire",
+    "lvReqToEquip": 1,
+    "Class": "ALL",
+    "Power": 2,
+    "Weapon_Power": 2,
+    "UQ1txt": "%_MULTIKILL",
+    "UQ1val": 10
+  },
+  "ObolBronzeEXP": {
+    "displayName": "Bronze_Obol_of_Experience",
+    "lvReqToEquip": 1,
+    "Class": "ALL",
+    "UQ1txt": "%_XP_FROM_MONSTERS",
+    "UQ1val": 1
+  },
+  "ObolSilverEXP": {
+    "displayName": "Silver_Obol_of_Experience",
+    "lvReqToEquip": 1,
+    "Class": "ALL",
+    "STR": 1,
+    "AGI": 1,
+    "WIS": 1,
+    "UQ1txt": "%_XP_FROM_MONSTERS",
+    "UQ1val": 1
+  },
+  "ObolGoldEXP": {
+    "displayName": "Golden_Obol_of_Experience",
+    "lvReqToEquip": 1,
+    "Class": "ALL",
+    "STR": 2,
+    "AGI": 2,
+    "WIS": 2,
+    "UQ1txt": "%_XP_FROM_MONSTERS",
+    "UQ1val": 2
+  },
+  "ObolPlatinumEXP": {
+    "displayName": "Platinum_Obol_of_Experience",
+    "lvReqToEquip": 1,
+    "Class": "ALL",
+    "STR": 3,
+    "AGI": 3,
+    "WIS": 3,
+    "UQ1txt": "%_XP_FROM_MONSTERS",
+    "UQ1val": 3
+  },
+  "ObolPinkEXP": {
+    "displayName": "Dementia_Obol_of_Experience",
+    "lvReqToEquip": 1,
+    "Class": "ALL",
+    "Power": 1,
+    "Weapon_Power": 1,
+    "STR": 5,
+    "AGI": 5,
+    "WIS": 5,
+    "UQ1txt": "%_XP_FROM_MONSTERS",
+    "UQ1val": 4
+  },
+  "ObolBronzeCard": {
+    "displayName": "Bronze_Obol_of_Cards",
+    "lvReqToEquip": 1,
+    "Class": "ALL",
+    "UQ1txt": "%_CARD_DROP_CHANCE",
+    "UQ1val": 1
+  },
+  "ObolSilverCard": {
+    "displayName": "Silver_Obol_of_Cards",
+    "lvReqToEquip": 1,
+    "Class": "ALL",
+    "STR": 1,
+    "AGI": 1,
+    "WIS": 1,
+    "UQ1txt": "%_CARD_DROP_CHANCE",
+    "UQ1val": 3
+  },
+  "ObolGoldCard": {
+    "displayName": "Golden_Obol_of_Cards",
+    "lvReqToEquip": 1,
+    "Class": "ALL",
+    "STR": 2,
+    "AGI": 2,
+    "WIS": 2,
+    "UQ1txt": "%_CARD_DROP_CHANCE",
+    "UQ1val": 5
+  },
+  "ObolPlatinumCard": {
+    "displayName": "Platinum_Obol_of_Cards",
+    "lvReqToEquip": 1,
+    "Class": "ALL",
+    "STR": 3,
+    "AGI": 3,
+    "WIS": 3,
+    "UQ1txt": "%_CARD_DROP_CHANCE",
+    "UQ1val": 7
+  },
+  "ObolPinkCard": {
+    "displayName": "Dementia_Obol_of_Cards",
+    "lvReqToEquip": 1,
+    "Class": "ALL",
+    "Power": 1,
+    "Weapon_Power": 1,
+    "STR": 5,
+    "AGI": 5,
+    "WIS": 5,
+    "UQ1txt": "%_CARD_DROP_CHANCE",
+    "UQ1val": 10
+  },
+  "ObolBronzeDef": {
+    "displayName": "Bronze_Obol_of_Defence",
+    "lvReqToEquip": 1,
+    "Class": "ALL",
+    "Defence": 1
+  },
+  "ObolSilverDef": {
+    "displayName": "Silver_Obol_of_Defence",
+    "lvReqToEquip": 1,
+    "Class": "ALL",
+    "Defence": 3
+  },
+  "ObolGoldDef": {
+    "displayName": "Golden_Obol_of_Defence",
+    "lvReqToEquip": 1,
+    "Class": "ALL",
+    "Defence": 6
+  },
+  "ObolPlatinumDef": {
+    "displayName": "Platinum_Obol_of_Defense_with_an_S",
+    "lvReqToEquip": 1,
+    "Class": "ALL",
+    "Defence": 15
+  },
+  "ObolPinkDef": {
+    "displayName": "Dementia_Obol_of_Defence",
+    "lvReqToEquip": 1,
+    "Class": "ALL",
+    "Defence": 25
+  },
+  "ObolBronzeTrapping": {
+    "displayName": "Bronze_Obol_of_Trapping",
+    "lvReqToEquip": 1,
+    "Class": "ALL",
+    "Power": 1,
+    "Weapon_Power": 1
+  },
+  "ObolSilverTrapping": {
+    "displayName": "Silver_Obol_of_Trapping",
+    "lvReqToEquip": 1,
+    "Class": "ALL",
+    "Power": 2,
+    "Weapon_Power": 2,
+    "AGI": 1
+  },
+  "ObolGoldTrapping": {
+    "displayName": "Golden_Obol_of_Trapping",
+    "lvReqToEquip": 1,
+    "Class": "ALL",
+    "Power": 3,
+    "Weapon_Power": 3,
+    "AGI": 2
+  },
+  "ObolPlatinumTrapping": {
+    "displayName": "Platinum_Obol_of_Trapping",
+    "lvReqToEquip": 1,
+    "Class": "ALL",
+    "Power": 5,
+    "Weapon_Power": 5,
+    "AGI": 3
+  },
+  "ObolPinkTrapping": {
+    "displayName": "Dementia_Obol_of_Trapping",
+    "lvReqToEquip": 1,
+    "Class": "ALL",
+    "Power": 7,
+    "Weapon_Power": 7,
+    "AGI": 5
+  },
+  "ObolBronzeCons": {
+    "displayName": "Bronze_Obol_of_Construction",
+    "lvReqToEquip": 1,
+    "Class": "ALL",
+    "UQ1txt": "%_BUILD_SPD",
+    "UQ1val": 1
+  },
+  "ObolSilverCons": {
+    "displayName": "Silver_Obol_of_Construction",
+    "lvReqToEquip": 1,
+    "Class": "ALL",
+    "STR": 1,
+    "UQ1txt": "%_BUILD_SPD",
+    "UQ1val": 2
+  },
+  "ObolGoldCons": {
+    "displayName": "Golden_Obol_of_Construction",
+    "lvReqToEquip": 1,
+    "Class": "ALL",
+    "STR": 2,
+    "UQ1txt": "%_BUILD_SPD",
+    "UQ1val": 5
+  },
+  "ObolPlatinumCons": {
+    "displayName": "Platinum_Obol_of_Construction",
+    "lvReqToEquip": 1,
+    "Class": "ALL",
+    "STR": 3,
+    "UQ1txt": "%_BUILD_SPD",
+    "UQ1val": 12
+  },
+  "ObolPinkCons": {
+    "displayName": "Dementia_Obol_of_Construction",
+    "lvReqToEquip": 1,
+    "Class": "ALL",
+    "STR": 5,
+    "UQ1txt": "%_BUILD_SPD",
+    "UQ1val": 20
+  },
+  "ObolBronzeWorship": {
+    "displayName": "Bronze_Obol_of_Worship",
+    "lvReqToEquip": 1,
+    "Class": "ALL",
+    "Power": 1,
+    "Weapon_Power": 1
+  },
+  "ObolSilverWorship": {
+    "displayName": "Silver_Obol_of_Worship",
+    "lvReqToEquip": 1,
+    "Class": "ALL",
+    "Power": 2,
+    "Weapon_Power": 2,
+    "WIS": 1
+  },
+  "ObolGoldWorship": {
+    "displayName": "Golden_Obol_of_Worship",
+    "lvReqToEquip": 1,
+    "Class": "ALL",
+    "Power": 3,
+    "Weapon_Power": 3,
+    "WIS": 2
+  },
+  "ObolPlatinumWorship": {
+    "displayName": "Platinum_Obol_of_Worship",
+    "lvReqToEquip": 1,
+    "Class": "ALL",
+    "Power": 5,
+    "Weapon_Power": 5,
+    "WIS": 3
+  },
+  "ObolPinkWorship": {
+    "displayName": "Dementia_Obol_of_Worship",
+    "lvReqToEquip": 1,
+    "Class": "ALL",
+    "Power": 7,
+    "Weapon_Power": 7,
+    "WIS": 5
+  },
+  "ExpSmith1": {
+    "displayName": "Smithing_Exp"
+  },
+  "StampA1": {
+    "displayName": "Sword_Stamp"
+  },
+  "StampA2": {
+    "displayName": "Heart_Stamp"
+  },
+  "StampA3": {
+    "displayName": "Mana_Stamp"
+  },
+  "StampA4": {
+    "displayName": "Tomahawk_Stamp"
+  },
+  "StampA5": {
+    "displayName": "Target_Stamp"
+  },
+  "StampA6": {
+    "displayName": "Shield_Stamp",
+    "Defence": 1
+  },
+  "StampA7": {
+    "displayName": "Longsword_Stamp"
+  },
+  "StampA8": {
+    "displayName": "Kapow_Stamp"
+  },
+  "StampA9": {
+    "displayName": "Fist_Stamp",
+    "STR": 1
+  },
+  "StampA10": {
+    "displayName": "Battleaxe_Stamp"
+  },
+  "StampA11": {
+    "displayName": "Agile_Stamp",
+    "AGI": 1
+  },
+  "StampA12": {
+    "displayName": "Vitality_Stamp"
+  },
+  "StampA13": {
+    "displayName": "Book_Stamp",
+    "WIS": 1
+  },
+  "StampA14": {
+    "displayName": "Manamoar_Stamp"
+  },
+  "StampA15": {
+    "displayName": "Clover_Stamp",
+    "LUK": 1
+  },
+  "StampA16": {
+    "displayName": "Scimitar_Stamp"
+  },
+  "StampA17": {
+    "displayName": "Bullseye_Stamp"
+  },
+  "StampA18": {
+    "displayName": "Feather_Stamp",
+    "Speed": 5
+  },
+  "StampA19": {
+    "displayName": "Polearm_Stamp"
+  },
+  "StampA20": {
+    "displayName": "Violence_Stamp",
+    "STR": 1
+  },
+  "StampA21": {
+    "displayName": "Buckler_Stamp",
+    "Defence": 1
+  },
+  "StampA22": {
+    "displayName": "FILLER",
+    "Defence": 30
+  },
+  "StampA23": {
+    "displayName": "Sukka_Foo"
+  },
+  "StampA24": {
+    "displayName": "Arcane_Stamp",
+    "WIS": 1
+  },
+  "StampA25": {
+    "displayName": "FILLER",
+    "Defence": 30
+  },
+  "StampA26": {
+    "displayName": "Steve_Sword"
+  },
+  "StampA27": {
+    "displayName": "Blover_Stamp",
+    "LUK": 1
+  },
+  "StampA28": {
+    "displayName": "Stat_Graph_Stamp"
+  },
+  "StampA29": {
+    "displayName": "FILLER",
+    "Defence": 30
+  },
+  "StampA30": {
+    "displayName": "FILLER",
+    "Defence": 30
+  },
+  "StampA31": {
+    "displayName": "FILLER",
+    "Defence": 30
+  },
+  "StampA32": {
+    "displayName": "FILLER",
+    "Defence": 30
+  },
+  "StampA33": {
+    "displayName": "FILLER",
+    "Defence": 30
+  },
+  "StampA34": {
+    "displayName": "FILLER",
+    "Defence": 30
+  },
+  "StampA35": {
+    "displayName": "FILLER",
+    "Defence": 30
+  },
+  "StampB1": {
+    "displayName": "Pickaxe_Stamp"
+  },
+  "StampB2": {
+    "displayName": "Hatchet_Stamp"
+  },
+  "StampB3": {
+    "displayName": "Anvil_Zoomer_Stamp"
+  },
+  "StampB4": {
+    "displayName": "Lil'_Mining_Baggy_Stamp"
+  },
+  "StampB5": {
+    "displayName": "Twin_Ores_Stamp"
+  },
+  "StampB6": {
+    "displayName": "Choppin'_Bag_Stamp"
+  },
+  "StampB7": {
+    "displayName": "Duplogs_Stamp"
+  },
+  "StampB8": {
+    "displayName": "Matty_Bag_Stamp"
+  },
+  "StampB9": {
+    "displayName": "Smart_Dirt_Stamp"
+  },
+  "StampB10": {
+    "displayName": "Cool_Diggy_Tool_Stamp"
+  },
+  "StampB11": {
+    "displayName": "High_IQ_Lumber_Stamp"
+  },
+  "StampB12": {
+    "displayName": "Swag_Swingy_Tool_Stamp"
+  },
+  "StampB13": {
+    "displayName": "Alch_Go_Brrr_Stamp",
+    "Speed": 1
+  },
+  "StampB14": {
+    "displayName": "Brainstew_Stamps"
+  },
+  "StampB15": {
+    "displayName": "Drippy_Drop_Stamp"
+  },
+  "StampB16": {
+    "displayName": "Droplots_Stamp"
+  },
+  "StampB17": {
+    "displayName": "Fishing_Rod_Stamp"
+  },
+  "StampB18": {
+    "displayName": "Fishhead_Stamp"
+  },
+  "StampB19": {
+    "displayName": "Catch_Net_Stamp"
+  },
+  "StampB20": {
+    "displayName": "Fly_Intel_Stamp"
+  },
+  "StampB21": {
+    "displayName": "Bag_o_Heads_Stamp"
+  },
+  "StampB22": {
+    "displayName": "Holy_Mackerel_Stamp"
+  },
+  "StampB23": {
+    "displayName": "Bugsack_Stamp"
+  },
+  "StampB24": {
+    "displayName": "Buzz_Buzz_Stamp"
+  },
+  "StampB25": {
+    "displayName": "Hidey_Box_Stamp"
+  },
+  "StampB26": {
+    "displayName": "Purp_Froge_Stamp"
+  },
+  "StampB27": {
+    "displayName": "Spikemouth_Stamp"
+  },
+  "StampB28": {
+    "displayName": "Shiny_Crab_Stamp"
+  },
+  "StampB29": {
+    "displayName": "Gear_Stamp"
+  },
+  "StampB30": {
+    "displayName": "Stample_Stamp"
+  },
+  "StampB31": {
+    "displayName": "Saw_Stamp"
+  },
+  "StampB32": {
+    "displayName": "Amplestample_Stamp"
+  },
+  "StampB33": {
+    "displayName": "SpoOoky_Stamp"
+  },
+  "StampB34": {
+    "displayName": "Flowin_Stamp",
+    "Speed": 1
+  },
+  "StampB35": {
+    "displayName": "Prayday_Stamp"
+  },
+  "StampB36": {
+    "displayName": "Banked_Pts_Stamp"
+  },
+  "StampC1": {
+    "displayName": "Questin_Stamp"
+  },
+  "StampC2": {
+    "displayName": "Mason_Jar_Stamp"
+  },
+  "StampC3": {
+    "displayName": "Crystallin"
+  },
+  "StampC4": {
+    "displayName": "Blank"
+  },
+  "StampC5": {
+    "displayName": "Apple_Stamp"
+  },
+  "StampC6": {
+    "displayName": "Potion_Stamp"
+  },
+  "StampC7": {
+    "displayName": "Golden_Apple_Stamp"
+  },
+  "StampC8": {
+    "displayName": "Blank"
+  },
+  "StampC9": {
+    "displayName": "Card_Stamp"
+  },
+  "StampC10": {
+    "displayName": "Blank"
+  },
+  "StampC11": {
+    "displayName": "Blank"
+  },
+  "StampC12": {
+    "displayName": "Blank"
+  },
+  "StampC13": {
+    "displayName": "Talent_I_Stamp"
+  },
+  "StampC14": {
+    "displayName": "Talent_II_Stamp"
+  },
+  "StampC15": {
+    "displayName": "Talent_III_Stamp"
+  },
+  "StampC16": {
+    "displayName": "Talent_IV_Stamp"
+  },
+  "StampC17": {
+    "displayName": "Talent_V_Stamp"
+  },
+  "StampC18": {
+    "displayName": "Talent_S_Stamp"
+  },
+  "StampC19": {
+    "displayName": "Multikill_Stamp"
+  },
+  "StampC20": {
+    "displayName": "Biblio_Stamp"
+  },
+  "StoneWe": {
+    "displayName": "Easter_Weapon_Stone",
+    "Power": 1,
+    "Defence": 1,
+    "Weapon_Power": 1
+  },
+  "StoneWeb": {
+    "displayName": "Summer_Weapon_Stone",
+    "Defence": 1
+  },
+  "StoneW1": {
+    "displayName": "Weapon_Upgrade_Stone_I",
+    "Power": 1,
+    "Weapon_Power": 1
+  },
+  "StoneW2": {
+    "displayName": "Weapon_Upgrade_Stone_II",
+    "Power": 1,
+    "Weapon_Power": 1
+  },
+  "StoneW3": {
+    "displayName": "Weapon_Upgrade_Stone_III",
+    "Power": 2,
+    "Weapon_Power": 2
+  },
+  "StoneW6": {
+    "displayName": "Warped_Weapon_Upgrade_Stone",
+    "Power": 3,
+    "Weapon_Power": 3
+  },
+  "StoneAe": {
+    "displayName": "Easter_Armor_Stone",
+    "Defence": 1
+  },
+  "StoneAeB": {
+    "displayName": "Summer_Armor_Stone",
+    "Defence": 3
+  },
+  "StoneA1": {
+    "displayName": "Armor_Upgrade_Stone_I",
+    "Defence": 2
+  },
+  "StoneA1b": {
+    "displayName": "Armor_Upgrade_Stone_G"
+  },
+  "StoneA2": {
+    "displayName": "Armor_Upgrade_Stone_II",
+    "Defence": 2
+  },
+  "StoneA2b": {
+    "displayName": "Armor_Upgrade_Stone_B",
+    "Defence": 5
+  },
+  "StoneA3": {
+    "displayName": "Armor_Upgrade_Stone_III",
+    "Defence": 3
+  },
+  "StoneA3b": {
+    "displayName": "Armor_Upgrade_Stone_C",
+    "Power": 1,
+    "Weapon_Power": 1
+  },
+  "StoneTe": {
+    "displayName": "Easter_Tool_Upgrade_Stone"
+  },
+  "StoneT1": {
+    "displayName": "Tool_Upgrade_Stone_I",
+    "Power": 1,
+    "Weapon_Power": 1
+  },
+  "StoneT1e": {
+    "displayName": "Giftmas_Tool_Upgrade_Stone"
+  },
+  "StoneT1eb": {
+    "displayName": "Summer_Tool_Upgrade_Stone",
+    "Defence": 3
+  },
+  "StoneT2": {
+    "displayName": "Tool_Upgrade_Stone_II",
+    "Power": 2,
+    "Weapon_Power": 2
+  },
+  "StoneT3": {
+    "displayName": "Tool_Upgrade_Stone_III",
+    "Power": 3,
+    "Weapon_Power": 3
+  },
+  "StoneHelm1": {
+    "displayName": "Helmet_Upgrade_Stone_I"
+  },
+  "StoneHelm6": {
+    "displayName": "Warped_Helmet_Upgrade_Stone"
+  },
+  "StoneHelm1b": {
+    "displayName": "Giftmas_Helmet_Upgrade_Stone"
+  },
+  "StoneZ1": {
+    "displayName": "Mystery_Upgrade_Stone_I"
+  },
+  "StoneZ2": {
+    "displayName": "Mystery_Upgrade_Stone_II"
+  },
+  "StonePremSTR": {
+    "displayName": "Premium_STR_Stone",
+    "STR": 5
+  },
+  "StonePremAGI": {
+    "displayName": "Premium_AGI_Stone",
+    "AGI": 5
+  },
+  "StonePremWIS": {
+    "displayName": "Premium_WIS_Stone",
+    "WIS": 5
+  },
+  "StonePremLUK": {
+    "displayName": "Premium_LUK_Stone",
+    "LUK": 5
+  },
+  "Refinery1": {
+    "displayName": "Redox_Salts"
+  },
+  "Refinery2": {
+    "displayName": "Explosive_Salts"
+  },
+  "Refinery3": {
+    "displayName": "Spontaneity_Salts"
+  },
+  "Refinery4": {
+    "displayName": "Dioxide_Synthesis"
+  },
+  "Refinery5": {
+    "displayName": "Red_Salt"
+  },
+  "Refinery6": {
+    "displayName": "Red_Salt"
+  },
+  "CraftMat1": {
+    "displayName": "Thread"
+  },
+  "CraftMat2": {
+    "displayName": "Crimson_String"
+  },
+  "CraftMat3": {
+    "displayName": "Cue_Tape"
+  },
+  "CraftMat5": {
+    "displayName": "Trusty_Nails"
+  },
+  "CraftMat6": {
+    "displayName": "Boring_Brick"
+  },
+  "CraftMat7": {
+    "displayName": "Chain_Link"
+  },
+  "CraftMat9": {
+    "displayName": "Leather_Hide"
+  },
+  "CraftMat8": {
+    "displayName": "Pinion_Spur"
+  },
+  "CraftMat10": {
+    "displayName": "Lugi_Bracket"
+  },
+  "CraftMat11": {
+    "displayName": "Filler"
+  },
+  "CraftMat12": {
+    "displayName": "Filler"
+  },
+  "CraftMat13": {
+    "displayName": "Filler"
+  },
+  "CraftMat14": {
+    "displayName": "Filler"
+  },
+  "CraftMat15": {
+    "displayName": "Filler"
+  },
+  "CraftMat16": {
+    "displayName": "Filler"
+  },
+  "CraftMat17": {
+    "displayName": "Filler"
+  },
+  "PureWater": {
+    "displayName": "Distilled_Water"
+  },
+  "PureWater2": {
+    "displayName": "Dense_Water"
+  },
+  "Grasslands1": {
+    "displayName": "Spore_Cap"
+  },
+  "Grasslands2": {
+    "displayName": "Frog_Leg"
+  },
+  "Grasslands3": {
+    "displayName": "Bean_Slices"
+  },
+  "Grasslands4": {
+    "displayName": "Red_Spore_Cap"
+  },
+  "Jungle1": {
+    "displayName": "Slime_Sludge"
+  },
+  "Jungle2": {
+    "displayName": "Snake_Skin"
+  },
+  "Jungle3": {
+    "displayName": "Carrot_Cube"
+  },
+  "Forest1": {
+    "displayName": "Glublin_Ear"
+  },
+  "Forest2": {
+    "displayName": "Plank"
+  },
+  "Forest3": {
+    "displayName": "Bullfrog_Horn"
+  },
+  "Sewers1": {
+    "displayName": "Corn_Kernels"
+  },
+  "Sewers1b": {
+    "displayName": "Golden_Plop"
+  },
+  "Sewers2": {
+    "displayName": "Rats_Tail"
+  },
+  "Sewers3": {
+    "displayName": "Bonemeal"
+  },
+  "TreeInterior1": {
+    "displayName": "Stick"
+  },
+  "TreeInterior1b": {
+    "displayName": "Woodular_Circle"
+  },
+  "TreeInterior2": {
+    "displayName": "Acorn"
+  },
+  "BabaYagaETC": {
+    "displayName": "Baba_Yaga_Baby_Eggs"
+  },
+  "DesertA1": {
+    "displayName": "Pocket_Sand"
+  },
+  "DesertA1b": {
+    "displayName": "Glass_Shard"
+  },
+  "DesertA2": {
+    "displayName": "Megalodon_Tooth"
+  },
+  "DesertA3": {
+    "displayName": "Crabby_Cakey"
+  },
+  "DesertA3b": {
+    "displayName": "Nuget_Cake"
+  },
+  "DesertB1": {
+    "displayName": "Coconotnotto"
+  },
+  "DesertB2": {
+    "displayName": "Furled_Flag"
+  },
+  "DesertB3": {
+    "displayName": "Pincer_Arm"
+  },
+  "DesertB4": {
+    "displayName": "Potato_Remains"
+  },
+  "DesertC1": {
+    "displayName": "High_Steaks"
+  },
+  "DesertC2": {
+    "displayName": "Wakka_Cherry"
+  },
+  "DesertC2b": {
+    "displayName": "Ghost"
+  },
+  "DesertC3": {
+    "displayName": "Singlecle"
+  },
+  "DesertC4": {
+    "displayName": "Shrapshell"
+  },
+  "SnowA1": {
+    "displayName": "Floof_Ploof"
+  },
+  "SnowA2": {
+    "displayName": "Melty_Cube"
+  },
+  "SnowA2a": {
+    "displayName": "Yellow_Snowflake"
+  },
+  "SnowA3": {
+    "displayName": "Moustache_Comb"
+  },
+  "SnowA4": {
+    "displayName": "Ram_Wool"
+  },
+  "SnowB1": {
+    "displayName": "Sticky_Stick"
+  },
+  "SnowB2": {
+    "displayName": "Mamooth_Tusk"
+  },
+  "SnowB2a": {
+    "displayName": "Ice_Age_3"
+  },
+  "SnowB5": {
+    "displayName": "Snow_Ball"
+  },
+  "SnowB3": {
+    "displayName": "Pen"
+  },
+  "SnowB4": {
+    "displayName": "Cracked_Glass"
+  },
+  "SnowC1": {
+    "displayName": "Sippy_Straw"
+  },
+  "SnowC2": {
+    "displayName": "Cryosnake_Skin"
+  },
+  "SnowC3": {
+    "displayName": "Audio_Cord"
+  },
+  "SnowC4": {
+    "displayName": "Contact_Lense"
+  },
+  "SnowC4a": {
+    "displayName": "Black_Lense"
+  },
+  "IceMountains2": {
+    "displayName": "Ice_A_La_Crem"
+  },
+  "Hgg": {
+    "displayName": "Minuteglass"
+  },
+  "EfauntDrop1": {
+    "displayName": "Ripped_Tunic"
+  },
+  "EfauntDrop2": {
+    "displayName": "Ribbed_Tunic"
+  },
+  "Trophy1": {
+    "displayName": "King_of_Food",
+    "lvReqToEquip": 65,
+    "Class": "ALL",
+    "Power": 3,
+    "Weapon_Power": 3,
+    "STR": 10,
+    "AGI": 10,
+    "WIS": 10,
+    "LUK": 10,
+    "Defence": 25,
+    "UQ1txt": "%_FOOD_EFFECT",
+    "UQ1val": 20
+  },
+  "Trophy2": {
+    "displayName": "Lucky_Lad",
+    "lvReqToEquip": 1,
+    "Class": "ALL",
+    "LUK": 7,
+    "UQ1txt": "%_DROP_CHANCE",
+    "UQ1val": 7
+  },
+  "Trophy3": {
+    "displayName": "Club_Member",
+    "lvReqToEquip": 1,
+    "Class": "BEGINNER",
+    "LUK": 5,
+    "Defence": 5,
+    "UQ1txt": "%_XP_FROM_MONSTERS",
+    "UQ1val": 3
+  },
+  "Trophy4": {
+    "displayName": "I_Made_This_Game",
+    "lvReqToEquip": 1,
+    "Class": "ALL",
+    "Power": 1,
+    "Weapon_Power": 1,
+    "UQ1txt": "%_PLAYER_HEIGHT",
+    "UQ1val": 100,
+    "UQ2txt": "%_RED_COLOURING"
+  },
+  "Trophy5": {
+    "displayName": "Dice_Dynamo",
+    "lvReqToEquip": 1,
+    "Class": "ALL",
+    "Power": 1,
+    "Weapon_Power": 1,
+    "LUK": 5,
+    "UQ1txt": "%_LUK",
+    "UQ1val": 2
+  },
+  "Trophy6": {
+    "displayName": "Blunder_Hero",
+    "lvReqToEquip": 50,
+    "Class": "ALL",
+    "Power": 2,
+    "Weapon_Power": 2,
+    "STR": 5,
+    "AGI": 5,
+    "WIS": 5,
+    "LUK": 5,
+    "Defence": 15,
+    "UQ1txt": "%_SKILL_AFK_GAIN",
+    "UQ1val": 3
+  },
+  "Trophy7": {
+    "displayName": "Original_Gamer",
+    "lvReqToEquip": 1,
+    "Class": "ALL",
+    "STR": 2,
+    "AGI": 2,
+    "WIS": 2,
+    "LUK": 2,
+    "UQ1txt": "%_XP_FROM_MONSTERS",
+    "UQ1val": 2
+  },
+  "Trophy8": {
+    "displayName": "Trailblazer",
+    "lvReqToEquip": 1,
+    "Class": "ALL",
+    "Power": 4,
+    "Weapon_Power": 4,
+    "STR": 3,
+    "AGI": 3,
+    "WIS": 3,
+    "LUK": 3,
+    "UQ1txt": "%_XP_FROM_MONSTERS",
+    "UQ1val": 20
+  },
+  "Trophy9": {
+    "displayName": "Ultra_Unboxer",
+    "lvReqToEquip": 1,
+    "Class": "ALL",
+    "STR": 3,
+    "AGI": 3,
+    "WIS": 3,
+    "LUK": 3,
+    "Defence": 3,
+    "UQ1txt": "%_DROP_CHANCE",
+    "UQ1val": 3
+  },
+  "Trophy10": {
+    "displayName": "Critter_Baron",
+    "lvReqToEquip": 1,
+    "Class": "ALL",
+    "AGI": 10,
+    "UQ1txt": "%_AGI",
+    "UQ1val": 3
+  },
+  "Trophy11": {
+    "displayName": "YumYum_Sheriff",
+    "lvReqToEquip": 1,
+    "Class": "ALL",
+    "Power": 2,
+    "Weapon_Power": 2,
+    "STR": 8,
+    "AGI": 8,
+    "WIS": 8,
+    "LUK": 8,
+    "Defence": 25,
+    "UQ1txt": "%_BOSS_DAMAGE",
+    "UQ1val": 8
+  },
+  "Trophy12": {
+    "displayName": "Megalodon",
+    "lvReqToEquip": 1,
+    "Class": "ALL",
+    "Power": 5,
+    "Weapon_Power": 5,
+    "STR": 15,
+    "Defence": 30,
+    "UQ1txt": "%_CRIT_CHANCE",
+    "UQ1val": 9
+  },
+  "Trophy13": {
+    "displayName": "Club_Maestro",
+    "lvReqToEquip": 70,
+    "Class": "BEGINNER",
+    "Power": 1,
+    "Weapon_Power": 1,
+    "LUK": 20,
+    "Defence": 20,
+    "UQ1txt": "%_SKILL_EXP",
+    "UQ1val": 35
+  },
+  "Trophy14": {
+    "displayName": "Beach_Bro",
+    "lvReqToEquip": 1,
+    "Class": "ALL",
+    "Power": 2,
+    "Weapon_Power": 2,
+    "STR": 5,
+    "AGI": 5,
+    "WIS": 5,
+    "LUK": 5,
+    "UQ1txt": "%_MONEY",
+    "UQ1val": 50
+  },
+  "Starlight": {
+    "displayName": "Starlight_Ore"
+  },
+  "AlienTreetutorial": {
+    "displayName": "Alien_Logs"
+  },
+  "EquipmentWeapons2": {
+    "displayName": "Flesh_Reaper",
+    "lvReqToEquip": 1,
+    "Class": "ALL",
+    "Speed": 5,
+    "Reach": 70,
+    "Power": 690,
+    "Weapon_Power": 690,
+    "AGI": 80,
+    "LUK": 420
+  },
+  "Secretstone": {
+    "displayName": "Secretstone"
+  },
+  "Timecandy1": {
+    "displayName": "1_HR_Time_Candy"
+  },
+  "Timecandy2": {
+    "displayName": "2_HR_Time_Candy"
+  },
+  "Timecandy3": {
+    "displayName": "4_HR_Time_Candy"
+  },
+  "Timecandy4": {
+    "displayName": "12_HR_Time_Candy"
+  },
+  "Timecandy5": {
+    "displayName": "24_HR_Time_Candy"
+  },
+  "Timecandy6": {
+    "displayName": "72_HR_Time_Candy"
+  },
+  "Timecandy7": {
+    "displayName": "Steamy_Time_Candy"
+  },
+  "InvBag1": {
+    "displayName": "Inventory_Bag_A",
+    "lvReqToEquip": 1,
+    "Class": "ALL",
+    "Speed": 20,
+    "Reach": 10
+  },
+  "InvBag2": {
+    "displayName": "Inventory_Bag_B",
+    "lvReqToEquip": 3,
+    "Class": "ALL",
+    "Speed": 20,
+    "Reach": 10
+  },
+  "InvBag3": {
+    "displayName": "Inventory_Bag_C",
+    "lvReqToEquip": 5,
+    "Class": "ALL",
+    "Speed": 20,
+    "Reach": 10
+  },
+  "InvBag4": {
+    "displayName": "Inventory_Bag_D",
+    "lvReqToEquip": 10,
+    "Class": "ALL",
+    "Speed": 165,
+    "Reach": 10
+  },
+  "InvBag5": {
+    "displayName": "Inventory_Bag_E",
+    "lvReqToEquip": 15,
+    "Class": "ALL",
+    "Speed": 165,
+    "Reach": 10
+  },
+  "InvBag6": {
+    "displayName": "Inventory_Bag_F",
+    "lvReqToEquip": 20,
+    "Class": "ALL",
+    "Speed": 165,
+    "Reach": 10
+  },
+  "InvBag7": {
+    "displayName": "Inventory_Bag_G",
+    "lvReqToEquip": 20,
+    "Class": "ALL",
+    "Speed": 165,
+    "Reach": 10
+  },
+  "InvBag8": {
+    "displayName": "Inventory_Bag_H",
+    "lvReqToEquip": 20,
+    "Class": "ALL",
+    "Speed": 165,
+    "Reach": 10
+  },
+  "InvBag9": {
+    "displayName": "Inventory_Bag_I",
+    "lvReqToEquip": 20,
+    "Class": "ALL",
+    "Speed": 165,
+    "Reach": 10
+  },
+  "InvBag21": {
+    "displayName": "Inventory_Bag_U",
+    "lvReqToEquip": 1,
+    "Class": "ALL",
+    "Speed": 150,
+    "Reach": 10
+  },
+  "InvBag22": {
+    "displayName": "Inventory_Bag_V",
+    "lvReqToEquip": 1,
+    "Class": "ALL",
+    "Speed": 150,
+    "Reach": 10
+  },
+  "InvBag23": {
+    "displayName": "Inventory_Bag_W",
+    "lvReqToEquip": 1,
+    "Class": "ALL",
+    "Speed": 150,
+    "Reach": 10
+  },
+  "InvBag24": {
+    "displayName": "Inventory_Bag_X",
+    "lvReqToEquip": 1,
+    "Class": "ALL",
+    "Speed": 150,
+    "Reach": 10
+  },
+  "InvBag25": {
+    "displayName": "Inventory_Bag_Y",
+    "lvReqToEquip": 1,
+    "Class": "ALL",
+    "Speed": 150,
+    "Reach": 10
+  },
+  "InvBag26": {
+    "displayName": "Inventory_Bag_Z",
+    "lvReqToEquip": 1,
+    "Class": "ALL",
+    "Speed": 150,
+    "Reach": 10
+  },
+  "InvBag100": {
+    "displayName": "Snakeskinventory_Bag",
+    "lvReqToEquip": 1,
+    "Class": "ALL",
+    "Speed": 120,
+    "Reach": 10
+  },
+  "InvBag101": {
+    "displayName": "Totally_Normal_and_not_fake_Bag",
+    "lvReqToEquip": 1,
+    "Class": "ALL",
+    "Speed": 20,
+    "Reach": 10
+  },
+  "InvBag102": {
+    "displayName": "Blunderbag",
+    "lvReqToEquip": 5,
+    "Class": "ALL",
+    "Speed": 20,
+    "Reach": 10
+  },
+  "InvBag103": {
+    "displayName": "Sandy_Satchel",
+    "lvReqToEquip": 20,
+    "Class": "ALL",
+    "Reach": 10
+  },
+  "InvBag104": {
+    "displayName": "Bummo_Bag",
+    "lvReqToEquip": 1,
+    "Class": "ALL",
+    "Reach": 10
+  },
+  "InvBag105": {
+    "displayName": "Capitalist_Case",
+    "lvReqToEquip": 15,
+    "Class": "ALL",
+    "Reach": 10
+  },
+  "InvBag106": {
+    "displayName": "Wealthy_Wallet",
+    "lvReqToEquip": 35,
+    "Class": "ALL",
+    "Reach": 10
+  },
+  "InvBag107": {
+    "displayName": "Prosperous_Pouch",
+    "lvReqToEquip": 70,
+    "Class": "ALL",
+    "Reach": 10
+  },
+  "InvBag108": {
+    "displayName": "Sack_of_Success",
+    "lvReqToEquip": 120,
+    "Class": "ALL",
+    "Reach": 10
+  },
+  "InvBag109": {
+    "displayName": "Shivering_Sack",
+    "lvReqToEquip": 65,
+    "Class": "ALL",
+    "Reach": 10
+  },
+  "InvBag110": {
+    "displayName": "Mamooth_Hide_Bag",
+    "lvReqToEquip": 55,
+    "Class": "ALL",
+    "Reach": 10
+  },
+  "InvStorage1": {
+    "displayName": "Storage_Chest_1",
+    "lvReqToEquip": 1,
+    "Class": "ALL",
+    "Speed": 330,
+    "Reach": 10
+  },
+  "InvStorage2": {
+    "displayName": "Storage_Chest_2",
+    "lvReqToEquip": 1,
+    "Class": "ALL",
+    "Speed": 330,
+    "Reach": 10
+  },
+  "InvStorage3": {
+    "displayName": "Storage_Chest_3",
+    "lvReqToEquip": 1,
+    "Class": "ALL",
+    "Speed": 330,
+    "Reach": 10
+  },
+  "InvStorage4": {
+    "displayName": "Storage_Chest_4",
+    "lvReqToEquip": 1,
+    "Class": "ALL",
+    "Speed": 330,
+    "Reach": 10
+  },
+  "InvStorage5": {
+    "displayName": "Storage_Chest_5",
+    "lvReqToEquip": 1,
+    "Class": "ALL",
+    "Speed": 330,
+    "Reach": 10
+  },
+  "InvStorage6": {
+    "displayName": "Storage_Chest_6",
+    "lvReqToEquip": 1,
+    "Class": "ALL",
+    "Speed": 170,
+    "Reach": 10
+  },
+  "InvStorage7": {
+    "displayName": "Storage_Chest_7",
+    "lvReqToEquip": 1,
+    "Class": "ALL",
+    "Speed": 170,
+    "Reach": 10
+  },
+  "InvStorage8": {
+    "displayName": "Storage_Chest_8",
+    "lvReqToEquip": 1,
+    "Class": "ALL",
+    "Speed": 170,
+    "Reach": 10
+  },
+  "InvStorage9": {
+    "displayName": "Storage_Chest_9",
+    "lvReqToEquip": 1,
+    "Class": "ALL",
+    "Speed": 170,
+    "Reach": 10
+  },
+  "InvStorage10": {
+    "displayName": "Storage_Chest_10",
+    "lvReqToEquip": 1,
+    "Class": "ALL",
+    "Reach": 10
+  },
+  "InvStorage11": {
+    "displayName": "Storage_Chest_11",
+    "lvReqToEquip": 1,
+    "Class": "ALL",
+    "Reach": 10
+  },
+  "InvStorage12": {
+    "displayName": "Storage_Chest_12",
+    "lvReqToEquip": 1,
+    "Class": "ALL",
+    "Reach": 10
+  },
+  "InvStorage13": {
+    "displayName": "Storage_Chest_13",
+    "lvReqToEquip": 1,
+    "Class": "ALL",
+    "Reach": 10
+  },
+  "InvStorage14": {
+    "displayName": "Storage_Chest_14",
+    "lvReqToEquip": 1,
+    "Class": "ALL",
+    "Reach": 10
+  },
+  "InvStorage15": {
+    "displayName": "Storage_Chest_15",
+    "lvReqToEquip": 1,
+    "Class": "ALL",
+    "Speed": 290,
+    "Reach": 10
+  },
+  "InvStorage16": {
+    "displayName": "Storage_Chest_16",
+    "lvReqToEquip": 1,
+    "Class": "ALL",
+    "Speed": 290,
+    "Reach": 10
+  },
+  "InvStorage17": {
+    "displayName": "Storage_Chest_17",
+    "lvReqToEquip": 1,
+    "Class": "ALL",
+    "Speed": 290,
+    "Reach": 10
+  },
+  "InvStorage18": {
+    "displayName": "Storage_Chest_18",
+    "lvReqToEquip": 1,
+    "Class": "ALL",
+    "Speed": 290,
+    "Reach": 10
+  },
+  "InvStorage19": {
+    "displayName": "Storage_Chest_19",
+    "lvReqToEquip": 1,
+    "Class": "ALL",
+    "Speed": 290,
+    "Reach": 10
+  },
+  "InvStorage20": {
+    "displayName": "Storage_Chest_20",
+    "lvReqToEquip": 1,
+    "Class": "ALL",
+    "Speed": 290,
+    "Reach": 10
+  },
+  "InvStorage21": {
+    "displayName": "Storage_Chest_21",
+    "lvReqToEquip": 1,
+    "Class": "ALL",
+    "Speed": 290,
+    "Reach": 10
+  },
+  "InvStorage31": {
+    "displayName": "Storage_Chest_90",
+    "lvReqToEquip": 1,
+    "Class": "ALL",
+    "Speed": 150,
+    "Reach": 10
+  },
+  "InvStorage32": {
+    "displayName": "Storage_Chest_91",
+    "lvReqToEquip": 1,
+    "Class": "ALL",
+    "Speed": 150,
+    "Reach": 10
+  },
+  "InvStorage33": {
+    "displayName": "Storage_Chest_92",
+    "lvReqToEquip": 1,
+    "Class": "ALL",
+    "Speed": 150,
+    "Reach": 10
+  },
+  "InvStorage34": {
+    "displayName": "Storage_Chest_93",
+    "lvReqToEquip": 1,
+    "Class": "ALL",
+    "Speed": 150,
+    "Reach": 10
+  },
+  "InvStorage35": {
+    "displayName": "Storage_Chest_94",
+    "lvReqToEquip": 1,
+    "Class": "ALL",
+    "Speed": 150,
+    "Reach": 10
+  },
+  "InvStorage36": {
+    "displayName": "Storage_Chest_95",
+    "lvReqToEquip": 1,
+    "Class": "ALL",
+    "Speed": 150,
+    "Reach": 10
+  },
+  "InvStorage37": {
+    "displayName": "Storage_Chest_96",
+    "lvReqToEquip": 1,
+    "Class": "ALL",
+    "Speed": 150,
+    "Reach": 10
+  },
+  "InvStorage38": {
+    "displayName": "Storage_Chest_97",
+    "lvReqToEquip": 1,
+    "Class": "ALL",
+    "Speed": 150,
+    "Reach": 10
+  },
+  "InvStorage39": {
+    "displayName": "Storage_Chest_98",
+    "lvReqToEquip": 1,
+    "Class": "ALL",
+    "Speed": 150,
+    "Reach": 10
+  },
+  "InvStorage40": {
+    "displayName": "Storage_Chest_99",
+    "lvReqToEquip": 1,
+    "Class": "ALL",
+    "Speed": 150,
+    "Reach": 10
+  },
+  "InvStorage41": {
+    "displayName": "Storage_Chest_99B",
+    "lvReqToEquip": 1,
+    "Class": "ALL",
+    "Speed": 150,
+    "Reach": 10
+  },
+  "InvStorage42": {
+    "displayName": "Storage_Chest_99C",
+    "lvReqToEquip": 1,
+    "Class": "ALL",
+    "Speed": 150,
+    "Reach": 10
+  },
+  "InvStorageF": {
+    "displayName": "Dank_Paypay_Chest",
+    "lvReqToEquip": 1,
+    "Class": "ALL",
+    "Reach": 10
+  },
+  "Key1": {
+    "displayName": "Forest_Villa_Key"
+  },
+  "Key2": {
+    "displayName": "Efaunt's_Tomb_Key"
+  },
+  "Key3": {
+    "displayName": "Chizoar's_Cavern_Key"
+  },
+  "ObolFrag": {
+    "displayName": "Obol_Fragment"
+  },
+  "DoubleAFKtix": {
+    "displayName": "Double_AFK_Gain_Ticket"
+  },
+  "TixCol": {
+    "displayName": "Colosseum_Ticket"
+  },
+  "DeliveryBox": {
+    "displayName": "Delivery_Box"
+  },
+  "SilverPen": {
+    "displayName": "Silver_Pen"
+  },
+  "PremiumGem": {
+    "displayName": "Gem"
+  },
+  "TalentPoint1": {
+    "displayName": "Talent_Point_Tab_1"
+  },
+  "TalentPoint2": {
+    "displayName": "Talent_Point_Tab_2"
+  },
+  "TalentPoint3": {
+    "displayName": "Talent_Point_Tab_3"
+  },
+  "TalentPoint4": {
+    "displayName": "Talent_Point_Tab_4"
+  },
+  "TalentPoint5": {
+    "displayName": "Talent_Point_Tab_4"
+  },
+  "TalentPoint6": {
+    "displayName": "Talent_Point_Special_Tab"
+  },
+  "Line1": {
+    "displayName": "Copper_Twine"
+  },
+  "Line2": {
+    "displayName": "Silver_Twine"
+  },
+  "Line3": {
+    "displayName": "Gold_Twine"
+  },
+  "Line4": {
+    "displayName": "Platinum_Twine"
+  },
+  "Line5": {
+    "displayName": "Leafy_Vines"
+  },
+  "Line6": {
+    "displayName": "Fun_Flags"
+  },
+  "Line7": {
+    "displayName": "Electrical_Wiring"
+  },
+  "Line8": {
+    "displayName": "Wiener_Links"
+  },
+  "Line9": {
+    "displayName": "Zeus_Gon_Fishin"
+  },
+  "Line10": {
+    "displayName": "Needledrop"
+  },
+  "Line11": {
+    "displayName": "Spoons_Lol"
+  },
+  "Line12": {
+    "displayName": "Its_a_Boy_Celebration"
+  },
+  "Line13": {
+    "displayName": "Its_a_Girl_Celebration"
+  },
+  "Line14": {
+    "displayName": "Its_Alright_Celebration"
+  },
+  "Weight1": {
+    "displayName": "Wormie_Weight"
+  },
+  "Weight2": {
+    "displayName": "Iron_Hook"
+  },
+  "Weight3": {
+    "displayName": "Basic_Bobber"
+  },
+  "Weight4": {
+    "displayName": "Dualhook_Prongs"
+  },
+  "Weight5": {
+    "displayName": "One_Pound_of_Steel"
+  },
+  "Weight6": {
+    "displayName": "One_Pound_of_Feathers"
+  },
+  "Weight7": {
+    "displayName": "Massless_Unit_for_Physics_Questions"
+  },
+  "Weight8": {
+    "displayName": "Literal_Elephant"
+  },
+  "Weight9": {
+    "displayName": "Valve_Patented_Circle_Thingies"
+  },
+  "Weight10": {
+    "displayName": "Dynamite"
+  },
+  "Weight11": {
+    "displayName": "Not_Dynamite"
+  },
+  "Weight12": {
+    "displayName": "Triple_Threat"
+  },
+  "Weight13": {
+    "displayName": "Crash_Box"
+  },
+  "Weight14": {
+    "displayName": "Fat_Albert"
+  },
+  "CardsA0": {
+    "displayName": "CardsA0"
+  },
+  "CardsA1": {
+    "displayName": "CardsA1"
+  },
+  "CardsA2": {
+    "displayName": "DONTFILL"
+  },
+  "CardsA3": {
+    "displayName": "DONTFILL"
+  },
+  "CardsA4": {
+    "displayName": "DONTFILL"
+  },
+  "CardsA5": {
+    "displayName": "DONTFILL"
+  },
+  "CardsA6": {
+    "displayName": "DONTFILL"
+  },
+  "CardsA7": {
+    "displayName": "DONTFILL"
+  },
+  "CardsA8": {
+    "displayName": "DONTFILL"
+  },
+  "CardsA9": {
+    "displayName": "DONTFILL"
+  },
+  "CardsA10": {
+    "displayName": "DONTFILL"
+  },
+  "CardsA11": {
+    "displayName": "DONTFILL"
+  },
+  "CardsA12": {
+    "displayName": "DONTFILL"
+  },
+  "CardsA13": {
+    "displayName": "DONTFILL"
+  },
+  "CardsA14": {
+    "displayName": "DONTFILL"
+  },
+  "CardsA15": {
+    "displayName": "DONTFILL"
+  },
+  "CardsA16": {
+    "displayName": "DONTFILL"
+  },
+  "CardsB1": {
+    "displayName": "DONTFILL"
+  },
+  "CardsB2": {
+    "displayName": "DONTFILL"
+  },
+  "CardsB3": {
+    "displayName": "DONTFILL"
+  },
+  "CardsB4": {
+    "displayName": "DONTFILL"
+  },
+  "CardsB5": {
+    "displayName": "DONTFILL"
+  },
+  "CardsB6": {
+    "displayName": "DONTFILL"
+  },
+  "CardsB7": {
+    "displayName": "DONTFILL"
+  },
+  "CardsB8": {
+    "displayName": "DONTFILL"
+  },
+  "CardsB9": {
+    "displayName": "DONTFILL"
+  },
+  "CardsB10": {
+    "displayName": "DONTFILL"
+  },
+  "CardsB11": {
+    "displayName": "DONTFILL"
+  },
+  "CardsB12": {
+    "displayName": "DONTFILL"
+  },
+  "CardsB13": {
+    "displayName": "DONTFILL"
+  },
+  "CardsB14": {
+    "displayName": "DONTFILL"
+  },
+  "CardsC1": {
+    "displayName": "DONTFILL"
+  },
+  "CardsC2": {
+    "displayName": "DONTFILL"
+  },
+  "CardsC3": {
+    "displayName": "DONTFILL"
+  },
+  "CardsC4": {
+    "displayName": "DONTFILL"
+  },
+  "CardsC5": {
+    "displayName": "DONTFILL"
+  },
+  "CardsC6": {
+    "displayName": "DONTFILL"
+  },
+  "CardsC7": {
+    "displayName": "DONTFILL"
+  },
+  "CardsC8": {
+    "displayName": "DONTFILL"
+  },
+  "CardsC9": {
+    "displayName": "DONTFILL"
+  },
+  "CardsC10": {
+    "displayName": "DONTFILL"
+  },
+  "CardsC11": {
+    "displayName": "DONTFILL"
+  },
+  "CardsC12": {
+    "displayName": "DONTFILL"
+  },
+  "CardsC13": {
+    "displayName": "DONTFILL"
+  },
+  "CardsC14": {
+    "displayName": "DONTFILL"
+  },
+  "CardsC15": {
+    "displayName": "DONTFILL"
+  },
+  "CardsC16": {
+    "displayName": "DONTFILL"
+  },
+  "CardsD1": {
+    "displayName": "DONTFILL"
+  },
+  "CardsD2": {
+    "displayName": "DONTFILL"
+  },
+  "CardsD3": {
+    "displayName": "DONTFILL"
+  },
+  "CardsD4": {
+    "displayName": "DONTFILL"
+  },
+  "CardsD5": {
+    "displayName": "DONTFILL"
+  },
+  "CardsD6": {
+    "displayName": "DONTFILL"
+  },
+  "CardsD7": {
+    "displayName": "DONTFILL"
+  },
+  "CardsD8": {
+    "displayName": "DONTFILL"
+  },
+  "CardsD9": {
+    "displayName": "DONTFILL"
+  },
+  "CardsD10": {
+    "displayName": "DONTFILL"
+  },
+  "CardsD11": {
+    "displayName": "DONTFILL"
+  },
+  "CardsD12": {
+    "displayName": "DONTFILL"
+  },
+  "CardsD13": {
+    "displayName": "DONTFILL"
+  },
+  "CardsD16": {
+    "displayName": "DONTFILL"
+  },
+  "CardsD17": {
+    "displayName": "DONTFILL"
+  },
+  "CardsD18": {
+    "displayName": "DONTFILL"
+  },
+  "CardsD19": {
+    "displayName": "DONTFILL"
+  },
+  "CardsD20": {
+    "displayName": "DONTFILL"
+  },
+  "CardsD21": {
+    "displayName": "DONTFILL"
+  },
+  "CardsE0": {
+    "displayName": "DONTFILL"
+  },
+  "CardsE1": {
+    "displayName": "DONTFILL"
+  },
+  "CardsE2": {
+    "displayName": "DONTFILL"
+  },
+  "CardsE3": {
+    "displayName": "DONTFILL"
+  },
+  "CardsE4": {
+    "displayName": "DONTFILL"
+  },
+  "CardsE5": {
+    "displayName": "DONTFILL"
+  },
+  "CardsE6": {
+    "displayName": "DONTFILL"
+  },
+  "CardsE7": {
+    "displayName": "DONTFILL"
+  },
+  "CardsE8": {
+    "displayName": "DONTFILL"
+  },
+  "CardsE9": {
+    "displayName": "DONTFILL"
+  },
+  "CardsE10": {
+    "displayName": "DONTFILL"
+  },
+  "CardsE11": {
+    "displayName": "DONTFILL"
+  },
+  "CardsE12": {
+    "displayName": "DONTFILL"
+  },
+  "CardsE13": {
+    "displayName": "DONTFILL"
+  },
+  "CardsE14": {
+    "displayName": "DONTFILL"
+  },
+  "CardsE15": {
+    "displayName": "DONTFILL"
+  },
+  "CardsF1": {
+    "displayName": "DONTFILL"
+  },
+  "CardsF2": {
+    "displayName": "DONTFILL"
+  },
+  "CardsF3": {
+    "displayName": "DONTFILL"
+  },
+  "CardsF4": {
+    "displayName": "DONTFILL"
+  },
+  "CardsF5": {
+    "displayName": "DONTFILL"
+  },
+  "CardsF6": {
+    "displayName": "DONTFILL"
+  },
+  "CardsF7": {
+    "displayName": "DONTFILL"
+  },
+  "CardsF8": {
+    "displayName": "DONTFILL"
+  },
+  "CardsF9": {
+    "displayName": "DONTFILL"
+  },
+  "CardsF10": {
+    "displayName": "DONTFILL"
+  },
+  "CardsF11": {
+    "displayName": "DONTFILL"
+  },
+  "CardsY0": {
+    "displayName": "DONTFILL"
+  },
+  "CardsY1": {
+    "displayName": "DONTFILL"
+  },
+  "CardsY2": {
+    "displayName": "DONTFILL"
+  },
+  "CardsY3": {
+    "displayName": "DONTFILL"
+  },
+  "CardsY4": {
+    "displayName": "DONTFILL"
+  },
+  "CardsY5": {
+    "displayName": "DONTFILL"
+  },
+  "CardsY6": {
+    "displayName": "DONTFILL"
+  },
+  "CardsY7": {
+    "displayName": "DONTFILL"
+  },
+  "CardsY8": {
+    "displayName": "DONTFILL"
+  },
+  "CardsY9": {
+    "displayName": "DONTFILL"
+  },
+  "CardsY10": {
+    "displayName": "DONTFILL"
+  },
+  "CardsY11": {
+    "displayName": "DONTFILL"
+  },
+  "CardsY12": {
+    "displayName": "DONTFILL"
+  },
+  "CardsY13": {
+    "displayName": "DONTFILL"
+  },
+  "CardsZ0": {
+    "displayName": "DONTFILL"
+  },
+  "CardsZ1": {
+    "displayName": "DONTFILL"
+  },
+  "CardsZ2": {
+    "displayName": "DONTFILL"
+  },
+  "CardsZ3": {
+    "displayName": "DONTFILL"
+  },
+  "CardsZ4": {
+    "displayName": "DONTFILL"
+  },
+  "CardsZ5": {
+    "displayName": "DONTFILL"
+  },
+  "CardsZ6": {
+    "displayName": "DONTFILL"
+  },
+  "CardsZ7": {
+    "displayName": "DONTFILL"
+  },
+  "CardsZ8": {
+    "displayName": "DONTFILL"
+  },
+  "CardsZ9": {
+    "displayName": "DONTFILL"
+  },
+  "CardPack1": {
+    "displayName": "Newbie_Card_Pack"
+  },
+  "CardPack2": {
+    "displayName": "Ancient_Card_Pack"
+  },
+  "CardPack3": {
+    "displayName": "Eternal_Card_Pack"
+  },
+  "EquipmentHats31": {
+    "displayName": "Smitty's_Bubble_Blowing_Hat",
+    "lvReqToEquip": 1,
+    "Class": "ALL",
+    "STR": 1,
+    "AGI": 1,
+    "WIS": 1,
+    "LUK": 1
+  },
+  "EquipmentHats32": {
+    "displayName": "Bandit_Bob_Mask",
+    "lvReqToEquip": 1,
+    "Class": "ALL",
+    "STR": 1,
+    "AGI": 1,
+    "WIS": 1,
+    "LUK": 1
+  },
+  "EquipmentHats33": {
+    "displayName": "Paper_Bag",
+    "lvReqToEquip": 1,
+    "Class": "ALL",
+    "STR": 1,
+    "AGI": 1,
+    "WIS": 1,
+    "LUK": 1
+  },
+  "EquipmentHats34": {
+    "displayName": "Parasite",
+    "lvReqToEquip": 1,
+    "Class": "ALL",
+    "STR": 1,
+    "AGI": 1,
+    "WIS": 1,
+    "LUK": 1
+  },
+  "EquipmentHats35": {
+    "displayName": "Diamon_Horns",
+    "lvReqToEquip": 1,
+    "Class": "ALL",
+    "STR": 1,
+    "AGI": 1,
+    "WIS": 1,
+    "LUK": 1
+  },
+  "EquipmentHats36": {
+    "displayName": "Halloween_Pumpkin",
+    "lvReqToEquip": 1,
+    "Class": "ALL",
+    "STR": 1,
+    "AGI": 1,
+    "WIS": 1,
+    "LUK": 1
+  },
+  "EquipmentHats40": {
+    "displayName": "Pardoned_Turkey",
+    "lvReqToEquip": 1,
+    "Class": "ALL",
+    "STR": 1,
+    "AGI": 1,
+    "WIS": 1,
+    "LUK": 1
+  },
+  "EquipmentHats37": {
+    "displayName": "Hotdog_Hero",
+    "lvReqToEquip": 1,
+    "Class": "ALL",
+    "STR": 1,
+    "AGI": 1,
+    "WIS": 1,
+    "LUK": 1
+  },
+  "EquipmentHats38": {
+    "displayName": "Invisible_Hat",
+    "lvReqToEquip": 1,
+    "Class": "ALL",
+    "STR": 1,
+    "AGI": 1,
+    "WIS": 1,
+    "LUK": 1
+  },
+  "EquipmentHats46": {
+    "displayName": "Strawbiggy",
+    "lvReqToEquip": 1,
+    "Class": "ALL",
+    "STR": 1,
+    "AGI": 1,
+    "WIS": 1,
+    "LUK": 1
+  },
+  "EquipmentHats47": {
+    "displayName": "Pop_Cat",
+    "lvReqToEquip": 1,
+    "Class": "ALL",
+    "STR": 1,
+    "AGI": 1,
+    "WIS": 1,
+    "LUK": 1
+  },
+  "EquipmentHats48": {
+    "displayName": "Dairy_Dunk",
+    "lvReqToEquip": 1,
+    "Class": "ALL",
+    "STR": 1,
+    "AGI": 1,
+    "WIS": 1,
+    "LUK": 1
+  },
+  "EquipmentHats49": {
+    "displayName": "The_Classic",
+    "Class": "ALL",
+    "lvReqToEquip": 1,
+    "STR": 1,
+    "AGI": 1,
+    "WIS": 1,
+    "LUK": 1
+  },
+  "EquipmentHats50": {
+    "displayName": "Green_Beanie",
+    "lvReqToEquip": 1,
+    "Class": "ALL",
+    "STR": 1,
+    "AGI": 1,
+    "WIS": 1,
+    "LUK": 1
+  },
+  "EquipmentHats43": {
+    "displayName": "Snowman",
+    "lvReqToEquip": 1,
+    "Class": "ALL",
+    "STR": 1,
+    "AGI": 1,
+    "WIS": 1,
+    "LUK": 1
+  },
+  "EquipmentHats45": {
+    "displayName": "Giftmas_Tree",
+    "lvReqToEquip": 1,
+    "Class": "ALL",
+    "STR": 1,
+    "AGI": 1,
+    "WIS": 1,
+    "LUK": 1,
+    "UQ1txt": "%_XP_FROM_MONSTERS",
+    "UQ1val": 10
+  },
+  "EquipmentHats57": {
+    "displayName": "Big_Bunny",
+    "lvReqToEquip": 1,
+    "Class": "ALL",
+    "STR": 1,
+    "AGI": 1,
+    "WIS": 1,
+    "LUK": 1,
+    "UQ1txt": "%_XP_FROM_MONSTERS",
+    "UQ1val": 11
+  },
+  "EquipmentHats62": {
+    "displayName": "Fluffy_Ramsy",
+    "lvReqToEquip": 1,
+    "Class": "ALL",
+    "STR": 1,
+    "AGI": 1,
+    "WIS": 1,
+    "LUK": 1,
+    "UQ1txt": "%_XP_FROM_MONSTERS",
+    "UQ1val": 11
+  },
+  "GemP1": {
+    "displayName": "Infinite_Forge",
+    "lvReqToEquip": 1,
+    "Class": "ALL",
+    "STR": 1,
+    "AGI": 1,
+    "WIS": 1,
+    "LUK": 1
+  },
+  "GemP9": {
+    "displayName": "Quality_Obol_Stack"
+  },
+  "GemP10": {
+    "displayName": "Marvelous_Obol_Stack"
+  },
+  "GemQ1": {
+    "displayName": "Infinite_Forge",
+    "lvReqToEquip": 1,
+    "Class": "ALL",
+    "STR": 1,
+    "AGI": 1,
+    "WIS": 1,
+    "LUK": 1
+  },
+  "GemQ2": {
+    "displayName": "Infinite_Forge",
+    "lvReqToEquip": 1,
+    "Class": "ALL",
+    "STR": 1,
+    "AGI": 1,
+    "WIS": 1,
+    "LUK": 1
+  },
+  "GemQ3": {
+    "displayName": "Infinite_Forge",
+    "lvReqToEquip": 1,
+    "Class": "ALL",
+    "STR": 1,
+    "AGI": 1,
+    "WIS": 1,
+    "LUK": 1
+  },
+  "GemQ4": {
+    "displayName": "Infinite_Forge",
+    "lvReqToEquip": 1,
+    "Class": "ALL",
+    "STR": 1,
+    "AGI": 1,
+    "WIS": 1,
+    "LUK": 1
+  },
+  "GemQ5": {
+    "displayName": "Infinite_Forge",
+    "lvReqToEquip": 1,
+    "Class": "ALL",
+    "STR": 1,
+    "AGI": 1,
+    "WIS": 1,
+    "LUK": 1
+  },
+  "GemQ6": {
+    "displayName": "Infinite_Forge",
+    "lvReqToEquip": 1,
+    "Class": "ALL",
+    "STR": 1,
+    "AGI": 1,
+    "WIS": 1,
+    "LUK": 1
+  },
+  "GemQ7": {
+    "displayName": "Infinite_Forge",
+    "lvReqToEquip": 1,
+    "Class": "ALL",
+    "STR": 1,
+    "AGI": 1,
+    "WIS": 1,
+    "LUK": 1
+  },
+  "GemQ8": {
+    "displayName": "Infinite_Forge",
+    "lvReqToEquip": 1,
+    "Class": "ALL",
+    "STR": 1,
+    "AGI": 1,
+    "WIS": 1,
+    "LUK": 1
+  },
+  "GemQ9": {
+    "displayName": "Infinite_Forge",
+    "lvReqToEquip": 1,
+    "Class": "ALL",
+    "STR": 1,
+    "AGI": 1,
+    "WIS": 1,
+    "LUK": 1
+  }
+};
 
 export {
   prayersMap,
