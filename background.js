@@ -16,6 +16,9 @@ import {
   obolFamilyShapeMap,
   obolMap,
   prayersMap,
+  shopMapping,
+  shopStockMapping,
+  shrineMap,
   skillIndexMap,
   stampsMap,
   starSignMap,
@@ -104,7 +107,6 @@ try {
 
     isRunning = false;
 
-    final.updatedAt = new Date();
     console.log('Finished Parsing');
     return final;
   };
@@ -176,6 +178,31 @@ try {
     const inventoryArr = fields['ChestOrder'].arrayValue.values;
     const inventoryQuantityArr = fields['ChestQuantity'].arrayValue.values;
     accountData.inventory = getInventory(inventoryArr, inventoryQuantityArr, 'storage');
+
+    const shrinesArray = JSON.parse(fields['Shrine']?.stringValue);
+    const startingIndex = 18;
+    accountData.shrines = shrinesArray.reduce((res, item, localIndex) => {
+      const index = startingIndex + localIndex;
+      const shrineName = shrineMap[index];
+      return item?.[0] !== 0 && shrineName !== 'Unknown' ? [...res, {
+        shrineLevel: item?.[3],
+        name: shrineName,
+        rawName: `ConTowerB${index}`
+      }] : res;
+    }, [])
+
+    const colosseumIndexMapping = { 1: true, 2: true, 3: true };
+    const colosseumHighscoresArray = fields['FamValColosseumHighscores']?.arrayValue?.values;
+    accountData.colosseumHighscores = colosseumHighscoresArray
+      .filter((_, index) => colosseumIndexMapping[index])
+      .map(({ doubleValue, integerValue }) => Math.floor(doubleValue) || Math.floor(integerValue));
+
+    const minigameIndexMapping = { 0: 'chopping', 1: 'fishing', 2: 'catching', 3: 'mining' };
+    const minigameHighscoresArray = fields['FamValMinigameHiscores']?.arrayValue?.values;
+    accountData.minigameHighscores = minigameHighscoresArray
+      .filter((_, index) => minigameIndexMapping[index])
+      .map(({ integerValue }, index) => ({ minigame: minigameIndexMapping[index], score: integerValue }));
+
     accountData.worldTeleports = fields?.['CYWorldTeleports']?.integerValue;
     accountData.keys = fields?.['CYKeysAll']?.arrayValue.values.reduce((res, { integerValue }, index) => integerValue > 0 ? [...res, { amount: integerValue, ...keysMap[index] }] : res, []);
     accountData.colosseumTickets = fields?.['CYColosseumTickets'].integerValue;
@@ -183,6 +210,20 @@ try {
     accountData.silverPens = fields?.['CYSilverPens'].integerValue;
     accountData.goldPens = fields?.['CYGoldPens'].integerValue;
     accountData.gems = fields?.['GemsOwned'].integerValue;
+
+    const shopStockArray = fields['ShopStock']?.arrayValue?.values;
+    accountData.shopStock = shopStockArray?.reduce((res, shopObject, shopIndex) => {
+      const realShopStock = shopObject?.mapValue?.fields;
+      delete realShopStock.length;
+      const shopName = shopMapping?.[shopIndex]?.name;
+      const mapped = Object.values(realShopStock)?.reduce((res, item, itemIndex) => {
+        const isIncluded = shopMapping?.[shopIndex]?.included?.[itemIndex];
+        const amount = parseInt(item?.integerValue) || 0;
+        return amount > 0 && isIncluded ? [...res, { amount: item?.integerValue, ...shopStockMapping[shopName][itemIndex] }] : res;
+      }, [])
+      return [...res, mapped]
+    }, []);
+
 
     console.log('Finished building account data');
     return accountData;
@@ -351,8 +392,31 @@ try {
         }
       }, {});
 
-      const prayersArray = JSON.parse(fields[`Prayers_${index}`].stringValue);
+      const prayersArray = JSON.parse(fields[`Prayers_${index}`]?.stringValue);
       extendedChar.prayers = prayersArray.reduce((res, prayerIndex) => (prayerIndex >= 0 ? [...res, { ...prayersMap?.[prayerIndex] }] : res), []);
+
+      // const cauldronsIndexMapping = { 0: "power", 1: "quicc", 2: "high-iq", 3: 'kazam' };
+      // const cauldronsInfoArray = fields?.CauldronInfo?.arrayValue?.values;
+      // const cauldronsMap = cauldronsInfoArray?.reduce((res, { mapValue }, index) => (index < 3 ? {
+      //   ...res,
+      //   [cauldronsIndexMapping?.index]: mapValue?.fields
+      // } : res), {});
+
+      // 0 - current worship charge rate
+      const playerStuffArray = JSON.parse(fields[`PlayerStuff_${index}`]?.stringValue);
+
+      extendedChar.worshipCharge = Math.round(playerStuffArray?.[0]);
+
+      // 3 - critter name
+      const trapsArray = JSON.parse(fields[`PldTraps_${index}`]?.stringValue);
+      extendedChar.traps = trapsArray?.reduce((res, critterInfo) => {
+        const critterName = critterInfo[3];
+        return critterInfo[0] !== -1 && critterName ? [...res, {
+          name: itemMap[critterName]?.displayName,
+          rawName: critterName
+        }] : res;
+      }, []);
+
       return {
         ...character,
         ...extendedChar,

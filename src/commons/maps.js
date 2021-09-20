@@ -8437,7 +8437,426 @@ const itemMap = {
   }
 };
 
+const shrineMap = {
+  18: "Woodular_Shrine",
+  19: "Isaccian_Shrine",
+  20: "Crystal_Shrine",
+  21: "Pantheon_Shrine",
+  22: "Clover_Shrine",
+  23: "Summereading_Shrine",
+  24: "Crescent_Shrine",
+  25: "Undead_Shrine",
+  26: "Primordial_Shrine",
+  27: "Unknown",
+  28: "Unknown",
+  29: "Unknown",
+}
+
+const shopStockMapping = {
+  "Blunder_Hills": [
+    {
+      "name": "Nomwich",
+      "rawName": "FoodHealth1"
+    },
+    {
+      "name": "Hot_Dog",
+      "rawName": "FoodHealth3"
+    },
+    {
+      "name": "Cheezy_Pizza",
+      "rawName": "FoodHealth2"
+    },
+    {
+      "name": "Cue_Tape",
+      "rawName": "CraftMat3"
+    },
+    {
+      "name": "Small_Mana_Potion",
+      "rawName": "FoodPotMana1"
+    },
+    {
+      "name": "Small_Strength_Potion",
+      "rawName": "FoodPotOr1"
+    },
+    {
+      "name": "Small_Life_Potion",
+      "rawName": "FoodPotRe1"
+    },
+    {
+      "name": "Small_Speed_Potion",
+      "rawName": "FoodPotGr1"
+    },
+    {
+      "name": "Crude_Oil",
+      "rawName": "OilBarrel1"
+    },
+    {
+      "name": "Weapon_Upgrade_Stone_I",
+      "rawName": "StoneW1"
+    },
+    {
+      "name": "Armor_Upgrade_Stone_I",
+      "rawName": "StoneA1"
+    },
+    {
+      "name": "Tool_Upgrade_Stone_I",
+      "rawName": "StoneT1"
+    },
+    {
+      "name": "Pugilist_Demise",
+      "rawName": "EquipmentRings7"
+    },
+    {
+      "name": "Power_Statue",
+      "rawName": "EquipmentStatues1"
+    },
+    {
+      "name": "Sculpting_Tools",
+      "rawName": "SmithingHammerChisel"
+    },
+    {
+      "name": "Target_Stamp",
+      "rawName": "StampA5"
+    },
+    {
+      "name": "Shield_Stamp",
+      "rawName": "StampA6"
+    },
+    {
+      "name": "Mana_Stamp",
+      "rawName": "StampA3"
+    },
+    {
+      "name": "Bummo_Bag",
+      "rawName": "InvBag104"
+    },
+    {
+      "name": "Storage_Chest_2",
+      "rawName": "InvStorage2"
+    },
+    {
+      "name": "Storage_Chest_6",
+      "rawName": "InvStorage6"
+    },
+    {
+      "name": "Storage_Chest_7",
+      "rawName": "InvStorage7"
+    },
+    {
+      "name": "Bottled_Town_Teleport",
+      "rawName": "rtt0"
+    },
+    {
+      "name": "Talent_Point_Reset_Fragment",
+      "rawName": "ResetFrag"
+    }
+  ],
+  "Encroaching_Forest_Villas": [
+    {
+      "name": "Hot_Dog",
+      "rawName": "FoodHealth3"
+    },
+    {
+      "name": "Cheezy_Pizza",
+      "rawName": "FoodHealth2"
+    },
+    {
+      "name": "Cranberry_Jam",
+      "rawName": "FoodHealth5"
+    },
+    {
+      "name": "Average_Strength_Potion",
+      "rawName": "FoodPotOr2"
+    },
+    {
+      "name": "Small_EXP_Potion",
+      "rawName": "FoodPotYe1"
+    },
+    {
+      "name": "Armor_Upgrade_Stone_II",
+      "rawName": "StoneA2"
+    },
+    {
+      "name": "Vitality_Stamp",
+      "rawName": "StampA12"
+    },
+    {
+      "name": "Tarantulight",
+      "rawName": "EquipmentPendant12"
+    },
+    {
+      "name": "Silver_Antique",
+      "rawName": "Quest37"
+    },
+    {
+      "name": "Capitalist_Case",
+      "rawName": "InvBag105"
+    },
+    {
+      "name": "Storage_Chest_8",
+      "rawName": "InvStorage8"
+    },
+    {
+      "name": "Storage_Chest_12",
+      "rawName": "InvStorage12"
+    },
+    {
+      "name": "Bottled_Town_Teleport",
+      "rawName": "rtt0"
+    },
+    {
+      "name": "Talent_Point_Reset_Fragment",
+      "rawName": "ResetFrag"
+    }
+  ],
+  "YumYum_Grotto": [
+    {
+      "name": "Kebab_Sticks",
+      "rawName": "FoodHealth6"
+    },
+    {
+      "name": "Meat_Pie",
+      "rawName": "FoodHealth7"
+    },
+    {
+      "name": "Saucy_Weiner",
+      "rawName": "FoodHealth4"
+    },
+    {
+      "name": "Golden_Dubloon",
+      "rawName": "Quest19"
+    },
+    {
+      "name": "BobJoePickle",
+      "rawName": "BobJoePickle"
+    },
+    {
+      "name": "Weapon_Upgrade_Stone_II",
+      "rawName": "StoneW2"
+    },
+    {
+      "name": "Armor_Upgrade_Stone_II",
+      "rawName": "StoneA2"
+    },
+    {
+      "name": "Tool_Upgrade_Stone_II",
+      "rawName": "StoneT2"
+    },
+    {
+      "name": "Average_Strength_Potion",
+      "rawName": "FoodPotOr2"
+    },
+    {
+      "name": "Average_Speed_Potion",
+      "rawName": "FoodPotGr2"
+    },
+    {
+      "name": "Average_Life_Potion",
+      "rawName": "FoodPotRe2"
+    },
+    {
+      "name": "Wealthy_Wallet",
+      "rawName": "InvBag106"
+    },
+    {
+      "name": "Storage_Chest_9",
+      "rawName": "InvStorage9"
+    },
+    {
+      "name": "Storage_Chest_10",
+      "rawName": "InvStorage10"
+    },
+    {
+      "name": "Storage_Chest_13",
+      "rawName": "InvStorage13"
+    },
+    {
+      "name": "Storage_Chest_15",
+      "rawName": "InvStorage15"
+    },
+    {
+      "name": "Guilding_Tools",
+      "rawName": "SmithingHammerChisel2"
+    },
+    {
+      "name": "Bottled_Town_Teleport",
+      "rawName": "rtt0"
+    },
+    {
+      "name": "Talent_Point_Reset_Fragment",
+      "rawName": "ResetFrag"
+    }
+  ],
+  "Faraway_Piers": [
+    {
+      "name": "Copper_Twine",
+      "rawName": "Line1"
+    },
+    {
+      "name": "Wormie_Weight",
+      "rawName": "Weight1"
+    },
+    {
+      "name": "Leafy_Vines",
+      "rawName": "Line5"
+    },
+    {
+      "name": "One_Pound_of_Steel",
+      "rawName": "Weight5"
+    },
+    {
+      "name": "Dynamite",
+      "rawName": "Weight10"
+    },
+    {
+      "name": "Needledrop",
+      "rawName": "Line10"
+    },
+    {
+      "name": "Not_Dynamite",
+      "rawName": "Weight11"
+    },
+    {
+      "name": "Tool_Upgrade_Stone_I",
+      "rawName": "StoneT1"
+    },
+    {
+      "name": "Tool_Upgrade_Stone_II",
+      "rawName": "StoneT2"
+    },
+    {
+      "name": "Matty_Bag_Stamp",
+      "rawName": "StampB8"
+    },
+    {
+      "name": "Clover_Stamp",
+      "rawName": "StampA15"
+    },
+    {
+      "name": "Cattleprod_Token",
+      "rawName": "NPCtoken27"
+    },
+    {
+      "name": "Talent_Point_Reset_Fragment",
+      "rawName": "ResetFrag"
+    }
+  ],
+  "Frostbite_Towndra": [
+    {
+      "name": "Mountain_Bread",
+      "rawName": "FoodHealth10"
+    },
+    {
+      "name": "Yeti_Ham",
+      "rawName": "FoodHealth9"
+    },
+    {
+      "name": "Sheepie_Dairy",
+      "rawName": "FoodHealth11"
+    },
+    {
+      "name": "Cardboard_Traps",
+      "rawName": "TrapBoxSet1"
+    },
+    {
+      "name": "Wax_Skull",
+      "rawName": "WorshipSkull1"
+    },
+    {
+      "name": "Weapon_Upgrade_Stone_III",
+      "rawName": "StoneW3"
+    },
+    {
+      "name": "Armor_Upgrade_Stone_III",
+      "rawName": "StoneA3"
+    },
+    {
+      "name": "Tool_Upgrade_Stone_III",
+      "rawName": "StoneT3"
+    },
+    {
+      "name": "Decent_Strength_Potion",
+      "rawName": "FoodPotOr3"
+    },
+    {
+      "name": "Decent_Speed_Potion",
+      "rawName": "FoodPotGr3"
+    },
+    {
+      "name": "Decent_Life_Potion",
+      "rawName": "FoodPotRe3"
+    },
+    {
+      "name": "Prosperous_Pouch",
+      "rawName": "InvBag107"
+    },
+    {
+      "name": "Storage_Chest_16",
+      "rawName": "InvStorage16"
+    },
+    {
+      "name": "Storage_Chest_17",
+      "rawName": "InvStorage17"
+    },
+    {
+      "name": "Storage_Chest_18",
+      "rawName": "InvStorage18"
+    },
+    {
+      "name": "Storage_Chest_19",
+      "rawName": "InvStorage19"
+    },
+    {
+      "name": "Storage_Chest_20",
+      "rawName": "InvStorage20"
+    },
+    {
+      "name": "Storage_Chest_21",
+      "rawName": "InvStorage21"
+    },
+    {
+      "name": "Bottled_Town_Teleport",
+      "rawName": "rtt0"
+    },
+    {
+      "name": "Talent_Point_Reset_Fragment",
+      "rawName": "ResetFrag"
+    }
+  ]
+}
+
+const shopMapping = {
+  0: {
+    included: {
+      0: true, 1: true, 4: true, 5: true, 6: true, 7: true, 13: true, 18: true, 23: true, 24: true
+    }, name: 'Blunder_Hills'
+  },
+  1: {
+    included: {
+      0: true, 3: true, 4: true, 8: true, 9: true, 12: true, 13: true
+    }, name: 'Encroaching_Forest_Villas'
+  },
+  2: {
+    included: {
+      0: true, 1: true, 2: true, 3: true, 4: true, 8: true, 9: true, 10: true, 11: true, 17: true, 18: true
+    }, name: 'YumYum_Grotto'
+  },
+  3: {
+    included: {
+      12: true
+    }, name: 'Faraway_Piers'
+  },
+  4: {
+    included: {
+      0: true, 1: true, 2: true, 5: true, 6: true, 7: true, 8: true, 9: true, 10: true, 11: true, 18: true, 19: true
+    }, name: 'Frostbite_Towndra'
+  }
+};
+
 export {
+  shopMapping,
+  shopStockMapping,
+  shrineMap,
   prayersMap,
   monstersMap,
   keysMap,
