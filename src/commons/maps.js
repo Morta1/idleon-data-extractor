@@ -705,54 +705,189 @@ const obolMap = {
 }
 
 const obolFamilyShapeMap = {
-  0: 'Circle',
-  1: 'Circle',
-  2: 'Square',
-  3: 'Circle',
-  4: 'Circle',
-  5: 'Circle',
-  6: 'Hexagon',
-  7: 'Sparkle',
-  8: 'Hexagon',
-  9: 'Circle',
-  10: 'Square',
-  11: 'Sparkle',
-  12: 'Sparkle',
-  13: 'Square',
-  14: 'Circle',
-  15: 'Hexagon',
-  16: 'Sparkle',
-  17: 'Hexagon',
-  18: 'Circle',
-  19: 'Circle',
-  20: 'Circle',
-  21: 'Square',
-  22: 'Circle',
-  23: 'Circle',
+  0: {
+    lvReq: 60,
+    shape: 'Circle'
+  },
+  1: {
+    lvReq: 250,
+    shape: 'Circle'
+  },
+  2: {
+    lvReq: 200,
+    shape: 'Square'
+  },
+  3: {
+    lvReq: 350,
+    shape: 'Circle'
+  },
+  4: {
+    lvReq: 100,
+    shape: 'Circle'
+  },
+  5: {
+    lvReq: 1250,
+    shape: 'Circle'
+  },
+  6: {
+    lvReq: 400,
+    shape: 'Hexagon'
+  },
+  7: {
+    lvReq: 650,
+    shape: 'Sparkle'
+  },
+  8: {
+    lvReq: 900,
+    shape: 'Hexagon'
+  },
+  9: {
+    lvReq: 1500,
+    shape: 'Circle'
+  },
+  10: {
+    lvReq: 1150,
+    shape: 'Square'
+  },
+  11: {
+    lvReq: 1200,
+    shape: 'Sparkle'
+  },
+  12: {
+    lvReq: 2500,
+    shape: 'Sparkle'
+  },
+  13: {
+    lvReq: 2000,
+    shape: 'Square'
+  },
+  14: {
+    lvReq: 2100,
+    shape: 'Circle'
+  },
+  15: {
+    lvReq: 3000,
+    shape: 'Hexagon'
+  },
+  16: {
+    lvReq: 5000,
+    shape: 'Sparkle'
+  },
+  17: {
+    lvReq: 1750,
+    shape: 'Hexagon'
+  },
+  18: {
+    lvReq: 400,
+    shape: 'Circle'
+  },
+  19: {
+    lvReq: 160,
+    shape: 'Circle'
+  },
+  20: {
+    lvReq: 875,
+    shape: 'Circle'
+  },
+  21: {
+    lvReq: 700,
+    shape: 'Square'
+  },
+  22: {
+    lvReq: 470,
+    shape: 'Circle'
+  },
+  23: {
+    lvReq: 80,
+    shape: 'Circle'
+  },
 };
 
 const obolCharacterShapeMap = {
-  0: 'Square',
-  1: 'Circle',
-  2: 'Hexagon',
-  3: 'Circle',
-  4: 'Square',
-  5: 'Circle',
-  6: 'Circle',
-  7: 'Circle',
-  8: 'Circle',
-  9: 'Square',
-  10: 'Sparkle',
-  11: 'Square',
-  12: 'Circle',
-  13: 'Circle',
-  14: 'Circle',
-  15: 'Circle',
-  16: 'Square',
-  17: 'Circle',
-  18: 'Hexagon',
-  19: 'Circle',
-  20: 'Square',
+  0: {
+    lvReq: 32,
+    shape: 'Square'
+  },
+  1: {
+    lvReq: 1,
+    shape: 'Circle'
+  },
+  2: {
+    lvReq: 105,
+    shape: 'Hexagon'
+  },
+  3: {
+    lvReq: 40,
+    shape: 'Circle'
+  },
+  4: {
+    lvReq: 60,
+    shape: 'Square'
+  },
+  5: {
+    lvReq: 25,
+    shape: 'Circle'
+  },
+  6: {
+    lvReq: 130,
+    shape: 'Circle'
+  },
+  7: {
+    lvReq: 152,
+    shape: 'Circle'
+  },
+  8: {
+    lvReq: 48,
+    shape: 'Circle'
+  },
+  9: {
+    lvReq: 190,
+    shape: 'Square'
+  },
+  10: {
+    lvReq: 250,
+    shape: 'Sparkle'
+  },
+  11: {
+    lvReq: 140,
+    shape: 'Square'
+  },
+  12: {
+    lvReq: 210,
+    shape: 'Circle'
+  },
+  13: {
+    lvReq: 170,
+    shape: 'Circle'
+  },
+  14: {
+    lvReq: 112,
+    shape: 'Circle'
+  },
+  15: {
+    lvReq: 98,
+    shape: 'Circle'
+  },
+  16: {
+    lvReq: 70,
+    shape: 'Circle'
+  },
+  17: {
+    lvReq: 80,
+    shape: 'Circle'
+  },
+  18: {
+    lvReq: 120,
+    shape: 'Square'
+  },
+  19: {
+    lvReq: 180,
+    shape: 'Hexagon'
+  },
+  20: {
+    lvReq: 90,
+    shape: 'Square'
+  },
 };
 
 const filteredLootyItems = {
@@ -8853,7 +8988,247 @@ const shopMapping = {
   }
 };
 
+const cauldronMapping = {
+  "power": {
+    "0": "ROID_RAGIN",
+    "1": "WARRIORS_RULE",
+    "2": "HEARTY_DIGGY",
+    "3": "WYOMING_BLOOD",
+    "4": "REELY_SMART",
+    "5": "BIG_MEATY_CLAWS",
+    "6": "SPLOOSH_SPLOOSH",
+    "7": "STRONK_TOOLS",
+    "8": "FMJ",
+    "9": "BAPPITY_BOOPITY",
+    "10": "BRITTLEY_SPEARS",
+    "11": "CALL_ME_BOB",
+    "12": "CARPENTER",
+    "13": "BUFF_BOI_TALENT",
+    "14": "ORANGE_BARGAIN"
+  },
+  "quicc": {
+    "0": "SWIFT_STEPPIN",
+    "1": "ARCHER_OR_BUST",
+    "2": "HAMMER_HAMMER",
+    "3": "LIL_BIG_DAMAGE",
+    "4": "ANVILNOMICS",
+    "5": "QUICK_SLAP",
+    "6": "SANIC_TOOLS",
+    "7": "BUG",
+    "8": "SHAQURACY",
+    "9": "CHEAP_SHOT",
+    "10": "BOW_JACK",
+    "11": "CALL_ME_ASH",
+    "12": "CUZ_I_CATCH_EM_ALL",
+    "13": "FAST_BOI_TALENT",
+    "14": "GREEN_BARGAIN"
+  },
+  "high-iq": {
+    "0": "STABLE_JENIUS",
+    "1": "MAGE_IS_BEST",
+    "2": "HOCUS_CHOPPUS",
+    "3": "MOLTO_LOGGO",
+    "4": "NOODUBBLE",
+    "5": "NAME_I_GUESS",
+    "6": "LE_BRAIN_TOOLS",
+    "7": "COOKIN_ROADKILL",
+    "8": "BREWSTACHIO",
+    "9": "ALL_FOR_KILL",
+    "10": "MATTY_STAFFORD",
+    "11": "CALL_ME_POPE",
+    "12": "GOSPEL_LEADER",
+    "13": "SMART_BOI_TALENT",
+    "14": "PURPLE_BARGAIN"
+  },
+  "kazam": {
+    "0": "LOTTO_SKILLS",
+    "1": "DROPPIN_LOADS",
+    "2": "STARTUE_EXP",
+    "3": "LEVEL_UP_GIFT",
+    "4": "PROWESESSARY",
+    "5": "STAMP_TRAMP",
+    "6": "UNDEVELOPED_COSTS",
+    "7": "DA_DAILY_DRIP",
+    "8": "GRIND_TIME",
+    "9": "LAAARRRRYYYY",
+    "10": "COGS_FOR_HANDS",
+    "11": "SAMPLE_IT",
+    "12": "BIG_GAME_HUNTER",
+    "13": "IGNORE_OVERDUES",
+    "14": "YELLOW_BARGAIN"
+  }
+}
+
+const vialMapping = {
+  "0": {
+    "name": "COPPER_CORONA",
+    "item": "Copper"
+  },
+  "1": {
+    "name": "SIPPY_SPLINTERS",
+    "item": "OakTree"
+  },
+  "2": {
+    "name": "MUSHROOM_SOUP",
+    "item": "Grasslands1"
+  },
+  "3": {
+    "name": "SPOOL_SPRITE",
+    "item": "CraftMat1"
+  },
+  "4": {
+    "name": "BARIUM_MIXTURE",
+    "item": "CopperBar"
+  },
+  "5": {
+    "name": "DIETER_DRINK",
+    "item": "Grasslands3"
+  },
+  "6": {
+    "name": "SKINNY_0_CAL",
+    "item": "Jungle2"
+  },
+  "7": {
+    "name": "THUMB_POW",
+    "item": "CraftMat5"
+  },
+  "8": {
+    "name": "JUNGLE_JUICE",
+    "item": "JungleTree"
+  },
+  "9": {
+    "name": "BARLEY_BREW",
+    "item": "IronBar"
+  },
+  "10": {
+    "name": "ANEARFUL",
+    "item": "Forest1"
+  },
+  "11": {
+    "name": "TEA_WITH_PEA",
+    "item": "ToiletTree"
+  },
+  "12": {
+    "name": "GOLD_GUZZLE",
+    "item": "Gold"
+  },
+  "13": {
+    "name": "RAMIFICOCTION",
+    "item": "Forest3"
+  },
+  "14": {
+    "name": "SEAWATER",
+    "item": "Fish1"
+  },
+  "15": {
+    "name": "TAIL_TIME",
+    "item": "Sewers2"
+  },
+  "16": {
+    "name": "FLY_IN_MY_DRINK",
+    "item": "Bug1"
+  },
+  "17": {
+    "name": "MIMICRAUGHT",
+    "item": "DesertA2"
+  },
+  "18": {
+    "name": "BLUE_FLAV",
+    "item": "Plat"
+  },
+  "19": {
+    "name": "SLUG_SLURP",
+    "item": "Fish2"
+  },
+  "20": {
+    "name": "PICKLE_JAR",
+    "item": "BobJoePickle"
+  },
+  "21": {
+    "name": "FUR_REFRESHER",
+    "item": "SnowA1"
+  },
+  "22": {
+    "name": "SIPPY_SOUL",
+    "item": "Soul1"
+  },
+  "23": {
+    "name": "CRAB_JUICE",
+    "item": "Critter2"
+  },
+  "24": {
+    "name": "VOID_VIAL",
+    "item": "Void"
+  },
+  "25": {
+    "name": "RED_MALT",
+    "item": "Refinery1"
+  },
+  "26": {
+    "name": "EW_GROSS_GROSS",
+    "item": "Bug5"
+  },
+  "27": {
+    "name": "THE_SPANISH_SAHARA",
+    "item": "SaharanFoal"
+  },
+  "28": {
+    "name": "POISON_TINCTURE",
+    "item": "Critter1A"
+  },
+  "29": {
+    "name": "ETRUSCAN_LAGER",
+    "item": "SnowB2"
+  },
+  "30": {
+    "name": "CHONKER_CHUG",
+    "item": "Soul2"
+  },
+  "31": {
+    "name": "BUBONIC_BURP",
+    "item": "Critter4"
+  },
+  "32": {
+    "name": "VISIBLE_INK",
+    "item": "SnowB3"
+  },
+  "33": {
+    "name": "ORANGE_MALT",
+    "item": "Refinery2"
+  },
+  "34": {
+    "name": "SNOW_SLURRY",
+    "item": "SnowB5"
+  },
+  "35": {
+    "name": "SLOWERGY_DRINK",
+    "item": "Soul4"
+  },
+  "36": {
+    "name": "SIPPY_CUP",
+    "item": "SnowC1"
+  },
+  "37": {
+    "name": "BUNNY_BREW",
+    "item": "Critter7"
+  },
+  "38": {
+    "name": "40-40_PURITY",
+    "item": "SnowC4"
+  },
+  "39": {
+    "name": "SPOOK_PINT",
+    "item": "Soul6"
+  },
+  "40": {
+    "name": "GOOSEY_GLUG",
+    "item": "Critter9"
+  }
+}
+
 export {
+  vialMapping,
+  cauldronMapping,
   shopMapping,
   shopStockMapping,
   shrineMap,

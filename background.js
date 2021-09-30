@@ -4,6 +4,7 @@ import {
   cardEquipMap,
   cardLevelMap,
   cardSetMap,
+  cauldronMapping,
   classMap,
   filteredLootyItems,
   guildBonusesMap,
@@ -24,7 +25,8 @@ import {
   starSignMap,
   statuesMap,
   talentPagesMap,
-  talentsMap
+  talentsMap,
+  vialMapping
 } from './src/commons/maps.js';
 
 try {
@@ -115,6 +117,7 @@ try {
     console.log('Started building account data');
     const accountData = {};
     const cardsObject = JSON.parse(fields?.["Cards0"].stringValue);
+
     accountData.cards = Object.keys(cardsObject).reduce(
       (res, card) => ({
         ...res,
@@ -123,10 +126,13 @@ try {
           stars: calculateStars(card, cardsObject?.[card]),
         },
       }), {});
+
     const obolsObject = fields.ObolEqO1.arrayValue.values;
     accountData.obols = obolsObject.map(({ stringValue }, index) => ({
       name: obolMap[stringValue],
-      shape: obolFamilyShapeMap[index]
+      shape: obolFamilyShapeMap[index],
+      rawName: stringValue,
+      ...(obolFamilyShapeMap[index] ? obolFamilyShapeMap[index] : {})
     }));
 
     const lootyObject = JSON.parse(fields.Cards1.stringValue);
@@ -136,6 +142,7 @@ try {
         delete allItems?.[lootyItemName];
       }
     });
+
     accountData.missingLootyItems = Object.keys(allItems).reduce((res, key) => (!filteredLootyItems[key] ? [
       ...res,
       {
@@ -144,7 +151,7 @@ try {
       }] : res), []);
 
     const stampsMapping = { 0: "combat", 1: "skills", 2: "misc" };
-    const stamps = fields['StampLv'].arrayValue.values?.reduce((result, item, index) => ({
+    const stamps = fields['StampLv']?.arrayValue.values?.reduce((result, item, index) => ({
       ...result,
       [stampsMapping?.[index]]: Object.keys(item.mapValue.fields).reduce((res, key) => (key !== 'length' ? [
           ...res,
@@ -152,6 +159,7 @@ try {
         ]
         : res), []),
     }), {});
+
     accountData.stamps = {
       combat: stamps.combat.map((item, index) => ({ ...stampsMap['combat'][index], ...item })),
       skills: stamps.skills.map((item, index) => ({ ...stampsMap['skills'][index], ...item })),
@@ -224,6 +232,32 @@ try {
       return [...res, mapped]
     }, []);
 
+    // 0-3 cauldrons
+    // 4 - vials
+    const cauldronsIndexMapping = { 0: "power", 1: "quicc", 2: "high-iq", 3: 'kazam' };
+    const cauldronsTextMapping = { 0: "O", 1: "G", 2: "P", 3: 'Y' };
+    const cauldronsInfoArray = fields?.CauldronInfo?.arrayValue?.values;
+    accountData.cauldronsMap = cauldronsInfoArray?.reduce((res, { mapValue }, index) => (index <= 3 ? {
+      ...res,
+      [cauldronsIndexMapping?.[index]]: Object.keys(mapValue?.fields)?.reduce((res, key, bubbleIndex) => (
+        key !== 'length' ? [
+          ...res,
+          {
+            name: cauldronMapping[cauldronsIndexMapping?.[index]][key],
+            level: mapValue?.fields?.[key]?.integerValue,
+            rawName: `aUpgrades${cauldronsTextMapping[index]}${bubbleIndex}`
+          }] : res), [])
+    } : res), {});
+
+    const vialsObject = fields?.CauldronInfo?.arrayValue?.values?.[4]?.mapValue?.fields;
+    accountData.vialsMap = Object.keys(vialsObject).reduce((res, key, index) => {
+      const vial = vialMapping?.[index];
+      return key !== 'length' ? [...res, {
+        name: vial?.name,
+        item: vial?.item,
+        level: vialsObject?.[key]?.integerValue
+      }] : res;
+    }, [])
 
     console.log('Finished building account data');
     return accountData;
@@ -367,11 +401,14 @@ try {
       );
 
       const obolObject = fields[`ObolEqO0_${index}`].arrayValue.values;
-      extendedChar.obols = obolObject.map(({ stringValue }, index) => ({
+      const obols = obolObject.map(({ stringValue }, index) => ({
+        index: calculateWeirdObolIndex(index),
         name: obolMap[stringValue],
-        shape: obolCharacterShapeMap[index]
+        rawName: stringValue,
+        ...(obolCharacterShapeMap[index] ? obolCharacterShapeMap[index] : {})
       }));
 
+      extendedChar.obols = obols.sort((a, b) => a.index - b.index);
       const talentsObject = JSON.parse(fields[`SL_${index}`].stringValue);
       const maxTalentsObject = JSON.parse(fields[`SM_${index}`].stringValue);
       const mergedObject = Object.keys(talentsObject).reduce((res, talentIndex) => ({
@@ -394,13 +431,6 @@ try {
 
       const prayersArray = JSON.parse(fields[`Prayers_${index}`]?.stringValue);
       extendedChar.prayers = prayersArray.reduce((res, prayerIndex) => (prayerIndex >= 0 ? [...res, { ...prayersMap?.[prayerIndex] }] : res), []);
-
-      // const cauldronsIndexMapping = { 0: "power", 1: "quicc", 2: "high-iq", 3: 'kazam' };
-      // const cauldronsInfoArray = fields?.CauldronInfo?.arrayValue?.values;
-      // const cauldronsMap = cauldronsInfoArray?.reduce((res, { mapValue }, index) => (index < 3 ? {
-      //   ...res,
-      //   [cauldronsIndexMapping?.index]: mapValue?.fields
-      // } : res), {});
 
       // 0 - current worship charge rate
       const playerStuffArray = JSON.parse(fields[`PlayerStuff_${index}`]?.stringValue);
@@ -460,6 +490,30 @@ try {
     console.log('Finished building guild data');
     return guildData;
   };
+
+  const calculateWeirdObolIndex = (index) => {
+    switch (index) {
+      case 12:
+        return 13;
+      case 13:
+        return 14;
+      case 14:
+        return 12;
+      case 17:
+        return 15;
+
+      case 15:
+        return 17;
+      case 16:
+        return 19;
+      case 18:
+        return 16;
+      case 19:
+        return 18;
+      default:
+        return index;
+    }
+  }
 
   const calculateCardSetStars = (card, bonus) => {
     if (!card || !bonus) return null;
