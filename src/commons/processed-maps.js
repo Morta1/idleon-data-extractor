@@ -10093,7 +10093,7 @@ const talentsMap = {
     "84"
   ]
 };
-const shopMapping = {
+const shopStockMapping = {
   "Blunder_Hills": [
     {
       "name": "Nomwich",
@@ -12571,7 +12571,7 @@ export {
   vialMapping,
   stampsMap,
   talentsMap,
-  shopMapping,
+  shopStockMapping,
   cauldronMapping,
   questsMap
 }

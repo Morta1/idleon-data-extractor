@@ -15,7 +15,7 @@ import {
   obolFamilyShapeMap,
   obolMap,
   prayersMap,
-  shopStockMapping,
+  shopMapping,
   shrineMap,
   skillIndexMap,
   starSignMap,
@@ -28,7 +28,7 @@ import {
   cauldronMapping,
   itemMap,
   questsMap,
-  shopMapping,
+  shopStockMapping,
   stampsMap,
   talentsMap,
   vialMapping
