@@ -1,7 +1,7 @@
 {
   "name": "idleon-data-extractor",
   "description": "Extract data from legends of idleon and transform it to a readable JSON",
-  "version": "0.0.0.4",
+  "version": "0.0.0.5",
   "manifest_version": 3,
   "permissions": [
     "activeTab",

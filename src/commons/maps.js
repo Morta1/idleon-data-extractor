@@ -956,6 +956,8 @@ const filteredLootyItems = {
   'EquipmentSmithingTabs6': true,
   'EquipmentSmithingTabs7': true,
   'EquipmentSmithingTabs8': true,
+  'StampA22': true,
+  'StampA25': true,
   'StampA29': true,
   'StampA30': true,
   'StampA31': true,
@@ -1007,380 +1009,102 @@ const filteredLootyItems = {
   'InvStorage41': true,
   'InvStorage42': true,
   "COIN": true,
-  "EXP": true
-};
-
-const stampsMap = {
-  "combat": {
-    "0": {
-      "name": "Sword_Stamp",
-      "rawName": "StampA1"
-    },
-    "1": {
-      "name": "Heart_Stamp",
-      "rawName": "StampA2"
-    },
-    "2": {
-      "name": "Mana_Stamp",
-      "rawName": "StampA3"
-    },
-    "3": {
-      "name": "Tomahawk_Stamp",
-      "rawName": "StampA4"
-    },
-    "4": {
-      "name": "Target_Stamp",
-      "rawName": "StampA5"
-    },
-    "5": {
-      "name": "Shield_Stamp",
-      "rawName": "StampA6"
-    },
-    "6": {
-      "name": "Longsword_Stamp",
-      "rawName": "StampA7"
-    },
-    "7": {
-      "name": "Kapow_Stamp",
-      "rawName": "StampA8"
-    },
-    "8": {
-      "name": "Fist_Stamp",
-      "rawName": "StampA9"
-    },
-    "9": {
-      "name": "Battleaxe_Stamp",
-      "rawName": "StampA10"
-    },
-    "10": {
-      "name": "Agile_Stamp",
-      "rawName": "StampA11"
-    },
-    "11": {
-      "name": "Vitality_Stamp",
-      "rawName": "StampA12"
-    },
-    "12": {
-      "name": "Book_Stamp",
-      "rawName": "StampA13"
-    },
-    "13": {
-      "name": "Manamoar_Stamp",
-      "rawName": "StampA14"
-    },
-    "14": {
-      "name": "Clover_Stamp",
-      "rawName": "StampA15"
-    },
-    "15": {
-      "name": "Scimitar_Stamp",
-      "rawName": "StampA16"
-    },
-    "16": {
-      "name": "Bullseye_Stamp",
-      "rawName": "StampA17"
-    },
-    "17": {
-      "name": "Feather_Stamp",
-      "rawName": "StampA18"
-    },
-    "18": {
-      "name": "Polearm_Stamp",
-      "rawName": "StampA19"
-    },
-    "19": {
-      "name": "Violence_Stamp",
-      "rawName": "StampA20"
-    },
-    "20": {
-      "name": "Buckler_Stamp",
-      "rawName": "StampA21"
-    },
-    "21": {
-      "name": "FILLER",
-      "rawName": "StampA22"
-    },
-    "22": {
-      "name": "Sukka_Foo",
-      "rawName": "StampA23"
-    },
-    "23": {
-      "name": "Arcane_Stamp",
-      "rawName": "StampA24"
-    },
-    "24": {
-      "name": "FILLER",
-      "rawName": "StampA25"
-    },
-    "25": {
-      "name": "Steve_Sword",
-      "rawName": "StampA26"
-    },
-    "26": {
-      "name": "Blover_Stamp",
-      "rawName": "StampA27"
-    },
-    "27": {
-      "name": "Stat_Graph_Stamp",
-      "rawName": "StampA28"
-    },
-    "28": {
-      "name": "FILLER",
-      "rawName": "StampA29"
-    },
-    "29": {
-      "name": "FILLER",
-      "rawName": "StampA30"
-    },
-    "30": {
-      "name": "FILLER",
-      "rawName": "StampA31"
-    },
-    "31": {
-      "name": "FILLER",
-      "rawName": "StampA32"
-    },
-    "32": {
-      "name": "FILLER",
-      "rawName": "StampA33"
-    },
-    "33": {
-      "name": "FILLER",
-      "rawName": "StampA34"
-    },
-    "34": {
-      "name": "FILLER",
-      "rawName": "StampA35"
-    }
-  },
-  "skills": {
-    "0": {
-      "name": "Pickaxe_Stamp",
-      "rawName": "StampB1"
-    },
-    "1": {
-      "name": "Hatchet_Stamp",
-      "rawName": "StampB2"
-    },
-    "2": {
-      "name": "Anvil_Zoomer_Stamp",
-      "rawName": "StampB3"
-    },
-    "3": {
-      "name": "Lil' Mining_Baggy_Stamp",
-      "rawName": "StampB4"
-    },
-    "4": {
-      "name": "Twin_Ores_Stamp",
-      "rawName": "StampB5"
-    },
-    "5": {
-      "name": "Choppin' Bag_Stamp",
-      "rawName": "StampB6"
-    },
-    "6": {
-      "name": "Duplogs_Stamp",
-      "rawName": "StampB7"
-    },
-    "7": {
-      "name": "Matty_Bag_Stamp",
-      "rawName": "StampB8"
-    },
-    "8": {
-      "name": "Smart_Dirt_Stamp",
-      "rawName": "StampB9"
-    },
-    "9": {
-      "name": "Cool_Diggy_Tool_Stamp",
-      "rawName": "StampB10"
-    },
-    "10": {
-      "name": "High_IQ_Lumber_Stamp",
-      "rawName": "StampB11"
-    },
-    "11": {
-      "name": "Swag_Swingy_Tool_Stamp",
-      "rawName": "StampB12"
-    },
-    "12": {
-      "name": "Alch_Go_Brrr_Stamp",
-      "rawName": "StampB13"
-    },
-    "13": {
-      "name": "Brainstew_Stamps",
-      "rawName": "StampB14"
-    },
-    "14": {
-      "name": "Drippy_Drop_Stamp",
-      "rawName": "StampB15"
-    },
-    "15": {
-      "name": "Droplots_Stamp",
-      "rawName": "StampB16"
-    },
-    "16": {
-      "name": "Fishing_Rod_Stamp",
-      "rawName": "StampB17"
-    },
-    "17": {
-      "name": "Fishhead_Stamp",
-      "rawName": "StampB18"
-    },
-    "18": {
-      "name": "Catch_Net_Stamp",
-      "rawName": "StampB19"
-    },
-    "19": {
-      "name": "Fly_Intel_Stamp",
-      "rawName": "StampB20"
-    },
-    "20": {
-      "name": "Bag_o_Heads_Stamp",
-      "rawName": "StampB21"
-    },
-    "21": {
-      "name": "Holy_Mackerel_Stamp",
-      "rawName": "StampB22"
-    },
-    "22": {
-      "name": "Bugsack_Stamp",
-      "rawName": "StampB23"
-    },
-    "23": {
-      "name": "Buzz_Buzz_Stamp",
-      "rawName": "StampB24"
-    },
-    "24": {
-      "name": "Hidey_Box_Stamp",
-      "rawName": "StampB25"
-    },
-    "25": {
-      "name": "Purp_Froge_Stamp",
-      "rawName": "StampB26"
-    },
-    "26": {
-      "name": "Spikemouth_Stamp",
-      "rawName": "StampB27"
-    },
-    "27": {
-      "name": "Shiny_Crab_Stamp",
-      "rawName": "StampB28"
-    },
-    "28": {
-      "name": "Gear_Stamp",
-      "rawName": "StampB29"
-    },
-    "29": {
-      "name": "Sample_Stamp",
-      "rawName": "StampB30"
-    },
-    "30": {
-      "name": "Saw_Stamp",
-      "rawName": "StampB31"
-    },
-    "31": {
-      "name": "Amplesample_Stamp",
-      "rawName": "StampB32"
-    },
-    "32": {
-      "name": "SpoOoky_Stamp",
-      "rawName": "StampB33"
-    },
-    "33": {
-      "name": "Flowin_Stamp",
-      "rawName": "StampB34"
-    },
-    "34": {
-      "name": "Prayday_Stamp",
-      "rawName": "StampB35"
-    },
-    "35": {
-      "name": "Banked_Pts_Stamp",
-      "rawName": "StampB36"
-    }
-  },
-  "misc": {
-    "0": {
-      "name": "Questin_Stamp",
-      "rawName": "StampC1"
-    },
-    "1": {
-      "name": "Mason_Jar_Stamp",
-      "rawName": "StampC2"
-    },
-    "2": {
-      "name": "Crystallin",
-      "rawName": "StampC3"
-    },
-    "3": {
-      "name": "Blank",
-      "rawName": "StampC4"
-    },
-    "4": {
-      "name": "Apple_Stamp",
-      "rawName": "StampC5"
-    },
-    "5": {
-      "name": "Potion_Stamp",
-      "rawName": "StampC6"
-    },
-    "6": {
-      "name": "Golden_Apple_Stamp",
-      "rawName": "StampC7"
-    },
-    "7": {
-      "name": "Blank",
-      "rawName": "StampC8"
-    },
-    "8": {
-      "name": "Card_Stamp",
-      "rawName": "StampC9"
-    },
-    "9": {
-      "name": "Blank",
-      "rawName": "StampC10"
-    },
-    "10": {
-      "name": "Blank",
-      "rawName": "StampC11"
-    },
-    "11": {
-      "name": "Blank",
-      "rawName": "StampC12"
-    },
-    "12": {
-      "name": "Talent_I_Stamp",
-      "rawName": "StampC13"
-    },
-    "13": {
-      "name": "Talent_II_Stamp",
-      "rawName": "StampC14"
-    },
-    "14": {
-      "name": "Talent_III_Stamp",
-      "rawName": "StampC15"
-    },
-    "15": {
-      "name": "Talent_IV_Stamp",
-      "rawName": "StampC16"
-    },
-    "16": {
-      "name": "Talent_V_Stamp",
-      "rawName": "StampC17"
-    },
-    "17": {
-      "name": "Talent_S_Stamp",
-      "rawName": "StampC18"
-    },
-    "18": {
-      "name": "Multikill_Stamp",
-      "rawName": "StampC19"
-    },
-    "19": {
-      "name": "Biblio_Stamp",
-      "rawName": "StampC20"
-    }
-  }
+  "EXP": true,
+  'Dreadlo': true,
+  'Godshard': true,
+  'DreadloBar': true,
+  'GodshardBar': true,
+  'AlienTree': true,
+  "TestObj18": true,
+  "TestObj9": true,
+  "TestObj10": true,
+  "EquipmentShirts7": true,
+  'EquipmentRingsChat2': true,
+  'EquipmentRingsChat3': true,
+  'EquipmentRingsChat4': true,
+  'EquipmentRingsChat5': true,
+  'EquipmentRingsChat6': true,
+  'EquipmentRingsChat8': true,
+  'EquipmentRingsChat9': true,
+  'EquipmentTools8': true,
+  'EquipmentTools9': true,
+  "EquipmentToolsHatchet6": true,
+  "EquipmentToolsHatchet8": true,
+  "EquipmentToolsHatchet9": true,
+  "EquipmentToolsHatchet10": true,
+  "Quest8": true,
+  "ClassSwap": true,
+  "ResetBox": true,
+  "Ht": true,
+  'StonePremRestore': true,
+  'SmithingRecipes3': true,
+  'SmithingRecipes4': true,
+  'EquipmentSmithingTabs4': true,
+  'Quest28': true,
+  'TrapBoxSet6': true,
+  'NPCtoken8"': true,
+  'StampB28': true,
+  'StampB29': true,
+  'StampB32': true,
+  'StampB33': true,
+  'StampB35': true,
+  'StampC4': true,
+  'StampC5': true,
+  'StampC10': true,
+  'StampC11': true,
+  'StampC12': true,
+  'ExpSmith1': true,
+  'StonePremSTR': true,
+  'StonePremAGI': true,
+  'StonePremWIS': true,
+  'StonePremLUK': true,
+  'GemP1': true,
+  'GemP9': true,
+  'GemP10': true,
+  'GemQ9': true,
+  'EquipmentHats57': true,
+  'EquipmentHats45': true,
+  'EquipmentHats43': true,
+  'EquipmentHats37': true,
+  'EquipmentHats40': true,
+  'EquipmentHats36': true,
+  'EquipmentHats33': true,
+  'EquipmentHats32': true,
+  'EquipmentHats31': true,
+  'EquipmentHats34': true,
+  'CardsC13': true,
+  'CardsC14': true,
+  'CardsC15': true,
+  'CardsD12': true,
+  'CardsD13': true,
+  'Trophy4': true,
+  'Trophy7': true,
+  'Line8': true,
+  'Line9': true,
+  'Line11': true,
+  'Line12': true,
+  'Line13': true,
+  'Line14': true,
+  'Weight4': true,
+  'Weight7': true,
+  'Weight9': true,
+  'Weight13': true,
+  'Weight14': true,
+  'StampsA22': true,
+  'StampsA25': true,
+  'TalentPoint1': true,
+  'TalentPoint4': true,
+  'TalentPoint5': true,
+  'TalentPoint6': true,
+  'DoubleAFKtix': true,
+  'ObolFrag': true,
+  'StampC14': true,
+  'StampC15': true,
+  'DeliveryBox': true,
+  'StampC16': true,
+  'StampC17': true,
+  'StampC18': true,
+  'StampC8': true
 };
 
 const maxCarryCap = {
@@ -1638,39 +1362,6 @@ const statuesMap = {
   16: { name: "Twosoul_Statue", rawName: "Statue17" },
   17: { name: "EhExPee_Statue", rawName: "Statue18" }
 }
-
-const talentsMap = {
-  "Beginner": ["0", "1", "8", "9", "5", "10", "11", "12", "13", "6", "75", "76", "77", "78", "79"],
-  "Journeyman": ["15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29"],
-  "Maestro": ["30", "31", "32", "33", "34", "35", "36", "37", "38", "39", "40", "41", "42", "43", "44"],
-  "Virtuoso": ["45", "45", "45", "45", "45", "48", "45", "45", "45", "45", "45", "45", "45", "45", "45"],
-  "Infinilyte": ["45", "45", "45", "45", "45", "45", "45", "45", "45", "45", "45", "45", "45", "45", "45"],
-  "Rage Basics": ["0", "1", "8", "9", "5", "10", "11", "12", "13", "6", "85", "86", "87", "88", "89"],
-  "Warrior": ["90", "91", "92", "93", "94", "95", "96", "97", "98", "99", "100", "101", "102", "103", "104"],
-  "Barbarian": ["105", "106", "107", "108", "109", "110", "111", "112", "81", "114", "115", "116", "117", "118", "119"],
-  "Squire": ["120", "121", "122", "123", "124", "125", "111", "127", "81", "129", "130", "131", "132", "133", "119"],
-  "Blood Berserker": ["45", "45", "45", "45", "45", "45", "45", "45", "45", "45", "45", "45", "45", "45", "45"],
-  "Death Bringer": ["45", "45", "45", "45", "45", "45", "45", "45", "45", "45", "45", "45", "45", "45", "45"],
-  "Diving Knight": ["45", "45", "45", "45", "45", "45", "45", "45", "45", "45", "45", "45", "45", "45", "45"],
-  "Royal Guardian": ["45", "45", "45", "45", "45", "45", "45", "45", "45", "45", "45", "45", "45", "45", "45"],
-  "Calm Basics": ["0", "1", "8", "9", "5", "10", "11", "12", "13", "6", "263", "266", "267", "268", "269"],
-  "Archer": ["270", "271", "272", "273", "274", "284", "276", "277", "278", "279", "280", "281", "282", "283", "265"],
-  "Bowman": ["285", "286", "287", "288", "289", "290", "291", "292", "293", "294", "295", "296", "297", "298", "299"],
-  "Hunter": ["300", "301", "302", "303", "304", "305", "291", "307", "293", "309", "310", "311", "312", "313", "299"],
-  "Siege Breaker": ["315", "45", "45", "45", "45", "45", "45", "45", "45", "45", "45", "45", "45", "45", "45"],
-  "Mayheim": ["45", "45", "45", "45", "45", "45", "45", "45", "45", "45", "45", "45", "45", "45", "45"],
-  "Wind Walker": ["45", "45", "45", "45", "45", "45", "45", "45", "45", "45", "45", "45", "45", "45", "45"],
-  "Beast Master": ["45", "45", "45", "45", "45", "45", "45", "45", "45", "45", "45", "45", "45", "45", "45"],
-  "Savvy Basics": ["0", "1", "8", "9", "5", "10", "11", "12", "13", "6", "445", "446", "447", "448", "449"],
-  "Mage": ["450", "451", "452", "453", "454", "455", "456", "457", "458", "459", "460", "461", "462", "464", "463"],
-  "Wizard": ["465", "466", "467", "468", "469", "470", "486", "472", "488", "474", "475", "476", "477", "478", "494"],
-  "Shaman": ["480", "481", "482", "483", "484", "485", "486", "487", "488", "489", "490", "491", "492", "493", "494"],
-  "Elemental Sorcerer": ["45", "45", "45", "45", "45", "45", "45", "45", "45", "45", "45", "45", "45", "45", "45"],
-  "Spiritual Monk": ["45", "45", "45", "45", "45", "45", "45", "45", "45", "45", "45", "45", "45", "45", "45"],
-  "Bubonic Conjuror": ["45", "45", "45", "45", "45", "45", "45", "45", "45", "45", "45", "45", "45", "45", "45"],
-  "Arcane Cultist": ["45", "45", "45", "45", "45", "45", "45", "45", "45", "45", "45", "45", "45", "45", "45"],
-  "Star Talents": ["84", "616", "84", "618", "619", "620", "621", "622", "623", "624", "Blank", "625", "626", "627", "Blank", "632", "631", "630", "84", "628", "84", "634", "635", "84", "84", "Blank", "84", "639", "84", "Blank"]
-};
 
 const talentPagesMap = {
   "Beginner": ["Beginner"],
@@ -8960,283 +8651,923 @@ const shopStockMapping = {
   ]
 }
 
-const shopMapping = {
-  0: {
-    included: {
-      0: true, 1: true, 4: true, 5: true, 6: true, 7: true, 13: true, 18: true, 23: true, 24: true
-    }, name: 'Blunder_Hills'
+const questsMap = {
+  "TP_Pete": {
+    "1": {
+      "questTitle": "Roll_of_Anger"
+    },
+    "2": {
+      "questTitle": "The_Rats_are_to_Blame!"
+    },
+    "3": {
+      "questTitle": "Fired_for_BS_Reasons!"
+    }
   },
-  1: {
-    included: {
-      0: true, 3: true, 4: true, 8: true, 9: true, 12: true, 13: true
-    }, name: 'Encroaching_Forest_Villas'
+  "Town_Marble": {
+    "1": {
+      "questTitle": "Visualizing_the_Sculpture_Within..."
+    }
   },
-  2: {
-    included: {
-      0: true, 1: true, 2: true, 3: true, 4: true, 8: true, 9: true, 10: true, 11: true, 17: true, 18: true
-    }, name: 'YumYum_Grotto'
+  "Obol_Altar": {
+    "1": {
+      "questTitle": "Bad_Kitty,_get_off_that_altar!"
+    }
   },
-  3: {
-    included: {
-      12: true
-    }, name: 'Faraway_Piers'
+  "Woodsman": {
+    "1": {
+      "questTitle": "A_noob's_first_swing"
+    },
+    "2": {
+      "questTitle": "A_noob's_2nd_first_swing"
+    },
+    "3": {
+      "questTitle": "It's_Just_a_Plank,_Bro!"
+    },
+    "4": {
+      "questTitle": "Exotic_Pranks..._I_mean_Logs!"
+    }
   },
-  4: {
-    included: {
-      0: true, 1: true, 2: true, 5: true, 6: true, 7: true, 8: true, 9: true, 10: true, 11: true, 18: true, 19: true
-    }, name: 'Frostbite_Towndra'
+  "Scripticus": {
+    "1": {
+      "questTitle": "The_Journey_Begins!"
+    },
+    "2": {
+      "questTitle": "Hardcore_Gamer_Status,_Here_I_Come!"
+    },
+    "3": {
+      "questTitle": "Gear_Up,_Gamer!"
+    },
+    "4": {
+      "questTitle": "Mr._Worldwide"
+    },
+    "5": {
+      "questTitle": "The_Choice_is_Yours!"
+    },
+    "6": {
+      "questTitle": "Certified_Swinger,_of_Pickaxes_of_course!"
+    },
+    "7": {
+      "questTitle": "The_Smithing_Grind"
+    },
+    "8": {
+      "questTitle": "The_Unoccupied_Picnic"
+    },
+    "9": {
+      "questTitle": "Seeking_Foreign_Aid"
+    },
+    "10": {
+      "questTitle": "What_Lies_at_the_Heart_of_the_Forest"
+    },
+    "11": {
+      "questTitle": "The_Bigger_they_are,_the_Bigger_they_Fall!"
+    },
+    "12": {
+      "questTitle": "Champion_of_the_Grasslands"
+    },
+    "13": {
+      "questTitle": "Can't_somebody_else_do_it?"
+    }
+  },
+  "f": {
+    "1": {
+      "questTitle": "f"
+    }
+  },
+  "Krunk": {
+    "1": {
+      "questTitle": "A_Plot_to_be_Perfect"
+    },
+    "2": {
+      "questTitle": "The_Scientific_Method,_According_to_a_Rock"
+    },
+    "3": {
+      "questTitle": "King_of_the_Cavern"
+    }
+  },
+  "Glumlee": {
+    "1": {
+      "questTitle": "Learning_to_Swing"
+    },
+    "2": {
+      "questTitle": "Learning_to_Smelt"
+    },
+    "3": {
+      "questTitle": "Literally_Burning_your_Money"
+    },
+    "4": {
+      "questTitle": "The_Impossible_Task"
+    },
+    "5": {
+      "questTitle": "He's_Havin'_a_Bad_Day"
+    }
+  },
+  "Picnic_Stowaway": {
+    "1": {
+      "questTitle": "The_Hungry_Stowaway"
+    },
+    "2": {
+      "questTitle": "Beating_Up_Frogs_for_some_Sauce"
+    },
+    "3": {
+      "questTitle": "Live-Action_Entertainment"
+    },
+    "4": {
+      "questTitle": "The_Most_Important_Meal_of_the_Day"
+    },
+    "5": {
+      "questTitle": "Brunchin'_with_the_Blobs"
+    },
+    "6": {
+      "questTitle": "Luncheon_with_the_Inlaws"
+    },
+    "7": {
+      "questTitle": "Afternoon_Tea_in_a_Jiffy"
+    },
+    "8": {
+      "questTitle": "Early_Evening_Eating_Endeavor"
+    },
+    "9": {
+      "questTitle": "The_Last_Supper,_at_Least_for_Today!"
+    },
+    "10": {
+      "questTitle": "Don't_Desert_the_Dessert"
+    },
+    "11": {
+      "questTitle": "A_Midnight_Snack"
+    },
+    "12": {
+      "questTitle": "King_of_Food"
+    }
+  },
+  "Hamish": {
+    "1": {
+      "questTitle": "The_Hamazing_Plot_Twist"
+    },
+    "2": {
+      "questTitle": "Should_We_Tell_Him?"
+    },
+    "3": {
+      "questTitle": "Slime_for_Storage"
+    }
+  },
+  "Mr_Pigibank": {
+    "1": {
+      "questTitle": "A_Pig_and_his_Stamps"
+    }
+  },
+  "Secretkeeper": {
+    "1": {
+      "questTitle": "The_Few,_the_Proud"
+    }
+  },
+  "Promotheus": {
+    "1": {
+      "questTitle": "I'm_Ready,_Promotion!"
+    },
+    "2": {
+      "questTitle": "Three_Right_Answers"
+    },
+    "3": {
+      "questTitle": "Slovakian_Scare"
+    },
+    "4": {
+      "questTitle": "The_Witcher,_but_not_Really"
+    }
+  },
+  "Bushlyte": {
+    "1": {
+      "questTitle": "A_Peanut_for_your_Thoughts"
+    },
+    "2": {
+      "questTitle": "Honk_if_you_Love_Peanuts!"
+    },
+    "3": {
+      "questTitle": "A_Peanut_Saved_is_a_Peanut_not_Eaten!"
+    }
+  },
+  "Rocklyte": {
+    "1": {
+      "questTitle": "How_It's_Made,_Episode_7._The_Super_Peanut"
+    },
+    "2": {
+      "questTitle": "If_Life_Gives_you_Peanuts,_make_Shiny_Peanuts!"
+    },
+    "3": {
+      "questTitle": "Becoming_the_Best_Beginner"
+    }
+  },
+  "Stiltzcho": {
+    "1": {
+      "questTitle": "Outta_the_Way_Slimes"
+    },
+    "2": {
+      "questTitle": "No_Stone_Unturned"
+    },
+    "3": {
+      "questTitle": "Investigator_by_Day,_Prankster_by_Night"
+    },
+    "4": {
+      "questTitle": "Time_Crime_Episode_1"
+    },
+    "5": {
+      "questTitle": "Time_Crime_Episode_2"
+    },
+    "6": {
+      "questTitle": "Time_Crime_Season_Finale"
+    }
+  },
+  "Tiki_Chief": {
+    "1": {
+      "questTitle": "Brochure_Building"
+    },
+    "2": {
+      "questTitle": "Three_Strikes,_you're_Out!"
+    },
+    "3": {
+      "questTitle": "Blame_it_on_the_Glublins"
+    },
+    "4": {
+      "questTitle": "Hotel?_Tikivago._Sorry,_couldn't_Help_It!"
+    }
+  },
+  "Builder_Bird": {
+    "1": {
+      "questTitle": "Restoring_Power_to_the_Portal"
+    }
+  },
+  "Mutton": {
+    "1": {
+      "questTitle": "Beatboxing_Starterpack"
+    },
+    "2": {
+      "questTitle": "Clout_Chasin'"
+    },
+    "3": {
+      "questTitle": "Cross_Platform_Promotion"
+    },
+    "4": {
+      "questTitle": "7_Figure_Followers"
+    }
+  },
+  "Funguy": {
+    "1": {
+      "questTitle": "Mushroom_Munchies"
+    },
+    "2": {
+      "questTitle": "Videogame_Highscores_are_COOL!"
+    },
+    "3": {
+      "questTitle": "Partycrastination"
+    },
+    "4": {
+      "questTitle": "Party_Crashin'"
+    },
+    "5": {
+      "questTitle": "Wicked_Party_Cleanup"
+    }
+  },
+  "Dog_Bone": {
+    "1": {
+      "questTitle": "Why_he_Die???"
+    },
+    "2": {
+      "questTitle": "Bow_Wow_going_Dow..n!"
+    }
+  },
+  "Speccius": {
+    "1": {
+      "questTitle": "More_like_'Sleepius'_lmao"
+    },
+    "2": {
+      "questTitle": "Specialization_Station"
+    }
+  },
+  "Whattso": {
+    "1": {
+      "questTitle": "Mopey_Dick"
+    },
+    "2": {
+      "questTitle": "The_Whaley_Hard_Minigame"
+    },
+    "3": {
+      "questTitle": "Bobbin'_Bobbers"
+    },
+    "4": {
+      "questTitle": "The_Biggest_Fish_in_the_Sea...?"
+    }
+  },
+  "Scubidew": {
+    "1": {
+      "questTitle": "Don't_Step_to_Me,_Bro!"
+    },
+    "2": {
+      "questTitle": "Uncovering_the_Deep_Sea_State!!!"
+    },
+    "3": {
+      "questTitle": "A_Normal_Quest."
+    }
+  },
+  "Fishpaste97": {
+    "1": {
+      "questTitle": "'Accidental'_Exploit"
+    },
+    "2": {
+      "questTitle": "Can_you_do_the_Can_Can?"
+    }
+  },
+  "Postboy_Pablob": {
+    "1": {
+      "questTitle": "Signed,_Sealed_and_Lost_in_the_Post"
+    }
+  },
+  "Sprout": {
+    "1": {
+      "questTitle": "Sticks_and_Stone_Something_Something_Bones..."
+    },
+    "2": {
+      "questTitle": "Justice_Wears_No_Clothes"
+    },
+    "3": {
+      "questTitle": "Shoe_Shopping_with_Sprout"
+    },
+    "4": {
+      "questTitle": "Frisbee_Fanatic"
+    }
+  },
+  "Desert_Davey": {
+    "1": {
+      "questTitle": "More_Tasks_Pls"
+    },
+    "2": {
+      "questTitle": "U_Cool?"
+    }
+  },
+  "Cowbo_Jones": {
+    "1": {
+      "questTitle": "The_Grind_Begins...?"
+    },
+    "2": {
+      "questTitle": "The_Hatless_Howerhouse!"
+    },
+    "3": {
+      "questTitle": "No_Country_for_One_Character"
+    },
+    "4": {
+      "questTitle": "Say_Goodbye_to_your_Dubloon!"
+    },
+    "5": {
+      "questTitle": "Alchemial_Apprentice"
+    },
+    "6": {
+      "questTitle": "Three_Vials?_Those_are_Rookie_Numbers!"
+    },
+    "7": {
+      "questTitle": "The_Notorious_B.O.B"
+    },
+    "8": {
+      "questTitle": "Bake_Him_Away,_Toys"
+    },
+    "9": {
+      "questTitle": "A_Hat_in_Crime"
+    },
+    "10": {
+      "questTitle": "Commence_Criminal_Crimes!"
+    },
+    "11": {
+      "questTitle": "The_Worst_Trade_Deal_in_History"
+    },
+    "12": {
+      "questTitle": "Children?_What'd_they_ever_do_for_Me..."
+    },
+    "13": {
+      "questTitle": "Oh_No,_not_the_Elderly!"
+    },
+    "14": {
+      "questTitle": "Tomb_Raid"
+    },
+    "15": {
+      "questTitle": "The_New_Sheriff"
+    }
+  },
+  "Loominadi": {
+    "1": {
+      "questTitle": "Rhyming_is_Key!"
+    },
+    "2": {
+      "questTitle": "Uh,_Something_About_Vials?"
+    },
+    "3": {
+      "questTitle": "Journey_to_the_Center_of_the_Blundermines"
+    },
+    "4": {
+      "questTitle": "The_Mummy_of_Mystery"
+    }
+  },
+  "Goldric": {
+    "1": {
+      "questTitle": "Trickle_Down_Economics"
+    },
+    "2": {
+      "questTitle": "Hoopsies"
+    },
+    "3": {
+      "questTitle": "Only_Winners_have_Portraits"
+    },
+    "4": {
+      "questTitle": "Criminal_Code_of_Conduct"
+    },
+    "5": {
+      "questTitle": "Dress_to_Impress"
+    },
+    "6": {
+      "questTitle": "Dont_lay_a_finger_on_my_Sheepies!!!"
+    }
+  },
+  "Djonnut": {
+    "1": {
+      "questTitle": "Genie_Dieting"
+    },
+    "2": {
+      "questTitle": "I'm_Blue_Dabadedada"
+    },
+    "3": {
+      "questTitle": "The_Blue_New_World"
+    }
+  },
+  "Bandit_Bob": {
+    "1": {
+      "questTitle": "Bullets_for_Bandit_Bob!"
+    },
+    "2": {
+      "questTitle": "Bob's_Brand_New_Bandana"
+    },
+    "3": {
+      "questTitle": "Bringing_Bob's_Boxes"
+    },
+    "4": {
+      "questTitle": "The_Desert_Dungeon_Prequest"
+    }
+  },
+  "Papua_Piggea": {
+    "1": {
+      "questTitle": "Crystal_Crime_Stopper"
+    },
+    "2": {
+      "questTitle": "Stamp_Collecting"
+    },
+    "3": {
+      "questTitle": "This_Little_Piggy_Felt_Remorse"
+    },
+    "4": {
+      "questTitle": "Oinko_Boinko"
+    }
+  },
+  "Carpetiem": {
+    "1": {
+      "questTitle": "Darn_Lazy_Gamers!"
+    },
+    "2": {
+      "questTitle": "Old_Timey_Craftin'"
+    },
+    "3": {
+      "questTitle": "Be_like_Buster!"
+    },
+    "4": {
+      "questTitle": "Helping_100_times_over"
+    }
+  },
+  "Typhoon": {
+    "1": {
+      "questTitle": "Surprise_Attack!"
+    }
+  },
+  "Giftmas_Blobulyte": {
+    "1": {
+      "questTitle": "Boo,_Headshot!"
+    },
+    "2": {
+      "questTitle": "You_Shouldn't_Have!_No,_really."
+    }
+  },
+  "Meel": {
+    "1": {
+      "questTitle": "Spooky_Scary_Skelepoops"
+    },
+    "2": {
+      "questTitle": "Waitin'_for_the_Cards_to_Drop"
+    }
+  },
+  "Wellington": {
+    "1": {
+      "questTitle": "Platforms_in_Disguise,_Platsformers!"
+    },
+    "2": {
+      "questTitle": "Findin'_Fingerprints"
+    },
+    "3": {
+      "questTitle": "You_Can't_Run,_but_you_Can_Hide"
+    },
+    "4": {
+      "questTitle": "Puzzles_and_Math,_a_Winning_Combination!"
+    }
+  },
+  "XxX_Cattleprod_XxX": {
+    "1": {
+      "questTitle": "Peak_Gaming"
+    },
+    "2": {
+      "questTitle": "Wait_No,_I_meant_Pathetic_Gaming"
+    },
+    "3": {
+      "questTitle": "Ok,_NOW_it's_Peak_Gaming!"
+    }
+  },
+  "Snake_Jar": {
+    "1": {
+      "questTitle": "Lookin'_Like_a_Snack"
+    },
+    "2": {
+      "questTitle": "Red_Stuff_Bad!"
+    },
+    "3": {
+      "questTitle": "PSA._You_Are_Being_Eaten!"
+    },
+    "4": {
+      "questTitle": "A_Noob,_served_Medium_Rare!"
+    }
+  },
+  "Centurion": {
+    "1": {
+      "questTitle": "Down_The_Mimic_Hole!"
+    },
+    "2": {
+      "questTitle": "Which_one_of_yous_is_the_Mafia?"
+    },
+    "3": {
+      "questTitle": "High_Scorer"
+    },
+    "4": {
+      "questTitle": "Colosseum_Champ!"
+    },
+    "5": {
+      "questTitle": "Colosseum_GDQ"
+    }
+  },
+  "Telescope": {
+    "1": {
+      "questTitle": "I'm_Seeing_Stars!"
+    }
+  },
+  "Loveulyte": {
+    "1": {
+      "questTitle": "Heart_Hogger"
+    },
+    "2": {
+      "questTitle": "Heartbreaker"
+    }
+  },
+  "Constructor_Crow": {
+    "1": {
+      "questTitle": "Restoring_Power_to_another_Portal"
+    }
+  },
+  "Iceland_Irwin": {
+    "1": {
+      "questTitle": "Crikey,_it's_cold_out!"
+    }
+  },
+  "Dazey": {
+    "1": {
+      "questTitle": "Dressing_like_a_Dork"
+    },
+    "2": {
+      "questTitle": "Literally_Physics"
+    }
+  },
+  "Egggulyte": {
+    "1": {
+      "questTitle": "Egg_Shaped_Lootboxes!"
+    },
+    "2": {
+      "questTitle": "I've_Got_a_Golden_Tickegg!"
+    }
+  },
+  "Lord_of_the_Hunt": {
+    "1": {
+      "questTitle": "Pelt_for_the_Pelt_God"
+    },
+    "2": {
+      "questTitle": "Frogecoin_to_the_MOON!"
+    },
+    "3": {
+      "questTitle": "Yet_another_Cartoon_Reference"
+    },
+    "4": {
+      "questTitle": "Small_Stingers,_Big_Owie"
+    },
+    "5": {
+      "questTitle": "The_Mouse_n_the_Molerat"
+    },
+    "6": {
+      "questTitle": "Happy_Tree_Friend"
+    },
+    "7": {
+      "questTitle": "Noot_Noot!"
+    },
+    "8": {
+      "questTitle": "Bunny_you_Should_Say_That!"
+    },
+    "9": {
+      "questTitle": "Rollin'_Thunder!"
+    },
+    "10": {
+      "questTitle": "Untitled_Quest"
+    },
+    "11": {
+      "questTitle": "To_Trap_or_not_to_Trap"
+    }
+  },
+  "Hoggindaz": {
+    "1": {
+      "questTitle": "Turn_ON_for_what???"
+    },
+    "2": {
+      "questTitle": "Trapping_with_the_Lord"
+    },
+    "3": {
+      "questTitle": "Constructing_a_Tower"
+    },
+    "4": {
+      "questTitle": "Monke_Tower_Time!"
+    },
+    "5": {
+      "questTitle": "Taking_Samples"
+    }
+  },
+  "Lonely_Hunter": {
+    "1": {
+      "questTitle": "Leaf_Him_Alone!"
+    },
+    "2": {
+      "questTitle": "Skeleton?_Skelegone!"
+    }
+  },
+  "Snouts": {
+    "1": {
+      "questTitle": "A_Salty_Fall"
+    },
+    "2": {
+      "questTitle": "Gravity_VS_Salt"
+    },
+    "3": {
+      "questTitle": "Big_Ol_Chonker"
+    }
+  },
+  "Cactolyte": {
+    "1": {
+      "questTitle": "Super_Skillage"
+    },
+    "2": {
+      "questTitle": "Top_Skillage"
+    },
+    "3": {
+      "questTitle": "Peanut_De-Aging"
+    },
+    "4": {
+      "questTitle": "Maestro!_The_Stro!_Mman!"
+    }
+  },
+  "Coastiolyte": {
+    "1": {
+      "questTitle": "Cooler_than_a_Cooler!"
+    },
+    "2": {
+      "questTitle": "Vibe_Check"
+    }
+  },
+  "Walupiggy": {
+    "1": {
+      "questTitle": "Treasure_Hunt_1"
+    },
+    "2": {
+      "questTitle": "Treasure_Hunt_2"
+    },
+    "3": {
+      "questTitle": "Treasure_Hunt_3"
+    },
+    "4": {
+      "questTitle": "Treasure_Hunt_4"
+    }
   }
 };
 
-const cauldronMapping = {
-  "power": {
-    "0": "ROID_RAGIN",
-    "1": "WARRIORS_RULE",
-    "2": "HEARTY_DIGGY",
-    "3": "WYOMING_BLOOD",
-    "4": "REELY_SMART",
-    "5": "BIG_MEATY_CLAWS",
-    "6": "SPLOOSH_SPLOOSH",
-    "7": "STRONK_TOOLS",
-    "8": "FMJ",
-    "9": "BAPPITY_BOOPITY",
-    "10": "BRITTLEY_SPEARS",
-    "11": "CALL_ME_BOB",
-    "12": "CARPENTER",
-    "13": "BUFF_BOI_TALENT",
-    "14": "ORANGE_BARGAIN"
+const worldNpcMap = {
+  "Scripticus": {
+    "world": "Blunder_Hills",
+    index: 0
   },
-  "quicc": {
-    "0": "SWIFT_STEPPIN",
-    "1": "ARCHER_OR_BUST",
-    "2": "HAMMER_HAMMER",
-    "3": "LIL_BIG_DAMAGE",
-    "4": "ANVILNOMICS",
-    "5": "QUICK_SLAP",
-    "6": "SANIC_TOOLS",
-    "7": "BUG",
-    "8": "SHAQURACY",
-    "9": "CHEAP_SHOT",
-    "10": "BOW_JACK",
-    "11": "CALL_ME_ASH",
-    "12": "CUZ_I_CATCH_EM_ALL",
-    "13": "FAST_BOI_TALENT",
-    "14": "GREEN_BARGAIN"
+  "Glumlee": {
+    "world": "Blunder_Hills",
+    index: 1
   },
-  "high-iq": {
-    "0": "STABLE_JENIUS",
-    "1": "MAGE_IS_BEST",
-    "2": "HOCUS_CHOPPUS",
-    "3": "MOLTO_LOGGO",
-    "4": "NOODUBBLE",
-    "5": "NAME_I_GUESS",
-    "6": "LE_BRAIN_TOOLS",
-    "7": "COOKIN_ROADKILL",
-    "8": "BREWSTACHIO",
-    "9": "ALL_FOR_KILL",
-    "10": "MATTY_STAFFORD",
-    "11": "CALL_ME_POPE",
-    "12": "GOSPEL_LEADER",
-    "13": "SMART_BOI_TALENT",
-    "14": "PURPLE_BARGAIN"
+  "Krunk": {
+    "world": "Blunder_Hills",
+    index: 2
   },
-  "kazam": {
-    "0": "LOTTO_SKILLS",
-    "1": "DROPPIN_LOADS",
-    "2": "STARTUE_EXP",
-    "3": "LEVEL_UP_GIFT",
-    "4": "PROWESESSARY",
-    "5": "STAMP_TRAMP",
-    "6": "UNDEVELOPED_COSTS",
-    "7": "DA_DAILY_DRIP",
-    "8": "GRIND_TIME",
-    "9": "LAAARRRRYYYY",
-    "10": "COGS_FOR_HANDS",
-    "11": "SAMPLE_IT",
-    "12": "BIG_GAME_HUNTER",
-    "13": "IGNORE_OVERDUES",
-    "14": "YELLOW_BARGAIN"
-  }
-}
-
-const vialMapping = {
-  "0": {
-    "name": "COPPER_CORONA",
-    "item": "Copper"
+  "Mutton": {
+    "world": "Blunder_Hills",
+    index: 3
   },
-  "1": {
-    "name": "SIPPY_SPLINTERS",
-    "item": "OakTree"
+  "Woodsman": {
+    "world": "Blunder_Hills",
+    index: 4
   },
-  "2": {
-    "name": "MUSHROOM_SOUP",
-    "item": "Grasslands1"
+  "Hamish": {
+    "world": "Blunder_Hills",
+    index: 5
   },
-  "3": {
-    "name": "SPOOL_SPRITE",
-    "item": "CraftMat1"
+  "Picnic_Stowaway": {
+    "world": "Blunder_Hills",
+    index: 6
   },
-  "4": {
-    "name": "BARIUM_MIXTURE",
-    "item": "CopperBar"
+  "Typhoon": {
+    "world": "Blunder_Hills",
+    index: 7
   },
-  "5": {
-    "name": "DIETER_DRINK",
-    "item": "Grasslands3"
+  "Sprout": {
+    "world": "Blunder_Hills",
+    index: 8
   },
-  "6": {
-    "name": "SKINNY_0_CAL",
-    "item": "Jungle2"
+  "Dazey": {
+    "world": "Blunder_Hills",
+    index: 9
   },
-  "7": {
-    "name": "THUMB_POW",
-    "item": "CraftMat5"
+  "Telescope": {
+    "world": "Blunder_Hills",
+    index: 10
   },
-  "8": {
-    "name": "JUNGLE_JUICE",
-    "item": "JungleTree"
+  "Stiltzcho": {
+    "world": "Blunder_Hills",
+    index: 11
   },
-  "9": {
-    "name": "BARLEY_BREW",
-    "item": "IronBar"
+  "Funguy": {
+    "world": "Blunder_Hills",
+    index: 12
   },
-  "10": {
-    "name": "ANEARFUL",
-    "item": "Forest1"
+  "Tiki_Chief": {
+    "world": "Blunder_Hills",
+    index: 13
   },
-  "11": {
-    "name": "TEA_WITH_PEA",
-    "item": "ToiletTree"
+  "Dog_Bone": {
+    "world": "Blunder_Hills",
+    index: 14
   },
-  "12": {
-    "name": "GOLD_GUZZLE",
-    "item": "Gold"
+  "Papua_Piggea": {
+    "world": "Blunder_Hills",
+    index: 15
   },
-  "13": {
-    "name": "RAMIFICOCTION",
-    "item": "Forest3"
+  "TP_Pete": {
+    "world": "Blunder_Hills",
+    index: 16
   },
-  "14": {
-    "name": "SEAWATER",
-    "item": "Fish1"
+  "Meel": {
+    "world": "Blunder_Hills",
+    index: 17
   },
-  "15": {
-    "name": "TAIL_TIME",
-    "item": "Sewers2"
+  "Town_Marble": {
+    "world": ""
   },
-  "16": {
-    "name": "FLY_IN_MY_DRINK",
-    "item": "Bug1"
+  "Mr_Pigibank": {
+    "world": ""
   },
-  "17": {
-    "name": "MIMICRAUGHT",
-    "item": "DesertA2"
+  "Secretkeeper": {
+    "world": ""
   },
-  "18": {
-    "name": "BLUE_FLAV",
-    "item": "Plat"
+  "Promotheus": {
+    "world": ""
   },
-  "19": {
-    "name": "SLUG_SLURP",
-    "item": "Fish2"
+  "Bushlyte": {
+    "world": ""
   },
-  "20": {
-    "name": "PICKLE_JAR",
-    "item": "BobJoePickle"
+  "Rocklyte": {
+    "world": ""
   },
-  "21": {
-    "name": "FUR_REFRESHER",
-    "item": "SnowA1"
+  "Cowbo_Jones": {
+    "world": "Yum-Yum_Desert",
+    index: 0
   },
-  "22": {
-    "name": "SIPPY_SOUL",
-    "item": "Soul1"
+  "Fishpaste97": {
+    "world": "Yum-Yum_Desert",
+    index: 1
   },
-  "23": {
-    "name": "CRAB_JUICE",
-    "item": "Critter2"
+  "Scubidew": {
+    "world": "Yum-Yum_Desert",
+    index: 2
   },
-  "24": {
-    "name": "VOID_VIAL",
-    "item": "Void"
+  "Whattso": {
+    "world": "Yum-Yum_Desert",
+    index: 3
   },
-  "25": {
-    "name": "RED_MALT",
-    "item": "Refinery1"
+  "Bandit_Bob": {
+    "world": "Yum-Yum_Desert",
+    index: 4
   },
-  "26": {
-    "name": "EW_GROSS_GROSS",
-    "item": "Bug5"
+  "Carpetiem": {
+    "world": "Yum-Yum_Desert",
+    index: 5
   },
-  "27": {
-    "name": "THE_SPANISH_SAHARA",
-    "item": "SaharanFoal"
+  "Centurion": {
+    "world": "Yum-Yum_Desert",
+    index: 6
   },
-  "28": {
-    "name": "POISON_TINCTURE",
-    "item": "Critter1A"
+  "Goldric": {
+    "world": "Yum-Yum_Desert",
+    index: 7
   },
-  "29": {
-    "name": "ETRUSCAN_LAGER",
-    "item": "SnowB2"
+  "Snake_Jar": {
+    "world": "Yum-Yum_Desert",
+    index: 8
   },
-  "30": {
-    "name": "CHONKER_CHUG",
-    "item": "Soul2"
+  "XxX_Cattleprod_XxX": {
+    "world": "Yum-Yum_Desert",
+    index: 9
   },
-  "31": {
-    "name": "BUBONIC_BURP",
-    "item": "Critter4"
+  "Loominadi": {
+    "world": "Yum-Yum_Desert",
+    index: 10
   },
-  "32": {
-    "name": "VISIBLE_INK",
-    "item": "SnowB3"
+  "Wellington": {
+    "world": "Yum-Yum_Desert",
+    index: 11
   },
-  "33": {
-    "name": "ORANGE_MALT",
-    "item": "Refinery2"
+  "Djonnut": {
+    "world": "Yum-Yum_Desert",
+    index: 12
   },
-  "34": {
-    "name": "SNOW_SLURRY",
-    "item": "SnowB5"
+  "Walupiggy": {
+    "world": "Yum-Yum_Desert",
+    index: 13
   },
-  "35": {
-    "name": "SLOWERGY_DRINK",
-    "item": "Soul4"
+  "Builder_Bird": {
+    "world": ""
   },
-  "36": {
-    "name": "SIPPY_CUP",
-    "item": "SnowC1"
+  "Speccius": {
+    "world": ""
   },
-  "37": {
-    "name": "BUNNY_BREW",
-    "item": "Critter7"
+  "Postboy_Pablob": {
+    "world": ""
   },
-  "38": {
-    "name": "40-40_PURITY",
-    "item": "SnowC4"
+  "Desert_Davey": {
+    "world": ""
   },
-  "39": {
-    "name": "SPOOK_PINT",
-    "item": "Soul6"
+  "Giftmas_Blobulyte": {
+    "world": ""
   },
-  "40": {
-    "name": "GOOSEY_GLUG",
-    "item": "Critter9"
-  }
-}
+  "Loveulyte": {
+    "world": ""
+  },
+  "Constructor_Crow": {
+    "world": ""
+  },
+  "Iceland_Irwin": {
+    "world": ""
+  },
+  "Egggulyte": {
+    "world": ""
+  },
+  "Hoggindaz": {
+    "world": "Frostbite_Tundra",
+    index: 0
+  },
+  "Lord_of_the_Hunt": {
+    "world": "Frostbite_Tundra",
+    index: 1
+  },
+  "Lonely_Hunter": {
+    "world": "Frostbite_Tundra",
+    index: 2
+  },
+  "Snouts": {
+    "world": "Frostbite_Tundra",
+    index: 3
+  },
+  "Cactolyte": {
+    "world": ""
+  },
+  "Coastiolyte": {
+    "world": ""
+  },
+};
 
 export {
-  vialMapping,
-  cauldronMapping,
-  shopMapping,
+  worldNpcMap,
+  questsMap,
   shopStockMapping,
   shrineMap,
   prayersMap,
   monstersMap,
   keysMap,
   talentPagesMap,
-  talentsMap,
   starSignMap,
   classMap,
   mapsMap,
@@ -9252,7 +9583,6 @@ export {
   obolCharacterShapeMap,
   filteredLootyItems,
   anvilProductionItems,
-  stampsMap,
   maxCarryCap,
   statuesMap
 };

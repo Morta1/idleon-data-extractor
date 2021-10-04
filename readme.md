@@ -20,4 +20,4 @@ progression along some more feature, you can check it out here
 
 ## credits
 
-[Corbeno](https://github.com/Corbeno) - for the inspiration and some code logic for this extension.
+[Corbeno](https://github.com/Corbeno) - for the inspiration for this extension.

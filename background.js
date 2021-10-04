@@ -4,11 +4,9 @@ import {
   cardEquipMap,
   cardLevelMap,
   cardSetMap,
-  cauldronMapping,
   classMap,
   filteredLootyItems,
   guildBonusesMap,
-  itemMap,
   keysMap,
   mapsMap,
   maxCarryCap,
@@ -17,17 +15,24 @@ import {
   obolFamilyShapeMap,
   obolMap,
   prayersMap,
-  shopMapping,
   shopStockMapping,
   shrineMap,
   skillIndexMap,
-  stampsMap,
   starSignMap,
   statuesMap,
   talentPagesMap,
+  worldNpcMap
+} from './src/commons/maps.js';
+
+import {
+  cauldronMapping,
+  itemMap,
+  questsMap,
+  shopMapping,
+  stampsMap,
   talentsMap,
   vialMapping
-} from './src/commons/maps.js';
+} from './src/commons/processed-maps.js';
 
 try {
   chrome.storage.local.clear();
@@ -95,22 +100,83 @@ try {
     const characterNames = data?.charNames;
     const guildInfo = data?.guildInfo;
 
-    final.account = buildAccountData(fields);
+    const account = buildAccountData(fields);
 
     // Initialize characters' array
     const characters = Object.keys(characterNames).map((index) => ({
       name: characterNames[index],
     }));
-    final.characters = buildCharacterData(characters, fields, final.account);
+    let charactersData = buildCharacterData(characters, fields, account);
     console.log('Finished building character data');
+
+    const quests = mapAccountQuests(charactersData);
+    charactersData = charactersData.map(({ quests, ...rest }) => rest);
+
+    final.characters = charactersData;
+    final.account = { ...account, quests };
     final.guild = buildGuildData(guildInfo, fields);
 
-    chrome.runtime.sendMessage({ data: true })
+    chrome.runtime.sendMessage({ data: true });
 
     isRunning = false;
 
     console.log('Finished Parsing');
     return final;
+  };
+
+  const mapAccountQuests = (characters) => {
+    const quests = Object.keys(questsMap);
+    let mappedQuests = quests?.reduce((res, npcName) => {
+      const npcQuests = questsMap[npcName];
+      const worldName = worldNpcMap?.[npcName]?.world;
+      const npcIndex = worldNpcMap?.[npcName]?.index;
+      if (!worldName) return res;
+      for (let i = 0; i < characters?.length; i++) {
+        const rawQuest = cloneObject(characters?.[i]?.quests?.[npcName]) || {};
+        const questIndices = Object.keys(rawQuest);
+        let skip = false;
+        for (let j = 0; j < questIndices?.length; j++) {
+          const questIndex = questIndices[j];
+          const questStatus = rawQuest[questIndex];
+          if (!npcQuests[questIndex]) continue;
+          if (npcQuests?.[questIndex - 1] && (!skip && (questStatus === 0 || questStatus === -1) || questStatus === 1)) {
+            npcQuests[questIndex - 1].progress = npcQuests[questIndex - 1]?.progress?.filter(({ charIndex }) => charIndex !== i);
+          }
+          if (questStatus === 1) { // completed
+            npcQuests[questIndex].completed = [...(npcQuests[questIndex]?.completed || []), {
+              charIndex: i,
+              status: questStatus
+            }];
+            npcQuests[questIndex].progress = [...(npcQuests[questIndex]?.progress || []), {
+              charIndex: i,
+              status: questStatus
+            }];
+          } else if (!skip && (questStatus === 0 || questStatus === -1)) {
+            npcQuests[questIndex].progress = [...(npcQuests[questIndex]?.progress || []), {
+              charIndex: i,
+              status: questStatus
+            }]
+            skip = true;
+          }
+        }
+      }
+      return {
+        ...res,
+        [worldName]: [
+          ...(res?.[worldName] || []),
+          {
+            name: npcName,
+            index: npcIndex,
+            npcQuests: Object.values(npcQuests)
+          }
+        ]
+      };
+    }, {});
+    for (const mappedQuest in mappedQuests) {
+      let val = mappedQuests[mappedQuest];
+      val?.sort((a, b) => a?.index - b?.index);
+    }
+    return mappedQuests;
   };
 
   const buildAccountData = (fields) => {
@@ -257,7 +323,7 @@ try {
         item: vial?.item,
         level: vialsObject?.[key]?.integerValue
       }] : res;
-    }, [])
+    }, []);
 
     console.log('Finished building account data');
     return accountData;
@@ -447,6 +513,16 @@ try {
         }] : res;
       }, []);
 
+      const quests = JSON.parse(fields?.[`QuestComplete_${index}`].stringValue);
+      extendedChar.quests = Object.keys(quests).reduce((res, key) => {
+        let [npcName, questIndex] = key.split(/([0-9]+)/);
+        if (npcName === 'Fishpaste') {
+          npcName = 'Fishpaste97'
+          questIndex = questIndex?.split('97')?.[1];
+        }
+        return { ...res, [npcName]: { ...(res?.[npcName] || {}), [questIndex]: quests[key] } }
+      }, {});
+
       return {
         ...character,
         ...extendedChar,
@@ -577,6 +653,14 @@ try {
       }
       return { ...res, [statName]: baseItemStat };
     }, {});
+  }
+
+  const cloneObject = (data) => {
+    try {
+      return JSON.parse(JSON.stringify(data));
+    } catch (err) {
+      return data;
+    }
   }
 
 } catch (err) {
