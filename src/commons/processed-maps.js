@@ -10620,7 +10620,7 @@ const questsMap = {
         {
           "rawName": "OakTree",
           "name": "Oak_Logs",
-          "amount": 1
+          "amount": 1000
         }
       ]
     },
@@ -11357,7 +11357,7 @@ const questsMap = {
         {
           "rawName": "ToiletTree",
           "name": "Potty_Rolls",
-          "amount": 1
+          "amount": 10000
         }
       ]
     }
