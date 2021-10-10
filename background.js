@@ -25,6 +25,7 @@ import {
 } from './src/commons/maps.js';
 
 import {
+  bribesMap,
   cauldronMapping,
   itemMap,
   questsMap,
@@ -221,7 +222,7 @@ try {
       ...result,
       [stampsMapping?.[index]]: Object.keys(item.mapValue.fields).reduce((res, key) => (key !== 'length' ? [
           ...res,
-          { level: item.mapValue.fields[key].integerValue }
+          { level: parseFloat(item.mapValue.fields[key].integerValue) }
         ]
         : res), []),
     }), {});
@@ -300,28 +301,54 @@ try {
 
     // 0-3 cauldrons
     // 4 - vials
+    accountData.alchemy = {};
     const cauldronsIndexMapping = { 0: "power", 1: "quicc", 2: "high-iq", 3: 'kazam' };
     const cauldronsTextMapping = { 0: "O", 1: "G", 2: "P", 3: 'Y' };
     const cauldronsInfoArray = fields?.CauldronInfo?.arrayValue?.values;
-    accountData.cauldronsMap = cauldronsInfoArray?.reduce((res, { mapValue }, index) => (index <= 3 ? {
+    accountData.alchemy.bubbles = cauldronsInfoArray?.reduce((res, { mapValue }, index) => (index <= 3 ? {
       ...res,
       [cauldronsIndexMapping?.[index]]: Object.keys(mapValue?.fields)?.reduce((res, key, bubbleIndex) => (
         key !== 'length' ? [
           ...res,
           {
-            name: cauldronMapping[cauldronsIndexMapping?.[index]][key],
-            level: mapValue?.fields?.[key]?.integerValue,
-            rawName: `aUpgrades${cauldronsTextMapping[index]}${bubbleIndex}`
+            level: parseInt(mapValue?.fields?.[key]?.integerValue) || 0,
+            rawName: `aUpgrades${cauldronsTextMapping[index]}${bubbleIndex}`,
+            ...cauldronMapping[cauldronsIndexMapping?.[index]][key],
           }] : res), [])
     } : res), {});
 
     const vialsObject = fields?.CauldronInfo?.arrayValue?.values?.[4]?.mapValue?.fields;
-    accountData.vialsMap = Object.keys(vialsObject).reduce((res, key, index) => {
+    accountData.alchemy.vials = Object.keys(vialsObject).reduce((res, key, index) => {
       const vial = vialMapping?.[index];
       return key !== 'length' ? [...res, {
-        name: vial?.name,
-        item: vial?.item,
-        level: vialsObject?.[key]?.integerValue
+        level: parseInt(vialsObject?.[key]?.integerValue) || 0,
+        ...vial
+      }] : res;
+    }, []);
+
+    // first 16 elements belong to cauldrons' levels
+    // 4 * 4
+    const rawCauldronsLevelsArray = fields?.['CauldUpgLVs']?.arrayValue.values;
+    const cauldronsLevels = rawCauldronsLevelsArray.slice(0, 16);
+    const cauldronsLevelsMapping = { 0: "power", 4: "quicc", 8: "high-iq", 12: 'kazam' };
+    let cauldrons = {};
+    const chunk = 4;
+    for (let i = 0, j = cauldronsLevels.length; i < j; i += chunk) {
+      const [speed, luck, cost, extra] = cauldronsLevels.slice(i, i + chunk);
+      cauldrons[cauldronsLevelsMapping[i]] = {
+        speed: parseInt(speed?.integerValue) || 0,
+        luck: parseInt(luck?.integerValue) || 0,
+        cost: parseInt(cost?.integerValue) || 0,
+        extra: parseInt(extra?.integerValue) || 0
+      };
+    }
+    accountData.alchemy.cauldrons = cauldrons;
+
+    const bribesArray = fields?.['BribeStatus']?.arrayValue?.values;
+    accountData.bribes = bribesArray?.reduce((res, { integerValue }, index) => {
+      return integerValue !== '-1' ? [...res, {
+        done: integerValue === '1',
+        ...(bribesMap?.[index] || [])
       }] : res;
     }, []);
 
