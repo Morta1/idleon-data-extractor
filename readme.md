@@ -10,7 +10,7 @@ progression along some more feature, you can check it out here
 
 1. Download the content of the library
 2. Extract the zip anywhere.
-3. Go to chrome://extension (or opera://extensions in opera).
+3. Go to chrome://extensions (or opera://extensions in opera).
 4. Make sure "Developer mode" is checked at the top right of the screen
 5. Click "Load unpacked" and select the extracted folder.
 6. Now you can go to [Idleon Family Progression](https://morta1.github.io/IdleonToolbox/family) and see your data!
