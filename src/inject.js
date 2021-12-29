@@ -9,10 +9,10 @@ chrome.storage.local.clear();
 window.addEventListener(
   "globalData",
   (event) => {
-    const { name, data } = event.detail;
+    const data = event.detail;
     chrome.storage.local.get('globalData', async (result) => {
       if (!chrome.runtime.lastError) {
-        await chrome.storage.local.set({ 'globalData': { ...result.globalData, [name]: data } });
+        await chrome.storage.local.set({ 'globalData': { ...result.globalData, ...data } });
       }
     });
   },
