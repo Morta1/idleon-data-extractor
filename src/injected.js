@@ -1,6 +1,6 @@
 setTimeout(async () => {
   const findData = setInterval(() => {
-    if (!l || !d || !Q || ae) return;
+    if (!l || !d || !Q || !ae) return;
     if (Object.keys(d)?.length === 0 || Object.keys(Q)?.length === 0) return;
     retry();
     window.setInterval(retry, 30000);
